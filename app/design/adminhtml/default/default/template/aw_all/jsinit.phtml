@@ -18,8 +18,8 @@
  * =================================================================
  *
  * @category   AW
- * @package    AW_Onsale
- * @version    2.5.3
+ * @package    AW_Pquestion2
+ * @version    2.1.2
  * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
  * @license    http://ecommerce.aheadworks.com/AW-LICENSE.txt
  */
@@ -52,7 +52,13 @@
             </td>
             <td><?php echo $Extension->getVersion()?></td>
             <td>
-                <a href="http://confluence.aheadworks.com/display/EUDOC"
+                <a href="
+                    <?php if (null !== $Extension->getFeedInfo()->getDocumentationUrl()): ?>
+                        <?php echo $Extension->getFeedInfo()->getDocumentationUrl(); ?>
+                    <?php else: ?>
+                        <?php echo 'http://confluence.aheadworks.com/display/EUDOC/';?>
+                    <?php endif;?>
+                "
                    onclick="this.target = '_blank'"><img
                         src="<?php echo $this->getSkinUrl('aw_all/images/readme.png')?>" title="<?php echo $this->__('Readme');?>"/></a></td>
         </tr>

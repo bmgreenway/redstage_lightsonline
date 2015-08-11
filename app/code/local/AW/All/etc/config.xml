@@ -2,7 +2,7 @@
 <config>
     <modules>
         <AW_All>
-            <version>2.3.2</version><platform>ee</platform>
+            <version>2.3.4</version><platform>ee</platform>
         </AW_All>
     </modules>
 
@@ -99,11 +99,6 @@
                         <class>awall/feed_extensions</class>
                         <method>check</method>
                     </awall_exts>
-                    <awall_check>
-                        <type>singleton</type>
-                        <class>awall/feed_extensions</class>
-                        <method>checkExtensions</method>
-                    </awall_check>
                     <awall_upds>
                         <type>singleton</type>
                         <class>awall/feed_updates</class>
@@ -111,7 +106,7 @@
                     </awall_upds>
                 </observers>
             </controller_action_predispatch>
-            <adminhtml_block_html_before>
+            <controller_action_layout_render_before_adminhtml_system_config_edit>
                 <observers>
                     <awall_tabs_sorting>
                         <type>singleton</type>
@@ -119,7 +114,7 @@
                         <method>prepareAWTabs</method>
                     </awall_tabs_sorting>
                 </observers>
-            </adminhtml_block_html_before>
+            </controller_action_layout_render_before_adminhtml_system_config_edit>
         </events>
     </adminhtml>
     <default>
@@ -133,4 +128,16 @@
             </feed>
         </awall>
     </default>
+    <crontab>
+        <jobs>
+            <aw_all_cron>
+                <schedule>
+                    <cron_expr>*/5 * * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>awall/cron::run</model>
+                </run>
+            </aw_all_cron>
+        </jobs>
+    </crontab>
 </config>
