@@ -18,8 +18,8 @@
  * =================================================================
  *
  * @category   AW
- * @package    AW_Helpdesk3
- * @version    3.3.3
+ * @package    AW_Onsale
+ * @version    2.5.3
  * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
  * @license    http://ecommerce.aheadworks.com/AW-LICENSE.txt
  */
@@ -155,8 +155,7 @@ class AW_All_Block_Jsinit extends Mage_Adminhtml_Block_Template
             $data = array(
                 'url' => @$this->_extensions_cache[$moduleName]['url'],
                 'display_name' => @$this->_extensions_cache[$moduleName]['display_name'],
-                'latest_version' => @$this->_extensions_cache[$moduleName]['version'],
-                'documentation_url' => @$this->_extensions_cache[$moduleName]['documentation_url'],
+                'latest_version' => @$this->_extensions_cache[$moduleName]['version']
             );
             return new Varien_Object($data);
         }
