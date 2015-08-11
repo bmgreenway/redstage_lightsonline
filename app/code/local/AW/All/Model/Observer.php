@@ -18,8 +18,8 @@
  * =================================================================
  *
  * @category   AW
- * @package    AW_Affiliate
- * @version    1.1.1
+ * @package    AW_Extradownloads
+ * @version    1.0.2
  * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
  * @license    http://ecommerce.aheadworks.com/AW-LICENSE.txt
  */
