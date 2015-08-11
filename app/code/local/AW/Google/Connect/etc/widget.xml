@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<widgets>
+    <googleconnect_button type="googleconnect/widget_connectbutton" translate="name" module="googleconnect">
+        <name>Google Connect Button</name>
+        <parameters>
+            <title translate="label value">
+                <label>Title</label>
+                <visible>1</visible>
+                <required>0</required>
+                <type>text</type>
+                <value>Sign in with Google</value>
+            </title>
+            <template translate="label">
+                <label>Frontend Template</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>text</type>
+                <value>google/connect/widget/connectbutton.phtml</value>
+            </template>
+        </parameters>
+    </googleconnect_button>
+</widgets>

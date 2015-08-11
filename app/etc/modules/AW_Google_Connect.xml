@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <AW_Google_Connect>
+            <active>true</active>
+            <codePool>local</codePool>
+        </AW_Google_Connect>
+    </modules>
+</config>

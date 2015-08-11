@@ -1,0 +1,17 @@
+<?php if($authUrl = $this->getAuthUrl()) : ?>
+<script type="text/javascript">
+var authCheck = false;
+function onloadRedirect() {
+	if(!authCheck) {
+		location.href='<?php echo $authUrl; ?>';
+		authCheck = true;
+	}
+}
+</script>
+<iframe id="twitIframe" src="<?php echo $authUrl; ?>" onload="javascript:onloadRedirect();" style="visibility:hidden;"></iframe>
+<script type="text/javascript">
+setTimeout('onloadRedirect();', 5000);
+</script>
+<?php else : ?>
+<?php echo Mage::helper('twitterconnect')->__('Could not connect to Twitter. Try again later.'); ?>
+<?php endif; ?>

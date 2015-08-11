@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <awall translate="label">
+            <label>aheadWorks Extensions</label>
+            <sort_order>300</sort_order>
+        </awall>
+    </tabs>
+    <sections>
+        <facebookconnect translate="label" module="facebookconnect">
+            <label>Facebook Connect</label>
+            <tab>awall</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>14</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label">
+                    <label>General Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable_extension translate="label">
+                            <label>Enable Extension</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_extension>
+                        <title translate="label comment">
+                            <label>Title</label>
+                            <comment>The title of the button.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </title>
+                    </fields>
+                </general>
+                <wall translate="label">
+                    <label>Wall Post</label>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <sort_order>2</sort_order>
+                    <fields>
+                        <publish_order translate="label">
+                            <label>Publish order on FaceBook wall</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </publish_order>
+                        <orderstatus translate="label comment">
+                            <label>Order status to post order details to Facebook Wall.</label>
+                            <comment>Indicate at what order status order details should be posted to user's Facebook wall.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>facebookconnect/system_config_source_orderstatus</source_model>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </orderstatus>
+                        <post_message translate="label comment">
+                            <label>Customer Wall update</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Publish a post into the stream on the user's Facebook Page's Wall and News Feed.&lt;br /&gt;Available variables:&lt;br /&gt;&lt;b&gt;{items_count}&lt;/b&gt; - number of items purchased&lt;br /&gt;&lt;b&gt;{store_link}&lt;/b&gt; - link to your store</comment>
+                        </post_message>
+                        <post_link_template translate="label comment">
+                            <label>Action template</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[<span class="required">Required field.</span> Available variables:<br><b>{items_count}</b> - number of items purchased<br><b>{item_name}</b> - item name<br><b>{item_price}</b> - item price<br><b>{item_link}</b> - link to the item purchased<br><b>{store_link}</b> - link to your store]]></comment>
+                            <validate>required-entry</validate>
+                        </post_link_template>
+                        <items_count translate="label comment">
+                            <label>Number of items to post</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>0 - all items</comment>
+                        </items_count>
+                        <picture translate="label">
+                            <label>Post product image</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>60</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </picture>
+                        <wishlist_button translate="label comment">
+                            <label>Use Wishlist Facebook Share Button</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </wishlist_button>
+                        <wishlist_share_message translate="label comment">
+                            <label>Customer Wishlist Share Wall update</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>80</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[Publish a wishlist into the stream on the user's Facebook Page's Wall. <br />Available variables:<br /><b>{store_link}</b>  -  link to your store<br /><b>{wishlist_link}</b>  -  link to customer's Wishlist]]></comment>
+                        </wishlist_share_message>
+                    </fields>
+                </wall>
+                <content translate="label">
+                    <label>Content Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <show_in_login translate="label">
+                            <label>Display on Login Page</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_in_login>
+                        <show_in_checkout translate="label">
+                            <label>Display on Checkout Page</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_in_checkout>
+                        <show_custom translate="label">
+                            <label>Display Custom Buttons</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_custom>
+                        <show_widget translate="label">
+                            <label>Display Widget Buttons</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </show_widget>
+                    </fields>
+                </content>
+                <signup translate="label">
+                    <label>Facebook "Sign Up" Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>3</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <signup_enable_message translate="label">
+                            <label>Enable Facebook Wall "Sign Up" Message</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </signup_enable_message>
+                        <signup_message translate="label">
+                            <label>Message Text</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </signup_message>
+                        <signup_image translate="label">
+                            <label>Image URL</label>
+                            <comment>Image URL. Ex.: http://magentoshopurl.com/images/signupimage.jpg</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </signup_image>
+                        <signup_name translate="label">
+                            <label>Message Name</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </signup_name>
+                        <signup_description translate="label">
+                            <label>Message Description</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </signup_description>
+                    </fields>
+                </signup>
+                <create_account translate="label">
+                    <label>Create New Account Options</label>
+                    <sort_order>20</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <enable_notify>
+                            <frontend_type>select</frontend_type>
+                            <label>Enable Notifications</label>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </enable_notify>
+                        <email_template translate="label">
+                            <label>Welcome Email</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_template</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </email_template>
+                        <email_identity translate="label">
+                            <label>Email Sender</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_identity</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </email_identity>
+                    </fields>
+                </create_account>
+            </groups>
+        </facebookconnect>
+    </sections>
+</config>

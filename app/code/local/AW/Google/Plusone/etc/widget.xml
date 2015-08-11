@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<widgets>
+	<googleplusone_button type="googleplusone/widget_button" translate="name" module="googleplusone">
+		<name>Google "+1" Button</name>
+		<parameters>
+			<template translate="label">
+				<label>Frontend Template</label>
+				<visible>1</visible>
+				<required>1</required>
+				<type>text</type>
+				<value>google/plusone/widget/button.phtml</value> 
+			</template>
+		</parameters>
+	</googleplusone_button>
+</widgets>

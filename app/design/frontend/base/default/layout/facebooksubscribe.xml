@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<layout version="1.0.0">
+    <default>
+        <block type="facebooksubscribe/custom_subscribe" name="custom.facebooksubscribe"
+               template="facebooksubscribe/custom/subscribe.phtml"/>
+    </default>
+
+    <cms_page>
+        <reference name="content">
+            <block type="facebooksubscribe/cms_subscribe" name="cms_page.facebooksubscribe"
+                   template="facebooksubscribe/subscribe.phtml" before="-"/>
+        </reference>
+    </cms_page>
+
+    <catalog_product_view>
+        <reference name="content">
+            <block type="facebooksubscribe/catalog_product_subscribe" name="product_page.facebooksubscribe"
+                   template="facebooksubscribe/subscribe.phtml" before="-"/>
+        </reference>
+    </catalog_product_view>
+
+    <catalog_category_default>
+        <reference name="content">
+            <block type="facebooksubscribe/catalog_category_subscribe" name="category_page.facebooksubscribe"
+                   template="facebooksubscribe/subscribe.phtml" before="-"/>
+        </reference>
+    </catalog_category_default>
+
+    <catalog_category_layered>
+        <reference name="content">
+            <block type="facebooksubscribe/catalog_category_subscribe" name="category_page.facebooksubscribe"
+                   template="facebooksubscribe/subscribe.phtml" before="-"/>
+        </reference>
+    </catalog_category_layered>
+</layout>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<layout version="1.0.0">
+    <default>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/aheadworks/socialbuttons/twitterconnect.js</name></action>
+            <action method="addItem"><type>skin_css</type><name>css/aheadworks/socialbuttons/twitterconnect.css</name></action>
+        </reference>
+        <block type="twitterconnect/custom_connectbutton" name="custom.twitterconnect" template="twitter/connect/custom/connectbutton.phtml"/>
+    </default>
+
+    <customer_account_login>
+        <reference name="before_body_end">
+            <block  type="twitterconnect/customer_connectbutton" name="twitterconnect" template="twitter/connect/connectbutton.phtml" />
+        </reference>
+    </customer_account_login>
+
+    <aw_onestepcheckout_index_index>
+        <reference name="before_body_end">
+            <block type="twitterconnect/checkout_connectbutton" name="twitterconnect" template="twitter/connect/connectbutton.phtml"/>
+        </reference>
+    </aw_onestepcheckout_index_index>
+
+    <checkout_onepage_index>
+        <reference name="before_body_end">
+            <block type="twitterconnect/checkout_connectbutton" name="twitterconnect" template="twitter/connect/connectbutton.phtml"/>
+        </reference>
+    </checkout_onepage_index>
+	
+
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="twitterconnect"><name>twitterconnect</name><path>twitterconnect/manage/</path><label>Twitter Connect</label></action>
+        </reference>
+    </customer_account>
+	
+	<twitterconnect_login_index>
+        <reference name="root">
+            <action method="setTemplate"><template>twitter/connect/popup.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="twitterconnect/login" name="twitterconnect.login" template="twitter/connect/login.phtml"/>
+        </reference>
+	</twitterconnect_login_index>
+
+
+    <twitterconnect_manage_index translate="label">
+        <label>Customer My Account Twitter Post</label>
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+            <block type="twitterconnect/customer_form_twitterconnect" name="customer_twitterconnect" template="twitter/connect/customer/form/twitterconnect.phtml">
+                <block type="page/html_wrapper" name="customer.twitterconnect.form.before" as="twitterconnect_form_before" translate="label">
+                    <label>Twitter Connect Form Before</label>
+                    <action method="setMayBeInvisible"><value>1</value></action>
+                </block>
+            </block>
+        </reference>
+    </twitterconnect_manage_index>
+</layout>
