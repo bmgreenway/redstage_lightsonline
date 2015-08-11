@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <awall translate="label">
+            <label>aheadWorks Extensions</label>
+            <sort_order>300</sort_order>
+        </awall>
+    </tabs>
+	<sections>
+		<twittertweet translate="label" module="twittertweet">
+			<label>Twitter Tweet Button</label>
+            <tab>awall</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>50</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<general translate="label">
+					<label>General Options</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<button_code translate="label comment">
+							<label>Button Code</label>
+							<comment>The recommended way is to use Javascript.</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>twittertweet/system_config_source_buttoncode</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</button_code>
+						<via translate="label">
+							<label>Twitter User Name</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</via>
+						<text translate="label comment">
+							<label>Tweet text</label>
+							<comment>Default value - content of the TITLE tag.</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</text>
+						<related translate="label comment">
+							<label>Recommended accounts</label>
+							<comment>Using this field you can suggest accounts for a user to follow once they have sent a Tweet using your Tweet Button. These suggested accounts and their basic information are shown on the last page of the Share Box flow. You can provide multiple related accounts by comma separating entries in the field. Ex.: anywhere:The Javascript API,sitestreams,twitter:The official account</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</related>
+						<count translate="label comment">
+							<label>Count box position</label>
+							<frontend_type>select</frontend_type>
+							<source_model>twittertweet/system_config_source_countbox</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</count>
+						<counturl translate="label">
+							<label>The URL to which your shared URL resolves to</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</counturl>
+						<width translate="label comment">
+							<label>Width</label>
+							<comment>Ex.: 130px (in pixels or percentage). This only works with the IFRAME version.</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>7</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</width>
+						<height translate="label comment">
+							<label>Height</label>
+							<comment>Ex.: 50px (in pixels or percentage). This only works with the IFRAME version.</comment>
+							<frontend_type>text</frontend_type>
+							<sort_order>8</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</height>
+					</fields>
+				</general>
+				<content translate="label">
+					<label>Content Options</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>2</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<show_in_cms translate="label">
+							<label>Display on CMS pages</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_in_cms>
+						<show_in_home translate="label">
+							<label>Display on Home page</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_in_home>
+						<show_in_category translate="label">
+							<label>Display on categories page</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>3</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_in_category>
+						<show_in_product translate="label">
+							<label>Display on products page</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>4</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_in_product>
+						<show_custom translate="label">
+							<label>Display Custom Buttons</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>5</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_custom>
+						<show_widget translate="label">
+							<label>Display Widget Buttons</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>6</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</show_widget>
+					</fields>
+				</content>
+			</groups>
+		</twittertweet>
+	</sections>
+</config>

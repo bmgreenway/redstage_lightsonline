@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<widgets>
+	<googleshare_button type="googleshare/widget_button" translate="name" module="googleshare">
+		<name>Google Share Button</name>
+		<parameters>
+			<template translate="label">
+				<label>Frontend Template</label>
+				<visible>1</visible>
+				<required>1</required>
+				<type>text</type>
+				<value>google/share/widget/button.phtml</value> 
+			</template>
+		</parameters>
+	</googleshare_button>
+</widgets>
