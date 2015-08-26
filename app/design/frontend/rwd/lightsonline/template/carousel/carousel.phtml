@@ -1,0 +1,16 @@
+<div class="slide-container">
+    <div class="home-slide flexslider" id="homeSlider">
+        <ul class="slides" id="slides">
+            <?php
+            $slideIndex = 0;
+            foreach ($this->getSlides() as $slide):
+                $slideIndex ++;
+                ?>
+            <li class="slide">
+                    <a href="<?php echo $slide->getLink(); ?>"><img src='<?php echo $slide->getImage(); ?>'  /></a>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div><!--// End slide container -->
+<div class="clearer"></div>
