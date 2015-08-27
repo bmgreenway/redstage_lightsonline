@@ -101,3 +101,13 @@ patching file downloader/template/settings.phtml
 patching file errors/processor.php
 
 
+-e -n 2015-08-27 18:34:34 UTC | SUPEE-6482 | EE_1.14.2.0 | v2 | acb6502cf8bc7cf93acb33888821ab1249ceaa7c | Tue Jul 28 14:21:10 2015 +0300 | v1.14.2.0..HEAD
+patching file app/code/core/Enterprise/PageCache/Model/Processor.php
+patching file app/code/core/Mage/Api/Model/Server/Adapter/Soap.php
+patching file app/code/core/Mage/Catalog/Model/Product/Api/V2.php
+patching file app/code/core/Mage/Core/Controller/Request/Http.php
+patching file app/design/frontend/base/default/template/page/js/cookie.phtml
+patching file app/design/frontend/enterprise/default/template/giftregistry/search/form.phtml
+patching file app/design/frontend/rwd/enterprise/template/giftregistry/search/form.phtml
+
+
