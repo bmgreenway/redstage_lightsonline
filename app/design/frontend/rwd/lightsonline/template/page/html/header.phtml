@@ -38,7 +38,7 @@
 		
 		<div class="header_top_right_links_m"><span class="call_icon"></span><span class="call_text">call</span></div>
 		<div class="header_top_right_links">
-			<span class="qustion_link">Questions?</span><span class="tel_link">Call us toll free:  <a class="highlight" href="tel:18666883562">1-866-688-3562</a><span>
+			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('header_call_us_toll_free')->toHtml(); ?>
 		</div>
 		<div class="chat_live_m"><span class="chat_icon"></span><span class="chat_text">chat</span></div>
 		<div class="chat_live">
@@ -64,72 +64,65 @@
 
 <header id="header" class="page-header">
     <div class="page-header-container">
-      <div class="main_header_cont">  
-		<div class="header_section_one">
-			<div class="link_header_1">
-				Free Shipping<span class="asterisk">*</span>
+		<div class="main_header_cont">  
+			<div class="header_section_one">
+				<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('header_free_shipping')->toHtml(); ?>
 			</div>
-			<div class="link_header_1">
-				110% Price Match<span class="asterisk">*</span>
+			
+			<div class="header_section_two">
+			<a class="logo" href="<?php echo $this->getUrl('') ?>">
+				<img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
+				<img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
+			</a>
 			</div>
-			<div class="link_header_1">
-				No Restock Fees<span class="asterisk">*</span>
+			<!-- Search -->
+			<div class="header_section_three">
+			<div id="header-search" class="skip-content">
+				<?php echo $this->getChildHtml('topSearch') ?>
 			</div>
+			</div>
+			<?php // In order for the language switcher to display next to logo on smaller viewports, it will be moved here.
+				  // See app.js for details ?>
+			<div class="store-language-container"></div>
 		</div>
-		
-		<div class="header_section_two">
-		<a class="logo" href="<?php echo $this->getUrl('') ?>">
-            <img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
-            <img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
-        </a>
-		</div>
-		<!-- Search -->
-		<div class="header_section_three">
-        <div id="header-search" class="skip-content">
-            <?php echo $this->getChildHtml('topSearch') ?>
-        </div>
-		</div>
-        <?php // In order for the language switcher to display next to logo on smaller viewports, it will be moved here.
-              // See app.js for details ?>
-        <div class="store-language-container"></div>
-	</div>
         <!-- Skip Links -->
 
         <div class="skip-links" >
             <div class="mobile_menu_1">
-			<a href="#header-nav" class="skip-link skip-nav">
-				<div class="shop_menu_icon"></div>
-                <div class="label"><?php echo $this->__('Menu'); ?></div>
-				
-            </a>
+				<a href="#header-nav" class="skip-link skip-nav">
+					<div class="shop_menu_icon"></div>
+					<div class="label"><?php echo $this->__('Menu'); ?></div>
+					
+				</a>
 			</div>
 			<div class="mobile_menu_2">
-			<a class="logo" href="<?php echo $this->getUrl('') ?>">
-				<img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
-				<img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
-				<div class="link_header_1">
-				Free ShippinG over $49
-				</div>
-			</a>
+				<a class="logo" href="<?php echo $this->getUrl('') ?>">
+					<img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="large" />
+					<img src="<?php echo $this->getLogoSrcSmall() ?>" alt="<?php echo $this->getLogoAlt() ?>" class="small" />
+					<div class="link_header_1">
+					Free ShippinG over $49
+					</div>
+				</a>
 			</div>
 			<div class="mobile_menu_3">
-            <a href="#header-search" class="skip-link skip-search">
-				<div class="search_menu_icon"></div>
-                <div class="label"><?php echo $this->__('Search'); ?></div>
-            </a>
+				<a href="#header-search" class="skip-link skip-search">
+					<div class="search_menu_icon"></div>
+					<div class="label"><?php echo $this->__('Search'); ?></div>
+				</a>
 			</div>
-		  <div class="account-cart-wrapper" style="display:none;">
-                <a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
-                  <span class="icon"></span>
-                    <span class="label"><?php echo $this->__('Account'); ?></span>
-                </a>
+		<!-- This sectione moved above -->
+			 <!-- <div class="account-cart-wrapper" style="display:none;">
+					<a href="<?php //echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
+					  <span class="icon"></span>
+						<span class="label"><?php //echo $this->__('Account'); ?></span>
+					</a>
 
-                <!-- Cart -->
+					 
 
-                <div class="header-minicart">
-                    <?php echo $this->getChildHtml('minicart_head'); ?>
-                </div>
-           </div>
+					<div class="header-minicart">
+						<?php //echo $this->getChildHtml('minicart_head'); ?>
+					</div>
+			   </div> -->
             
 
 

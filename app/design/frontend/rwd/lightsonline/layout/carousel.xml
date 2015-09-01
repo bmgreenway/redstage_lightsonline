@@ -1,5 +1,5 @@
 <layout>
-    <default>
+    <cms_index_index>
         <reference name="head">
             <!--Add CSS and JS, skin Folder-->
             <action method="addItem"><type>skin_js</type><name>js/homepage-banner-carousel/jquery-1.10.1.min.js</name></action>
@@ -7,5 +7,5 @@
             <action method="addItem"><type>skin_js</type><name>js/homepage-banner-carousel/jquery.flexslider.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/homepage-banner-carousel/common-scripts.js</name></action>
         </reference>
-    </default>
+    </cms_index_index>
 </layout>

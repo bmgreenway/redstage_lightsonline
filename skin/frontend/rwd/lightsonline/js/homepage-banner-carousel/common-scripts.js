@@ -41,7 +41,7 @@ if(navigator.appName == 'Microsoft Internet Explorer' ){
     jQuery(window).load(function(){
         jQuery('#homeSlider').flexslider({
 			   animation: "slide",
-			   slideshow: true,
+			   slideshow: false,
 			   controlNav: true,
 			   directionNav: true,
 			   useCSS : false,

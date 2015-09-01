@@ -28,73 +28,68 @@
 <div class="footer-container">
   <div class="fthd">
     <div class="footer">
-      <div class="livechat"><div class="que">Questions? <span>1-866-688-3562</span></div><img src="<?php echo $this->getSkinUrl('images/icn-chatwomen.png'); ?>" alt="Live chat"/> <a class="chat" href="#">Live Chat is <span>Online</span></a></div>
+      <div class="livechat">
+        <div class="que">Questions? <span>1-866-688-3562</span></div>
+        <img src="<?php echo $this->getSkinUrl('images/icn-chatwomen.png'); ?>" alt="Live chat"/> <a class="chat" href="#">Live Chat is <span>Online</span></a></div>
       <div class="joinemail">
-      	
-      
-      <div class="email">Drop us your email,<br> <span>We’ll send you <em>discounts</em></span>.</div> 
-      <!-- subscribe form starts -->
-		<div class="block block-subscribe">
-			<!--<div class="block-title">
+        <div class="email"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_newsletter_subscription_text')->toHtml(); ?></div>
+        <!-- subscribe form starts -->
+        <div class="block block-subscribe"> 
+          <!--<div class="block-title">
 				<strong><span><?php //echo $this->__('Newsletter') ?></span></strong>
 			</div>-->
-			<form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
-				<div class="block-content">
-					<div class="form-subscribe-header">
-						<label for="newsletter"><?php echo $this->__('Sign Up for Our Newsletter:') ?></label>
-					</div>
-					<div class="input-box">
-					   <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Sign up for our newsletter')) ?>" class="input-text required-entry validate-email" />
-					</div>
-					<div class="actions">
-						<button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Subscribe')) ?>" class="button"><span><span><?php echo $this->__('Join') ?></span></span></button>
-					</div>
-				</div>
-			</form>
-			<script type="text/javascript">
+          <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
+            <div class="block-content">
+              <div class="form-subscribe-header">
+                <label for="newsletter"><?php echo $this->__('Sign Up for Our Newsletter:') ?></label>
+              </div>
+              <div class="input-box">
+                <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Sign up for our newsletter')) ?>" class="input-text required-entry validate-email" />
+              </div>
+              <div class="actions">
+                <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Subscribe')) ?>" class="button"><span><span><?php echo $this->__('Join') ?></span></span></button>
+              </div>
+            </div>
+          </form>
+          <script type="text/javascript">
 			//<![CDATA[
 				var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
 			//]]>
-			</script>
-		</div>
-
-	   <!-- subscribe form ends -->
-      
-      	
+			</script> 
+        </div>
         
-        
+        <!-- subscribe form ends --> 
         
       </div>
-	  
-	  
-	  
-	  
       <div class="clear"></div>
     </div>
   </div>
   <div class="footer">
-    <div class="ftcol-lt"> <?php echo $this->getChildHtml() ?>
-      
+    <div class="ftcol-lt">
+      <?php //echo $this->getChildHtml() ?>
+      <div class="links">
+	  <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_shop_links')->toHtml(); ?>       
+      </div>
+      <div class="links">
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_account_links')->toHtml(); ?>
+      </div>
+      <div class="links">
+	  <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_aboutus_links')->toHtml(); ?>
+        
+      </div>
+      <div class="links">
+	  <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_learn_links')->toHtml(); ?>
+        
+      </div>
     </div>
     <div class="ftcol-rt">
-      <div class="social"> <a href="#"><img src="<?php echo $this->getSkinUrl('images/icn-fb.png'); ?>" alt="Facebook"/></a> <a href="#"><img src="<?php echo $this->getSkinUrl('images/icn-tw.png'); ?>" alt="Twitter"/></a> <a href="#"><img src="<?php echo $this->getSkinUrl('images/icn-pin.png'); ?>" alt="arrow"/></a> <a href="#"><img src="<?php echo $this->getSkinUrl('images/icn-gplus.png'); ?>" alt="Google Plus"/></a> </div>
-      <div class="clear"></div>
-      <ul class="everycompany">
-        <li><a class="icnekomi" href="#"><img src="<?php echo $this->getSkinUrl('images/icn-ekomi.png'); ?>" alt="Ekomi"/></a></li>
-        <li><a class="icnbbb" href="#"><img src="<?php echo $this->getSkinUrl('images/icn-bbb.png'); ?>" alt="BBB"/></a></li>
-        <li><a class="icnauthorize" href="#"><img src="<?php echo $this->getSkinUrl('images/icn-authorize.png'); ?>" alt="Authorize"/></a></li>
-        <li><a class="icnhot100" href="#"><img src="<?php echo $this->getSkinUrl('images/icn-hot100zone.png'); ?>" alt="Hot100zone"/></a></li>
-        <li><a class="icnehouzz" href="#"><img src="<?php echo $this->getSkinUrl('images/icn-houzz.png'); ?>" alt="Houzz"/></a></li>
-      </ul>
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_social_trust_logos')->toHtml(); ?>
+      
     </div>
     <div class="clear">&nbsp;</div>
-    <div class="clear">&nbsp;</div>
-      <address class="copyright">
-      <?php echo $this->getCopyright() ?>
-      </address>
-      <ul class="ftmenu">
-        <li><a href="#">Terms &nbsp; Conditions</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-      </ul>
+    <address class="copyright">
+    <?php echo $this->getCopyright() ?>
+    </address>
+	<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_terms_privacy_policy')->toHtml(); ?>   
   </div>
 </div>
