@@ -33,7 +33,7 @@
 ?>
 <?php
 
-    $_productCollection=$this->getLoadedProductCollection();
+    $_productCollection = $this->getLoadedProductCollection();
     $_helper = $this->helper('catalog/output');
      
 ?>
@@ -44,14 +44,14 @@
 <div class="home_category-products"> 
 <?php // Grid Mode ?>
 
-<?php $_collectionSize = $_productCollection->count() ?>
+<?php $_collectionSize = $_productCollection->count() ; ?>
 <?php $_columnCount = $this->getColumnCount(); ?>
-<?php $i=0; foreach ($_productCollection as $_product): if($i>3)break; ?>
-    <?php if ($i++%$_columnCount==0): ?>
-    <ul class="home_products-grid">
-    <?php endif ?>
+<ul class="home_products-grid">  
+<div id="owl-demo"> 
+<?php foreach ($_productCollection as $_product): ?>
+      
         <?php 
-            $item_classes = array('item');
+          /*  $item_classes = array('item');
             $p = Mage::getModel('catalog/product')->load($_product->getId());
             
             if(($i-1)%$_columnCount==0)
@@ -62,37 +62,34 @@
             {
                 $item_classes[] = 'last';
             }           
-           /* if($p->isNew())
+            if($p->isNew())
             {
                 $item_classes[] = 'new';
             }   
             */
-        ?>              
+        ?> 
+			
         <li class="<?php echo implode(' ', $item_classes); ?>">
-            <?php $p = Mage::getModel('catalog/product')->load($_product->getId());?>
-            <div class="icons">
-                <?php if($p->getData('is_waterproof')): //image displays for waterproof products ?>
-                        <img src="<?php echo $this->getSkinUrl('images/waterproof-icon.gif'); ?>" alt="Waterproof" title="Waterproof" border="0" />
-                    <?php endif;?>
-                <?php if ($p->getData('is_leather')): //image displays for leather products ?>    
-                    <img src="<?php echo $this->getSkinUrl('images/leather-icon.gif'); ?>" alt="Leather" title="Leather" border="0" />
-                <?php endif; ?> 
-                <?php if($p->getData('is_cushioned')): //image displays for cushioned products ?>
-                        <img src="<?php echo $this->getSkinUrl('images/cushioned-footbed-icon.gif'); ?>" alt="Extra Cushioned" title="Extra Cushioned" border="0" />
-                <?php endif;?>      
-            </div>           
-            <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200); ?>" width="200" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" /></a>
-            <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
-            <?php 
-            $display_name = $_helper->productAttribute($_product, $_product->getName(), 'name');
-            $split_name = explode(" ", $display_name);
-            $first_name = array_shift($split_name);
-            echo "<b>{$first_name}</b> " . implode(" ", $split_name);
-            ?>
-            </a></h2>
-            <?php if($_product->getRatingSummary()): ?>
-            <?php echo $this->getReviewsSummaryHtml($_product, 'short') ?>
-            <?php endif; ?>
+		<div class="item"> 
+            <?php //$p = Mage::getModel('catalog/product')->load($_product->getId());?>                       
+		<?php if($_product->getMarkAsEnergyStar()){?>
+			<div class="energy_class_main">
+				<div class="energy_class">
+				
+				</div>
+			</div>
+		<?php } ?>
+		         <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
+				<img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200); ?>" width="200" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
+			</a>
+            <h2 class="product-name">
+				<a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>">
+					<?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+				</a>
+			</h2>
+            <?php //if($_product->getRatingSummary()): ?>
+            <?php //echo $this->getReviewsSummaryHtml($_product, 'short') ?>
+            <?php //endif; ?>
             <?php echo $this->getPriceHtml($_product, true) ?>
             <!--<div class="actions">
                 <?php //if($_product->isSaleable()): ?>
@@ -112,13 +109,13 @@
                             <li><a href="<?php //echo $_compareUrl ?>" class="link-compare"><?php //echo $this->__('Add to Compare') ?></a></li>
                         <?php //endif; ?>
                     </ul> 
-            </div>-->
-            <?php //$this->helper('yotpo')->showBottomline($this, $_product); ?>
-        </li>
-    <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
-    </ul>
-    <?php endif ?>
-    <?php endforeach ?>
+            </div>--> 
+</div>				
+        </li>  
+		
+	<?php endforeach ?>
+	</div> 
+</ul>
     <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
 </div> 
 <?php endif; ?>

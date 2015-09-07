@@ -29,7 +29,7 @@
   <div class="fthd">
     <div class="footer">
       <div class="livechat">
-        <div class="que">Questions? <span>1-866-688-3562</span></div>
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_call_us_toll_free')->toHtml(); ?>
         <img src="<?php echo $this->getSkinUrl('images/icn-chatwomen.png'); ?>" alt="Live chat"/> <a class="chat" href="#">Live Chat is <span>Online</span></a></div>
       <div class="joinemail">
         <div class="email"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_newsletter_subscription_text')->toHtml(); ?></div>
@@ -44,7 +44,7 @@
                 <label for="newsletter"><?php echo $this->__('Sign Up for Our Newsletter:') ?></label>
               </div>
               <div class="input-box">
-                <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Sign up for our newsletter')) ?>" class="input-text required-entry validate-email" />
+                <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" placeholder="Your Email Address" id="newsletter" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Sign up for our newsletter')) ?>" class="input-text required-entry validate-email" />
               </div>
               <div class="actions">
                 <button type="submit" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Subscribe')) ?>" class="button"><span><span><?php echo $this->__('Join') ?></span></span></button>

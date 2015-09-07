@@ -4,6 +4,15 @@
     <cms_index_index>
 	  <reference name="head">
 	  	<action method="addItem"><type>skin_js</type><name>js/homepage-lightfinder.js</name></action>
+		<!-- slider for product images homeapge. -->
+			 
+			<action method="addItem"><type>skin_css</type><name>css/home-product-carousel/owl.carousel.css</name><params/></action>
+			<action method="addItem"><type>skin_css</type><name>css/home-product-carousel/owl.theme.css</name><params/></action>
+			<!-- Include js plugin -->
+            <action method="addItem"><type>skin_js</type><name>js/home-product-carousel/owl.carousel.js</name></action> 
+			<action method="addItem"><type>skin_js</type><name>js/home-product-carousel/load.carousel.js</name></action>
+			 
+		<!-- end slider for product images homeapge. -->
 	  </reference>
 	   <reference name="content">
 			<block type="carousel/carousel" name="carousel_carousel" template="carousel/carousel.phtml" />

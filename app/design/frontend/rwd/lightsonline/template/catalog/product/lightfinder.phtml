@@ -1,5 +1,12 @@
 <form name="lightfinder" action="<?php echo $this->getBaseUrl()?>catalogsearch/advanced/result/" id="lightfinder" method="GET">
+
 <h1 class="light_finder_title">Light Finder</h1>
+<div class="reset_submitlightfinder">
+	<input type="button" id="reset" value="" name="reset" />
+</div>
+<div class="reset_submitlightfinder">
+	<input type="button" id="reset" value="" name="reset" />
+</div>
 <div id="main-lightfinder">
 <div class="which_room lightfinder_inner">
 <div class="lightfinder_inner_title">Which Room?</div>
@@ -52,11 +59,9 @@
   <option value="audi">Audi</option>
 </select>
 </div>
-<div class="reset_submitlightfinder lightfinder_inner">
-<input type="button" id="reset" value="reset" name="reset" />
-</div>
+
 <div class="submit_submitlightfinder">
-<input type="submit" id="submitlightfinder" value="Submit" name="submitlightfinder" />
+<input type="submit" id="submitlightfinder" value="GO" name="submitlightfinder" />
 </div>
 </div>
 </form>
