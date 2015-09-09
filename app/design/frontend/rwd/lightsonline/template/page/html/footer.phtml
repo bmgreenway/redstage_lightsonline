@@ -65,19 +65,68 @@
     </div>
   </div>
   <div class="footer">
-    <div class="ftcol-lt">
+    <div class="ftcol-lt for_mobile">
       <?php //echo $this->getChildHtml() ?>
-      <div class="links">
-	  <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_shop_links')->toHtml(); ?>       
+      <div class="links">			 
+			<div class="block-title">
+				<strong><span class="show_hide_toggle magic_arrow_down" dataparam="footer_shop_links" >Shop</span>
+				</strong>
+			</div>			
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_shop_links')->toHtml(); ?>       
       </div>
       <div class="links">
+			<div class="block-title extra_class_links">
+				<strong><span class="show_hide_toggle magic_arrow_down" dataparam="footer_account_links" >Account</span>
+				</strong>
+			</div>
         <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_account_links')->toHtml(); ?>
       </div>
       <div class="links">
+			<div class="block-title">
+				<strong><span class="show_hide_toggle magic_arrow_down" dataparam="footer_aboutus_links" >About Us</span>
+				</strong>
+			</div>
 	  <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_aboutus_links')->toHtml(); ?>
         
       </div>
       <div class="links">
+			<div class="block-title extra_class_links">
+				<strong><span class="show_hide_toggle magic_arrow_down" dataparam="footer_learn_links" >Learn</span>
+				</strong>
+			</div>
+	  <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_learn_links')->toHtml(); ?>
+        
+      </div>
+    </div>
+	<div class="ftcol-lt for_desktop_tab">
+      <?php //echo $this->getChildHtml() ?>
+      <div class="links">			 
+			<div class="block-title">
+				<strong><span class="footer_shop_links_1 magic_arrow_down" dataparam="footer_shop_links_1" >Shop</span>
+				</strong>
+			</div>			
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_shop_links')->toHtml(); ?>       
+      </div>
+      <div class="links">
+			<div class="block-title">
+				<strong><span class="footer_account_links_1 magic_arrow_down" dataparam="footer_account_links_1" >Account</span>
+				</strong>
+			</div>
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_account_links')->toHtml(); ?>
+      </div>
+      <div class="links">
+			<div class="block-title">
+				<strong><span class="footer_aboutus_links_1 magic_arrow_down" dataparam="footer_aboutus_links_1" >About Us</span>
+				</strong>
+			</div>
+	  <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_aboutus_links')->toHtml(); ?>
+        
+      </div>
+      <div class="links">
+			<div class="block-title">
+				<strong><span class="footer_learn_links_1 magic_arrow_down" dataparam="footer_learn_links_1" >Learn</span>
+				</strong>
+			</div>
 	  <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_learn_links')->toHtml(); ?>
         
       </div>

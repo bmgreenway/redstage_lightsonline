@@ -119,3 +119,10 @@
     <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
 </div> 
 <?php endif; ?>
+<a class="show_hide_toggle magic_arrow_down" id="show_hide_toggle" href="javascript:void(0);" dataparam="home_page_heading_section" >Show</a>
+<div class="desktop-head-title">
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home_page_heading_section')->toHtml(); ?>
+</div>
+<div class="mobile-head-title">
+<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('home_page_heading_section')->toHtml(); ?>
+</div>

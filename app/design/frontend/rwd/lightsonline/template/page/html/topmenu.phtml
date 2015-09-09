@@ -40,3 +40,10 @@
         </ol>
     </nav>
 <?php endif ?>
+<?php 
+$is_homepage = Mage::getBlockSingleton('page/html_header')->getIsHomePage(); 
+if($is_homepage) 
+{
+	echo $this->getLayout()->createBlock('cms/block')->setBlockId('discount_block_homepage')->toHtml(); 
+}
+?>
