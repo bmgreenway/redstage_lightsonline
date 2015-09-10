@@ -295,7 +295,7 @@ h6, .h6 {margin:0; margin-bottom:5px; color:#636363; font-family:"Helvetica Neue
 /* -------------------------------------------- *
  * Page Titles
  */
-.page-title h1, .page-title h2, .product-name h1, .product-name .h1 {text-transform:uppercase; font-size:24px; font-weight:600; color:#636363; border-bottom:1px solid #a5ccdd; padding-bottom:3px; margin-bottom:15px; text-transform:uppercase;}
+.page-title h1, .page-title h2, .product-name h1, .product-name .h1 {text-transform:capitalize; font-size:24px; font-weight:600; color:#636363; border-bottom:1px solid #a5ccdd; padding-bottom:3px; margin-bottom:15px; font-family:'source_sans_prolight';}
 /* -------------------------------------------- *
  * Block Module
  */
@@ -563,7 +563,7 @@ clear:left;}
 .messages .error-msg li:before {content:''; position:absolute; width:0; height:0; display:block; border-top:6px solid transparent; border-bottom:6px solid transparent; border-left:6px solid #df280a; border-right:none;}
 .messages .notice-msg li {color:black; border-left:5px solid #e26703; background-color:#f9ebe6;}
 .messages .notice-msg li:before {content:''; position:absolute; width:0; height:0; display:block; border-top:6px solid transparent; border-bottom:6px solid transparent; border-left:6px solid #e26703; border-right:none;}
-.messages .success-msg li {color:black; border-left:5px solid #11b400; background-color:#eff5ea;}
+.messages .success-msg li {color:black; border: none; background-color:#dcebf1;}
 .messages .success-msg li:before {content:''; position:absolute; width:0; height:0; display:block; border-top:6px solid transparent; border-bottom:6px solid transparent; border-left:6px solid #11b400; border-right:none;}
 
 @media only screen and (min-width:915px) {.order-list-grid .col-1 {width:30%;}
@@ -881,7 +881,7 @@ form .form-instructions {font-style:italic; font-family:Georgia, Times, "Times N
 .data-table td, .data-table th {padding:10px; vertical-align:top;}
 .data-table th {background:#f4f4f4; text-transform:uppercase; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; line-height:1.4; white-space:nowrap;}
 .data-table thead th, .data-table tbody td {border-bottom:1px solid silver;}
-.data-table tbody td, .data-table tfoot td {font-family:Georgia, Times, "Times New Roman", serif;}
+.data-table tbody td, .data-table tfoot td {font-family:Georgia, Times, "Times New Roman", serif; padding: 12px 0;}
 .data-table tfoot tr {background:#f4f4f4;}
 .data-table tbody td .item-options {margin-left:20px; margin-top:10px;}
 .data-table tbody td .item-options dt:after {content:':';}
@@ -1804,10 +1804,12 @@ padding:2px 0; vertical-align:middle;}
 /* ============================================ *
  * Checkout - Layout
  * ============================================ */
-.cart-table {float:left; width:60%;}
-.cart .button {white-space:normal;}
-.cart-forms, .cart-totals-wrapper, .crosssell {float:right; clear:right; width:40%; padding-left:20px;}
+.cart-table {float:left; width:66.9%;}
+.cart .button {height: 40px; width: 250px; white-space:normal; background-color: #c55446; border-radius: 2px; box-shadow: 0px 1px 1px 0px #000;}
+.cart .button span {font-size: 1.1em;}
+.cart-forms, .cart-totals-wrapper, .crosssell {float:right; clear:right; width:33.1%; padding-left:20px;}
 .cart-totals, .cart-forms .discount, .cart-forms .giftcard, .cart-forms .shipping {padding:10px; background-color:#f4f4f4; border:1px solid #cccccc;}
+.cart-forms .discount {background-color: #fff; padding: 8px 15px 15px; border: 1px dashed #78b3cb;}
 .cart-table, .cart-totals, .cart-forms .discount, .cart-forms .giftcard, .cart-forms .shipping {margin-bottom:20px;}
 .checkout-cart-index #postcode {width:100%;}
 .display-both-prices .cart-table {float:none; width:100%;}
@@ -1849,7 +1851,7 @@ padding:2px 0; vertical-align:middle;}
 
 @media only screen and (min-width:741px) {.checkout-types.bottom .paypal-or {text-align:right; padding-right:70px;}
 }
-.cart-totals .checkout-types .btn-checkout {margin-bottom:7px;}
+.cart-totals .checkout-types .btn-checkout {margin-bottom:7px; margin-right: 15px;}
 
 @media only screen and (max-width:740px) {.checkout-types {float:none; text-align:center;}
 .checkout-types.bottom .paypal-or, .checkout-types.minicart .paypal-or {width:auto; float:none;}
@@ -1861,7 +1863,7 @@ padding:2px 0; vertical-align:middle;}
 .cart-table {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;}
 .cart-table th, .cart-table td, .cart-table tbody td {border-bottom:none; vertical-align:top;}
 .cart-table h2 {color:#636363; font-size:14px; font-weight:600; margin-bottom:0;}
-.cart-table thead th, .cart-table tbody td {background-color:transparent; padding:10px 5px; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;}
+.cart-table thead th, .cart-table tbody td {background-color:transparent; padding:10px 5px; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; text-transform: capitalize;}
 .cart-table .product-cart-info, .cart-table .product-cart-actions {padding-left:15px;}
 .cart-table tr {border-bottom:1px solid silver;}
 .cart-table tfoot tr {background:none;}
@@ -1871,7 +1873,7 @@ padding:2px 0; vertical-align:middle;}
 .cart-table .product-cart-image {padding-left:0; padding-right:0;}
 .cart-table .product-cart-image .product-image img {max-width:100%; width:100%;}
 .cart-table .product-cart-image a.cart-edit {display:none;}
-.cart-table .product-cart-sku {font-family:Georgia, Times, "Times New Roman", serif; font-style:italic; font-size:12px; margin:5px 0 12px;}
+.cart-table .product-cart-sku {font-family:Georgia, Times, "Times New Roman", serif; font-style:italic; font-size:12px; text-transform: uppercase; margin:5px 0 12px;}
 .cart-table .product-cart-sku .label {font-weight:600;}
 .cart-table .btn-empty {float:left;}
 .cart-table .product-cart-total, .cart-table .product-cart-price {text-align:center;}
@@ -1883,8 +1885,12 @@ padding:2px 0; vertical-align:middle;}
 .cart-table .cart-links > li:last-child {margin-bottom:0;}
 .cart-table .product-cart-actions {min-width:60px; text-align:center;}
 .cart-table .product-cart-actions .qty {height:30px; border-color:silver; border-radius:0; margin-bottom:10px; text-align:center; width:3.2em;}
-.cart-table .product-cart-actions .button {margin-bottom:5px;}
+.cart-table .product-cart-actions .button {margin-bottom:5px; text-transform: capitalize;}
 .cart-table .item-options {padding-left:15px;}
+.cart-table .cart-footer-actions .btn-continue {float:left; border: 1px solid #c4d7e4; padding: 6px 20px;}
+.cart-table .cart-footer-actions .btn-continue span {text-decoration: none;}
+.cart-table .cart-footer-actions .btn-update {background-color: #78b3cb; border: 1px solid #c4d7e4; padding: 6px 20px;}
+.cart-table .cart-footer-actions .btn-update span {text-decoration: none; color: #fff;}
 
 @media only screen and (max-width:770px) {.cart-table th {font-size:12px;}
 .cart-table th,  .cart-table td {padding:7px 6px;}
@@ -1962,11 +1968,11 @@ padding:2px 0; vertical-align:middle;}
 .cart .cart-totals table {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:12px; margin-bottom:20px; text-transform:uppercase; width:100%;}
 .cart .cart-totals table td {padding:2px 0px;}
 .cart .cart-totals table td:first-child {padding-right:10px; min-width:120px;}
-.cart .cart-totals table tbody tr:last-child td, .cart .cart-totals table tbody tr:last-child th {padding-bottom:10px;}
+.cart .cart-totals table tbody tr:last-child td, .cart .cart-totals table tbody tr:last-child th {padding-bottom:10px; text-transform: capitalize;}
 .cart .cart-totals table tfoot {border-top:1px solid #E6E6E6; border-bottom:1px solid #E6E6E6;}
 .cart .cart-totals table tfoot td {font-size:24px; padding:2px 5px; vertical-align:top;}
 .cart .cart-totals table tfoot strong span, .cart .cart-totals table tfoot span.price {font-family:"Helvetica Neue", Verdana, Arial, sans-serif;}
-.cart .cart-totals table tfoot strong {font-weight:400;}
+.cart .cart-totals table tfoot strong {font-weight:400; text-transform:capitalize; color:#c55446;}
 
 @media only screen and (max-width:600px) {.cart-totals {text-align:right;}
 }
@@ -1976,20 +1982,24 @@ padding:2px 0; vertical-align:middle;}
 .discount-form:after, #giftcard-form:after {content:''; display:table; clear:both;}
 #discount-coupon-form, .cart .giftcard {width:100%;}
 #discount-coupon-form h2, .cart .giftcard h2 {display:none;}
-#discount-coupon-form label, .cart .giftcard label {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:12px; font-weight:400; text-align:left; text-transform:uppercase; min-width:105px; display:inline-block; margin-right:10px;}
+#discount-coupon-form label, .cart .giftcard label {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:12px; font-weight:400; text-align:left; text-transform:capitalize; min-width:105px; display:inline-block; margin-right:10px; color:#78b3cb;}
 #discount-coupon-form .field-wrapper, .cart .giftcard .field-wrapper {display:inline-block;}
 #discount-coupon-form .validation-advice, .cart .giftcard .validation-advice {display:inline;}
 #discount-coupon-form .button-wrapper, .cart .giftcard .button-wrapper {display:inline-block; vertical-align:bottom;}
 #discount-coupon-form .button-wrapper > button, .cart .giftcard .button-wrapper > button {float:left;}
-#discount-coupon-form .input-text, .cart .giftcard .input-text {border-radius:0; height:30px; margin:4px 10px 0 0; width:190px;}
+#discount-coupon-form .button-wrapper > button {height: 37px; background-color: #78b3cb; border: 1px solid lightblue; margin-top:4px; padding:0 13px;}
+#discount-coupon-form .button-wrapper span {color:#fff; text-decoration: none;}
+#discount-coupon-form .input-text, .cart .giftcard .input-text {border-radius:0; height:37px; margin-top:4px; width:200px; float:left;}
 .cart .giftcard p {margin-bottom:7px;}
 .cart .giftcard .check-gc-status {float:left; padding:0px;}
 .cart .giftcard .check-gc-status > span > span {font-size:14px; text-transform:none;}
 /* ============================================ *
  * Checkout - Cart Cross sell
  * ============================================ */
-.crosssell h2 {color:#1d80a9;}
+.crosssell h2 {color:#1d80a9; font-family:'source_sans_proregular'; font-size: 1.3em;}
+.crosssell h2:after {content:''; display:block; height:1px; background-color:#78b3cb;}
 .crosssell .item a.product-image {width:auto; float:left;}
+.crosssell {float: none; width: 66.9%;}
 
 /* Change the layout to 2 columns at a breakpoint that is higher than a 3 columns layout would normally break */
 @media only screen and (max-width:979px) {.crosssell {/* Undo three-column config */
@@ -3030,7 +3040,7 @@ body[class*="checkout-multishipping-"] .box-title {float:left; width:100%;}
 body[class*="checkout-multishipping-"] .page-title .button {float:left; margin-bottom:10px;}
 body[class*="checkout-multishipping-"] .linearize-table tfoot td {text-align:right;}
 body[class*="checkout-multishipping-"] .linearize-table select {width:100%; min-width:200px;}
-body[class*="checkout-multishipping-"] .col-1.col-narrow, body[class*="checkout-multishipping-"] .col-2.col-wide {width:100%; padding:0;} 
+body[class*="checkout-multishipping-"] .col-1.col-narrow, body[class*="checkout-multishipping-"] .col-2.col-wide {width:100%; padding:0;}
 .footer .ftcol-rt .social {margin-right:15px}
 .footer .block-subscribe .input-box {float: left;min-width: 135px;padding-top: 0;}
 .footer-container .fthd .joinemail .block-subscribe .button{height: 34px;}
@@ -3060,7 +3070,7 @@ span.chat_link_a {font-size:13px; color:#666; font-family:'robotolight';}
 .cart_icon {background:url('../images/cart_icon.png'); float:right; height:20px; width:23px; margin:6px 0;}
 .link_header_1 {font-size:15px; font-family:'source_sans_proitalic'; color:#1d80a9; text-transform:uppercase; line-height:26px;}
 .header_section_one {padding:12px 0;}
-/* li.level0.first a {margin-left:-18px;} 
+/* li.level0.first a {margin-left:-18px;}
 li.level0.last a {margin-right:-18px;}*/
 .main_header_cont {max-width:980px; margin:0 auto;}
 #header-nav #nav {margin:0 auto; max-width:980px;}
@@ -3118,11 +3128,11 @@ img { max-width: 100%; height: auto }
 .flex-control-nav.flex-control-paging li {
     float:left;
     padding: 0.3% 1.3%;
-    
+
     background-color: rgba(0, 0, 0, 0.27);
 }
 .flex-control-nav.flex-control-paging li a{
-    
+
 }
 .flex-control-nav{
 line-height: 35px;
@@ -3205,7 +3215,7 @@ input#submitlightfinder {
     padding: 3px 4px;
 }
 .reset_submitlightfinder {
- 
+
     float: right;
 }
 .reset_submitlightfinder_1 {
@@ -3350,7 +3360,7 @@ input#submitlightfinder {
     width: 40px;
     background-repeat: no-repeat;
     display: inline-block;
-  
+
     background-position: 35px 5px;
 }
 .footer .magic_arrow_down {
@@ -3470,7 +3480,7 @@ a#show_hide_toggle {
     text-decoration: none;
     font-family: 'robotoregular';
     font-size: 12px;
-	
+
 }
 .lightfinder_inner select {
 	min-width: 100%;
@@ -3492,7 +3502,7 @@ width:100%;
 .footer-container .fthd .que, .footer-container .fthd .livechat a.chat {width:37.05524861878453%; *width:37.00205712942283%;}
 .footer-container .fthd .joinemail .email, .footer-container .fthd .joinemail .block-subscribe {}
 	.footer .ftcol-rt {width:100%; margin:0 auto}
-	
+
 	.featuredbrands.col {
     width: 98.7%;
 }
@@ -4002,7 +4012,7 @@ a.skip-link.skip-search .label {
     margin: 0 0 0 -5px;
 }
 .skip-links{
-border:none !important; 
+border:none !important;
 }
 .link_header_1 {
     font-size: 12px !important;
@@ -4087,7 +4097,7 @@ a.skip-link.skip-cart .label {
 #lightfinder {
     padding: 5px 5px 12px 10px;
     border-bottom: 1px solid #a5ccdd;
-    
+
 }
 }
 /* from slider style */
