@@ -46,8 +46,8 @@
 		</div>
 		<div class="account-cart-wrapper_m"> <?php echo $this->getChildHtml('minicart_head'); ?></div>
 		<div class="account-cart-wrapper">
-                <a href="#"class="link-help">Help</a>
-				<a href="<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>"class="link-wishlist">My Wishlist</a>
+                <a href="#"class="link-help">Help</a>				
+				<a href="<?php echo $this->getUrl('wishlist') ?>"class="link-wishlist">My Wishlist</a>
 				<a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
                   
                     <span class="label"><?php echo $this->__('Account'); ?></span>
