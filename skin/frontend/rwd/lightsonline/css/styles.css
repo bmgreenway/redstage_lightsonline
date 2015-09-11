@@ -295,7 +295,7 @@ h6, .h6 {margin:0; margin-bottom:5px; color:#636363; font-family:"Helvetica Neue
 /* -------------------------------------------- *
  * Page Titles
  */
-.page-title h1, .page-title h2, .product-name h1, .product-name .h1 {text-transform:uppercase; font-size:24px; font-weight:600; color:#636363; border-bottom:1px solid #a5ccdd; padding-bottom:3px; margin-bottom:15px; text-transform:uppercase;}
+.page-title h1, .page-title h2, .product-name h1, .product-name .h1 {font-size:24px; font-weight:600; color:#636363; border-bottom:1px solid #a5ccdd; padding-bottom:3px; margin-bottom:15px;}
 /* -------------------------------------------- *
  * Block Module
  */
@@ -401,12 +401,12 @@ a.button:hover {color:#FFFFFF;}
 /* -------------------------------------------- *
  * Breadcrumbs
  */
-.breadcrumbs {overflow:hidden; margin:-15px 0 15px;}
-.breadcrumbs li {float:left; font-size:12px; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; text-transform:uppercase;}
-.breadcrumbs a {float:left; color:#636363;}
+.breadcrumbs {overflow:hidden; margin:0px 0 15px;}
+.breadcrumbs li {float:left; font-size:13px; font-family:'robotoregular';}
+.breadcrumbs a {float:left; color:#1e80a9;}
 .breadcrumbs a:hover {color:#1d80a9;}
-.breadcrumbs strong {color:#636363; font-weight:normal;}
-.breadcrumbs span {float:left; padding:0 7px;}
+.breadcrumbs strong {color:#666766;font-weight: normal;}
+.breadcrumbs span {float: left;padding: 0 7px;font-size: 13px;font-family: 'robotoregular';color:#1e80a9;}
 
 @media only screen and (max-width:770px) {.breadcrumbs {display:none;}
 }
@@ -607,8 +607,7 @@ clear:left;}
 /* -------------------------------------------- *
  * Price Box - Special
  */
-.price-box .old-price, .price-box .special-price {display: inherit;text-align: center;    height: 20px;
-    overflow: hidden;}
+.price-box .old-price, .price-box .special-price {display: inherit;text-align: center;overflow: hidden;}
 .regular-price {top: 20px; position: relative;}
 .price-box .old-price .price-label, .price-box .special-price .price-label {display:none;}
 .price-box .old-price .price, .price-box .special-price .price {display:inline-block;}
@@ -3057,6 +3056,13 @@ span.tel_link {font-size:13px; color:#666; font-family:'robotolight'; margin:0 0
 span.chat_link_a {font-size:13px; color:#666; font-family:'robotolight';}
 .highlight {font-family:'robotomedium'; font-size:13px;color: #1d80a9;}
 .account-cart-wrapper a {font-family:'source_sans_proregular'; font-size:13px; color:#666; padding:0 11px; line-height:34px;}
+.cart_icon_addtocart {
+    background: url('../images/cart_icon_addtocart.png');
+    float: left;
+    height: 20px;
+    width: 23px;
+    margin: 8px 20px 8px 0px;
+}
 .cart_icon {background:url('../images/cart_icon.png'); float:right; height:20px; width:23px; margin:6px 0;}
 .link_header_1 {font-size:15px; font-family:'source_sans_proitalic'; color:#1d80a9; text-transform:uppercase; line-height:26px;}
 .header_section_one {padding:12px 0;}
@@ -3317,6 +3323,22 @@ position: relative;
 	padding: 5px 0 12px 0;
 	border-bottom:1px solid #a5ccdd;
 }
+.catalog-product-view .product-name .h1{
+	font-family:'robotolight';
+	font-size:26px;
+    color: #666 !important;
+    text-transform: inherit;
+    font-weight: normal;
+}
+
+
+/* end for desktop */
+
+
+
+
+
+
 @media only screen and (max-width:640px) {
 a#show_hide_toggle {
     display: block !important;
@@ -3618,12 +3640,10 @@ display:none;
        display: inline-block;
     border-bottom: 1px solid #a5cbda;
     line-height: 18px;
-    margin: 0 0 0 19px;
+    margin: 0 0 0 18px;
     font-size: 18px;
 }
-.header-language-background .header-language-container{
-padding:0 15px;
-}
+
 .see_all_codes {
     border-bottom: 1px solid #b5d3df;
     display: inline-block;
