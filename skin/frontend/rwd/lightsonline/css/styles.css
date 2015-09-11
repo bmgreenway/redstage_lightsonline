@@ -814,7 +814,11 @@ textarea {-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:
 /* -------------------------------------------- *
  * Inputs
  */
-.input-text {-webkit-appearance:none; -moz-appearance:none; appearance:none; -webkit-border-radius:2px; -moz-border-radius:2px; -ms-border-radius:2px; -o-border-radius:2px; border-radius:2px; border:1px solid silver; background:#FFFFFF; font-size:15px;}
+.input-text {-webkit-appearance:none; -moz-appearance:none; appearance:none; -webkit-border-radius:2px; -moz-border-radius:2px; -ms-border-radius:2px; -o-border-radius:2px;     	border-radius: 0;
+    border: 1px solid #b3b4b4;
+    background: #f4f4f4;
+    font-size: 15px;}
+
 .input-text:focus {border:1px solid #1d80a9;}
 .input-text.validation-failed {border-color:#df280a;}
 .input-text.validation-failed:focus {outline-color:#ef9384;}
@@ -1455,7 +1459,7 @@ h2.product-name a:hover, h3.product-name a:hover, h4.product-name a:hover, h5.pr
 /* ============================================ *
  * Catalog - List
  * ============================================ */
-.category-image {border:1px solid #cccccc; padding:10px;}
+.category-image {border:1px solid #cccccc;}
 .category-image img {width:100%; max-width:100%;}
 .category-image img:hidden {display:none;}
 /* ============================================ *
@@ -1576,8 +1580,12 @@ h2.product-name a:hover, h3.product-name a:hover, h4.product-name a:hover, h5.pr
 .product-view .add-to-cart .qty-wrapper, .product-view .product-options-bottom .price-box, .product-view .add-to-cart-buttons {min-height:40px;}
 .product-view .product-options-bottom .price-box, .product-view .add-to-cart .qty-wrapper, .product-view .add-to-cart-buttons .button, .product-view .add-to-cart-buttons .paypal-logo {margin-bottom:10px;}
 .product-view .add-to-cart .qty-wrapper, .product-view .add-to-cart .qty-wrapper label {margin-right:7px; float:left;}
+.product-view .add-to-cart .qty-wrapper {
+    margin-right: 15px;
+    margin-top: 6px;
+}
 .product-view .add-to-cart .qty-wrapper label {line-height:40px;}
-.product-view .add-to-cart .qty-wrapper .qty {float:left; height:40px;}
+.product-view .add-to-cart .qty-wrapper .qty {float:left; height:35px;}
 .product-view .add-to-cart-buttons {float:left; margin-right:10px; max-width:100%;}
 .product-view .add-to-cart-buttons .paypal-logo {clear:left; text-align:center;}
 .product-view .add-to-cart-buttons .paypal-logo .paypal-button {margin:0 auto; display:block; width:170px;}
@@ -1585,8 +1593,8 @@ h2.product-name a:hover, h3.product-name a:hover, h4.product-name a:hover, h5.pr
 .product-view .add-to-cart-buttons .paypal-logo .bml_button a {text-align:center;}
 .product-view .add-to-cart-buttons .paypal-logo .paypal-or {display:block; margin-bottom:10px; margin-left:0; margin-right:0; line-height:1; text-align:center;}
 .product-view .add-to-cart-buttons .button {
-	min-height: 40px;
-    line-height: 40px;
+	min-height: 43px;
+    line-height: 38px;
     font-family: 'source_sans_prosemibold';
     padding: 0px 20px;
     float: left;
