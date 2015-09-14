@@ -19,37 +19,28 @@
  * needs please refer to http://www.magento.com for more information.
  *
  * @category    design
- * @package     rwd_default
+ * @package     base_default
  * @copyright Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
  * @license http://www.magento.com/license/enterprise-edition
  */
 ?>
-<?php
-/**
- * Top menu for store
- *
- * @see Mage_Page_Block_Html_Topmenu
- */
-?>
-<?php $_menu = $this->getHtml('level-top') ?>
-
-<?php if($_menu): ?>
-    <nav id="nav">
-        <ol class="nav-primary">
-            <?php echo $_menu ?>
-        </ol>
-    </nav>
-<?php endif ?>
-<?php 
-/*$is_homepage = Mage::getBlockSingleton('page/html_header')->getIsHomePage(); 
-if($is_homepage) 
-{
-	echo $this->getLayout()->createBlock('cms/block')->setBlockId('discount_block_homepage')->toHtml(); 
-}*/
-
-$routeName = Mage::app()->getRequest()->getRouteName();
-$identifier = Mage::getSingleton('cms/page')->getIdentifier();
-if($routeName == 'cms' && ($identifier == 'home' || $identifier == ''))
-{ echo $this->getLayout()->createBlock('cms/block')->setBlockId('discount_block_homepage')->toHtml(); } 
-
-?>
+<?php if($crumbs && is_array($crumbs)): ?>
+<div class="breadcrumbs">
+    <ul>
+        <?php foreach($crumbs as $_crumbName=>$_crumbInfo): ?>
+            <li class="<?php echo $_crumbName ?>">
+            <?php if($_crumbInfo['link']): ?>
+                <a href="<?php echo $_crumbInfo['link'] ?>" title="<?php echo $this->escapeHtml($_crumbInfo['title']) ?>"><?php echo $this->escapeHtml($_crumbInfo['label']) ?></a>
+            <?php elseif($_crumbInfo['last']): ?>
+                <strong><?php echo $this->escapeHtml($_crumbInfo['label']) ?></strong>
+            <?php else: ?>
+                <?php echo $this->escapeHtml($_crumbInfo['label']) ?>
+            <?php endif; ?>
+            <?php if(!$_crumbInfo['last']): ?>
+                <span> › </span>
+            <?php endif; ?>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>
