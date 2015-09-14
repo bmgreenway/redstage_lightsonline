@@ -1,0 +1,20 @@
+<?php 
+$categories = Mage::getModel('catalog/category')
+    ->getCollection()
+    ->addAttributeToFilter('featured_category', '1');
+$categories->addAttributeToFilter('parent_id', 2);//if you want only children of a specific category
+?>
+<div class="new_light_finder_block">
+	<div class="wrapper_inner_add">
+		<ul class="list1">
+	    <?php foreach ($categories as $category){
+	    	$category = Mage::getModel('catalog/category')->load($category->getId());
+	     ?>
+        	<li><img alt="light" src="<?php echo $category->getImageUrl(); ?>" />
+				<h2><?php echo $category->getName(); ?></h2>
+				<a class="shop" href="<?php echo $category->getUrl(); ?>">Shop now</a>
+			</li>
+    	<?php } ?>
+   		</ul>
+	</div>
+</div>
