@@ -40,9 +40,10 @@
 		<div class="header_top_right_links">
 			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('header_call_us_toll_free')->toHtml(); ?>
 		</div>
-		<div class="chat_live_m"><span class="chat_icon"></span><span class="chat_text">chat</span></div>
+		<div class="chat_live_m"><span class="chat_icon"></span><span class="chat_text" onclick="parent.LC_API.open_chat_window()">chat</span></div>
 		<div class="chat_live">
-			<span class="chat_link_a">Live Chat is <span class="highlight">Online</span><span class="chat_icon"></span></span>
+			<span class="chat_link_a" onclick="parent.LC_API.open_chat_window()">Live Chat is <span class="highlight">Online</span><span class="chat_icon"></span>
+			</span>
 		</div>
 		<div class="account-cart-wrapper_m"> <?php echo $this->getChildHtml('minicart_head'); ?></div>
 		<div class="account-cart-wrapper">
