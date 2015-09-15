@@ -45,7 +45,9 @@
         </ul>
         <?php endif; ?>
     </div>
-    <?php echo $this->getMessagesBlock()->toHtml() ?>
+    <div class="msg-wrapper" onclick="this.style.display='none';">
+        <?php echo $this->getMessagesBlock()->toHtml() ?>
+    </div>
     <?php echo $this->getChildHtml('form_before') ?>
     <form action="<?php echo $this->getFormActionUrl() ?>" method="post">
         <?php echo $this->getBlockHtml('formkey'); ?>
