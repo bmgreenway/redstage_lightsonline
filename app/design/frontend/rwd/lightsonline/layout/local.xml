@@ -5,33 +5,58 @@
 	  <reference name="head">
 	  	<action method="addItem"><type>skin_js</type><name>js/homepage-lightfinder.js</name></action>
 		<!-- slider for product images homeapge. -->
-			 
+
 			<action method="addItem"><type>skin_css</type><name>css/home-product-carousel/owl.carousel.css</name><params/></action>
 			<action method="addItem"><type>skin_css</type><name>css/home-product-carousel/owl.theme.css</name><params/></action>
 			<!-- Include js plugin -->
-            <action method="addItem"><type>skin_js</type><name>js/home-product-carousel/owl.carousel.js</name></action> 
+            <action method="addItem"><type>skin_js</type><name>js/home-product-carousel/owl.carousel.js</name></action>
 			<action method="addItem"><type>skin_js</type><name>js/home-product-carousel/load.carousel.js</name></action>
-			 
+
 		<!-- end slider for product images homeapge. -->
 	  </reference>
-	   <reference name="content">			
+	   <reference name="content">
 			<block type="carousel/carousel" name="carousel_carousel" template="carousel/carousel.phtml" />
 			<block name="lightfinder" type="core/template" template="catalog/product/lightfinder.phtml"/>
 			<block name="featuredcategory" type="core/template" template="catalog/category/featuredcategory.phtml"/>
-			
+
 			 <block name="featuredbrandflexiblebox" type="shopbybrand/featuredbrand" template="shopbybrand/featuredbrandflexiblebox.phtml"/>
 			 <block type="cms/block" name="homepage_whats_hot1">
                 <action method="setBlockId"><block_id>homepage_whats_hot</block_id></action>
-            </block>             
+            </block>
         </reference>
-    </cms_index_index>    
+    </cms_index_index>
 
     <default>
 		<remove name="welcome"/>
-		<remove name="footer.newsletter" />		
+		<remove name="footer.newsletter" />
 		<reference name="head">
 			<action method="addItem"><type>skin_css</type><name>css/kiran.css</name></action>
 		</reference>
     </default>
-	 
+
+    <!-- Cart Page -->
+    <checkout_cart_index>
+      <reference name="header">
+        <block type="page/header" name="header">
+          <!-- Custom header template for cart page -->
+          <action method="setTemplate">
+            <template>checkout/header/checkout_header.phtml</template>
+          </action>
+        </block>
+      </reference>
+      <!-- Removes the 'Estimated Tax & Shipping' block -->
+      <remove name="checkout.cart.shipping" />
+    </checkout_cart_index>
+
+    <!-- aheadWorks One Step Checkout Page -->
+    <aw_onestepcheckout_index_index>
+      <reference name="header">
+        <block type="page/header" name="header">
+          <!-- Custom header template for checkout page -->
+          <action method="setTemplate">
+            <template>checkout/header/checkout_header.phtml</template>
+          </action>
+        </block>
+      </reference>
+    </aw_onestepcheckout_index_index>
 </layout>
