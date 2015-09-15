@@ -34,7 +34,8 @@
 	<catalog_category_view>
 		<reference name="root">
 			<action method="setTemplate"><template>page/2columns-left.phtml</template></action>
-			<block type="catalog/category_view" name="category.products.banner" template="catalog/category/category_banner.phtml" />		
+			<block type="catalog/category_view" name="category.products.banner" template="catalog/category/category_banner.phtml" />
+			<block type="catalog/category_view" name="category.products.description" template="catalog/category/category_description.phtml" />				
 		</reference>
 	</catalog_category_view>
 	
