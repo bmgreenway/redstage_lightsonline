@@ -41,12 +41,15 @@
     <div class="count-container">
         <?php if($this->getShowAmounts()): ?>
             <?php if($this->getLastPageNum()>1): ?>
-            <p class="amount amount--has-pages">
-                <?php echo $this->__('%s-%s of %s', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
+            <!-- <p class="amount amount--has-pages">
+                <?php //echo $this->__('%s-%s of %s', $this->getFirstNum(), $this->getLastNum(), $this->getTotalNum()) ?>
+            </p> -->
+			<p class="amount amount--no-pages">
+                <strong><?php echo $this->__('%s Items', $this->getTotalNum()) ?></strong>
             </p>
             <?php else: ?>
             <p class="amount amount--no-pages">
-                <strong><?php echo $this->__('%s Item(s)', $this->getTotalNum()) ?></strong>
+                <strong><?php echo $this->__('%s Items', $this->getTotalNum()) ?></strong>
             </p>
             <?php endif; ?>
         <?php endif ?>

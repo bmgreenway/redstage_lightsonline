@@ -7,8 +7,7 @@
                 $slideIndex ++;
                 ?>
             <li class="slide" data-cap="<?php echo $slide->getName(); ?>">
-                   <a href="<?php echo $slide->getLink(); ?>"><?php echo $slide->getName(); ?><!--<img src='<?php echo $slide->getImage(); ?>' />--></a
->            </li>
+                   <a href="<?php echo $slide->getLink(); ?>"><?php echo $slide->getName(); ?><img src='<?php echo $slide->getImage(); ?>' /></a></li>
             <?php endforeach; ?>
         </ul>
     </div>
