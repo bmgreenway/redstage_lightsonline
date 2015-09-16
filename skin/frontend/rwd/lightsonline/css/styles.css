@@ -3114,6 +3114,7 @@ h1.home-page_heading_title {text-transform:inherit; font-family:'robotobold'; co
 span.link_sb {color:#77b3cb;}
 .featuredbrands.col {
     width: 99.7%;
+	float:left;
 }
 .reset_submitlightfinder_1{
 display:none;
