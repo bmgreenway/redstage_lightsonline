@@ -50,7 +50,7 @@
                 <div id="aw-onestepcheckout-order-review">
                     <?php $blockNumberClass = (!is_null($this->getBlockNumber(false)))?"aw-onestepcheckout-number-v":"";?>
                     <div class="order_review_main">
-					<p class="aw-onestepcheckout-number <?php echo $blockNumberClass;?>"><?php echo $this->__('ORDER REVIEW'); ?></p>
+					<p class="aw-onestepcheckout-number <?php echo $blockNumberClass;?>"><?php echo $this->__('Order Review'); ?></p>
                     </div>
 					<div id="aw-onestepcheckout-order-review-cart-wrapper">
                         <?php echo $this->getChildHtml('review.cart'); ?>
@@ -93,13 +93,13 @@
                     </div>
                     <div id="aw-onestepcheckout-place-order">
                         <button type="button" title="<?php echo $this->__('Place Order Now'); ?>" id="aw-onestepcheckout-place-order-button">
-                            <span class="aw-onestepcheckout-place-order-grand-total">
+                            <!--<span class="aw-onestepcheckout-place-order-grand-total">
                                 <span class="aw-onestepcheckout-place-order-label"><?php echo $this->__('Grand Total'); ?></span>
                                 <span class="aw-onestepcheckout-place-order-amount" ><?php echo $this->getGrandTotal(); ?></span>
                                 <span class="aw-onestepcheckout-place-order-process" style="display:none;">
                                     <img src="<?php echo $this->getSkinUrl('aw_onestepcheckout/images/ajax-loader.gif') ?>" />
                                 </span>
-                            </span>
+                            </span> -->
                             <span class="aw-onestepcheckout-place-order-title"><?php echo $this->__('Place Order'); ?></span>
                         </button>
                         <div class="aw-onestepcheckout-place-order-please-wait">
