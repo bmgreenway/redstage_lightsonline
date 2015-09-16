@@ -277,10 +277,10 @@ ol, ul {list-style:none; margin:0; padding:0;}
 /* ============================================ *
  * Typography
  * ============================================ */
-h1, .h1 {margin:0; margin-bottom:0.7em; color:#1d80a9; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:28px; font-weight:400; font-style:normal; line-height:1.2; text-rendering:optimizeLegibility; text-transform:uppercase;}
-h2, .h2 {margin:0; margin-bottom:0.5em; color:#636363; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:24px; font-weight:400; font-style:normal; line-height:1.2; text-rendering:optimizeLegibility; text-transform:uppercase;}
-h3, .h3 {margin:0; margin-bottom:10px; color:#636363; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:18px; font-weight:400; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase;}
-h4, .h4 {margin:0; margin-bottom:10px; color:#636363; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase;}
+h1, .h1 {margin:0; margin-bottom:0.7em; color:#1d80a9; font-family:'robotoregular'; font-size:28px; font-weight:400; font-style:normal; line-height:1.2; text-rendering:optimizeLegibility; text-transform:uppercase;}
+h2, .h2 {margin:0; margin-bottom:0.5em; color:#636363; font-family:'robotoregular'; font-size:24px; font-weight:400; font-style:normal; line-height:1.2; text-rendering:optimizeLegibility; text-transform:uppercase;}
+h3, .h3 {margin:0; margin-bottom:10px; color:#636363; font-family:'robotoregular'; font-size:18px; font-weight:400; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase;}
+h4, .h4 {margin:0; margin-bottom:10px; color:#636363; font-family:'robotoregular'; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase;}
 h5, .h5 {margin:0; margin-bottom:10px; color:#636363; font-family:"Helvetica Neue", Verdana, Arial, sans-serif; font-size:13px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase;}
 h6, .h6 {margin:0; margin-bottom:5px; color:#636363; font-family:"Helvetica Neue", Verdana, Arial, sans-serif; font-size:12px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase;}
 /* ============================================ *
@@ -302,10 +302,10 @@ h6, .h6 {margin:0; margin-bottom:5px; color:#636363; font-family:"Helvetica Neue
 .block, .col-left-first {margin-bottom:20px;}
 .col-left-first .block:last-of-type {margin-bottom:0;}
 .block-title {position:relative; padding:10px 0 0; margin-bottom:5px; border-top:1px solid #cccccc;}
-.block-title h2, .block-title h3, .block-title strong {margin:0; margin-bottom:10px; color:#636363; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; color:#1d80a9; margin-bottom:0; text-transform:uppercase; font-weight:600;}
+.block-title h2, .block-title h3, .block-title strong {font-family:'robotoregular'; font-size:14px; font-weight:bold; line-height:1.4; color:#333;}
 .block-title small {font-size:100%; font-weight:normal; color:#a0a0a0;}
 body:not(.customer-account) .block:first-child .block-title {border-top:none; padding-top:0;}
-.block-subtitle {font-weight:bold; margin-bottom:7px;}
+.block-subtitle {margin-bottom:7px;}
 .block-content {margin-top:5px;}
 .block-content.unpad {padding:0;}
 .block-content li.item {margin:0 0 10px 9px;}
@@ -318,10 +318,10 @@ body:not(.customer-account) .block:first-child .block-title {border-top:none; pa
 
 @media only screen and (max-width:770px) {.sidebar .block:not(.block-layered-nav) {margin-bottom:0;}
 .sidebar .block:not(.block-layered-nav) .block-title {padding:0; margin-top:0; border-bottom:none; border-top:none; margin-bottom:0;}
-.sidebar .block:not(.block-layered-nav) .block-title > strong {margin:0; margin-bottom:10px; color:#636363; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; -moz-user-select:none; -ms-user-select:none; -webkit-user-select:none; -o-user-select:none; user-select:none; font-weight:normal; margin-bottom:0px; padding:7px 10px 7px 24px; border-width:1px; border-style:solid; border-color:#cccccc; position:relative; background-color:#f4f4f4; display:block; width:100%; cursor:pointer; border-bottom:0;}
+.sidebar .block:not(.block-layered-nav) .block-title > strong {margin:0; margin-bottom:10px; color:#636363; font-family:'robotoregular'; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; -moz-user-select:none; -ms-user-select:none; -webkit-user-select:none; -o-user-select:none; user-select:none; font-weight:normal; margin-bottom:0px; padding:7px 10px 7px 24px; border-width:1px; border-style:solid; border-color:#cccccc; position:relative; background-color:#f4f4f4; display:block; width:100%; cursor:pointer; border-bottom:0;}
 .sidebar .block:not(.block-layered-nav) .block-title > strong:after {content:''; position:absolute; width:0; height:0; display:block; border-top:4px solid transparent; border-bottom:4px solid transparent; border-left:4px solid #1d80a9; border-right:none; left:10px; top:50%; margin-top:-3px;}
 .sidebar .block:not(.block-layered-nav) .block-title > strong:hover {background-color:#ececec;}
-.sidebar .block:not(.block-layered-nav) .block-title.active > strong {margin:0; margin-bottom:10px; color:#636363; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; -moz-user-select:none; -ms-user-select:none; -webkit-user-select:none; -o-user-select:none; user-select:none; font-weight:normal; margin-bottom:0px; padding:7px 10px 7px 24px; border-width:1px; border-style:solid; border-color:#cccccc; position:relative; background-color:#f4f4f4;}
+.sidebar .block:not(.block-layered-nav) .block-title.active > strong {margin:0; margin-bottom:10px; color:#636363; font-family:'robotoregular'; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; -moz-user-select:none; -ms-user-select:none; -webkit-user-select:none; -o-user-select:none; user-select:none; font-weight:normal; margin-bottom:0px; padding:7px 10px 7px 24px; border-width:1px; border-style:solid; border-color:#cccccc; position:relative; background-color:#f4f4f4;}
 .sidebar .block:not(.block-layered-nav) .block-title.active > strong:after {content:''; position:absolute; width:0; height:0; display:block; border-right:4px solid transparent; border-left:4px solid transparent; border-top:4px solid #1d80a9; border-bottom:none; left:10px; top:50%; margin-top:-3px;}
 .sidebar .block:not(.block-layered-nav) .block-title.active > strong:hover {background-color:#ececec;}
 .sidebar .block:not(.block-layered-nav) .block-content {padding:10px; margin-top:0; border-width:0 1px; border-style:solid; border-color:#cccccc;}
@@ -331,7 +331,7 @@ body:not(.customer-account) .block:first-child .block-title {border-top:none; pa
  * Secondary Navigation
  */
 .block-account .block-title, .block-cms-menu .block-title {padding-top:0; border-top:none;}
-.block-account li, .block-cms-menu li {text-transform:uppercase; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; margin:7px 0;}
+.block-account li, .block-cms-menu li {text-transform:uppercase; font-family:'robotoregular'; margin:7px 0;}
 .block-account li strong, .block-cms-menu li strong {font-weight:400; color:#1d80a9;}
 .block-account li a, .block-cms-menu li a {color:#636363;}
 .block-account li a:hover, .block-cms-menu li a:hover {color:#1d80a9;}
@@ -543,7 +543,7 @@ clear:left;}
 /* -------------------------------------------- *
  * Promotional Message Banner
  */
-.promo-msg {color:#1d80a9; text-align:center; margin:10px; text-transform:uppercase; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;}
+.promo-msg {color:#1d80a9; text-align:center; margin:10px; text-transform:uppercase; font-family:'robotoregular';}
 /* -------------------------------------------- *
  * Grid
  */
@@ -631,7 +631,7 @@ span.weee {display:block;}
 /* ============================================ *
  * Item Options
  * ============================================ */
-.item-options {font-size:14px; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;}
+.item-options {font-size:14px; font-family:'robotoregular';}
 .item-options:after {content:''; display:table; clear:both;}
 .item-options dt {float:left; clear:left; font-weight:600; padding-right:5px; font-style:italic;}
 .item-options dt:after {content:':';}
@@ -693,7 +693,7 @@ span.weee {display:block;}
 .toolbar:after {content:''; display:table; clear:both;}
 .pager-no-toolbar {margin-bottom:10px;}
 .pager-no-toolbar ~ .pager-no-toolbar {margin-top:10px;}
-.toolbar, .pager {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; color:#636363; line-height:30px; font-size:12px;}
+.toolbar, .pager {font-family:'robotoregular'; color:#636363; line-height:30px; font-size:12px;}
 .toolbar label, .pager-no-toolbar label {font-weight:normal; text-transform:uppercase;}
 .sorter {float:left; margin-bottom:5px;}
 .sorter label {float:left; margin-right:5px;}
@@ -783,7 +783,7 @@ span.weee {display:block;}
 .fieldset p {margin-bottom:7px;}
 .fieldset p.required {margin-bottom:5px; float:right; font-size:12px; margin-top:0px;}
 .fieldset + .fieldset {margin-top:5px;}
-form .legend {margin:0; margin-bottom:10px; color:#636363; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:18px; font-weight:400; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; margin-bottom:15px; padding-bottom:7px; border-bottom:1px solid #ededed;}
+form .legend {margin:0; margin-bottom:10px; color:#636363; font-family:'robotoregular'; font-size:18px; font-weight:400; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; margin-bottom:15px; padding-bottom:7px; border-bottom:1px solid #ededed;}
 /* -------------------------------------------- *
  * Input Box
  */
@@ -796,7 +796,7 @@ li.centinel-logos div.input-box img {display:inline; vertical-align:middle;}
 /* -------------------------------------------- *
  * Labels
  */
-label {display:inline-block; font-size:13px; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-weight:600; -moz-user-select:none; -ms-user-select:none; -webkit-user-select:none; -o-user-select:none; user-select:none;}
+label {display:inline-block; font-size:13px; font-family:'robotoregular'; font-weight:600; -moz-user-select:none; -ms-user-select:none; -webkit-user-select:none; -o-user-select:none; user-select:none;}
 label.required:after, span.required:after {content:' *'; color:#df280a; font-weight:normal; font-family:"Helvetica Neue", Verdana, Arial, sans-serif; font-size:12px;}
 label.required em, span.required em {display:none;}
 /* -------------------------------------------- *
@@ -884,7 +884,7 @@ form .form-instructions {font-style:italic; font-family:Georgia, Times, "Times N
  * ============================================ */
 .data-table {width:100%;}
 .data-table td, .data-table th {padding:10px; vertical-align:top;}
-.data-table th {background:#f4f4f4; text-transform:uppercase; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; line-height:1.4; white-space:nowrap;}
+.data-table th {background:#f4f4f4; text-transform:uppercase; font-family:'robotoregular'; line-height:1.4; white-space:nowrap;}
 .data-table thead th, .data-table tbody td {border-bottom:1px solid silver;}
 .data-table tbody td, .data-table tfoot td {font-family:Georgia, Times, "Times New Roman", serif; padding: 12px 0;}
 .data-table tfoot tr {background:#f4f4f4;}
@@ -921,7 +921,7 @@ form .form-instructions {font-style:italic; font-family:Georgia, Times, "Times N
 .linearize-table tbody td:first-child {padding-top:10px;}
 .linearize-table tbody td:first-child,  .linearize-table tbody td:first-child h3 {font-weight:bold;}
 .linearize-table tbody td[data-rwd-label] {text-align:left; padding-left:30px;}
-.linearize-table tbody td[data-rwd-label]:before {content:attr(data-rwd-label) ":"; font-size:12px; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; padding-right:5px; text-transform:uppercase;}
+.linearize-table tbody td[data-rwd-label]:before {content:attr(data-rwd-label) ":"; font-size:12px; font-family:'robotoregular'; padding-right:5px; text-transform:uppercase;}
 .linearize-table tfoot tr {display:block; text-align:right;}
 .linearize-table tfoot tr:after {content:''; display:table; clear:both;}
 .linearize-table tfoot td {display:block; float:left;}
@@ -945,7 +945,7 @@ form .form-instructions {font-style:italic; font-family:Georgia, Times, "Times N
 .linearize-table-large tbody td:first-child {padding-top:10px;}
 .linearize-table-large tbody td:first-child,  .linearize-table-large tbody td:first-child h3 {font-weight:bold;}
 .linearize-table-large tbody td[data-rwd-label] {text-align:left; padding-left:30px;}
-.linearize-table-large tbody td[data-rwd-label]:before {content:attr(data-rwd-label) ":"; font-size:12px; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; padding-right:5px; text-transform:uppercase;}
+.linearize-table-large tbody td[data-rwd-label]:before {content:attr(data-rwd-label) ":"; font-size:12px; font-family:'robotoregular'; padding-right:5px; text-transform:uppercase;}
 .linearize-table-large tfoot tr {display:block; text-align:right;}
 .linearize-table-large tfoot tr:after {content:''; display:table; clear:both;}
 .linearize-table-large tfoot td {display:block; float:left;}
@@ -1230,7 +1230,7 @@ button.button.search-button span >span {display:none;}
 .cart-menu .actions .button {float:left; width:48%;}
 .cart-menu .actions .button + .button {margin-left:4%;}
 /* Subtotal */
-.cart-menu .subtotal {padding:0 15px 15px; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:24px; line-height:1.2;}
+.cart-menu .subtotal {padding:0 15px 15px; font-family:'robotoregular'; font-size:24px; line-height:1.2;}
 /* List */
 .mini-cart-list {margin-bottom:5px;}
 .mini-cart-list li {position:relative; min-height:90px; padding:15px 15px 15px 90px; border-top:1px solid #cccccc; font-size:13px; line-height:1.35;}
@@ -1246,7 +1246,7 @@ button.button.search-button span >span {display:none;}
 /* -------------------------------------------- *
  * Footer
  */
-.footer, .footer button {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;}
+.footer, .footer button {font-family:'robotoregular';}
 .footer {clear:both; max-width:980px; padding-top:20px;/*-** Social icons*/ margin:0 auto}
 .footer .ftcol-lt {width:64.74585635359117%; *width:65.69266486422946%; float:left}
 .footer .ftcol-rt {width:33.491712707182323%; *width:31.43852121782062%; float:right}
@@ -1342,7 +1342,7 @@ button.button.search-button span >span {display:none;}
 h2.product-name, h3.product-name, h4.product-name, h5.product-name, p.product-name {text-transform: capitalize;text-align: center;line-height: 15px;}
 h2.product-name a, h3.product-name a, h4.product-name a, h5.product-name a, p.product-name a {color:#4d4d4d;font-size:13px;font-family:'robotoregular'}
 h2.product-name a:hover, h3.product-name a:hover, h4.product-name a:hover, h5.product-name a:hover, p.product-name a:hover {color:#1d80a9; text-decoration:none;}
-.products-grid .product-name, .products-list .product-name {text-transform:uppercase; margin-bottom:5px; font-size:14px; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;}
+.products-grid .product-name, .products-list .product-name {text-transform:uppercase; margin-bottom:5px; font-size:14px; font-family:'robotoregular';}
 .products-grid .product-name a, .products-list .product-name a {font-weight:500;}
 /* ============================================ *
  * Product Grid
@@ -1467,11 +1467,12 @@ h2.product-name a:hover, h3.product-name a:hover, h4.product-name a:hover, h5.pr
 /* ============================================ *
  * Layered Navigation
  * ============================================ */
-.block-layered-nav .block-subtitle--filter {display:none; margin:0; margin-bottom:10px; color:#636363; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; -moz-user-select:none; -ms-user-select:none; -webkit-user-select:none; -o-user-select:none; user-select:none; font-weight:normal; margin-bottom:0px; padding:7px 10px 7px 24px; border-width:1px; border-style:solid; border-color:#cccccc; position:relative; background-color:#f4f4f4; cursor:pointer;}
+.block-layered-nav .block-subtitle--filter {display:none; margin:0; margin-bottom:10px; color:#636363; font-family:'robotoregular'; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; -moz-user-select:none; -ms-user-select:none; -webkit-user-select:none; -o-user-select:none; user-select:none; font-weight:normal; margin-bottom:0px; padding:7px 10px 7px 24px; border-width:1px; border-style:solid; border-color:#cccccc; position:relative; background-color:#f4f4f4; cursor:pointer;}
 .block-layered-nav .block-subtitle--filter:after {content:''; position:absolute; width:0; height:0; display:block; border-right:4px solid transparent; border-left:4px solid transparent; border-top:4px solid #1d80a9; border-bottom:none; left:10px; top:50%; margin-top:-3px;}
 .block-layered-nav .block-subtitle--filter:hover {background-color:#ececec;}
 .block-layered-nav .block-content .toggle-tabs {display:none;}
-.block-layered-nav .block-content > dl > dt {margin:0; margin-bottom:10px; color:#636363; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; -moz-user-select:none; -ms-user-select:none; -webkit-user-select:none; -o-user-select:none; user-select:none; font-weight:normal; margin-bottom:0px; padding:7px 10px 7px 24px; border-width:1px; border-style:solid; border-color:#cccccc; position:relative; background-color:#f4f4f4; display:block;}
+/*
+.block-layered-nav .block-content > dl > dt {margin:0; margin-bottom:10px; color:#636363; font-family:'robotoregular'; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; -moz-user-select:none; -ms-user-select:none; -webkit-user-select:none; -o-user-select:none; user-select:none; font-weight:normal; margin-bottom:0px; padding:7px 10px 7px 24px; border-width:1px; border-style:solid; border-color:#cccccc; position:relative; background-color:#f4f4f4; display:block;}
 .block-layered-nav .block-content > dl > dt:after {content:''; position:absolute; width:0; height:0; display:block; border-right:4px solid transparent; border-left:4px solid transparent; border-top:4px solid #1d80a9; border-bottom:none; left:10px; top:50%; margin-top:-3px;}
 .block-layered-nav .block-content > dl > dt:hover {background-color:#ececec;}
 .block-layered-nav .block-content > dl > dd {padding:10px; margin:0; border-width:0 1px; border-style:solid; border-color:#cccccc;}
@@ -1504,12 +1505,13 @@ h2.product-name a:hover, h3.product-name a:hover, h4.product-name a:hover, h5.pr
 .block-layered-nav dl ol > li > a {color:#636363; background-color:#f4f4f4; padding:5px 10px;}
 .block-layered-nav dl ol > li > a:hover {text-decoration:none; background:#ececec;}
 }
-.block-layered-nav .currently .block-subtitle {display:block; margin:0; margin-bottom:10px; color:#636363; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase;}
+.block-layered-nav .currently .block-subtitle {display:block; margin:0; margin-bottom:10px; color:#636363; font-family:'robotoregular'; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase;}
 .block-layered-nav .currently ol {padding-left:10px; margin-bottom:10px;}
 .block-layered-nav .currently ol li {margin-bottom:5px;}
 .block-layered-nav .currently ol li .label {font-weight:bold;}
 .block-layered-nav .currently ol li:after {content:''; display:table; clear:both;}
 .block-layered-nav .actions {text-align:right; margin-bottom:7px;}
+*/
 /* ============================================ *
  * Catalog - Product
  * ============================================ */
@@ -1653,7 +1655,7 @@ h2.product-name a:hover, h3.product-name a:hover, h4.product-name a:hover, h5.pr
 }
 
 @media only screen and (max-width:770px) {.product-collateral .toggle-tabs {display:none;}
-.product-collateral > dl > dt {margin:0; margin-bottom:10px; color:#636363; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; -moz-user-select:none; -ms-user-select:none; -webkit-user-select:none; -o-user-select:none; user-select:none; font-weight:normal; margin-bottom:0px; padding:7px 10px 7px 24px; border-width:1px; border-style:solid; border-color:#cccccc; position:relative; background-color:#f4f4f4; display:block;}
+.product-collateral > dl > dt {margin:0; margin-bottom:10px; color:#636363; font-family:'robotoregular'; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; -moz-user-select:none; -ms-user-select:none; -webkit-user-select:none; -o-user-select:none; user-select:none; font-weight:normal; margin-bottom:0px; padding:7px 10px 7px 24px; border-width:1px; border-style:solid; border-color:#cccccc; position:relative; background-color:#f4f4f4; display:block;}
 .product-collateral > dl > dt:after {content:''; position:absolute; width:0; height:0; display:block; border-right:4px solid transparent; border-left:4px solid transparent; border-top:4px solid #1d80a9; border-bottom:none; left:10px; top:50%; margin-top:-3px;}
 .product-collateral > dl > dt:hover {background-color:#ececec;}
 .product-collateral > dl > dd {padding:10px; margin:0; border-width:0 1px; border-style:solid; border-color:#cccccc;}
@@ -1688,7 +1690,7 @@ h2.product-name a:hover, h3.product-name a:hover, h4.product-name a:hover, h5.pr
 
 @media only screen and (max-width:479px) {.grouped-items-table-wrapper {margin-bottom:15px;}
 }
-.grouped-items-table .name-wrapper {color:#1d80a9; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;}
+.grouped-items-table .name-wrapper {color:#1d80a9; font-family:'robotoregular';}
 .grouped-items-table .qty-wrapper {padding-top:7px;}
 .grouped-items-table .qty-label {margin-left:7px;}
 .grouped-items-table td {padding:4px;}
@@ -1747,7 +1749,7 @@ padding:2px 0; vertical-align:middle;}
 /* Block:Related */
 .block-related li {margin-bottom:7px;}
 .block-related .block-title {border-bottom:none;}
-.block-related .block-title h2 {margin:0; margin-bottom:0.5em; color:#636363; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:24px; font-weight:400; font-style:normal; line-height:1.2; text-rendering:optimizeLegibility; text-transform:uppercase; margin-bottom:0;}
+.block-related .block-title h2 {margin:0; margin-bottom:0.5em; color:#636363; font-family:'robotoregular'; font-size:24px; font-weight:400; font-style:normal; line-height:1.2; text-rendering:optimizeLegibility; text-transform:uppercase; margin-bottom:0;}
 .block-related .block-subtitle {margin-bottom:7px;}
 .block-related .product {margin-left:20px; position:relative;}
 .block-related .checkbox {float:left; margin-top:36px;}
@@ -1829,7 +1831,7 @@ padding:2px 0; vertical-align:middle;}
 .cart-table {float:left; width:66.9%;}
 .cart .btn-proceed-checkout {height:40px; width:250px; white-space:normal; background-color: #c55446; border-radius:2px; box-shadow:0px 1px 1px 0px #000; padding-top:.9em;}
 .cart .button span {font-size: 1.2em;}
-.cart-forms, .cart-totals-wrapper, .crosssell {float:right; clear:right; width:33.1%; padding-left:20px; position:relative; top:35px;}
+.cart-forms, .cart-totals-wrapper, .crosssell {float:right; clear:right; width:33.1%; padding-left:20px; position:relative;}
 .cart-totals, .cart-forms .discount, .cart-forms .giftcard, .cart-forms .shipping {padding:10px; background-color:#f4f4f4; border:1px solid #cccccc;}
 .cart-forms .discount {height:92px; background-color: #fff; padding: 8px 15px 15px; border: 1px dashed #78b3cb;}
 .cart .cart-forms .giftcard {padding-bottom:0;}
@@ -1885,7 +1887,7 @@ padding:2px 0; vertical-align:middle;}
 
 @media only screen and (max-width:599px) {.btn-checkout {width:100%;}
 }
-.cart-table {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;}
+.cart-table {font-family:'robotoregular';}
 .cart-table th, .cart-table td, .cart-table tbody td {border-bottom:none; vertical-align:top;}
 .cart-table h2 {color:#636363; font-size:14px; font-weight:600; margin-bottom:0; width:175px; display:inline-block;}
 .cart-table thead th, .cart-table tbody td {background-color:transparent; padding:10px 5px; font-family:'robotoregular'; text-transform: capitalize;}
@@ -1893,7 +1895,7 @@ padding:2px 0; vertical-align:middle;}
 .cart-table tr {border-bottom:1px solid #dfedf3;}
 .cart-table tfoot tr {background:none;}
 .cart-table tfoot tr > td:after {content:''; display:table; clear:both;}
-.cart-table span.or {font-size:9px; padding:0 5px; text-transform:uppercase; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;}
+.cart-table span.or {font-size:9px; padding:0 5px; text-transform:uppercase; font-family:'robotoregular';}
 .cart-table .product-cart-image .cart-links, .cart-table .product-cart-info .btn-remove, .cart-table .product-cart-actions .button {display:none;}
 .cart-table .product-cart-image {padding-left:0; padding-right:0; width:16%;}
 .cart-table .product-cart-image .product-image img {max-width:100%; width:100%; border:1px solid #4a99ba;}
@@ -1975,11 +1977,11 @@ padding:2px 0; vertical-align:middle;}
 .shipping .form-list .shipping-postcode input {margin-top:4px;}
 .shipping .form-list .input-box {padding-top:0;}
 .shipping .form-list input {height:30px; margin-top:4px;}
-.shipping .form-list label {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:13px; font-weight:400; text-transform:uppercase; white-space:nowrap;}
+.shipping .form-list label {font-family:'robotoregular'; font-size:13px; font-weight:400; text-transform:uppercase; white-space:nowrap;}
 .shipping .sp-methods {padding:10px 0 0; text-align:left;}
 .shipping .sp-methods dd {margin-bottom:10px;}
 .shipping .sp-methods label {font-family:Georgia, Times, "Times New Roman", serif; font-size:12px; font-style:italic; min-width:100px;}
-.shipping .sp-methods label span {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-weight:bold; font-style:normal;}
+.shipping .sp-methods label span {font-family:'robotoregular'; font-weight:bold; font-style:normal;}
 .shipping #co-shipping-method-form .buttons-set .button {float:left; margin-left:0;}
 .shipping #co-shipping-method-form .sp-methods dd label {border:1px solid #cccccc; background-color:#ececec; min-width:220px;}
 .shipping #co-shipping-method-form .sp-methods dd label:hover {background-color:#dbdbdb;}
@@ -1988,9 +1990,9 @@ padding:2px 0; vertical-align:middle;}
 .shipping .shipping-form .form-list > li label {display:block;}
 .shipping .shipping-form .form-list > li input,  .shipping .shipping-form .form-list > li select {width:100%;}
 }
-.cart .cart-totals {text-align:right; padding:8px 0 5px; margin-bottom:-20px;}
+.cart .cart-totals {text-align:right; padding:8px 0 5px;}
 .cart .cart-totals:after {content:''; display:table; clear:both;}
-.cart .cart-totals table {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:12px; margin-bottom:10px; text-transform:uppercase; width:100%;}
+.cart .cart-totals table {font-family:'robotoregular'; font-size:12px; margin-bottom:10px; text-transform:uppercase; width:100%;}
 .cart .cart-totals table td {padding:2px 40px 5px 0;}
 .cart .cart-totals table td:first-child {padding-right:8.5%; min-width:120px; text-transform:capitalize;}
 .cart .cart-totals table tbody tr:last-child td, .cart .cart-totals table tbody tr:last-child th {padding:2px 40px 5px 0; text-transform: capitalize;}
@@ -2134,7 +2136,7 @@ body:not(.opc-has-progressed-from-login) .opc.opc-firststep-login .section#opc-l
 /* One Page Checkout */
 .block-progress {border:0; margin:0; border-left:1px solid #cccccc; padding-left:20px;}
 .block-progress .block-content {font-size:13px;}
-.block-progress dt {padding-top:6px; margin:0; margin-bottom:10px; color:#636363; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; margin-bottom:6px; text-transform:uppercase; font-weight:normal; color:#a0a0a0;}
+.block-progress dt {padding-top:6px; margin:0; margin-bottom:10px; color:#636363; font-family:'robotoregular'; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; margin-bottom:6px; text-transform:uppercase; font-weight:normal; color:#a0a0a0;}
 .block-progress dt.complete {color:#636363;}
 .block-progress dd {padding-left:15px; margin-bottom:10px; font-family:Georgia, Times, "Times New Roman", serif; font-style:italic;}
 .block-progress dd address {font-style:italic;}
@@ -2314,7 +2316,7 @@ body.customer-account .my-account .fieldset h2, body.customer-account .my-accoun
 body.customer-account .my-account .addresses-list h3 {font-size:14px; font-weight:600;}
 body.customer-account .my-account .fieldset {margin-top:30px; margin-bottom:30px;}
 body.customer-account .data-table {margin-top:5px;}
-body.customer-account .data-table td a {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; text-transform:uppercase; font-style:normal; font-size:13px;}
+body.customer-account .data-table td a {font-family:'robotoregular'; text-transform:uppercase; font-style:normal; font-size:13px;}
 body.customer-account .data-table span.nobr {white-space:normal;}
 body.customer-account .data-table span.nobr a {white-space:nowrap;}
 body.customer-account .data-table td.view a {display:block;}
@@ -2349,7 +2351,7 @@ body.customer-account .sidebar .block-reorder ol#cart-sidebar-reorder p.product-
 .dashboard .box-reviews li .number {margin-right:-20px; float:left; line-height:1.4; font-size:13px;}
 .dashboard .box-reviews li .details {margin-left:20px;}
 .dashboard .box-reviews li .details .ratings {content:''; display:table; clear:both; margin-bottom:0;}
-.dashboard .box-reviews li .details .ratings strong {float:left; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:13px; margin-right:5px;}
+.dashboard .box-reviews li .details .ratings strong {float:left; font-family:'robotoregular'; font-size:13px; margin-right:5px;}
 .dashboard .box-reviews li .details .ratings .rating-box {float:left; margin:3px 0 0 0;}
 /* ============================================ *
  * Address Book
@@ -2374,20 +2376,20 @@ body.customer-account .sidebar .block-reorder ol#cart-sidebar-reorder p.product-
 .order-info li {margin:0 0 0 20px;}
 .order-info li.current {font-weight:600;}
 .order-info li:first-child {margin-left:0;}
-.order-date {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; text-transform:uppercase;}
+.order-date {font-family:'robotoregular'; text-transform:uppercase;}
 .order-info-box {margin-bottom:40px; margin-top:20px;}
 .order-info-box + .order-info-box {padding-bottom:40px; border-bottom:1px solid #ededed;}
 .order-info-box .col-1 {padding-right:0; width:48%;}
 .order-info-box .col-2 {width:52%;}
 .order-info-box .col-1, .order-info-box .col-2 {overflow:hidden; padding-top:0; padding-bottom:0;}
 .order-info-box .box-title {width:150px; padding-right:10px; float:left;}
-.order-info-box .box-title h2 {font-size:14px; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-weight:bold; line-height:1.5;}
+.order-info-box .box-title h2 {font-size:14px; font-family:'robotoregular'; font-weight:bold; line-height:1.5;}
 .order-info-box .box-title h2:after {content:':';}
 .order-info-box .box-content {float:left; font-family:Georgia, Times, "Times New Roman", serif;}
 .order-info-box .box-content td, .order-info-box .box-content th {font-family:Georgia, Times, "Times New Roman", serif; line-height:1.3;}
 .order-info-box .box-content th {padding-top:10px;}
 .order-info-box .box-content td {padding-left:15px;}
-.order-info-box .box-content strong {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-weight:normal; text-transform:uppercase;}
+.order-info-box .box-content strong {font-family:'robotoregular'; font-weight:normal; text-transform:uppercase;}
 #my-orders-table .option-label {margin-left:10px; font-weight:600; font-style:italic;}
 #my-orders-table .option-value {margin-left:20px;}
 #my-orders-table tr.bundle:not(:last-child) td {border-bottom:none; border-top:none;}
@@ -2517,30 +2519,30 @@ div.paypal-logo span > img {display:none;}
 #customer-reviews .review-heading h2 {float:left; display:block;}
 #customer-reviews .review-heading .pager {clear:none; float:right; width:auto;}
 #customer-reviews .review-heading .pager .count-container .limiter {margin-bottom:0;}
-#customer-reviews .review-heading .pager .count-container .limiter label {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:10px; text-transform:uppercase;}
+#customer-reviews .review-heading .pager .count-container .limiter label {font-family:'robotoregular'; font-size:10px; text-transform:uppercase;}
 #customer-reviews .review-heading .pager .amount {display:none;}
 #customer-reviews h2 {color:#1d80a9; font-size:12px; text-transform:uppercase;}
 #customer-reviews h2 span {color:#636363;}
-#customer-reviews h3 {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:12px; font-weight:normal; text-transform:uppercase;}
+#customer-reviews h3 {font-family:'robotoregular'; font-size:12px; font-weight:normal; text-transform:uppercase;}
 #customer-reviews h3 span {color:#1d80a9;}
 #customer-reviews .fieldset {padding-top:25px; width:470px;}
-#customer-reviews .fieldset h4 {border-bottom:1px solid #cccccc; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:12px; font-weight:normal; padding-bottom:5px; text-transform:uppercase;}
+#customer-reviews .fieldset h4 {border-bottom:1px solid #cccccc; font-family:'robotoregular'; font-size:12px; font-weight:normal; padding-bottom:5px; text-transform:uppercase;}
 #customer-reviews .fieldset h4 em {display:none;}
-#customer-reviews .fieldset .form-list {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:12px; font-weight:normal; margin:10px 0; text-transform:uppercase; width:470px;}
+#customer-reviews .fieldset .form-list {font-family:'robotoregular'; font-size:12px; font-weight:normal; margin:10px 0; text-transform:uppercase; width:470px;}
 #customer-reviews .fieldset .form-list .inline-label:after {content:''; display:table; clear:both;}
 #customer-reviews .fieldset .form-list label {font-size:12px; font-weight:normal;}
 #customer-reviews .fieldset .form-list textarea {border:1px solid #cccccc; border-radius:0; min-width:100%; -webkit-appearance:none;}
 #customer-reviews .fieldset .form-list input {border:1px solid #cccccc; border-radius:0;}
 #customer-reviews .fieldset .form-list input[type="text"] {width:100%;}
 #customer-reviews .buttons-set {border:none; margin:0; width:470px;}
-#customer-reviews dl {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:12px; font-weight:normal; margin-bottom:10px;}
+#customer-reviews dl {font-family:'robotoregular'; font-size:12px; font-weight:normal; margin-bottom:10px;}
 #customer-reviews dl dt {margin:10px 0; text-transform:uppercase;}
 #customer-reviews dl dd {font-family:Georgia, Times, "Times New Roman", serif; font-size:14px; margin:10px 0;}
-#customer-reviews dl dd .ratings-table {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:12px; width:100%;}
+#customer-reviews dl dd .ratings-table {font-family:'robotoregular'; font-size:12px; width:100%;}
 #customer-reviews dl dd .ratings-table tr {margin-right:15px;}
 #customer-reviews dl dd .ratings-table .review-label {width:300px; max-width:70%;}
 #customer-reviews dl dd table {margin:15px 0;}
-#customer-reviews dl dd .review-meta {color:#1d80a9; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:10px; font-weight:normal; text-transform:uppercase;}
+#customer-reviews dl dd .review-meta {color:#1d80a9; font-family:'robotoregular'; font-size:10px; font-weight:normal; text-transform:uppercase;}
 .review-summary-table {border-bottom:1px solid #cccccc; margin:0 0 10px;}
 .review-summary-table thead {background:transparent;}
 .review-summary-table thead th {background:transparent; border:none; padding:15px 7px 10px 8px;}
@@ -2552,7 +2554,7 @@ div.paypal-logo span > img {display:none;}
 /* ============================================ *
  * Ratings - Global
  * ============================================ */
-.ratings-table {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:12px; text-transform:uppercase;}
+.ratings-table {font-family:'robotoregular'; font-size:12px; text-transform:uppercase;}
 .ratings-table th {padding-right:10px;}
 .ratings-table .rating-box {background-position:0 -615px; background-repeat:repeat-x; height:13px; overflow:hidden; text-indent:-9999px; width:65px;}
 .ratings-table .rating-box .rating {background-position:0 -600px; background-repeat:repeat-x; float:left; height:13px; text-indent:-9999px;}
@@ -2621,14 +2623,14 @@ body.review-product-list .product-view .product-shop .extra-info .ratings-table 
  * Wishlist
  * ============================================ */
 #wishlist-table th {text-align:center;}
-#wishlist-table.clean-table {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:12px; text-transform:uppercase; width:100%;}
+#wishlist-table.clean-table {font-family:'robotoregular'; font-size:12px; text-transform:uppercase; width:100%;}
 #wishlist-table.clean-table th {border-bottom:1px solid silver;}
 #wishlist-table.clean-table td {padding:15px; vertical-align:top;}
-#wishlist-table.clean-table thead th {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:12px; text-transform:uppercase;}
-#wishlist-table .product-name {font-size:16px; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; margin-bottom:0; text-transform:uppercase;}
+#wishlist-table.clean-table thead th {font-family:'robotoregular'; font-size:12px; text-transform:uppercase;}
+#wishlist-table .product-name {font-size:16px; font-family:'robotoregular'; margin-bottom:0; text-transform:uppercase;}
 #wishlist-table .product-name a {color:#1d80a9;}
-#wishlist-table .wishlist-sku {font-size:11px; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; margin:5px 0;}
-#wishlist-table textarea {border:1px solid silver; width:100%; height:45px; font-size:11px; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;}
+#wishlist-table .wishlist-sku {font-size:11px; font-family:'robotoregular'; margin:5px 0;}
+#wishlist-table textarea {border:1px solid silver; width:100%; height:45px; font-size:11px; font-family:'robotoregular';}
 #wishlist-table textarea::-webkit-input-placeholder {text-transform:uppercase;}
 #wishlist-table textarea:-moz-placeholder {text-transform:uppercase;}
 #wishlist-table textarea::-moz-placeholder {text-transform:uppercase;}
@@ -2648,7 +2650,7 @@ body.review-product-list .product-view .product-shop .extra-info .ratings-table 
 #wishlist-table td.customer-wishlist-item-cart .btn-remove {vertical-align:top;}
 #wishlist-table td.customer-wishlist-item-remove {width:20px;}
 #wishlist-table td .button, #wishlist-table td button {white-space:normal;}
-#wishlist-table .price-box {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:12px;}
+#wishlist-table .price-box {font-family:'robotoregular'; font-size:12px;}
 #wishlist-table .price-box .price {color:#636363;}
 #wishlist-table .giftregisty-add {margin-top:5px;}
 #wishlist-table .giftregisty-add .change {display:none;}
@@ -2721,7 +2723,7 @@ body.review-product-list .product-view .product-shop .extra-info .ratings-table 
 .header-minicart .minicart-wrapper.loading {position:relative;}
 .header-minicart .minicart-wrapper.loading:before, .header-minicart .minicart-wrapper.loading:after {display:block;}
 .header-minicart .block-cart {display:none;}
-.header-minicart .block-subtitle {color:#50A4CF; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:10px; font-weight:bold; line-height:1.4; padding:5px; text-align:center; text-transform:uppercase; margin-bottom:0px;}
+.header-minicart .block-subtitle {color:#50A4CF; font-family:'robotoregular'; font-size:10px; font-weight:bold; line-height:1.4; padding:5px; text-align:center; text-transform:uppercase; margin-bottom:0px;}
 .header-minicart .block-subtitle .close {width:40px; float:right; display:block; color:#636363; text-decoration:none; font-weight:normal; font-size:30px; position:absolute; top:-8px; right:-3px;}
 .header-minicart .mini-products-list {padding:10px; padding-top:0px;}
 .header-minicart .mini-products-list li {padding:8px 5px 8px 11px; border-bottom:1px solid #DDDDDD; position:relative;}
@@ -2797,14 +2799,14 @@ body.review-product-list .product-view .product-shop .extra-info .ratings-table 
 /* ============================================ *
  * Account - Reviews
  * ============================================ */
-.product-review .product-img-box p.label {border-bottom:1px solid #cccccc; font-size:16px; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; margin-top:20px; padding-bottom:10px; text-transform:uppercase;}
+.product-review .product-img-box p.label {border-bottom:1px solid #cccccc; font-size:16px; font-family:'robotoregular'; margin-top:20px; padding-bottom:10px; text-transform:uppercase;}
 .product-review .product-img-box .rating-box {margin:15px 0;}
-.product-review .product-details h2 {border-bottom:1px solid #cccccc; color:#1d80a9; font-size:16px; font-weight:600; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; padding-bottom:10px;}
-.product-review .ratings-table {font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;}
+.product-review .product-details h2 {border-bottom:1px solid #cccccc; color:#1d80a9; font-size:16px; font-weight:600; font-family:'robotoregular'; padding-bottom:10px;}
+.product-review .ratings-table {font-family:'robotoregular';}
 .product-review .ratings-table th {padding-right:10px;}
 .product-review .ratings-table tr {float:left; font-size:12px; margin-right:10px; text-transform:uppercase;}
-.product-review .ratings-description dt {border-bottom:1px solid #cccccc; font-size:16px; font-weight:400; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; margin-top:20px; padding:10px 0; text-transform:uppercase;}
-.product-review .ratings-description dd {color:#737373; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:13px;}
+.product-review .ratings-description dt {border-bottom:1px solid #cccccc; font-size:16px; font-weight:400; font-family:'robotoregular'; margin-top:20px; padding:10px 0; text-transform:uppercase;}
+.product-review .ratings-description dd {color:#737373; font-family:'robotoregular'; font-size:13px;}
 
 @media only screen and (min-width:761px) {.product-review .ratings-table tr {float:none;}
 }
@@ -2829,7 +2831,7 @@ body.review-product-list .product-view .product-shop .extra-info .ratings-table 
 .cms-page-view .std .messages ul, .cms-home .std .messages ul, .cms-no-route .std .messages ul {margin-bottom:0;}
 .cms-page-view .std .messages li, .cms-home .std .messages li, .cms-no-route .std .messages li {list-style:none; margin-left:0; font-style:normal; font-family:"Helvetica Neue", Verdana, Arial, sans-serif;}
 #accordion .toggle-tabs {display:none;}
-#accordion > dl > dt {margin:0; margin-bottom:10px; color:#636363; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; -moz-user-select:none; -ms-user-select:none; -webkit-user-select:none; -o-user-select:none; user-select:none; font-weight:normal; margin-bottom:0px; padding:7px 10px 7px 24px; border-width:1px; border-style:solid; border-color:#cccccc; position:relative; background-color:#f4f4f4; display:block;}
+#accordion > dl > dt {margin:0; margin-bottom:10px; color:#636363; font-family:'robotoregular'; font-size:14px; font-weight:bold; font-style:normal; line-height:1.4; text-rendering:optimizeSpeed; text-transform:uppercase; -moz-user-select:none; -ms-user-select:none; -webkit-user-select:none; -o-user-select:none; user-select:none; font-weight:normal; margin-bottom:0px; padding:7px 10px 7px 24px; border-width:1px; border-style:solid; border-color:#cccccc; position:relative; background-color:#f4f4f4; display:block;}
 #accordion > dl > dt:after {content:''; position:absolute; width:0; height:0; display:block; border-right:4px solid transparent; border-left:4px solid transparent; border-top:4px solid #1d80a9; border-bottom:none; left:10px; top:50%; margin-top:-3px;}
 #accordion > dl > dt:hover {background-color:#ececec;}
 #accordion > dl > dd {padding:10px; margin:0; border-width:0 1px; border-style:solid; border-color:#cccccc;}
@@ -2851,7 +2853,7 @@ body.review-product-list .product-view .product-shop .extra-info .ratings-table 
 /* ============================================ *
  * Pricing Conditions
  * ============================================ */
-.price-box .minimal-price-link .label {color:#cf5050; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; font-size:12px; text-transform:uppercase;}
+.price-box .minimal-price-link .label {color:#cf5050; font-family:'robotoregular'; font-size:12px; text-transform:uppercase;}
 .map-info {white-space:nowrap;}
 .catalog-product-view .map-info {white-space:normal;}
 .catalog-product-view .map-info > span {float:right; margin-bottom:5px;}
@@ -3026,7 +3028,7 @@ body.customer-account .my-account .title-buttons.recurring-profiles-title-button
  * Checkout - Multiple Addresses
  * ============================================ */
 body[class*="checkout-multishipping-"] .checkout-progress {width:100%; float:left; margin-bottom:25px;}
-body[class*="checkout-multishipping-"] .checkout-progress > li {float:left; width:20%; text-align:center; padding:8px 1% 6px; background:#f4f4f4; text-transform:uppercase; border-bottom:1px solid #cccccc; border-right:1px solid #cccccc; margin-bottom:10px; font-family:"Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;}
+body[class*="checkout-multishipping-"] .checkout-progress > li {float:left; width:20%; text-align:center; padding:8px 1% 6px; background:#f4f4f4; text-transform:uppercase; border-bottom:1px solid #cccccc; border-right:1px solid #cccccc; margin-bottom:10px; font-family:'robotoregular';}
 body[class*="checkout-multishipping-"] .checkout-progress > li.active {background-color:#dddddd;}
 body[class*="checkout-multishipping-"] .checkout-progress > li.last {border-right:0px;}
 body[class*="checkout-multishipping-"] .page-title {float:left; width:100%; margin-bottom:15px;}
@@ -4358,3 +4360,45 @@ tbody tr:first-child {border-bottom:1px solid #e7f0f3;}
 .selectedPageNumber{font-weight:bold;}
 .toolbar-bottom .toolbar .sorter {display:none !important;}
 .toolbar-bottom .toolbar .pager .count-container {display:none !important;}
+.ajax_loading_style {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    opacity: 0.6;
+    z-index: 99;
+}
+.ajax_loading_style img {
+    text-align: center;
+    width: 100%;
+    max-width: 48px;
+    margin: 20% auto;
+}
+/* category override */
+.catalog-category-view .col-main{
+    width: 84%;
+}
+.catalog-category-view .col-left{
+    width: 16%;
+}
+.catalog-category-view .category-description.std {
+    float: left;
+    width: 100%;
+}
+.cat_desc_title {
+    font-family: 'robotobold';
+    color: #808080;
+    font-size: 13px;
+    line-height: 22px;
+}
+.cat_desc_exp {
+    font-size: 13px;
+    font-family: 'robotoregular';
+    color: #999;
+    line-height: 22px;
+}
+.cat_desc_exp_blue {
+    color: #77b3cb;
+}

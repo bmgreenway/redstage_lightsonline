@@ -27,7 +27,7 @@
 <?php $blockNumber = $this->getBlockNumber();?>
 <?php $blockNumberClass = (!is_null($blockNumber))?"aw-onestepcheckout-number-{$blockNumber}":"";?>
 <div class="shipping_method_main">
-<p class="aw-onestepcheckout-number <?php echo $blockNumberClass;?>"><?php echo $this->__('SHIPPING METHOD'); ?></p>
+<p class="aw-onestepcheckout-number <?php echo $blockNumberClass;?>"><?php echo $this->__('Shipping Method'); ?></p>
 </div>
 <div id="aw-onestepcheckout-shipping-method" >
     <?php $_shippingRateGroups = $this->getShippingRates(); ?>

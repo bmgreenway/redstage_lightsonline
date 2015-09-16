@@ -630,10 +630,10 @@ font-weight: normal;
     margin-top: 5px;
 }
 #aw-onestepcheckout-review-coupon .input-box{
-    width: 266px;
+    width: 100%;
 }
 #aw-onestepcheckout-review-coupon .input-box input{
-    width: 260px;
+    width: 100%;
 }
 #aw-onestepcheckout-review-coupon .input-box input.with-buttons{
     width: 110px;
@@ -693,11 +693,12 @@ font-weight: normal;
 
 /* COMMENTS/DDAN */
 #aw-onestepcheckout-review-comments .input-box{
-    width: 260px;
+    width: 100%;
 }
 #aw-onestepcheckout-review-comments textarea{
     width:100%!important;
     height:5em;
+	background-color:#f4f4f4;
 }
 #aw-onestepcheckout-review-comments .field-row{
     margin-top: 5px;
@@ -790,33 +791,27 @@ font-weight: normal;
 }
 #aw-onestepcheckout-place-order-button,
 #aw-onestepcheckout-place-order-button:visited {
-    background: #ff832f url(../images/button-background.png) repeat-x;
+    background: #c55446;
     display: inline-block;
     text-decoration: none;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-    text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
-    border: none;
-    border-bottom: 1px solid rgba(0,0,0,0.25);
+    border-radius: 1px;
+	border:#d37f74 1px solid;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    box-shadow: 0px 1px 0px 1px #88201b;
+    -moz-box-shadow:0px 1px 0px 1px #88201b;
+    -webkit-box-shadow: 0px 1px 0px 1px #88201b;
     position: relative;
     cursor: pointer;
-    width: 266px;
+    width: 285px;
     color: white;
     z-index: 6;
+	height:50px;
+	text-transform:uppercase;
 }
-#aw-onestepcheckout-place-order-button:hover{
-    background-color: #fc732e;
-}
-#aw-onestepcheckout-place-order-button:active{
-    top: 1px;
-}
-#aw-onestepcheckout-place-order-button span{
-    display: block;
-    line-height: normal;
+
+table.aw-onestepcheckout-cart-table thead tr {
+    background-color: #f7f7f7 !important;
 }
 #aw-onestepcheckout-place-order-button .aw-onestepcheckout-place-order-grand-total{
     font-size: 20px;
@@ -836,9 +831,9 @@ font-weight: normal;
     height: 30px;
 }
 #aw-onestepcheckout-place-order-button .aw-onestepcheckout-place-order-title{
-    font-size: 35px;
-    font-weight: bold;
-    padding: 0 0 12px;
+    font-size: 23px;
+    padding: 0;
+    font-family: 'source_sans_prosemibold';
 }
 #aw-onestepcheckout-place-order-button.aw-onestepcheckout-place-order-button-disabled,
 #aw-onestepcheckout-place-order-button.aw-onestepcheckout-place-order-button-disabled:visited,
@@ -953,6 +948,7 @@ font-weight: normal;
 
 #enterprise_giftcard_code {
     margin-bottom: 5px;
+	width: 100%;
 }
 #aw-onestepcheckout-enterprise-giftcard-apply-btn {
     margin-bottom: 5px;
@@ -1223,4 +1219,10 @@ border-bottom:2px dashed #8ebfd4;
 }
 .form-list .control label, .sp-methods dt label, #checkout-shipping-method-load .sp-methods dd label, #co-shipping-method-form .sp-methods dd label, .product-options ul.options-list label{
 background-color:#FFF !important;
+}
+.aw-onestepcheckout-cart-table tr:nth-child(even) {background: #f7f7f7}
+.aw-onestepcheckout-cart-table tr:nth-child(odd) {background: #FFF}
+#aw-onestepcheckout-order-review-enterprise-giftcard-wrapper .input-box .button {
+    background-color: #78b3cb;
+	border:1px solid #4999ba;
 }
