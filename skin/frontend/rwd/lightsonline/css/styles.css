@@ -891,7 +891,7 @@ span.weee {display:block;}
 .sorter > .view-mode strong.grid, .sorter > .view-mode a.grid:hover {background-position:-42px -492px;}
 .sorter > .view-mode .list {background-position:11px -517px;}
 .sorter > .view-mode strong.list, .sorter > .view-mode a.list:hover {background-position:-39px -517px;}
-.pager {display:inline-block; overflow:hidden;}
+.pager {float: right;overflow: hidden;width: 60%;}
 .pager > .count-container {float:left;}
 .pager .amount {float:left; font-family:"Helvetica Neue", Verdana, Arial, sans-serif; white-space:nowrap; margin:0 15px 0 0;}
 .pager .limiter {float:left; height:30px; line-height:30px;}
