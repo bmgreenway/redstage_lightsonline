@@ -65,5 +65,13 @@
     </reference>
   </aw_onestepcheckout_index_index>
 
+  <catalog_product_view>
+	<reference name="content">
+		<remove name="product.attributes" />
+		<remove name="product.reviews" />
+		<remove name="product_tag_list" />
+		<remove name="extradownloads.products.section" />
+	</reference>
+  </catalog_product_view>
 </layout>
 
