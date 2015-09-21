@@ -240,33 +240,3 @@ input[name^="amshopby"][id$="from"].input-text, input[name^="amshopby"][id$="to"
     width: auto;
 }
 
-.amshopby-item-top{
-    max-width: 225px;
-    min-width: 180px;
-    display: inline-block;
-    vertical-align: top;
-    height: 100%;
-}
-
-.amshopby-filters-top .block-content ol{
-    max-width: 250px;
-}
-
-.amshopby-item-top div.amshopby-column {
-    width: auto;
-}
-
-.no-display-current, .no-display{
-    display: none;
-}
-
-.current .no-display-current, dd.current td.no-display{
-    display: block;
-}
-
-@media only screen and (max-width: 770px) {
-    dl#narrow-by-list,
-    dl#narrow-by-list2 {
-        padding: 0px;
-    }
-}

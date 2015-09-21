@@ -1064,7 +1064,7 @@ table.aw-onestepcheckout-cart-table thead tr {
     .aw-onestepcheckout-number-9,
     .aw-onestepcheckout-number-v{
         padding-top: 10px;
-        border-top: 2px dotted #ff832f;
+      /*  border-top: 2px dotted #ff832f; */
     }
 
     #aw-onestepcheckout-authentification .validation-advice {

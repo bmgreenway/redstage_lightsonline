@@ -217,16 +217,14 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
 					
                     
 					<?php if(Mage::getStoreConfig('ajax/wishlistcompare/enabledpro')){?>
-					 <ul class="add-to-links">
+					 <ul class="add-to-links comp_wl_product_list">
 						<?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
-                            <li>
-							<input type="checkbox" name="add_to_comepare_chk" value="<?php echo $this->__('Add to Compare') ?>" onclick='ajaxCompare("<?php echo $_compareUrl ?>","<?php echo $_product->getId()?>");return false;' class="link-compare" />Compare
-							
-							<span class="separator">|</span>
+                            <li class="comp_product_list">
+							<input type="checkbox" name="add_to_comepare_chk" value="<?php echo $this->__('Add to Compare') ?>"  class="link-compare" />Compare ›<a onclick='ajaxCompare("<?php echo $_compareUrl ?>","<?php echo $_product->getId()?>");return false;' title=""></a><span class="separator">|</span>
 							<!-- <a href="#" onclick='ajaxCompare("<?php //echo $_compareUrl ?>","<?php //echo $_product->getId()?>");return false;' class="link-compare"><?php //echo $this->__('Add to Compare') ?></a></li> -->
                         <?php endif; ?>
                         <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                            <li><a href="#" onclick='ajaxWishlist("<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>","<?php echo $_product->getId()?>");return false;' class="link-wishlist"><?php echo $this->__('+Wish List') ?></a></li>
+                            <li class="wl_product_list"><a href="#" onclick='ajaxWishlist("<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>","<?php echo $_product->getId()?>");return false;' class="link-wishlist"><?php echo $this->__('+Wish List') ?></a></li>
                         <?php endif; ?>
                         
                     </ul>
