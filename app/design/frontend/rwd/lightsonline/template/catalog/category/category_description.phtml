@@ -2,7 +2,15 @@
 	$_helper    = $this->helper('catalog/output');
 	$_category  = $this->getCurrentCategory();
 	if($_description = $_category->getDescription()): ?>
-    <div class="category-description std">
-        <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+   <div class="desktop-head-title"> 
+	<a class="show_hide_toggle magic_arrow_down" id="show_hide_toggle_cat_desc" href="javascript:void(0);" dataparam="category_description_std" >Show</a>	
+		<div class="category-description std" id="category_description_std"> 
+			<?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+		</div>
+	</div>
+	<div class="mobile-head-title">
+		<div class="category-description std" id="category_description_std"> 
+			<?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+		</div>
     </div>
-    <?php endif; ?>
+<?php endif; ?>
