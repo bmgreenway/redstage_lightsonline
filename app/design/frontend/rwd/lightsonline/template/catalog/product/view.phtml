@@ -116,10 +116,7 @@
 						</dl>
 					<?php endif; ?>
 				</div>
-            </div>
-			<div class="product-spec">
-				<?php echo $this->getLayout()->createBlock('catalog/product_view_attributes')->setTemplate('catalog/product/view/attributes.phtml')->toHtml(); ?>
-			</div>
+            </div>			
             <div class="add-to-cart-wrapper">
                 <?php echo $this->getChildHtml('product_type_data') ?>
                 <?php echo $this->getChildHtml('extrahint') ?>
@@ -143,6 +140,9 @@
                     </div>
                 <?php endif; ?>
             </div>
+			<div class="product-spec">
+				<?php echo $this->getLayout()->createBlock('catalog/product_view_attributes')->setTemplate('catalog/product/view/attributes.phtml')->toHtml(); ?>
+			</div>
 			<div class="clearer"></div>
             <?php echo $this->getChildHtml('related_products') ?>
 
