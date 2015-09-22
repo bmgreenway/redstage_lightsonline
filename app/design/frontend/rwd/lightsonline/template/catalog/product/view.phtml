@@ -56,26 +56,21 @@
             <div class="product-shop">
                 <div class="product-name">
                     <span class="h1"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span>
+					<span class="h3">SKU# <?php echo $_helper->productAttribute($_product, $_product->getSku(), 'name') ?></span>
                 </div>
-
-                <div class="price-info">
-                    <?php echo $this->getPriceHtml($_product); ?>
-                    <?php echo $this->getChildHtml('bundle_prices') ?>
-                    <?php echo $this->getTierPriceHtml() ?>
-                </div>
+				
+				<?php echo $this->getLayout()
+					->createBlock('ambanners/container')
+					->setTemplate('ambanners/container.phtml')
+					->setPosition(3)
+					->toHtml(); ?>               
 
                 <div class="extra-info">
                     <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
-                    <?php echo $this->getChildHtml('product_type_availability'); ?>
                 </div>
 
                 <?php echo $this->getChildHtml('alert_urls') ?>
-
-                <?php if ($_product->getShortDescription()):?>
-                    <div class="short-description">
-                        <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
-                    </div>
-                <?php endif;?>
+				
                 <?php echo $this->getChildHtml('other');?>
 
                 <?php if ($_product->isSaleable() && $this->hasOptions()):?>
@@ -84,6 +79,27 @@
 				<?php if ($_product->isSaleable() && $this->hasOptions()):?>
 					<?php echo $this->getChildChildHtml('container2', '', true, true) ?>
 				<?php endif;?>
+				<div class="free-shipping-block">
+					<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('product_free_shipping')->toHtml(); ?>
+				</div>
+				<?php echo $this->getChildHtml('product_type_availability'); ?>
+				<div class="social_sharing">
+					<span class='st_facebook'></span>
+					<span class='st_twitter'></span>
+					<span class='st_pinterest'></span>
+					<span class='st_googleplus'></span>
+					<span class='st_email'></span>
+					<script type="text/javascript">var switchTo5x=true;</script>
+					<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+					<script type="text/javascript">stLight.options({publisher: "45fc0612-9449-4780-9249-c80b0a9e85ec", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+				</div>		
+				<div class="add_to">
+				<?php $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>
+				
+				<?php if ($this->helper('wishlist')->isAllow()) : ?>
+					<li><a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, this.href); return false;" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
+				<?php endif; ?>
+				</div>
 				<div class="product-collateral toggle-content tabs">
 					<?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
 						<dl id="collateral-tabs" class="collateral-tabs">
@@ -186,6 +202,22 @@
         </script>
     </div>
     <?php echo $this->getChildHtml('upsell_products') ?>
+	<?php
+	$brand = Mage::getModel('shopbybrand/brand');        
+	$attributeCode = Mage::helper('shopbybrand/brand')->getAttributeCode();        
+	$optionId = $_product->getData($attributeCode);
+	if($optionId){
+		$brand->load($optionId, 'option_id');
+		$brand->setStoreId($this->getStoreId())->load($brand->getId());
+	}
+    if($brand->getStatus()==1) : ?>
+		<div class="about_manufacturer_main">
+		<div class="about_manufacturer_title">About This Manufacturer</div>
+			<div class="about_manufacturer_desc">
+				<?php echo $brand->getDescription(); ?>
+			</div>
+		</div>
+	<?php endif; ?>
 	<?php echo $this->getLayout()->createBlock('extradownloads/product_section')->toHtml(); ?>
     <?php echo $this->getChildHtml('product_additional_data') ?>
 	
