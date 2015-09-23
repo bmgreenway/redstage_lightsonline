@@ -26,7 +26,7 @@
 	  </reference>
 	   <reference name="content">
 			<block type="carousel/carousel" name="carousel_carousel" template="carousel/carousel.phtml" />
-			<block name="lightfinder" type="core/template" template="catalog/product/lightfinder.phtml"/>
+			<block name="lightfinder" type="catalogsearch/advanced_form" template="catalog/product/lightfinder.phtml"/>
 			<block name="featuredcategory" type="core/template" template="catalog/category/featuredcategory.phtml"/>
 
 			 <block name="featuredbrandflexiblebox" type="shopbybrand/featuredbrand" template="shopbybrand/featuredbrandflexiblebox.phtml"/>
