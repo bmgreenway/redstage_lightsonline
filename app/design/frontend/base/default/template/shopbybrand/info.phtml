@@ -40,17 +40,6 @@
         <?php echo $brand->getName();?>
     </div>                                                                   
 </a>
-<!-- Edit by Son-->
-<div class="s_description">
-    <p>
-        <?php 
-            $helper = Mage::helper('cms');
-           $processor = $helper->getBlockTemplateProcessor();
-            $html=$processor->filter($brand->getShortDescription());
-            echo $html;
-        ?>
-    </p>
 </div>
-</div>
-<!-- Edit by Son-->
+
 <?php endif; endif; ?>

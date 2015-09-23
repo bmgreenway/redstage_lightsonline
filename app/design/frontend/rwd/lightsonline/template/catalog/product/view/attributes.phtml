@@ -19,40 +19,31 @@
  * needs please refer to http://www.magento.com for more information.
  *
  * @category    design
- * @package     rwd_default
+ * @package     base_default
  * @copyright Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
  * @license http://www.magento.com/license/enterprise-edition
  */
 
 /**
- * Shoping cart sidebar
+ * Product additional attributes template
  *
- * @see Mage_Checkout_Block_Cart_Sidebar
+ * @see Mage_Catalog_Block_Product_View_Attributes
  */
-
 ?>
-
 <?php
-    $_cartQty = $this->getSummaryCount();
-    if(empty($_cartQty)) {
-        $_cartQty = 0;
-    }
+    $_helper = $this->helper('catalog/output');
+    $_product = $this->getProduct()
 ?>
-<?php if($_cartQty > 0){?>
-<div class="account-cart-wrapper_m_item_in_cart">
-<?php } ?>
-<a href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>" data-target-element="#header-cart" class="skip-link skip-cart <?php if($_cartQty <= 0): ?> no-count<?php endif; ?>">
-   <?php if($_cartQty > 0){?>
-       <span class="label"><?php echo 'checkout'; ?></span>
-   <?php }else{ ?>
-    <span class="label"><?php echo 'My Cart'; ?></span>
-   <?php } ?>
-	<span class="count"><?php echo $_cartQty; ?></span>
-	<span class="cart_icon"></span>
-</a>
-<?php if($_cartQty > 0){?>
-</div>
-<?php } ?>
-<div id="header-cart" class="block block-cart skip-content">
-    <?php echo $this->getChildHtml('minicart_content');?>
-</div>
+<?php if($_additional = $this->getAdditionalData()): ?>
+    <h2><?php echo $this->__('Additional Information') ?></h2>
+    <ul class="data-table" id="product-attribute-specs-table">
+        <?php foreach ($_additional as $_data): ?>
+                <li class="additional_info_main">
+					<div class="additional_info_1"><?php echo $this->escapeHtml($this->__($_data['label'])) ?>:</div>
+					<div class="additional_info_2"><?php echo $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?></div>
+				</li>
+            
+        <?php endforeach; ?>
+	</ul>
+    <script type="text/javascript">decorateTable('product-attribute-specs-table')</script>
+<?php endif;?>

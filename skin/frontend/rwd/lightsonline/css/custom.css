@@ -1,0 +1,24 @@
+.highlight {
+       cursor: pointer !important;
+}
+.chat_icon {
+     cursor: pointer !important;
+}
+.button, .cart-table .product-cart-actions .button, #co-shipping-method-form .buttons-set .button, .footer .button {
+	margin-bottom:10px !important;
+}
+input [type="search"]:focux {
+	color:transparent !important;
+}
+.link_header_1  .asterisk{
+	color:#000 !important;
+}
+.flex-control-nav.flex-control-paging li a {
+    cursor: pointer !important;
+}
+.ca-item{
+	cursor:pointer !important;
+}
+.ca-nav span:hover{
+	cursor:pointer !important;
+}
