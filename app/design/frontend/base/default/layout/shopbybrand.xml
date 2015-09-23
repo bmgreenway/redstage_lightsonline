@@ -34,9 +34,9 @@
                 <stylesheet>css/shopbybrand/templates/default/shopbybrand-bootstrap.css</stylesheet>
             </action>
         </reference>
-        <reference name="left">
+        <!-- <reference name="left">
             <block type="shopbybrand/sidebar" name="shopbybrand_left" template="shopbybrand/sidebar.phtml" />
-        </reference>
+        </reference> -->
         <reference name="content">
             <block type="core/template" name="style_config" template="shopbybrand/styles.phtml"/>
         </reference>
