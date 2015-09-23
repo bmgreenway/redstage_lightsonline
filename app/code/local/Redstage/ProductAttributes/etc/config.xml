@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Redstage_ProductAttributes>
-            <version>1.0.4</version>
+            <version>1.0.5</version>
         </Redstage_ProductAttributes>
     </modules>
     <global>
