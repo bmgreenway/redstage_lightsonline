@@ -25,11 +25,12 @@
  */
 ?>
 <?php $_product = $this->getProduct(); ?>
-<div class="price-info">
+
+<div class="product-options-bottom">
+<div class="price-info_new">
 	<?php echo $this->getPriceHtml($_product); ?>
 	<?php echo $this->getChildHtml('bundle_prices') ?>
 	<?php echo $this->getTierPriceHtml() ?>
 </div>
-<div class="product-options-bottom">
     <?php echo $this->getChildHtml('', true, true);?>
 </div>
