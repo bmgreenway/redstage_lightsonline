@@ -10,7 +10,7 @@
 		{
             //$path = 'brands' . DS . $brand->getId();
             $path = 'brands' . DS . 'thumbnail'.DS.$brand->getId();
-            $imgSrc = Mage::helper('shopbybrand/image')->init($brand, $path)->resizeThumbnail(60, 40);
+            $imgSrc = Mage::helper('shopbybrand/image')->init($brand, $path)->resizeThumbnail(100, 100);
             ?>
                 <img  src="<?php echo $imgSrc;?>" title="<?php echo $brand->getName();?>"/>
             <?php

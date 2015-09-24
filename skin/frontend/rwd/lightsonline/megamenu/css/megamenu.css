@@ -44,7 +44,7 @@
     color: #808080;
     padding: 8.75px 15px;
     font-family: 'robotolight';
-    text-transform: uppercase;
+    text-transform: uppercase !important;
 }
 #ms-topmenu li:hover {
     border: 1px solid #CCC;
@@ -300,9 +300,6 @@ small.glyphicon.glyphicon-th-large{
     border-top: 0;
 }
 /*---- Fix for magento 1.9---*/
-#header-nav{display: block;}
-.skip-nav{display: none;}
-
 /* ----- Left Menu ---------*/
 .item_relative{position: relative;}
 .ms-leftmenu{

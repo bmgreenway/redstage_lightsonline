@@ -3,7 +3,7 @@
 	$_category  = $this->getCurrentCategory();
 	if($_description = $_category->getDescription()): ?>
    <div class="desktop-head-title"> 
-	<a class="show_hide_toggle magic_arrow_down" id="show_hide_toggle_cat_desc" href="javascript:void(0);" dataparam="category_description_std" >Show</a>	
+	<h3><?php echo  $_category->getMetaTitle(); ?></h3><a class="show_hide_toggle magic_arrow_down" id="show_hide_toggle_cat_desc" href="javascript:void(0);" dataparam="category_description_std" >Show</a>	
 		<div class="category-description std" id="category_description_std"> 
 			<?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
 		</div>
