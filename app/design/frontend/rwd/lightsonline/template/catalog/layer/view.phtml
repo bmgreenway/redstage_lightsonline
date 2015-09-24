@@ -33,13 +33,13 @@
 ?>
 <?php if($this->canShowBlock()): ?>
 <div class="block block-layered-nav<?php if (!$this->getLayer()->getState()->getFilters()): ?> block-layered-nav--no-filters<?php endif; ?>">
-    <div class="block-title">
-        <strong><span><?php echo $this->__('Shop By') ?></span></strong>
-    </div>
+	<!--<div class="block-title">
+        <strong><span><?php //echo $this->__('Shop By') ?></span></strong>
+    </div> --> 
     <div class="block-content toggle-content">
         <?php echo $this->getStateHtml() ?>
         <?php if($this->canShowOptions()): ?>
-            <p class="block-subtitle block-subtitle--filter"><?php echo $this->__('Filter') ?></p>
+             <p class="block-subtitle block-subtitle--filter"><?php echo $this->__('Refine Your Results') ?></p>
             <dl id="narrow-by-list">
                 <?php $_filters = $this->getFilters() ?>
                 <?php foreach ($_filters as $_filter): ?>
