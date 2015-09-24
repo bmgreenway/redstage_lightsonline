@@ -22,6 +22,7 @@ class VS_Ajax_WhishlistController extends Mage_Core_Controller_Front_Action
 				$sidebar_block->setTemplate('ajax/catalog/product/compare/sidebar.phtml');
 				$sidebar = $sidebar_block->toHtml();
 				$response['sidebar'] = $sidebar;
+				//$response['removeurl'] = $this->getBaseUrl().'ajax/whishlist/deletecompare';
 			}
 		}
 		$this->getResponse()->setBody(Mage::helper('core')->jsonEncode($response));
@@ -29,7 +30,33 @@ class VS_Ajax_WhishlistController extends Mage_Core_Controller_Front_Action
 	}
 
 
+	public function deletecompareAction()
+	{
+		$response = array();
 
+		if ($productId = (int) $this->getRequest()->getParam('product')) {
+			$product = Mage::getModel('catalog/product')
+			->setStoreId(Mage::app()->getStore()->getId())
+			->load($productId);
+
+			if ($product->getId()/* && !$product->isSuper()*/) {
+				Mage::getSingleton('catalog/product_compare_list')->removeProduct($product);
+				$response['status'] = 'SUCCESS';
+				$response['message'] = $this->__('The product %s has been removed from comparison list.', Mage::helper('core')->escapeHtml($product->getName()));
+				//Mage::register('referrer_url', $this->_getRefererUrl());
+				//Mage::helper('catalog/product_compare')->calculate();
+			//	Mage::dispatchEvent('catalog_product_compare_add_product', array('product'=>$product));
+				$this->loadLayout();
+				$sidebar_block = $this->getLayout()->getBlock('catalog.compare.sidebar');
+				$sidebar_block->setTemplate('ajax/catalog/product/compare/sidebar.phtml');
+				$sidebar = $sidebar_block->toHtml();
+				$response['sidebar'] = $sidebar;
+				//$response['removeurl'] = $this->getBaseUrl().'ajax/whishlist/deletecompare';
+			}
+		}
+		$this->getResponse()->setBody(Mage::helper('core')->jsonEncode($response));
+		return;
+	}
 	protected function _getWishlist()
 	{
 		$wishlist = Mage::registry('wishlist');

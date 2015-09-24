@@ -9,7 +9,7 @@ function ajaxCompare(url,id){
 		alert('else');
 	}*/
 	
-	
+	var saveurl=url;
 	
 	url = url.replace("catalog/product_compare/add","ajax/whishlist/compare");
 	url += 'isAjax/1/';
@@ -22,7 +22,46 @@ function ajaxCompare(url,id){
 			if(data.status == 'ERROR'){
 				alert(data.message);
 			}else{
+				jQuery("#ajaxCompare-"+id).addClass("active");
+			jQuery("#ajaxCompare-"+id).attr("onclick", "ajaxdelete('"+saveurl+"',"+id+")");
+				if(jQuery('.block-compare').length){
+                    jQuery('.block-compare').replaceWith(data.sidebar);
+                }else{
+                    if(jQuery('.col-right').length){
+                    	jQuery('.col-right').prepend(data.sidebar);
+                    }
+                }
+			}
+		}
+	});
+}
+function ajaxdelete(url,id){
+	
+	//check if checkbox checked
+	/*if(jQuery(this).prop('checked') == true){
+		alert('rer');
+			jQuery(this).prop('checked', true); 
+	}else
+	{
+		alert('else');
+	}*/
+	
+	
+	var saveurl=url;
+	url = url.replace("catalog/product_compare/add","ajax/whishlist/deletecompare");
+	url += 'isAjax/1/';
+	jQuery('#ajax_loading'+id).show();
+	jQuery.ajax( {
+		url : url,
+		dataType : 'json',
+		success : function(data) {
+			jQuery('#ajax_loading'+id).hide();
+			if(data.status == 'ERROR'){
 				alert(data.message);
+			}else{
+				alert(data.message);
+				jQuery("#ajaxCompare-"+id).removeClass("active");
+			jQuery("#ajaxCompare-"+id).attr('onclick', 'ajaxCompare("'+saveurl+'",'+id+')');
 				if(jQuery('.block-compare').length){
                     jQuery('.block-compare').replaceWith(data.sidebar);
                 }else{
