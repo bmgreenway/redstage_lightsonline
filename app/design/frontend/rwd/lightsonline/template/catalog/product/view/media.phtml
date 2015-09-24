@@ -74,11 +74,12 @@
     <?php $i++; endforeach; ?>
     </div>
 </div> 
+<?php if ($i > 5) : ?>
 <div class="customNavigation">
   <a class="btn prev"></a>
   <a class="btn next"></a>
 </div>
-
+<?php endif;?>
 
 <?php endif; ?>
 
@@ -114,5 +115,6 @@
 		  jQuery(".prev").click(function(){
 			owl.trigger('owl.prev');
 		  })  
+		  
 	});
 </script>
