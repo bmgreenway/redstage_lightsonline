@@ -55,19 +55,48 @@
 
             <div class="product-shop">
                 <div class="product-name">
-                    <span class="h1"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span>
-					<span class="h3">SKU# <?php echo $_helper->productAttribute($_product, $_product->getSku(), 'name') ?></span>
+                    <div class="h1"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></div>
+					<div class="h3">SKU# <?php echo $_helper->productAttribute($_product, $_product->getSku(), 'name') ?></div>
                 </div>
-				
-				<?php echo $this->getLayout()
-					->createBlock('ambanners/container')
-					->setTemplate('ambanners/container.phtml')
-					->setPosition(3)
-					->toHtml(); ?>               
+				<div class="some_extra_offer">
+					<?php echo $this->getLayout()
+						->createBlock('ambanners/container')
+						->setTemplate('ambanners/container.phtml')
+						->setPosition(3)
+						->toHtml(); ?>    
+									
+				</div>				
+				<div class="add-to-cart-wrapper simple_wrapper_with_no_com">
+					<?php echo $this->getChildHtml('product_type_data') ?>
+					<?php echo $this->getChildHtml('extrahint') ?>
 
-                <div class="extra-info">
-                    <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
-                </div>
+					<?php if (!$this->hasOptions()):?>
+						<div class="price-info_new">
+							<?php echo $this->getPriceHtml($_product); ?>
+							<?php echo $this->getChildHtml('bundle_prices') ?>
+							<?php echo $this->getTierPriceHtml() ?>
+						</div>
+						<div class="add-to-box">
+							<?php if($_product->isSaleable()): ?>
+								<?php echo $this->getChildHtml('addtocart') ?>
+								<?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
+									<span class="or"><?php echo $this->__('OR') ?></span>
+								<?php endif; ?>
+							<?php endif; ?>
+							<?php echo $this->getChildHtml('addto') ?>
+							<?php echo $this->getChildHtml('sharing') ?>
+						</div>						
+					<?php echo $this->getChildHtml('extra_buttons') ?>
+					<?php elseif (!$_product->isSaleable()): ?>
+						<div class="add-to-box">
+							<?php echo $this->getChildHtml('addto') ?>
+							<?php echo $this->getChildHtml('sharing') ?>
+						</div>
+					<?php endif; ?>
+				</div>
+                
+                <?php //echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
+                
 
                 <?php echo $this->getChildHtml('alert_urls') ?>
 				
@@ -79,10 +108,15 @@
 				<?php if ($_product->isSaleable() && $this->hasOptions()):?>
 					<?php echo $this->getChildChildHtml('container2', '', true, true) ?>
 				<?php endif;?>
+				<div class="free-shipping_avalilablty">
 				<div class="free-shipping-block">
 					<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('product_free_shipping')->toHtml(); ?>
 				</div>
-				<?php echo $this->getChildHtml('product_type_availability'); ?>
+				<div class="product_type_availability">
+				<?php echo $this->getChildHtml('product_type_availability'); ?>	
+				</div>
+				</div>
+				
 				<div class="social_sharing">
 					<span class='st_facebook'></span>
 					<span class='st_twitter'></span>
@@ -97,49 +131,43 @@
 				<?php $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>
 				
 				<?php if ($this->helper('wishlist')->isAllow()) : ?>
-					<li><a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, this.href); return false;" class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
+					<li><a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, this.href); return false;" class="link-wishlist"><?php echo $this->__('+ Add to Wishlist') ?></a></li>
 				<?php endif; ?>
 				</div>
-				<div class="product-collateral toggle-content tabs">
-					<?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
-						<dl id="collateral-tabs" class="collateral-tabs">
-							<?php foreach ($detailedInfoGroup as $alias => $html):?>
-								<dt class="tab"><span><?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?></span></dt>
-								<dd class="tab-container">
-									<div class="tab-content"><?php echo $html ?></div>
-								</dd>
-							<?php endforeach;?>
-								<dt class="tab"><span>Energy Guide</span></dt>
-								<dd class="tab-container">
-									<div class="tab-content"><?php echo $_product->getDescription(); ?></div>
-								</dd>
-						</dl>
-					<?php endif; ?>
+				<div class="product_qa">
+					<?php 
+						$collection = Mage::getResourceModel('aw_pq2/question_collection');
+						$collection
+							->addFilterByProduct($_product)
+							->addShowInStoresFilter(Mage::app()->getStore()->getId())
+							->addPublicFilter()
+							->addApprovedStatusFilter()
+							->addCreatedAtLessThanNowFilter()
+						;
+					?>
+					<a href="#product_qa">Question and Answers (<?php echo $collection->getSize(); ?>)</a>
 				</div>
-            </div>			
-            <div class="add-to-cart-wrapper">
-                <?php echo $this->getChildHtml('product_type_data') ?>
-                <?php echo $this->getChildHtml('extrahint') ?>
-
-                <?php if (!$this->hasOptions()):?>
-                    <div class="add-to-box">
-                        <?php if($_product->isSaleable()): ?>
-                            <?php echo $this->getChildHtml('addtocart') ?>
-                            <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
-                                <span class="or"><?php echo $this->__('OR') ?></span>
-                            <?php endif; ?>
-                        <?php endif; ?>
-                        <?php echo $this->getChildHtml('addto') ?>
-                        <?php echo $this->getChildHtml('sharing') ?>
-                    </div>
-                    <?php echo $this->getChildHtml('extra_buttons') ?>
-                <?php elseif (!$_product->isSaleable()): ?>
-                    <div class="add-to-box">
-                        <?php echo $this->getChildHtml('addto') ?>
-                        <?php echo $this->getChildHtml('sharing') ?>
-                    </div>
-                <?php endif; ?>
-            </div>
+				
+            </div>	
+			<div class="product-collateral toggle-content tabs">
+				<?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
+					<dl id="collateral-tabs" class="collateral-tabs">
+						<?php foreach ($detailedInfoGroup as $alias => $html):?>
+							<dt class="tab"><span><?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?></span></dt>
+							<dd class="tab-container">
+								<div class="tab-content"><?php echo $html ?></div>
+							</dd>
+						<?php endforeach;?>
+						<?php if ($_product->getMarkAsEnergyStar()) : ?>
+							<dt class="tab"><span id="energy_guide">Energy Guide</span></dt>
+							<dd class="tab-container">
+								<div class="tab-content"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($_product->getEnergyGuideIdentifier())->toHtml(); ?></div>
+							</dd>
+							<?php endif; ?>
+					</dl>
+				<?php endif; ?>
+			</div>			
+            
 			<div class="product-spec">
 				<?php echo $this->getLayout()->createBlock('catalog/product_view_attributes')->setTemplate('catalog/product/view/attributes.phtml')->toHtml(); ?>
 			</div>

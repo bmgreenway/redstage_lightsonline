@@ -27,7 +27,7 @@
 <?php /* @var $this AW_Pquestion2_Block_Question_List */ ?>
 <?php if ($this->canShow()) : ?>
 <?php $questionCollection = $this->getQuestionCollection(); ?>
-<div class="box-collateral aw-pq2-question-list-wrapper">
+<div class="box-collateral aw-pq2-question-list-wrapper" id="product_qa">
     <div class="aw-pq2-question-title box-title">
         <?php if ($this->canAskQuestion()) : ?>
             <button type="button" class="button aw-pq2-list__add-question-button aw-pq2-list__button_position_right" title="<?php echo $this->__('Ask Question'); ?>" ><span><span><?php echo $this->__('Ask Question'); ?></span></span></button>
