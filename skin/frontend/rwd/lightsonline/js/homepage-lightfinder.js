@@ -83,6 +83,132 @@ jQuery( ".reset" ).click(function() {
 			 
 			}
 		//============================
+		//===========================\
+		//budget
+			if(document.getElementById("budget"))
+			{
+			var budget = document.getElementById("budget");
+			 var budgetval = budget.options[budget.selectedIndex].value;
+			 if(budgetval!='') {
+			 	validatedrop=1;
+			 	 budgetval = budgetval.split("-");
+			 	if(catalogsearchUrl.indexOf("?") == -1)
+			 	{
+			 		catalogsearchUrl=catalogsearchUrl+'?price[from]='+budgetval[0]+'&price[to]='+budgetval[1];
+			 	}
+			 	else
+			 	{
+			 		catalogsearchUrl=catalogsearchUrl+'&price[from]='+budgetval[0]+'&price[to]='+budgetval[1];
+			 	}
+			 }
+			 
+			}
+		//============================
+		if(validatedrop==0)
+		{
+			alert("Please select at least one option.");
+			return false;
+		}else{
+			window.location.href=catalogsearchUrl;
+		}
+		
+	}
+function sumitlightfinderMobile(catalogsearchUrl)
+	{
+		// room  type_of_bulbs  finish  style
+		var indicator=0;
+		var validatedrop=0;
+		// Room
+			if(document.getElementById("room-mobile"))
+			{
+			var room = document.getElementById("room-mobile");
+			 var roomval = room.options[room.selectedIndex].value;
+			 if(roomval!='') {
+			 	validatedrop=1;
+			 	catalogsearchUrl=catalogsearchUrl+'?room='+roomval;
+			 }
+			 
+			}
+		//---------------------------\
+		//Type
+			if(document.getElementById("type-mobile")){
+			var type = document.getElementById("type-mobile");
+			 var typeval = type.options[type.selectedIndex].value;
+			 if(typeval!='') {
+			 	validatedrop=1;
+			 	
+			 	if(catalogsearchUrl.indexOf("?") == -1)
+			 	{
+			 		catalogsearchUrl=catalogsearchUrl+'?type_of_bulbs='+typeval;
+			 	}
+			 	else
+			 	{
+			 		catalogsearchUrl=catalogsearchUrl+'&type_of_bulbs='+typeval;
+			 	}
+			 }
+			
+			}
+		//==============================\	
+		// finish
+
+			if(document.getElementById("finish-mobile"))
+			{
+			var finish = document.getElementById("finish-mobile");
+			 var finishval = finish.options[finish.selectedIndex].value;
+			 if(finishval!='') {
+			 	validatedrop=1;
+			 	if(catalogsearchUrl.indexOf("?") == -1)
+			 	{
+			 		catalogsearchUrl=catalogsearchUrl+'?finish='+finishval;
+			 	}
+			 	else
+			 	{
+			 		catalogsearchUrl=catalogsearchUrl+'&finish='+finishval;
+			 	}
+			 }
+			
+			}
+		//===========================\
+		//style
+			if(document.getElementById("style-mobile"))
+			{
+			var style = document.getElementById("style-mobile");
+			 var styleval = style.options[style.selectedIndex].value;
+			 if(styleval!='') {
+			 	validatedrop=1;
+			 	if(catalogsearchUrl.indexOf("?") == -1)
+			 	{
+			 		catalogsearchUrl=catalogsearchUrl+'?style='+styleval;
+			 	}
+			 	else
+			 	{
+			 		catalogsearchUrl=catalogsearchUrl+'&style='+styleval;
+			 	}
+			 }
+			 
+			}
+		//============================
+		//===========================\
+		//budget
+			if(document.getElementById("budget-mobile"))
+			{
+			var budget = document.getElementById("budget-mobile");
+			 var budgetval = budget.options[budget.selectedIndex].value;
+			 if(budgetval!='') {
+			 	validatedrop=1;
+			 	 budgetval = budgetval.split("-");
+			 	if(catalogsearchUrl.indexOf("?") == -1)
+			 	{
+			 		catalogsearchUrl=catalogsearchUrl+'?price[from]='+budgetval[0]+'&price[to]='+budgetval[1];
+			 	}
+			 	else
+			 	{
+			 		catalogsearchUrl=catalogsearchUrl+'&price[from]='+budgetval[0]+'&price[to]='+budgetval[1];
+			 	}
+			 }
+			 
+			}
+		//============================
 		if(validatedrop==0)
 		{
 			alert("Please select at least one option.");
