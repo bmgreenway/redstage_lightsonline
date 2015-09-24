@@ -20,10 +20,12 @@ function ajaxCompare(url,id){
 		success : function(data) {
 			jQuery('#ajax_loading'+id).hide();
 			if(data.status == 'ERROR'){
-				alert(data.message);
+				jQuery('#ajax-response-compare .message').html(data.message);
 			}else{
 				jQuery("#ajaxCompare-"+id).addClass("active");
-			jQuery("#ajaxCompare-"+id).attr("onclick", "ajaxdelete('"+saveurl+"',"+id+")");
+				jQuery("#ajaxCompare-"+id).attr("onclick", "ajaxdelete('"+saveurl+"',"+id+")");
+				jQuery('#ajax-response-compare .message').html(data.message);
+				showMessage();
 				if(jQuery('.block-compare').length){
                     jQuery('.block-compare').replaceWith(data.sidebar);
                 }else{
@@ -57,11 +59,12 @@ function ajaxdelete(url,id){
 		success : function(data) {
 			jQuery('#ajax_loading'+id).hide();
 			if(data.status == 'ERROR'){
-				alert(data.message);
+				jQuery('#ajax-response-compare .message').html(data.message);
 			}else{
-				alert(data.message);
+				jQuery('#ajax-response-compare .message').html(data.message);
+				showMessage();
 				jQuery("#ajaxCompare-"+id).removeClass("active");
-			jQuery("#ajaxCompare-"+id).attr('onclick', 'ajaxCompare("'+saveurl+'",'+id+')');
+				jQuery("#ajaxCompare-"+id).attr('onclick', 'ajaxCompare("'+saveurl+'",'+id+')');
 				if(jQuery('.block-compare').length){
                     jQuery('.block-compare').replaceWith(data.sidebar);
                 }else{
@@ -97,3 +100,16 @@ function ajaxWishlist(url,id){
 		}
 	});
 }
+
+
+function showMessage()
+{
+	jQuery(".overlay_image").fadeIn(1000);
+	jQuery("#ajax-response-compare").fadeIn(1000);	
+}
+jQuery(document).ready(function(){
+	jQuery('.close_ajax').click(function(){
+	jQuery(".overlay_image").fadeOut(1000);
+	jQuery("#ajax-response-compare").fadeOut(1000);
+});
+});

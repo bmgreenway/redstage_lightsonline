@@ -114,6 +114,7 @@
 				</div>
 				
 				<div class="social_sharing">
+					<span class="share_label">Share: </span>
 					<span class='st_facebook'></span>
 					<span class='st_twitter'></span>
 					<span class='st_pinterest'></span>
@@ -143,9 +144,7 @@
 					?>
 					<a href="#product_qa">Question and Answers (<?php echo $collection->getSize(); ?>)</a>
 				</div>
-				
-            </div>	
-			<div class="product-collateral toggle-content tabs">
+				<div class="product-collateral toggle-content tabs">
 				<?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
 					<dl id="collateral-tabs" class="collateral-tabs">
 						<?php foreach ($detailedInfoGroup as $alias => $html):?>
@@ -157,7 +156,26 @@
 						<?php if ($_product->getMarkAsEnergyStar()) : ?>
 							<dt class="tab"><span id="energy_guide">Energy Guide</span></dt>
 							<dd class="tab-container">
-								<div class="tab-content"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($_product->getEnergyGuideIdentifier())->toHtml(); ?></div>
+								<div class="tab-content"><?php echo $_product->getEnergyGuideIdentifier(); ?></div>
+							</dd>
+							<?php endif; ?>
+					</dl>
+				<?php endif; ?>
+				</div>	
+            </div>	
+			<div class="product-collateral toggle-content tabs mobile-only">
+				<?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
+					<dl id="collateral-tabs" class="collateral-tabs">
+						<?php foreach ($detailedInfoGroup as $alias => $html):?>
+							<dt class="tab"><span><?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?></span></dt>
+							<dd class="tab-container">
+								<div class="tab-content"><?php echo $html ?></div>
+							</dd>
+						<?php endforeach;?>
+						<?php if ($_product->getMarkAsEnergyStar()) : ?>
+							<dt class="tab"><span id="energy_guide">Energy Guide</span></dt>
+							<dd class="tab-container">
+								<div class="tab-content"><?php echo $_product->getEnergyGuideIdentifier(); ?></div>
 							</dd>
 							<?php endif; ?>
 					</dl>
@@ -233,12 +251,19 @@
 	if($optionId){
 		$brand->load($optionId, 'option_id');
 		$brand->setStoreId($this->getStoreId())->load($brand->getId());
+		$path = 'brands' . DS . 'thumbnail'.DS.$brand->getId();
 	}
     if($brand->getStatus()==1) : ?>
 		<div class="about_manufacturer_main">
+		<a class="ultimate_toggle magic_arrow_down" id="show_hide_toggle" href="javascript:void(0);" dataparam="brand_data">Show</a>
 		<div class="about_manufacturer_title">About This Manufacturer</div>
-			<div class="about_manufacturer_desc">
-				<?php echo $brand->getDescription(); ?>
+			<div id="brand_data">
+				<div class="brand_image">				
+					<img src="<?php echo Mage::helper('shopbybrand/image')->init($brand, $path)->resizeThumbnail(100, 100); ?>" />
+				</div>
+				<div class="about_manufacturer_desc">
+					<?php echo $brand->getDescription(); ?>
+				</div>
 			</div>
 		</div>
 	<?php endif; ?>
