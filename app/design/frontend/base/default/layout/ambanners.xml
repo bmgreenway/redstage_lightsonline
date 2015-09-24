@@ -30,9 +30,8 @@
     </default>
 
     <cms_index_index>
-        <reference name="content">
-            <block before="main" type="ambanners/container" name="ambanners.category"
-                   template="ambanners/container.phtml">
+        <reference name="header">
+            <block type="ambanners/container" name="ambanners.category" template="ambanners/container.phtml">
                 <action method="setPosition">
                     <position>11</position>
                 </action>
