@@ -5,8 +5,7 @@
             <action method="addItem"><type>skin_js</type><name>js/homepage-banner-carousel/jquery-1.10.1.min.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/homepage-banner-carousel/jquerynoconflict.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/homepage-banner-carousel/jquery.flexslider.js</name></action>
-            <action method="addItem"><type>skin_js</type><name>js/homepage-banner-carousel/common-scripts.js</name></action>
-			<action method="addItem"><type>skin_js</type><name>js/mobile-toggle-effect.js</name></action>        
+            <action method="addItem"><type>skin_js</type><name>js/homepage-banner-carousel/common-scripts.js</name></action>      
 		</reference>
     </cms_index_index>
 </layout>

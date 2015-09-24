@@ -59,13 +59,9 @@
 					<div class="h3">SKU# <?php echo $_helper->productAttribute($_product, $_product->getSku(), 'name') ?></div>
                 </div>
 				<div class="some_extra_offer">
-					<?php echo $this->getLayout()
-						->createBlock('ambanners/container')
-						->setTemplate('ambanners/container.phtml')
-						->setPosition(3)
-						->toHtml(); ?>    
-									
-				</div>				
+					<?php echo Mage::helper('onsale')->getProductLabelHtml($_product); ?>									
+				</div>		
+				<?php echo $this->getChildHtml('alert_urls') ?>				
 				<div class="add-to-cart-wrapper simple_wrapper_with_no_com">
 					<?php echo $this->getChildHtml('product_type_data') ?>
 					<?php echo $this->getChildHtml('extrahint') ?>
@@ -98,7 +94,7 @@
                 <?php //echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
                 
 
-                <?php echo $this->getChildHtml('alert_urls') ?>
+               
 				
                 <?php echo $this->getChildHtml('other');?>
 

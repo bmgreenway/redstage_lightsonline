@@ -37,6 +37,9 @@ div.block-layered-nav dd a img {/* padding: 0px 4px 5px;*/ float:left;}
 #narrow-by-list dd {
     margin-top: 4px;
 }
+#narrow-by-list dt:first-child{
+    padding: 0px 0 10px 0;
+}
 #narrow-by-list dt {
     color: #333;
     padding: 35px 0 10px 0;
