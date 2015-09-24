@@ -26,7 +26,9 @@
 ?>
 <div id="aw-onestepcheckout-title">
     <h1><?php echo $this->getTitle();?></h1>
+     <?php if(!$this->isCustomerLoggedIn()): ?>
     <p id="aw-onestepcheckout-title-description"><?php //echo $this->getDescription();?> Already registered? <a href="javascript:void(0);"  id="login-chkout">Login here</a></p>
+     <?php endif; ?>
 </div>
 <script type="text/javascript">
    jQuery("#login-chkout").click(function(){
