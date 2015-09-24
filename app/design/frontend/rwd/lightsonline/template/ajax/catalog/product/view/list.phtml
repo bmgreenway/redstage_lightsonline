@@ -13,30 +13,18 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
     </div>
 	<?php endif; ?>
     <div class="block-content">
-    <?php if($_helper->getItemCount() > 0): ?>
+    <?php if($_helper->getItemCount() > 0):
+        $itemInCompareArray=array();
+        $i=0;
+     ?>
         <ol id="compare-items">
-        <?php foreach($_items as $_index => $_item): ?>
+        <?php foreach($_items as $_index => $_item): 
+                    $itemInCompareArray[$i]=$_item->getId();
+                     $_compareUrl=$this->getAddToCompareUrl($_item);
+        ?>
             <li class="item">
                 <input type="hidden" class="compare-item-id" value="<?php echo $_item->getId() ?>" />
-                <a href="<?php 
-			        $params = $this->getRequest()->getParams();
-					if($params['isAjax'] == 1){
-						$refererUrl = Mage::registry('referrer_url');
-				        if (empty($refererUrl)) {
-				            $refererUrl = Mage::getBaseUrl();
-				        }
-						$deleteUrl = $this->getUrl(
-				            'catalog/product_compare/remove',
-				            array(
-				                'product'=>$_item->getId(),
-				                Mage_Core_Controller_Front_Action::PARAM_NAME_URL_ENCODED => $this->helper('core/url')->getEncodedUrl($refererUrl)
-				            )
-				        );
-					}else{
-		        		$deleteUrl = $_helper->getRemoveUrl($_item);
-					}
-		        	echo $deleteUrl; 
-        		?>" title="<?php echo $this->__('Remove This Item') ?>" class="btn-remove" onclick="return confirm('<?php echo $this->__('Are you sure you would like to remove this item from the compare products?') ?>');"><?php echo $this->__('Remove This Item') ?></a>
+                <a style="cursor: pointer;" title="<?php echo $this->__('Remove This Item') ?>" class="btn-remove" onclick='ajaxdelete("<?php echo $_compareUrl ?>","<?php echo $_item->getId()?>");return false;'><?php echo $this->__('Remove This Item') ?></a>
                 <p class="product-name"><a href="<?php echo $this->getProductUrl($_item) ?>"><?php echo $this->helper('catalog/output')->productAttribute($_item, $_item->getName(), 'name') ?></a></p>
             </li>
         <?php endforeach; ?>
@@ -139,7 +127,7 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
                             <li><a href="#" onclick='ajaxWishlist("<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>","<?php echo $_product->getId()?>");return false;' class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
                         <?php endif; ?>
                         <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
-                            <li><span class="separator">|</span> <a href="#" onclick='ajaxCompare("<?php echo $_compareUrl ?>","<?php echo $_product->getId()?>");return false;' class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+                            <li><span class="separator">|</span> <a style="cursor:pointer;" href="#" onclick='ajaxCompare("<?php echo $_compareUrl ?>","<?php echo $_product->getId()?>");return false;' class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
                         <?php endif; ?>
                     </ul>
                     <span id='ajax_loading<?php echo $_product->getId()?>' class="ajax_loading_style" style='display:none'><img src='<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif')?>'/></span>
@@ -220,7 +208,7 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
 					 <ul class="add-to-links comp_wl_product_list">
 						<?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
                             <li class="comp_product_list">
-							<input type="checkbox" name="add_to_comepare_chk" value="<?php echo $this->__('Add to Compare') ?>"  class="link-compare" />Compare ›<a onclick='ajaxCompare("<?php echo $_compareUrl ?>","<?php echo $_product->getId()?>");return false;' title=""></a><span class="separator">|</span>
+							<input  type="checkbox" name="add_to_comepare_chk" value="<?php echo $this->__('Add to Compare') ?>"  class="link-compare" />Compare ›<a id="ajaxCompare-<?php echo $_product->getId()?>" <?php if(in_array($_product->getId() , $itemInCompareArray)){ ?> onclick='ajaxdelete("<?php echo $_compareUrl ?>","<?php echo $_product->getId()?>");return false;' class="active" <?php }else{ ?> onclick='ajaxCompare("<?php echo $_compareUrl ?>","<?php echo $_product->getId()?>");return false;' <?php } ?>  title=""></a><span class="separator">|</span>
 							<!-- <a href="#" onclick='ajaxCompare("<?php //echo $_compareUrl ?>","<?php //echo $_product->getId()?>");return false;' class="link-compare"><?php //echo $this->__('Add to Compare') ?></a></li> -->
                         <?php endif; ?>
                         <?php if ($this->helper('wishlist')->isAllow()) : ?>
