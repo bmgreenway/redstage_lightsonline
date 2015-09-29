@@ -6,6 +6,11 @@
         </Redstage_ProductAttributes>
     </modules>
     <global>
+        <helpers>
+            <redstage_productattributes>
+                <class>Redstage_ProductAttributes_Helper</class>
+            </redstage_productattributes>
+        </helpers>
         <resources>
             <redstage_productattributes_setup>
                 <setup>
@@ -25,4 +30,28 @@
             </redstage_productattributes_read>
         </resources>
     </global>
+    <adminhtml>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <productattrib>
+                                        <title>Energy Guide - All</title>
+                                    </productattrib>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</adminhtml>
 </config>
