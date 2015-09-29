@@ -1596,7 +1596,7 @@ button.button.search-button span >span {display:none;}
 .footer .ftmenu li:first-child {border:none; margin-left:0; padding-left:0}
 .footer .ftmenu li a {color:#333}
 
-@media only screen and (max-width:1199px) {.footer .links {width: 31.491712707182323%; *width: 31.43852121782062%; padding-right:0}
+@media only screen and (max-width:1199px) {.footer .links {width: 31.491712707182323% !important; *width: 31.43852121782062% !important; padding-right:0}
 .footer .links:nth-child(4) {margin-right:0;}
 
 }
@@ -3242,7 +3242,7 @@ body.review-product-list .product-view .product-shop .extra-info .ratings-table 
 /* ============================================ *
  * Search - Auto Suggest
  * ============================================ */
-.search-autocomplete {left:0 !important; overflow:visible !important; position:relative !important; top:15px !important; width:100% !important; z-index:200;}
+.search-autocomplete {left: 0 !important; overflow: visible !important; position: relative !important; top: -19px !important; width: 100% !important; z-index: 99999999;}
 .search-autocomplete ul {-webkit-border-radius:2px; -moz-border-radius:2px; -ms-border-radius:2px; -o-border-radius:2px; border-radius:2px; background-color:#FFFFFF; border:1px solid #1d80a9; left:0; padding-left:0; position:absolute; top:0; width:100%;}
 .search-autocomplete ul li {border-bottom:1px solid #f4f4f4; color:#1d80a9; cursor:pointer; font-size:12px; padding:4px 6px; text-align:left;}
 .search-autocomplete ul li:hover {color:#2e8ab8;}
@@ -3544,25 +3544,24 @@ body[class*="checkout-multishipping-"] .col-1.col-narrow, body[class*="checkout-
 div.calendar table {border-collapse:separate;}
 div.calendar table td.button {display:table-cell; background:inherit; color:inherit; text-transform:none;}
 /* header edits */
-
-.chat_icon {background:url('../images/chat_icon.png'); height:20px; width:20px; float:right; background-size:cover; margin:3px 3px;}
-.header_top_right_links, .chat_live {display:inline-block; padding:4px 6px 4px 0px;}
+a.discount_an {color: #FFF;}
+.chat_icon {background:url('../images/chat_icon.png'); height:20px; width:20px; float:right; background-size:cover; margin:3px 3px;cursor:pointer;}
+.header_top_right_links{}
+.header_top_right_links, .chat_live {float:left; padding:4px 6px 4px 0px;}
 .header_section_one {width:37%; float:left;}
 .header_section_two {width:34%; float:left; text-align:center;}
 .header_section_three {width:29%; float:left; top:52px; position:relative;}
+
 .ambanners img {width:100%;}
 span.qustion_link {font-family:'robotolight'; font-size:13px; color:#666;}
 span.tel_link {font-size:13px; color:#666; font-family:'robotolight'; margin:0 0 0 3px;}
 span.chat_link_a {font-size:13px; color:#666; font-family:'robotolight';}
-.highlight {font-family:'robotomedium'; font-size:13px;color: #1d80a9;}
+.highlight {font-family:'robotomedium'; font-size:13px;color: #1d80a9;cursor:pointer;}
 .account-cart-wrapper a {font-family:'source_sans_proregular'; font-size:13px; color:#666; padding:0 11px; line-height:34px;}
-.cart_icon_addtocart {
-    background: url('../images/cart_icon_addtocart.png');
-    float: left;
-    height: 20px;
-    width: 23px;
-    margin: 8px 20px 8px 0px;
-}
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+.cart_icon_addtocart {background: url('../images/cart_icon_addtocart.png');float: left;height: 20px;width: 23px;margin: 8px 20px 8px 0px;}
+.link_header_1 .asterisk {color: #4d4d4d;}
 .cart_icon {background:url('../images/cart_icon.png'); float:right; height:20px; width:23px; margin:6px 0;}
 .link_header_1 {font-size:15px; font-family:'source_sans_proitalic'; color:#1d80a9; text-transform:uppercase; line-height:26px;}
 .header_section_one {padding:12px 0;}
@@ -3737,13 +3736,14 @@ input#reset {
     color: #808080;
     font-size: 12px;
     background-image: url('../images/drop_down_arrow1.png');
-    background-position: center right 0px;
+    background-position: center right;
     background-repeat: no-repeat;
     -webkit-appearance: none;
     height: 30px;
     -moz-appearance: none;
     border: 2px solid #c3c3c3;
     border-right: 1px solid #c3c3c3;
+	padding:0 5px;
 }
 .owl-item .item a img {
     margin: 0 auto;
@@ -3882,6 +3882,7 @@ display:none;
 .see_all_codes {
     border-bottom: 1px solid #b5d3df;
     display: inline-block;
+	cursor:pointer;
 }
 .see_all_codes_icon {
   background: url('../images/discount_arrow_con.png');
@@ -4583,7 +4584,9 @@ border:none;
     top: -15px;
  cursor: pointer;
 }
-
+.wrapper_inner_add .list1 li a {
+    text-decoration: underline;
+}
 /* end for desktop */
 
 @media only screen and (max-width:736px) {
@@ -5099,6 +5102,34 @@ display:none;
 }
 /* mobile */
 @media only screen and (max-width: 736px){
+#header-nav #nav {
+    margin: -33px auto;
+    max-width: 980px;
+    width: 95%;
+    background-color: #FFF;
+    position: relative;
+}
+.joinemail .email{
+display:none;
+}
+.block.block-subscribe {
+    width: 100% !important;
+}
+.footer .block-subscribe .input-box {
+    float: left;
+    width: 82%;
+    padding-top: 0;
+    min-width: auto;
+}
+form#newsletter-validate-detail {
+    float: right;
+    width: 100%;
+}
+.account-cart-wrapper_m a {
+    font-size: 13px;
+    color: #666;
+    font-family: 'source_sans_prolight';
+}
 li.level0 {
     border: 1px solid #f3f3f3;
 }
@@ -5525,6 +5556,20 @@ a.skip-link.skip-search {
 	display: block;
 	background-repeat: no-repeat;
 }
+.skip-link.skip-active {
+    background: #FFFFFF !important;
+    color: inherit;
+    padding: 7px 9px 0px 9px;
+    z-index: 99;
+    border-left: 1px solid #ccc !important;
+    margin: -8px -10px 0 0px;
+    border-right: 1px solid #ccc !important;
+    border-top: 1px solid #ccc !important;
+    border-bottom: 1px solid #FFF !important;
+}
+.skip-link.skip-active .label {
+    color: #999999;
+}
 .skip-link.skip-active .search_menu_icon {
     background: url('../images/search_menu_icon_active.png');
     height: 27px;
@@ -5624,7 +5669,7 @@ a.skip-link.skip-cart .label {
 }
 .account-cart-wrapper_m{
     float: right;
-    width: 30%;
+   /* width: 30%;*/
     text-align: right;
     display: block;
     padding: 7px 0;

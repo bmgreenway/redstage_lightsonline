@@ -1,0 +1,56 @@
+#aw-onestepcheckout-title-description::after {
+	 border-width: 11px;
+}
+.aw-onestepcheckout-general-form-field.aw-onestepcheckout-general-form-field-right .input-box select {
+    width: 135px;
+}
+.form-list .control input.checkbox{
+	margin-left:0;
+}
+#aw-onestepcheckout-address .form-list .control label {
+    padding-left: 20px;
+}
+.shipping_address_main {
+    margin: 0;
+}
+#aw-onestepcheckout-shipping-address-list {
+    padding: 20px;
+}
+.sp-methods dt {
+    margin: 13px 0 5px;
+    font-family: "robotoregular";
+    font-size: 13px;
+    color: #4999ba;
+    font-weight: normal;
+}
+.sp-methods .price {
+    font-weight: normal;
+}
+.checkbox, .radio {
+	top:0;
+}
+#allow_gift_options {
+    margin-top: 2px;
+}
+.aw-onestepcheckout-overlay-48 {
+	left:0;
+}
+.inner-box input {
+    margin-left: 2px;
+}
+.sp-methods dt input.radio{
+	margin-left:0;
+}
+.sp-methods dt label {
+    padding-left: 25px;
+}
+.sp-methods label a {
+    float: left;
+    margin-left: 10px;
+}
+.aw-onestepcheckout-cart-table {
+      margin-top: 10px;
+}
+.input-box .v-fix {
+     margin-right: 0px;
+ }

@@ -34,7 +34,7 @@
 ?>
 <?php
     $_product = $this->getProduct();
-    $_helper = $this->helper('catalog/output');
+    $_helper = $this->helper('catalog/output');	
 ?>
 <div class="product-image product-image-zoom">
     <div class="product-image-gallery">
@@ -55,7 +55,14 @@
     </div>
 	<?php if ($_product->getMarkAsEnergyStar()) : ?>
 	<div class="energy_guide">
-		<img src="<?php echo $this->getSkinUrl('images/energy_guide.png'); ?>" />
+	<?php 
+		$epath = Mage::getStoreConfig('productattrib/energyguide/image');
+		$energyGuideImage = $this->getSkinUrl('images/energy_guide.png');
+		if (!empty($epath)) {
+			$energyGuideImage = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA) . 'energy_guide/' . $epath;
+		}
+	?>
+		<img src="<?php echo $energyGuideImage; ?>" />
 	</div>
 	<?php endif; ?>
 </div>
