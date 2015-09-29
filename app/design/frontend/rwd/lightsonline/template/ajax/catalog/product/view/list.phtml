@@ -114,7 +114,7 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
                        
 		        <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
                     
-		    		<p class="action"><button type="button" title="<?php echo $this->quoteEscape($this->__('SEE DETAILS')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('SEE DETAILS') ?></span></span></button></p>
+		    		<p class="action"><button type="button" title="<?php echo $this->quoteEscape($this->__('SEE DETAILS')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $_product->getProductUrl() ?>')"><span><span><?php echo $this->__('SEE DETAILS') ?></span></span></button></p>
                  <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
                             <p class="action"><a title="<?php echo $this->quoteEscape($this->__('View Details')) ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a></p>
 					
@@ -197,7 +197,7 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
                 <div class="actions">
                     <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
                     
-		                                <button type="button" title="<?php echo $this->quoteEscape($this->__('SEE DETAILS')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('SEE DETAILS') ?></span></span></button>
+		                                <button type="button" title="<?php echo $this->quoteEscape($this->__('SEE DETAILS')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $_product->getProductUrl() ?>')"><span><span><?php echo $this->__('SEE DETAILS') ?></span></span></button>
                         <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
                             <a title="<?php echo $this->quoteEscape($this->__('View Details')) ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a>
                     <?php else: ?>

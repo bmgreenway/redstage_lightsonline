@@ -43,6 +43,7 @@ if(navigator.appName == 'Microsoft Internet Explorer' ){
 			   animation: "slide",
 			   slideshow: true,
 			   controlNav: true,
+			   autoPlay: true,
 			   directionNav: true,
 			   useCSS : false,
 			   pauseOnHover: true,
