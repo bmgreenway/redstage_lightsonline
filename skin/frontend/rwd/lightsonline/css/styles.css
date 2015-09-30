@@ -64,7 +64,7 @@ body {margin:0;}
 /*
  * Addresses `outline` inconsistency between Chrome and other browsers.
  */
-a:focus {outline:thin dotted;}
+a:focus {}
 /*
  * Improves readability when focused and also mouse hovered in all browsers.
  */
@@ -272,7 +272,7 @@ a, button {-ms-touch-action:manipulation; touch-action:manipulation;cursor:point
 body, button, input, select, table, textarea {font-family:'robotomedium'; color:#4d4d4d; font-size:14px; line-height:1.5;}
 a {color:#1d80a9; text-decoration:none;}
 a:hover {color:#2e8ab8; text-decoration:underline;}
-a:focus {outline-color:#3091c2; color:#143d52;}
+a:focus {outline-color:transparent; color:#143d52;}
 ol, ul {list-style:none; margin:0; padding:0;}
 /* ============================================ *
  * Typography
@@ -932,8 +932,10 @@ a.previous.i-previous{
     padding: 4px 0px !important;
     margin: 2px 0px 0 4px !important;
 }
-.toolbar-bottom .pager{
-float: left;
+.toolbar-bottom .pager {
+    margin: 0 auto;
+    width: 40%;
+    float: none;
 }
 .toolbar-bottom .toolbar{
 border-bottom:0px solid #b0d2e1 !important;
@@ -1230,7 +1232,7 @@ html, body {height:100%;}
  * Header
  * ============================================ */
 @media only screen and (min-width:761px) {.page-header {width:100%; margin:0 auto; padding:0 0px;}
-.page-header-container {position:relative;}
+.page-header-container {position:relative;max-width: 980px;margin: 0 auto;}
 }
 .header-language-container, .page-header {font-family:'robotomedium';}
 /* ============================================ *
@@ -1468,7 +1470,7 @@ button.button.search-button span >span {display:none;}
 .skip-account .icon {background-position:4px -44px;}
 
 @media only screen and (min-width:761px) {.skip-account {float:none; width:auto;}
-#header-account.skip-active {background:#FBFBFB; border:solid 1px #cccccc; display:block; position:absolute; z-index:99999;top: 0;right: 213px;width: 200px;}
+#header-account.skip-active {background:#FBFBFB; border:solid 1px #cccccc; display:block; position:absolute; z-index:99999;top: 0;right: 5%;width: 200px;}
 #header-account a {display:block; padding:5px 10px; color:#636363; line-height:2;}
 #header-account a:hover {color:#1d80a9;}
 }
@@ -1981,7 +1983,7 @@ ul.toggle-tabs li {margin: 0 0 0 5px;}
 .product-collateral > dl {width:100%;}
 .product-collateral > dl > dt {display:none;}
 .product-collateral > dl > dd {width:100%; display:none; padding:15px; border:1px solid #999; border-top:0;border-radius: 1px 1px 0px 0px;}
-.product-collateral > dl > dd.current {display:block;}
+.product-collateral > dl > dd.current {display:inline-block;}
 }
 
 @media only screen and (max-width:310px) {.product-collateral .toggle-tabs {display:none;}
@@ -3697,7 +3699,7 @@ float:left;
 
 .submitlightfinder_1 {
     width: 40%;
-    margin: 0 auto;
+    margin: 5px auto;
 }
 span.show_hide_toggle {
     color: #333;
@@ -3729,6 +3731,9 @@ input#reset {
 }
 .cms-index-index .page-title {
     line-height: 10px;
+}
+.lightfinder_inner select::-ms-expand{
+display:none
 }
 .lightfinder_inner select {
 	background-color: #ededed;
@@ -4176,6 +4181,7 @@ font-size:15px;
 #product_addtocart_form .product-spec {
     width: 100%;
     float: left;
+    padding: 10px 0;
 }
 
 li.additional_info_main:nth-child(1) {
@@ -4609,6 +4615,52 @@ padding-left: 0 !important;
 margin:0 !important;
 position: absolute;
 }
+.ca-item-main a {
+    width: 100%;
+    float: left;
+    z-index: 99;
+    position: relative;
+}
+.energy_title {
+    text-align: center;
+    font-size: 13px;
+    color: #333;
+    padding: 5px 15px 15px 15px;
+}
+.attrib_info {
+    width: 100%;
+    float: left;
+	font-family:'robotolight';
+}
+
+.attrib_info ul li {
+    display: inline-block;
+    width: 32%;
+    border: 1px solid #b3b4b4;
+    padding: 5px;
+    text-align: center;
+}
+.attrib_val span {
+    color: #666766;
+}
+.products-grid .energy_star {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+}
+.product-img-box .energy_star {
+    left: 0;
+    position: absolute;
+    top: 0;
+
+}
+.money_tip {
+    width: 100%;
+    float: left;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid;
+}
 /* end for desktop */
 
 @media only screen and (max-width:736px) {
@@ -4742,7 +4794,7 @@ line-height:23px;
     background-position: right 5px;
 }
 .reset_submitlightfinder_1 {
-    display: block !important;
+    display: inline-block !important;
 }
 input#submitlightfinder {
     width: 100px !important;
@@ -4804,8 +4856,8 @@ width:100%;
     margin: 0 auto;
 }
 #lightfinder{
-    padding: 5px;
-    top: -62px;
+    padding: 0px;
+  
     position: relative;
 	background:#FFF;
 }
@@ -5440,15 +5492,28 @@ padding: 10px 10px;
 }
 
 #product_addtocart_form .product-spec {
-    padding: 0 10px;
+    padding: 10px 0;
 }
 .account-cart-wrapper_m_item_in_cart{
     right: 0px;
 	padding: 4px 12px;
 }
+.attrib_val {
+    color: #231f20;
+}
 .product-img-box {
     padding: 0 10px;
 }
+.group_info {
+	width: 100%;
+    float: left;
+    font-family: 'robotolight';
+    color: #808080;
+    font-size: 13px;
+    padding: 15px 21px;
+    text-align: center;
+}
+
 .some_extra_icon {
     float: right;
     width: 62px;
@@ -5558,6 +5623,7 @@ display:none;
 }
 .for_mobile{
 display:block !important;
+    padding: 0 10px;
 }
 .header-minicart{
 display:none !important;

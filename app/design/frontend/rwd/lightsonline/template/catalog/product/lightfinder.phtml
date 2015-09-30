@@ -24,7 +24,7 @@
  			$finishArray=array();
  			$styleArray=array();
  			//load room values in value label format
- 			$attributeIdRoom = Mage::getResourceModel('eav/entity_attribute')->getIdByCode('catalog_product','rooms');
+ 			$attributeIdRoom = Mage::getResourceModel('eav/entity_attribute')->getIdByCode('catalog_product','room');
  			$collectionRoom =Mage::getResourceModel('eav/entity_attribute_option_collection')
                 ->setPositionOrder('asc')
                 ->setAttributeFilter($attributeIdRoom)
@@ -33,14 +33,16 @@
             $roomArray=$collectionRoom->toOptionArray();
             //End of room values 
              //load Type values in value label format
- 			$typeArray = Mage::getModel('catalog/category')->getCollection()
-    ->addAttributeToSelect('*')//or you can just add some attributes
-    ->addAttributeToFilter('level', 2)//2 is actually the first level
-    ->addAttributeToFilter('is_active', 1)//if you want only active categories
-;
+ 			$attributeIdType = Mage::getResourceModel('eav/entity_attribute')->getIdByCode('catalog_product','type_of_bulbs');
+ 			$collectionType =Mage::getResourceModel('eav/entity_attribute_option_collection')
+                ->setPositionOrder('asc')
+                ->setAttributeFilter($attributeIdType)
+                ->setStoreFilter(Mage::app()->getStore()->getId())
+                ->load();
+            $typeArray=$collectionType->toOptionArray();
             //End of Type values 
              //load Finish values in value label format
- 			$attributeIdFinish = Mage::getResourceModel('eav/entity_attribute')->getIdByCode('catalog_product','finish_filter');
+ 			$attributeIdFinish = Mage::getResourceModel('eav/entity_attribute')->getIdByCode('catalog_product','finish');
  			$collectionFinish =Mage::getResourceModel('eav/entity_attribute_option_collection')
                 ->setPositionOrder('asc')
                 ->setAttributeFilter($attributeIdFinish)
@@ -75,10 +77,10 @@
 		<div class="which_type lightfinder_inner">
 		<div class="lightfinder_inner_title">Which Type? </div>
 
-		<select id="type" name="category">
+		<select id="type" name="type_of_bulbs[]">
 		 <option value="">Any Type</option>
 		  <?php foreach ($typeArray as $key) { ?>
-		  <option value="<?php echo $key->getId(); ?>"><?php echo $key->getName(); ?></option>
+		  <option value="<?php echo $key['value']; ?>"><?php echo $key['label']; ?></option>
 		 <?php } ?>
 		</select>
 		</div>
@@ -104,13 +106,10 @@
 		<div class="lightfinder_inner_title">Your Budget?</div>
 		<select id="budget" >
 		 <option value="">Any Budget</option>
-		  <option value=">0-50">$0 - $50.00</option>
-		  <option value="50-99.99">$50 - $99.99</option>
-		  <option value="100-199.99">$100 - $199.99</option>
-		  <option value="200-499.99">$200 - $499.99</option>
-		  <option value="500-999.99">$500 - $999.99</option>
-		  <option value="1000-1999.99">$1000.00 - $1999.99</option>
-		  <option value="2000-100000">$2000 and up</option>
+		  <option value=">0-1000">$0-$1000</option>
+		  <option value="1000-2000">$1000-$2000</option>
+		  <option value="2000-3000">$2000-$3000</option>
+		  <option value="3000-10000">$3000-$10000</option>
 		</select>
 		</div>		
 		<div class="submit_submitlightfinder">			
@@ -122,72 +121,63 @@
 </div>
 </div>
 <div class="for_mobile">
-<div class="which_room lightfinder_inner">
-		<div class="lightfinder_inner_title">Which Room?</div>
-		<select id="room-mobile" name="room[]" >
-		 <option value="">Any Room</option>
-		 <?php foreach ($roomArray as $key) { ?>
-		  <option value="<?php echo $key['value']; ?>"><?php echo $key['label']; ?></option>
-		 <?php } ?>
-		</select>
-		</div>
-<div id="main-lightfinder">
+<div>
 	<form name="lightfinder" action="<?php echo $this->getBaseUrl()?>catalogsearch/advanced/result/" id="lightfinder" method="GET">
 		<div class="which_room lightfinder_inner">
-		<div class="lightfinder_inner_title">Which Room?</div>
-		<select id="room-mobile" name="room[]" >
-		 <option value="">Any Room</option>
-		 <?php foreach ($roomArray as $key) { ?>
-		  <option value="<?php echo $key['value']; ?>"><?php echo $key['label']; ?></option>
-		 <?php } ?>
-		</select>
+			<div class="lightfinder_inner_title">Which Room?</div>
+			<select id="room-mobile" name="room[]" >
+			 <option value="">Any Room</option>
+			 <?php foreach ($roomArray as $key) { ?>
+			  <option value="<?php echo $key['value']; ?>"><?php echo $key['label']; ?></option>
+			 <?php } ?>
+			</select>
 		</div>
-		<div class="which_type lightfinder_inner">
-		<div class="lightfinder_inner_title">Which Type? </div>
+		<div id="main-lightfinder" class="fignt_finder_remaining_blocks">
+			<div class="which_type lightfinder_inner">
+			<div class="lightfinder_inner_title">Which Type? </div>
 
-		<select id="type-mobile" name="type_of_bulbs[]">
-		 <option value="">Any Type</option>
-		  <?php foreach ($typeArray as $key) { ?>
-		  <option value="<?php echo $key['value']; ?>"><?php echo $key['label']; ?></option>
-		 <?php } ?>
-		</select>
-		</div>
-		<div class="which_finish lightfinder_inner">
-		<div class="lightfinder_inner_title">Which Finish? </div>
-		<select id="finish-mobile" name="finish[]">
-		 <option value="">Any Finish</option>
-		  <?php foreach ($finishArray as $key) { ?>
-		  <option value="<?php echo $key['value']; ?>"><?php echo $key['label']; ?></option>
-		 <?php } ?>
-		</select>
-		</div>
-		<div class="your_style lightfinder_inner">
-		<div class="lightfinder_inner_title">Your Style?</div>
-		<select id="style-mobile" name="style[]">
-		 <option value="">Any Style</option>
-		  <?php foreach ($styleArray as $key) { ?>
-		  <option value="<?php echo $key['value']; ?>"><?php echo $key['label']; ?></option>
-		 <?php } ?>
-		</select>
-		</div>
-		<div class="your_budget lightfinder_inner">
-		<div class="lightfinder_inner_title">Your Budget? </div>
-		<select id="budget-mobile" >
-		 <option value=">0-50">$0 - $50.00</option>
-		  <option value="50-99.99">$50 - $99.99</option>
-		  <option value="100-199.99">$100 - $199.99</option>
-		  <option value="200-499.99">$200 - $499.99</option>
-		  <option value="500-999.99">$500 - $999.99</option>
-		  <option value="1000-1999.99">$1000.00 - $1999.99</option>
-		  <option value="2000-100000">$2000 and up</option>
-		</select>
-		</div>		
-		<div class="submit_submitlightfinder">
-			<div class="reset_submitlightfinder_1">
-				<input type="button" id="reset"  class="reset" value="" name="reset" />
+			<select id="type-mobile" name="type_of_bulbs[]">
+			 <option value="">Any Type</option>
+			  <?php foreach ($typeArray as $key) { ?>
+			  <option value="<?php echo $key['value']; ?>"><?php echo $key['label']; ?></option>
+			 <?php } ?>
+			</select>
 			</div>
-			<div class="submitlightfinder_1">
-				<input type="button" onclick="sumitlightfinderMobile('<?php echo $this->getBaseUrl()?>catalogsearch/advanced/result/');" id="submitlightfinder" value="GO" name="submitlightfinder" />
+			<div class="which_finish lightfinder_inner">
+			<div class="lightfinder_inner_title">Which Finish? </div>
+			<select id="finish-mobile" name="finish[]">
+			 <option value="">Any Finish</option>
+			  <?php foreach ($finishArray as $key) { ?>
+			  <option value="<?php echo $key['value']; ?>"><?php echo $key['label']; ?></option>
+			 <?php } ?>
+			</select>
+			</div>
+			<div class="your_style lightfinder_inner">
+			<div class="lightfinder_inner_title">Your Style?</div>
+			<select id="style-mobile" name="style[]">
+			 <option value="">Any Style</option>
+			  <?php foreach ($styleArray as $key) { ?>
+			  <option value="<?php echo $key['value']; ?>"><?php echo $key['label']; ?></option>
+			 <?php } ?>
+			</select>
+			</div>
+			<div class="your_budget lightfinder_inner">
+			<div class="lightfinder_inner_title">Your Budget? </div>
+			<select id="budget-mobile" >
+			 <option value="">Any Budget</option>
+			  <option value=">0-1000">$0-$1000</option>
+			  <option value="1000-2000">$1000-$2000</option>
+			  <option value="2000-3000">$2000-$3000</option>
+			  <option value="3000-10000">$3000-$10000</option>
+			</select>
+			</div>		
+			<div class="submit_submitlightfinder">
+				<div class="reset_submitlightfinder_1">
+					<input type="button" id="reset"  class="reset" value="" name="reset" />
+				</div>
+				<div class="submitlightfinder_1">
+					<input type="button" onclick="sumitlightfinderMobile('<?php echo $this->getBaseUrl()?>catalogsearch/advanced/result/');" id="submitlightfinder" value="GO" name="submitlightfinder" />
+				</div>
 			</div>
 		</div>
 	</form>

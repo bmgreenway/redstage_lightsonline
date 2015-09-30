@@ -38,11 +38,12 @@
     <h2><?php echo $this->__('Additional Information') ?></h2>
     <ul class="data-table" id="product-attribute-specs-table">
         <?php foreach ($_additional as $_data): ?>
+                <?php if (!empty($_data['value']) && $_data['value'] != 'No' && $_data['value'] != 'N/A') : ?>
                 <li class="additional_info_main">
 					<div class="additional_info_1"><?php echo $this->escapeHtml($this->__($_data['label'])) ?>:</div>
 					<div class="additional_info_2"><?php echo $_helper->productAttribute($_product, $_data['value'], $_data['code']) ?></div>
 				</li>
-            
+                <?php endif; ?>
         <?php endforeach; ?>
 	</ul>
     <script type="text/javascript">decorateTable('product-attribute-specs-table')</script>
