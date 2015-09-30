@@ -20,7 +20,7 @@ jQuery( ".reset" ).click(function() {
 			 var roomval = room.options[room.selectedIndex].value;
 			 if(roomval!='') {
 			 	validatedrop=1;
-			 	catalogsearchUrl=catalogsearchUrl+'?room='+roomval;
+			 	catalogsearchUrl=catalogsearchUrl+'?rooms='+roomval;
 			 }
 			 
 			}
@@ -34,11 +34,12 @@ jQuery( ".reset" ).click(function() {
 			 	
 			 	if(catalogsearchUrl.indexOf("?") == -1)
 			 	{
-			 		catalogsearchUrl=catalogsearchUrl+'?type_of_bulbs='+typeval;
+
+			 		catalogsearchUrl=catalogsearchUrl+'?category='+typeval;
 			 	}
 			 	else
 			 	{
-			 		catalogsearchUrl=catalogsearchUrl+'&type_of_bulbs='+typeval;
+			 		catalogsearchUrl=catalogsearchUrl+'&category='+typeval;
 			 	}
 			 }
 			
@@ -54,11 +55,11 @@ jQuery( ".reset" ).click(function() {
 			 	validatedrop=1;
 			 	if(catalogsearchUrl.indexOf("?") == -1)
 			 	{
-			 		catalogsearchUrl=catalogsearchUrl+'?finish='+finishval;
+			 		catalogsearchUrl=catalogsearchUrl+'?finish_filter='+finishval;
 			 	}
 			 	else
 			 	{
-			 		catalogsearchUrl=catalogsearchUrl+'&finish='+finishval;
+			 		catalogsearchUrl=catalogsearchUrl+'&finish_filter='+finishval;
 			 	}
 			 }
 			
@@ -125,7 +126,7 @@ function sumitlightfinderMobile(catalogsearchUrl)
 			 var roomval = room.options[room.selectedIndex].value;
 			 if(roomval!='') {
 			 	validatedrop=1;
-			 	catalogsearchUrl=catalogsearchUrl+'?room='+roomval;
+			 	catalogsearchUrl=catalogsearchUrl+'?rooms='+roomval;
 			 }
 			 
 			}
@@ -139,11 +140,11 @@ function sumitlightfinderMobile(catalogsearchUrl)
 			 	
 			 	if(catalogsearchUrl.indexOf("?") == -1)
 			 	{
-			 		catalogsearchUrl=catalogsearchUrl+'?type_of_bulbs='+typeval;
+			 		catalogsearchUrl=catalogsearchUrl+'?category='+typeval;
 			 	}
 			 	else
 			 	{
-			 		catalogsearchUrl=catalogsearchUrl+'&type_of_bulbs='+typeval;
+			 		catalogsearchUrl=catalogsearchUrl+'&category='+typeval;
 			 	}
 			 }
 			
@@ -159,11 +160,11 @@ function sumitlightfinderMobile(catalogsearchUrl)
 			 	validatedrop=1;
 			 	if(catalogsearchUrl.indexOf("?") == -1)
 			 	{
-			 		catalogsearchUrl=catalogsearchUrl+'?finish='+finishval;
+			 		catalogsearchUrl=catalogsearchUrl+'?finish_filter='+finishval;
 			 	}
 			 	else
 			 	{
-			 		catalogsearchUrl=catalogsearchUrl+'&finish='+finishval;
+			 		catalogsearchUrl=catalogsearchUrl+'&finish_filter='+finishval;
 			 	}
 			 }
 			
