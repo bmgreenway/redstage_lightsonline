@@ -52,8 +52,13 @@
                  data-zoom-image="<?php echo  $this->getGalleryImageUrl($_image); ?>" />
             <?php endif; ?>
         <?php $i++; endforeach; ?>
+        <?php  if ($_product->getMarkAsEnergyStar()) : ?>
+            <div class="energy_star">
+                <img src="<?php echo $this->getSkinUrl('images/energy_star_logo.png'); ?>" />
+            </div>
+        <?php endif; ?>
     </div>
-	<?php if ($_product->getMarkAsEnergyStar()) : ?>
+	<?php if ($_product->getHasEnergyGuide()) : ?>
 	<div class="energy_guide">
 	<?php 
 		$epath = Mage::getStoreConfig('productattrib/energyguide/image');
