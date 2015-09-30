@@ -49,8 +49,9 @@
             <div class="product-img-box">
                 <div class="product-name">
                     <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
-                </div>
+				</div>
                 <?php echo $this->getChildHtml('media') ?>
+				<div class="h3 for_mobile">SKU# <?php echo $_helper->productAttribute($_product, $_product->getSku(), 'name') ?></div>
             </div>
 
             <div class="product-shop">

@@ -121,6 +121,15 @@
 </div>
 </div>
 <div class="for_mobile">
+<div class="which_room lightfinder_inner">
+		<div class="lightfinder_inner_title">Which Room?</div>
+		<select id="room-mobile" name="room[]" >
+		 <option value="">Any Room</option>
+		 <?php foreach ($roomArray as $key) { ?>
+		  <option value="<?php echo $key['value']; ?>"><?php echo $key['label']; ?></option>
+		 <?php } ?>
+		</select>
+		</div>
 <div id="main-lightfinder">
 	<form name="lightfinder" action="<?php echo $this->getBaseUrl()?>catalogsearch/advanced/result/" id="lightfinder" method="GET">
 		<div class="which_room lightfinder_inner">
