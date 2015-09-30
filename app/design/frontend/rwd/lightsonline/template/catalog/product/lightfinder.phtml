@@ -36,7 +36,7 @@
  			 $typeArray = Mage::getModel('catalog/category')->getCollection()
     ->addAttributeToSelect('*')//or you can just add some attributes
     ->addAttributeToFilter('level', 2)//2 is actually the first level
-    ->addAttributeToFilter('is_active', 1)//if you want only active categories
+    ->addAttributeToFilter('is_active', 1);//if you want only active categories
             //End of Type values 
              //load Finish values in value label format
  			$attributeIdFinish = Mage::getResourceModel('eav/entity_attribute')->getIdByCode('catalog_product','finish_filter');
