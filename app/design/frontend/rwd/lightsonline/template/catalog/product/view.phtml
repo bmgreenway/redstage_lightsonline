@@ -157,7 +157,38 @@
 						<?php if ($_product->getMarkAsEnergyStar()) : ?>
 							<dt class="tab"><span id="energy_guide">Energy Guide</span></dt>
 							<dd class="tab-container">
-								<div class="tab-content"><?php echo $_product->getEnergyGuideIdentifier(); ?></div>
+								<div class="tab-content">
+									<div class="main_tab_content">
+										<div class="energy_title">ENERGY INFORMATION at High Speed</div>
+										<div class="attrib_info">
+											<ul>
+												<li>
+													<div class="attrib_val">
+														<span>Airflow</span> <br/> <?php echo $_product->getAttributeText('f_airflow'); ?>
+														Cubic Feet Per Minute
+													</div>
+												</li>
+												<li>
+													<div class="attrib_val">
+														<span>Electricity Use</span> <br/> <?php echo $_product->getAttributeText('f_watts'); ?>
+														Watts (excludes lights)
+													</div>
+												</li>
+												<li>
+													<div class="attrib_val">
+														<span>Airflow Efficiency</span> <br/> <?php echo $_product->getAttributeText('f_efficiency'); ?>
+														Cubic Feet Per Minute Per Watt
+													</div>
+												</li>
+											</ul>
+										</div>
+										<div class="group_info">
+										<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($_product->getAttributeText('group_info'))->toHtml(); ?>
+										</div>
+										<div class="money_tip"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('money_saving_tip')->toHtml(); ?></div>
+									</div>
+
+								</div>
 							</dd>
 							<?php endif; ?>
 					</dl>

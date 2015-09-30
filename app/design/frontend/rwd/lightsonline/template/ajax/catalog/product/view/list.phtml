@@ -174,6 +174,11 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
                          src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($_imgSize); ?>"
                          alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
                 </a>
+                <?php  if ($_product->getMarkAsEnergyStar()) : ?>
+                    <div class="energy_star">
+                        <img src="<?php echo $this->getSkinUrl('images/energy_star_logo.png'); ?>" />
+                    </div>
+                <?php endif; ?>
 				</div>
                 <div class="product-info">
                 <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>
