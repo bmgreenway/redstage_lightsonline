@@ -73,7 +73,7 @@
 </div>
 <div class="main-image-showcase"><img id="main_image_showcase" src="" /></div>
 <h3 class="for_desktop_tab"><a id="enlarge_image" href="javascript:void(0)">Click to enlarge</a></h3>
-<h3 class="for_mobile"><a id="enlarge_image" href="javascript:void(0)">Tap to enlarge</a></h3>
+<h3 class="for_mobile"><a id="enlarge_image_mobile" href="javascript:void(0)">Tap to Zoom</a></h3>
 <?php if (count($this->getGalleryImages()) > 0): ?>
 <div class="more-views">    
     <div class="product-image-thumbs" id="image-gallery">
@@ -112,6 +112,14 @@ var $j = jQuery.noConflict();
 			jQuery('.overlay_image').fadeIn(1000);
 			jQuery('.main-image-showcase').fadeIn(1000);
 		});
+		
+		jQuery('#enlarge_image_mobile').click(function(){
+			jQuery('#main_image_showcase').attr('src', jQuery('.product-image-gallery .visible').attr('src'));
+			jQuery('.overlay_image').fadeIn(1000);
+			jQuery('.main-image-showcase').fadeIn(1000);
+		});
+		
+		
 		jQuery('.overlay_image').click(function(){
 			jQuery('.overlay_image').fadeOut(1000);
 			jQuery('.main-image-showcase').fadeOut(1000);
