@@ -246,4 +246,23 @@ class Mage_CatalogSearch_Model_Advanced extends Mage_Core_Model_Abstract
         Mage::getSingleton('catalog/product_visibility')->addVisibleInSearchFilterToCollection($collection);
         return $this;
     }
+    public function getAttributes()
+    {
+        /* @var $attributes Mage_Catalog_Model_Resource_Eav_Resource_Product_Attribute_Collection */
+        $attributes = $this->getData('attributes');
+        if (is_null($attributes)) {
+            $product = Mage::getModel('catalog/product');
+            $attributes = Mage::getResourceModel('catalog/product_attribute_collection')
+                ->addHasOptionsFilter()
+                ->addDisplayInAdvancedSearchFilter()
+                ->addStoreLabel(Mage::app()->getStore()->getId())
+                ->setOrder('main_table.attribute_id', 'asc')
+                ->load();
+            foreach ($attributes as $attribute) {
+                $attribute->setEntity($product->getResource());
+            }
+            $this->setData('attributes', $attributes);
+        }
+        return $attributes;
+    }
 }
