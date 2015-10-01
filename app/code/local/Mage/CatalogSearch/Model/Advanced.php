@@ -52,9 +52,98 @@
  */
 class Mage_CatalogSearch_Model_Advanced extends Mage_Core_Model_Abstract
 {
-    
+    /**
+     * User friendly search criteria list
+     *
+     * @var array
+     */
+    protected $_searchCriterias = array();
 
-   
+    /**
+     * Current search engine
+     *
+     * @var object|Mage_CatalogSearch_Model_Resource_Fulltext_Engine
+     */
+    protected $_engine;
+
+    /**
+     * Found products collection
+     *
+     * @var Mage_CatalogSearch_Model_Resource_Advanced_Collection
+     */
+    protected $_productCollection;
+
+    /**
+     * Initialize resource model
+     *
+     */
+    protected function _construct()
+    {
+        $this->_getEngine();
+        $this->_init('catalogsearch/advanced');
+    }
+
+    protected function _getEngine()
+    {
+        if ($this->_engine == null) {
+            $this->_engine = Mage::helper('catalogsearch')->getEngine();
+        }
+
+        return $this->_engine;
+    }
+
+    /**
+     * Retrieve resource instance wrapper
+     *
+     * @return Mage_CatalogSearch_Model_Resource_Advanced
+     */
+    protected function _getResource()
+    {
+        $resourceName = $this->_engine->getResourceName();
+        if ($resourceName) {
+            $this->_resourceName = $resourceName;
+        }
+        return parent::_getResource();
+    }
+
+    /**
+     * Retrieve array of attributes used in advanced search
+     *
+     * @return array
+     */
+    public function getAttributes()
+    {
+        /* @var $attributes Mage_Catalog_Model_Resource_Eav_Resource_Product_Attribute_Collection */
+        $attributes = $this->getData('attributes');
+        if (is_null($attributes)) {
+            $product = Mage::getModel('catalog/product');
+            $attributes = Mage::getResourceModel('catalog/product_attribute_collection')
+                ->addHasOptionsFilter()
+                ->addDisplayInAdvancedSearchFilter()
+                ->addStoreLabel(Mage::app()->getStore()->getId())
+                ->setOrder('main_table.attribute_id', 'asc')
+                ->load();
+            foreach ($attributes as $attribute) {
+                $attribute->setEntity($product->getResource());
+            }
+            $this->setData('attributes', $attributes);
+        }
+        return $attributes;
+    }
+
+    /**
+     * Prepare search condition for attribute
+     *
+     * @deprecated after 1.4.1.0 - use Mage_CatalogSearch_Model_Resource_Advanced->_prepareCondition()
+     *
+     * @param Mage_Catalog_Model_Resource_Eav_Attribute $attribute
+     * @param string|array $value
+     * @return mixed
+     */
+    protected function _prepareCondition($attribute, $value)
+    {
+        return $this->_getResource()->prepareCondition($attribute, $value, $this->getProductCollection());
+    }
 
     /**
      * Add advanced search filters to product collection
@@ -119,11 +208,11 @@ class Mage_CatalogSearch_Model_Advanced extends Mage_Core_Model_Abstract
                 $allConditions[$table][$attributeId] = $condition;
             }
         }
-       if (($allConditions) || (isset($values['category']) && is_numeric($values['category']))) {
+        if ($allConditions || !empty($_GET['category'])) {
             $this->getProductCollection()->addFieldsToFilter($allConditions);
-        } else if (!count($filteredAttributes)) {
-            Mage::throwException(Mage::helper('catalogsearch')->__('You have to specify at least one search term'));
-        } 
+        } else if (!$hasConditions) {
+            Mage::throwException(Mage::helper('catalogsearch')->__('Please specify at least one search term.'));
+        }
 
         return $this;
     }
@@ -197,16 +286,16 @@ class Mage_CatalogSearch_Model_Advanced extends Mage_Core_Model_Abstract
      *
      * @return array
      */
-   public function getSearchCriterias()
+    public function getSearchCriterias()
     {
-        $search = $this->_searchCriterias;
+      $search = $this->_searchCriterias;
         /* display category filtering criteria */
         if(isset($_GET['category']) && is_numeric($_GET['category'])) {
             $category = Mage::getModel('catalog/category')->load($_GET['category']);
             $search[] = array('name'=>'Category','value'=>$category->getName());
         }
         return $search;
-    } 
+    }
 
     /**
      * Retrieve advanced search product collection
@@ -214,7 +303,7 @@ class Mage_CatalogSearch_Model_Advanced extends Mage_Core_Model_Abstract
      * @return Mage_CatalogSearch_Model_Resource_Advanced_Collection
      */
     public function getProductCollection(){
-      if (is_null($this->_productCollection)) {
+       if (is_null($this->_productCollection)) {
           $this->_productCollection = Mage::getResourceModel('catalogsearch/advanced_collection')
               ->addAttributeToSelect(Mage::getSingleton('catalog/config')->getProductAttributes())
               ->addMinimalPrice()
@@ -245,24 +334,5 @@ class Mage_CatalogSearch_Model_Advanced extends Mage_Core_Model_Abstract
         Mage::getSingleton('catalog/product_status')->addVisibleFilterToCollection($collection);
         Mage::getSingleton('catalog/product_visibility')->addVisibleInSearchFilterToCollection($collection);
         return $this;
-    }
-    public function getAttributes()
-    {
-        /* @var $attributes Mage_Catalog_Model_Resource_Eav_Resource_Product_Attribute_Collection */
-        $attributes = $this->getData('attributes');
-        if (is_null($attributes)) {
-            $product = Mage::getModel('catalog/product');
-            $attributes = Mage::getResourceModel('catalog/product_attribute_collection')
-                ->addHasOptionsFilter()
-                ->addDisplayInAdvancedSearchFilter()
-                ->addStoreLabel(Mage::app()->getStore()->getId())
-                ->setOrder('main_table.attribute_id', 'asc')
-                ->load();
-            foreach ($attributes as $attribute) {
-                $attribute->setEntity($product->getResource());
-            }
-            $this->setData('attributes', $attributes);
-        }
-        return $attributes;
     }
 }
