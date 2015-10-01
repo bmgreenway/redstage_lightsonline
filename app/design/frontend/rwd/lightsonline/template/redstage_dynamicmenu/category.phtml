@@ -2,16 +2,20 @@
 <?php $category = Mage::getModel('catalog/category')->load($dataParams['cat_id']); ?>
 <?php //print_r($category->getData()); exit; ?>
 <?php if ($category->getId()) : ?>
-<li class="sub_category_menu_li"><a href="<?php echo $category->getUrl(); ?>"><?php echo $category->getName(); ?></a>
+<li class="sub_category_menu_li">
+	<a href="<?php echo $category->getUrl(); ?>"><?php echo $category->getName(); ?></a>
 	<div class="sub_category_menu_sub_inner" id="<?php echo $dataParams['id']; ?>">
 		<div class="sub_category_menu_sub_content">
 			<span class="arrow_custom">
 				<img alt="" src="<?php echo Mage::getBaseUrl('media').'catalog/category/' . $category->getImage(); ?>" /> 
 			</span>
-			<div class="menu_overlay">
-				<p><?php echo $dataParams['content_label']; ?></p>
-				<p><?php echo $dataParams['content_desc']; ?></p>
-			</div>
+			<a href="<?php echo $category->getUrl(); ?>">
+				<div class="menu_overlay">
+					<p><?php echo $dataParams['content_label']; ?></p>
+					<p><?php echo $dataParams['content_desc']; ?></p>
+					<i class="menu_arrow_icon"></i>
+				</div>
+			</a>
 		</div>
 	</div>
 </li>
