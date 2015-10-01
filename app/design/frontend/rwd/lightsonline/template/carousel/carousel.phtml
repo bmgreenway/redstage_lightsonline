@@ -7,7 +7,23 @@
                 $slideIndex ++;
                 ?>
             <li class="slide" data-cap="<?php echo $slide->getName(); ?>">
-                   <a href="<?php echo $slide->getLink(); ?>"><?php echo $slide->getName(); ?><img src='<?php echo $slide->getImage(); ?>' /></a></li>
+					
+                   <a href="<?php echo $slide->getLink(); ?>">
+				   <div class="banner_content_inner">
+					<div class="banner_content_inner_content">
+						<div class="banner_content_top_title">Take 15% off all</div>
+						<div class="banner_content_top">Savoy House</div>
+						<div class="banner_content_center">throught may 31, 2015</div>
+						<div class="banner_content_bottom">use coupon code</div>
+						<div class="banner_content_bottom_tagline">ALLSAVOY</div>
+						<div class="banner_content_bottom_button">SHOP NOW</div>
+					</div>
+					</div>
+				   <img src='<?php echo $slide->getImage(); ?>' />
+				   
+				   
+				   </a>
+			</li>
             <?php endforeach; ?>
         </ul>
     </div>

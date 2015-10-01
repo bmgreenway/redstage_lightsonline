@@ -26,3 +26,19 @@
        echo $block->toHtml(); 
    }
 ?>
+<script>
+	jQuery(document).ready(function(){		
+		jQuery(".sub_category_menu_sub .sub_category_menu_ul li").hover(
+		  function(){
+			if ("first_cat" !== this.down().next().id) {			
+				jQuery(this.down().next()).fadeIn();
+			}
+		  },
+		  function(){
+			if ("first_cat" !== this.down().next().id) {			
+				jQuery(this.down().next()).fadeOut();
+			}
+		  }
+		);
+	});
+</script>
