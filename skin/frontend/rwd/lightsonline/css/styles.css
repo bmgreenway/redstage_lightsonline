@@ -662,7 +662,7 @@ top:10px;
 .footer-container .fthd .footer {margin:0 auto; padding:0}
 .footer-container .fthd .livechat {float:left; font:normal 16px 'robotolight'}
 .footer-container .fthd .que {float:left; margin:12px 0 0}
-.footer-container .fthd .que span {color:#1d80a9}
+.footer-container .fthd .que span {color:#1d80a9;display:inline-block;}
 .footer-container .fthd .livechat img {float:left; margin:0 10px}
 .footer-container .fthd .livechat a.chat {background:url(../images/icn-chatonline.png) 100% center no-repeat; padding:0 25px 0 0; float:left; color:#666; margin:12px 0 0}
 .footer-container .fthd .livechat a.chat span {color:#1d80a9}
@@ -966,7 +966,7 @@ border-top:1px solid #b0d2e1 !important;
 .sorter > .view-mode strong.list, .sorter > .view-mode a.list:hover {background-position:-39px -517px;}
 .pager {float: right;overflow: hidden;}
 .pager > .count-container {float:left;line-height: 27px;}
-.pager .amount {float:left; font-family:'robotoregular'; white-space:nowrap; margin:0 0px 0 10px;}
+.pager .amount {float:left; font-family:'robotoregular'; white-space:nowrap; margin:0 10px 0 10px;}
 .pager .limiter {float:left;}
 .pager .limiter > label {padding-right:5px;}
 .pager .limiter > label:after {content:':';}
@@ -1470,7 +1470,7 @@ button.button.search-button span >span {display:none;}
 .skip-account .icon {background-position:4px -44px;}
 
 @media only screen and (min-width:761px) {.skip-account {float:none; width:auto;}
-#header-account.skip-active {background:#FBFBFB; border:solid 1px #cccccc; display:block; position:absolute; z-index:99999;top: 0;right: 5%;width: 200px;}
+#header-account.skip-active {background:#FBFBFB; border:solid 1px #cccccc; display:block; position:absolute; z-index:99999;top: 0;right: 18%;width: 200px;}
 #header-account a {display:block; padding:5px 10px; color:#636363; line-height:2;}
 #header-account a:hover {color:#1d80a9;}
 }
@@ -1545,7 +1545,7 @@ button.button.search-button span >span {display:none;}
 .footer .ftcol-rt .social { float:right}
 .footer .ftcol-rt .social a {float:left; margin-left:27px}
 .footer .ftcol-rt .social a:nth-child(1) {margin-left:0}
-.footer .ftcol-rt .everycompany {margin-top:40px; width:260px; float:right;}
+.footer .ftcol-rt .everycompany {margin-top:40px; width:315px; float:right;}
 .footer .ftcol-rt .everycompany li {float:left; margin:0 1%}
 .footer .ftcol-rt .everycompany a {text-decoration:none}
 .footer .ftcol-rt .everycompany a.icnekomi {display:block}
@@ -2471,9 +2471,9 @@ color:#1e80a9;
 @media only screen and (max-width:760px) {.cart .cart-totals table tfoot td {font-size:18px;}
 }
 .discount-form:after, #giftcard-form:after {content:''; display:table; clear:both;}
-#discount-coupon-form, .cart .giftcard {width:100%;}
-#discount-coupon-form h2, .cart .giftcard h2 {display:none;}
-#discount-coupon-form label, .cart .giftcard label {font-family:"robotoregular"; font-size:12px; font-weight:400; text-align:left; text-transform:capitalize; min-width:105px; display:inline-block; margin-right:10px; color:#78b3cb;}
+.cart .giftcard {width:100%;}
+.cart .giftcard h2 {display:none;}
+.cart .giftcard label {font-family:"robotoregular"; font-size:12px; font-weight:400; text-align:left; text-transform:capitalize; min-width:105px; display:inline-block; margin-right:10px; color:#78b3cb;}
 #discount-coupon-form .field-wrapper, .cart .giftcard .field-wrapper {display:inline-block;width:100%;}
 #discount-coupon-form .validation-advice, .cart .giftcard .validation-advice {position:absolute; top:5px; right:20px;}
 #discount-coupon-form .button-wrapper, .cart .giftcard .button-wrapper {display:inline-block; vertical-align:bottom;}
@@ -5005,6 +5005,10 @@ h1.home-page_heading_title{
 }
 
 @media only screen and (max-width: 770px){
+#header-account.skip-active{
+right: 9%;
+}
+
 input#amshopby-price-to, input#amshopby-price-from{
 width:46px;
 font-size: 12px;
@@ -5042,7 +5046,7 @@ font-size:16px;
 }
 #aw-onestepcheckout-title-description a{margin-left:5px;font-size:16px;}
 .add-to-links li{
-	margin:0px 0px 0 4px;
+	margin:0px 0px 0 3px;
 }
 input.link-compare + a{
 margin:1px 5px 0 0px;
@@ -5211,7 +5215,6 @@ float:right !important;
 }
 .account-cart-wrapper {
     padding: 0;
-    display:none;
     float: right !important;
 }
 .header-minicart {
@@ -5281,6 +5284,14 @@ padding:10px;
 	margin: 10px;
     padding: 10px 10px;
 }
+#discount-coupon-form .input-text, .cart .giftcard .input-text{
+width: 138px;
+}
+ul.sub_category_menu_sub_second_main {
+    padding: 0 20px;
+    border-left: 1px solid #ccc;
+    margin: 0 0 0 115px;
+}
 }
 .for_mobile{
 display:none;
@@ -5307,11 +5318,26 @@ display:none;
 }
 /* mobile */
 @media only screen and (max-width: 736px){
+#discount-coupon-form span {
+    font-size: 13px;    
+	font-family: 'source_sans_prolight';
+}
+.ca-wrapper{
+	width: 84% !important;
+    height: 100%;
+    position: relative;
+    background: #808080;
+    margin: 0 auto;
+}
+.account-cart-wrapper{
+display:none;
+}
 .toolbar {
     margin-top: 10px;
     margin-bottom: 15px;
     border-bottom: 0px solid #b0d2e1;
     padding: 5px 0px 0px 5px !important;
+  
 }
 .sorter {
     float: left;
@@ -5324,7 +5350,8 @@ display:none;
     margin: 0;
     width: 60%;
     border-top: 1px solid #a5ccdd;
-	padding: 10px 10px 20px 10px;
+	border-bottom: 1px solid #a5ccdd;
+	padding: 10px 10px 20px 10px;  margin: 5px 0 0 0;
 }
 .catalog-product-view .product-view .add-to-cart{
     width: 100%;
