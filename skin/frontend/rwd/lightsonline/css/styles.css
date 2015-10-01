@@ -1232,7 +1232,7 @@ html, body {height:100%;}
  * Header
  * ============================================ */
 @media only screen and (min-width:761px) {.page-header {width:100%; margin:0 auto; padding:0 0px;}
-.page-header-container {position:relative;max-width: 980px;margin: 0 auto;}
+.page-header-container {position:relative;margin: 0 auto;}
 }
 .header-language-container, .page-header {font-family:'robotomedium';}
 /* ============================================ *
@@ -4510,7 +4510,7 @@ nav#nav {
 text-transform:uppercase !important;
 }
 ul#ms-topmenu {
-    display: block;
+
 }
 .ceilingLightsDetails {
 	margin: 0 auto;
@@ -4661,6 +4661,11 @@ position: absolute;
     text-align: center;
     border: 1px solid;
 }
+.mobile-head-title #category_description_std {
+    border-top: 1px solid #a5ccdd;
+    padding: 18px 0;
+}
+
 /* end for desktop */
 
 @media only screen and (max-width:736px) {
