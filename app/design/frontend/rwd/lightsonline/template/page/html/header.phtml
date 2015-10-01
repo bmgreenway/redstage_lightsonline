@@ -150,7 +150,7 @@ echo $this->getLayout()->createBlock('ambanners/container')->setTemplate('ambann
 }
 	?>
 <?php 
-if(Mage::registry('current_category'))
+if(Mage::registry('current_category') && !Mage::registry('current_product'))
 {
 echo $this->getLayout()->createBlock('ambanners/container')->setTemplate('ambanners/container.phtml')->setPosition(4)->toHtml(); 
 }
