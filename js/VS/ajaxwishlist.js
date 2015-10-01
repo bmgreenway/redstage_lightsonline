@@ -107,6 +107,12 @@ function showMessage()
 	jQuery(".overlay_image").fadeIn(1000);
 	jQuery("#ajax-response-compare").fadeIn(1000);	
 }
+
+function close_popup()
+{
+	jQuery(".overlay_image").fadeOut(1000);
+	jQuery("#ajax-response-compare").fadeOut(1000);
+}
 jQuery(document).ready(function(){
 	jQuery('.close_ajax').click(function(){
 	jQuery(".overlay_image").fadeOut(1000);

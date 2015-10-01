@@ -4744,6 +4744,9 @@ border-radius: 0;
     font-size: 0.9em;
 }
 
+.toolbar-bottom .toolbar p.amount.amount--no-pages {
+    display: none;
+}
 /* end for desktop */
 
 @media only screen and (max-width:736px) {
@@ -5005,6 +5008,16 @@ h1.home-page_heading_title{
 }
 
 @media only screen and (max-width: 770px){
+
+.banner_content_inner_content {
+    width: 370px;
+    position: relative;
+    float: right;
+    background-color: rgba(0, 0, 0, 0.34);
+    margin: 0 28px !important;
+    padding: 0px 10px !important;
+}
+
 #header-account.skip-active{
 right: 9%;
 }
@@ -5318,6 +5331,17 @@ display:none;
 }
 /* mobile */
 @media only screen and (max-width: 736px){
+
+#aw-onestepcheckout-title-description {
+    text-align: center;
+    width: 100%;
+}
+#aw-onestepcheckout-title {
+    text-align: center;
+}
+.toolbar-bottom .toolbar .pages{
+    width: 100%;
+}
 #discount-coupon-form span {
     font-size: 13px;    
 	font-family: 'source_sans_prolight';
@@ -5348,7 +5372,7 @@ display:none;
     font-family: 'robotoregular';
     white-space: nowrap;
     margin: 0;
-    width: 60%;
+    width: 24%;
     border-top: 1px solid #a5ccdd;
 	border-bottom: 1px solid #a5ccdd;
 	padding: 10px 10px 20px 10px;  margin: 5px 0 0 0;
@@ -5531,7 +5555,7 @@ float:right;
 }
 .col2-left-layout .pager .pages {
     margin-top: -5px;
-    width: 40%;
+    width: 76%;
     border-top: 1px solid #a5ccdd;
     margin-top: 0px;
     padding: 10px 10px 9px 10px;
