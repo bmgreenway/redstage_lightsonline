@@ -23,7 +23,7 @@
             <action method="addJs" ifconfig="ajax/general/enabledpro"><script>VS/jquery-1.6.4.min.js</script></action>	   
 	    	<action method="addJs" ifconfig="ajax/general/enabledpro"><script>VS/noconflict.js</script></action>
 			<action method="addJs" ifconfig="ajax/wishlistcompare/enabledpro"><script>VS/ajaxwishlist.js</script></action>	
-			<block type="core/template" name="ajaxtoolbar" template="ajax/ajaxtoolbar.phtml" output="toHtml"></block> 
+			<!-- block type="core/template" name="ajaxtoolbar" template="ajax/ajaxtoolbar.phtml" output="toHtml"></block --> 
 			<action method="addJs" ifconfig="ajax/ajaxtoolbar/enabled"><script>VS/ajaxtoolbar.js</script></action> 	
 			 <action method="addItem" ifconfig="ajax/general/enabledpro">
                 <type>skin_js</type>
@@ -51,7 +51,7 @@
             <action method="addJs" ifconfig="ajax/general/enabledpro"><script>VS/jquery-1.6.4.min.js</script></action>	   
 	    	<action method="addJs" ifconfig="ajax/general/enabledpro"><script>VS/noconflict.js</script></action>
 			<action method="addJs" ifconfig="ajax/wishlistcompare/enabledpro"><script>VS/ajaxwishlist.js</script></action>
-			<block type="core/template" name="ajaxtoolbar" template="ajax/ajaxtoolbar.phtml" output="toHtml"></block> 
+			<!-- block type="core/template" name="ajaxtoolbar" template="ajax/ajaxtoolbar.phtml" output="toHtml"></block --> 
 			<action method="addJs" ifconfig="ajax/ajaxtoolbar/enabled"><script>VS/ajaxtoolbar.js</script></action> 	
 			 <action method="addItem" ifconfig="ajax/general/enabledpro">
                 <type>skin_js</type>

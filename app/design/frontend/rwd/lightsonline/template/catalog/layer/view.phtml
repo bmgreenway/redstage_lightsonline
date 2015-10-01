@@ -39,7 +39,7 @@
     <div class="block-content toggle-content">
         <?php echo $this->getStateHtml() ?>
         <?php if($this->canShowOptions()): ?>
-             <p class="block-subtitle block-subtitle--filter"><?php echo $this->__('Refine Your Results') ?></p>
+             <p class="block-subtitle block-subtitle--filter" id="refine_results"><?php echo $this->__('Refine Your Results') ?></p>
             <dl id="narrow-by-list">
                 <?php $_filters = $this->getFilters() ?>
                 <?php foreach ($_filters as $_filter): ?>

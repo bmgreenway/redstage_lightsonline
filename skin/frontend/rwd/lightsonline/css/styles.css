@@ -966,7 +966,7 @@ border-top:1px solid #b0d2e1 !important;
 .sorter > .view-mode strong.list, .sorter > .view-mode a.list:hover {background-position:-39px -517px;}
 .pager {float: right;overflow: hidden;}
 .pager > .count-container {float:left;line-height: 27px;}
-.pager .amount {float:left; font-family:'robotoregular'; white-space:nowrap; margin:0 15px 0 0;}
+.pager .amount {float:left; font-family:'robotoregular'; white-space:nowrap; margin:0 0px 0 10px;}
 .pager .limiter {float:left;}
 .pager .limiter > label {padding-right:5px;}
 .pager .limiter > label:after {content:':';}
@@ -2294,10 +2294,10 @@ color:#1e80a9;
  * ============================================ */
 .cart-table {float:left; width:66.9%;}
 .cart .btn-proceed-checkout {height:40px; width:250px; white-space:normal; background-color: #c55446; border-radius:2px; box-shadow:0px 1px 1px 0px #000; padding-top:.9em;}
-.cart .button span {font-size: 1.2em;}
+.cart .button span {}
 .cart-forms, .cart-totals-wrapper, .crosssell {float:right; clear:right; width:33.1%; padding-left:20px; position:relative;}
 .cart-totals, .cart-forms .discount, .cart-forms .giftcard, .cart-forms .shipping {padding:10px; background-color:#f4f4f4; border:1px solid #cccccc;}
-.cart-forms .discount {height:92px; background-color: #fff; padding: 8px 15px 15px; border: 1px dashed #78b3cb;}
+.cart-forms .discount {background-color: #fff; padding: 8px 15px 15px; border: 1px dashed #78b3cb;}
 .cart .cart-forms .giftcard {padding-bottom:0;}
 .cart-table, .cart-totals, .cart-forms .discount, .cart-forms .giftcard, .cart-forms .shipping {margin-bottom:20px; background-color:#fff;border: 1px dashed #78b3cb; position:relative;}
 .cart-totals {border:1px solid #c55446; background-color:#f1f6f7; padding:8px 19px 15px;}
@@ -2479,7 +2479,7 @@ color:#1e80a9;
 #discount-coupon-form .button-wrapper, .cart .giftcard .button-wrapper {display:inline-block; vertical-align:bottom;}
 #discount-coupon-form .button-wrapper > button, .cart .giftcard .button-wrapper > button {float:left;height: 37px; width:70px; background-color: #78b3cb; border: 1px solid #4a99ba; margin-top:4px; padding:0 13px;}
 #discount-coupon-form .button-wrapper span, #giftcard-form .button-wrapper span {color:#fff; text-decoration: none;}
-#discount-coupon-form .input-text, .cart .giftcard .input-text {border-radius:0; height:37px; width:196px; margin-top:4px; float:left; position: relative; background-color:#f1f6f7; font-family:'robotolight'; font-size:0.9em;}
+#discount-coupon-form .input-text, .cart .giftcard .input-text {border-radius:0; height:37px; width:196px; margin-top:4px; float:left; position: relative; background-color:#f1f6f7; font-family:'robotolight'; font-size:0.9em;padding: 0px 5px;}
 .cart .giftcard p {margin-bottom:7px;}
 .cart .giftcard .check-gc-status {float:left; padding:0px;}
 .cart .giftcard .check-gc-status > span > span {font-size:12px; text-transform:none; text-decoration:none; font-family:'robotoregular'; padding-top:6px;}
@@ -4653,9 +4653,11 @@ position: absolute;
     color: #666766;
 }
 .products-grid .energy_star {
-    bottom: 0;
+	bottom: 0px;
     position: absolute;
     right: 0;
+    bottom: 1px;
+    right: 1px;
 }
 .product-img-box .energy_star {
     left: 0;
@@ -4680,11 +4682,73 @@ position: absolute;
     width: 100%;
     margin: 0px 0 0 0;
 }
+.wrapper_inner_add ul li img {
+    height: 100%;
+}
+.no-touch .product-image:hover {
+    border-color: #1d80a9;
+}
+.catalog-product-view .product-view .add-to-cart {
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+}
+.discount h2 {
+    font-family: "robotoregular";
+    font-size: 12px;
+    font-weight: 400;
+    text-align: left;
+    text-transform: capitalize;
+    min-width: 105px;
+    display: inline-block;
+    margin-right: 10px;
+    color: #78b3cb;
+}
+.discount-form .input-box .buttons-set button{
+	float: left;
+    height: 37px;
+    width: 70px;
+    background-color: #78b3cb;
+    border: 1px solid #4a99ba;
+    margin-top: 4px;
+    padding: 0 13px;
+}
+.discount-form .input-box{
+float: left;
+padding: 0;
+}
+.buttons-set_set button{
+    float: left;
+    height: 37px;
+    width: 70px;
+    background-color: #78b3cb;
+    border: 1px solid #4a99ba;
+    margin-top: 4px;
+    padding: 0 13px;
+}
+.buttons-set_set {
+display: inline-block;
+    vertical-align: bottom;
+}
+.discount-form .input-box input{
+border-radius: 0;
+    height: 37px;
+    width: 196px;
+    margin-top: 4px;
+    float: left;
+    position: relative;
+    background-color: #f1f6f7;
+    font-family: 'robotolight';
+    font-size: 0.9em;
+}
+
 /* end for desktop */
 
 @media only screen and (max-width:736px) {
 
-.footer-container .fthd .joinemail .block-subscribe {width:150px}
+.footer-container .fthd .joinemail .block-subscribe {width:170px}
 .footer address, .footer .ftmenu {display:block; text-align:center; width:100%; margin:10px 0 0}
 .footer .ftcol-rt {width:100%; margin:0 auto; text-align:center} .footer .ftcol-rt .everycompany {width:100%} .footer .ftcol-rt .everycompany li {float:none; display:inline-block} .footer .ftcol-rt .social {margin:0; float:none; display:inline-block}
 
@@ -5243,7 +5307,34 @@ display:none;
 }
 /* mobile */
 @media only screen and (max-width: 736px){
-
+.toolbar {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-bottom: 0px solid #b0d2e1;
+    padding: 5px 0px 0px 5px !important;
+}
+.sorter {
+    float: left;
+    width: 50% !important;
+}
+.pager .amount {
+    float: left;
+    font-family: 'robotoregular';
+    white-space: nowrap;
+    margin: 0;
+    width: 100%;
+    border-top: 1px solid #a5ccdd;
+	padding: 10px 10px 0px 10px;
+}
+.catalog-product-view .product-view .add-to-cart{
+    width: 100%;
+}
+.footer-container .fthd .joinemail {
+    font-size: 11px;
+}
+.footer-container .fthd .joinemail .email {
+    width: 124px;
+}
 .banner_content_inner_content {
     max-width: 260px;
     position: relative;
@@ -5352,16 +5443,17 @@ background-position: 60px 0px;
     position: relative;
 }
 .joinemail .email{
-display:none;
+
 }
-.block.block-subscribe {
-    width: 100% !important;
-}
+
 .footer .block-subscribe .input-box {
     float: left;
-    width: 82%;
+    width: 68%;
     padding-top: 0;
     min-width: auto;
+}
+#newsletter{
+font-size: 12px;
 }
 form#newsletter-validate-detail {
     float: right;
@@ -5416,10 +5508,8 @@ float:right;
 .sorter > .sort-by{
     margin-left: 10px;
 }
-.pager {
-    border-top: 1px solid #b6d6e3;
-    border-bottom: 1px solid #b6d6e3;
-}
+
+
 .toolbar{
 padding:0;}
 .toolbar-bottom .pages{
@@ -6046,8 +6136,6 @@ width: 100% !important;
   .checkout-cart-index .page-header, .aw-onestepcheckout-index-index .page-header {border-bottom:2px solid #dfecf2;}
   .cart-table .product-cart-actions .qty {width:80%;}
   .wrapper {background:initial;}
-  #discount-coupon-form .input-text, .cart .giftcard .input-text {width:73.61%;}
-  #discount-coupon-form .button-wrapper > button, .cart .giftcard .button-wrapper > button {width:100%; padding:0 14%;}
   .cart-totals .checkout-types .btn-checkout {height:50px; width:100%; padding:5px 17.27px 0; margin:0; position:relative; right:10% }
   .cart .button span {font-size:1.1em;}
   .cart .btn-proceed-checkout {height:50px; width:100%; padding:5px 21.28px 0;}
@@ -6092,8 +6180,6 @@ width: 100% !important;
   .checkout-cart-index .price-box .price, .price {padding-right:24%; font-size:1.1em; font-family:'robotoregular';}
   .cart .cart-totals table tfoot strong {font-size:1em;}
   .cart .cart-totals table tfoot strong span, .cart .cart-totals table tfoot span.price {font-size:0.9em; font-family:'robotoregular'; padding-right:15%;}
-  #discount-coupon-form .field-wrapper, .cart .giftcard .field-wrapper {width:100%;}
-  #discount-coupon-form .button-wrapper, .cart .giftcard .button-wrapper {width:26%;}
   .cart .giftcard .check-gc-status > span > span {font-size: 0.8em;}
   .products-grid {width:95%; margin:0 auto;}
   .crosssell h2 {text-align:center;}
@@ -6116,12 +6202,13 @@ width: 100% !important;
 }
 .arrow_custom img {
     width: 395px;
-    height: 320px;
+    height: 310px;
 }
 ul.sub_category_menu_ul {
 }
 li.sub_category_menu_li {
     width: 150px;
+	margin-bottom:3px; 
 }
 .menu_overlay {
     background-color: rgba(0, 0, 0, 0.4);
@@ -6177,13 +6264,7 @@ ul.sub_category_menu_sub_second_main {
 	left: 158px;
     padding: 0px;
 }
-.catalog-product-view .product-view .add-to-cart {
-    padding-bottom: 3px;
-    margin-bottom: 10px;
-    text-align: center;
-    margin: 0 auto;
-    width: 80%;
-}
+
 .catalog-product-view .product-view .product-shop .price-box{
     margin-top: 10px;
 }

@@ -122,13 +122,16 @@ function amshopby_ajax_request(url){
             parameters:{'is_ajax':1},
             onSuccess: function(response){
                 try {
+					alert("sending request....");
                     var data = response.responseText;
                     if(!data.isJSON()){
+						console.log("Exception thorwo...........");
                         throw new EventException('Cannot convert response data to JSON');
                     }
 
                     data = data.evalJSON();
                     if (!data.page || !data.blocks){
+						console.log("Exception thorwo...........22222222222");
                         throw new EventException('Invalid data structure in response');
                     }
                     amshopby_ajax_update(data);
