@@ -144,4 +144,15 @@
 
 
 <?php echo $this->getChildHtml('topContainer'); ?>
-<?php echo $this->getChildHtml('ambanners.category'); ?>
+<?php //echo $this->getChildHtml('ambanners.category'); ?>
+<?php if ($this->getIsHomePage()) {
+echo $this->getLayout()->createBlock('ambanners/container')->setTemplate('ambanners/container.phtml')->setPosition(11)->toHtml(); 
+}
+	?>
+<?php 
+if(Mage::registry('current_category'))
+{
+echo $this->getLayout()->createBlock('ambanners/container')->setTemplate('ambanners/container.phtml')->setPosition(4)->toHtml(); 
+}
+?>
+
