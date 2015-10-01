@@ -208,7 +208,7 @@
             <?php if ($this->isCustomerLoggedIn() && $this->customerHasAddresses()):?>
                 <div class="aw-onestepcheckout-general-form-field">
                     <div class="control">
-                        <input type="checkbox" name="billing[save_in_address_book]" value="1" title="<?php echo $this->__('Save in address book') ?>" id="billing:save_in_address_book" onchange="if(window.shipping) shipping.setSameAsBilling(false);"<?php if ($this->getDataFromSession('save_in_address_book')):?> checked="checked"<?php endif; ?> class="checkbox" />
+                        <input style="margin-left:0px;" type="checkbox" name="billing[save_in_address_book]" value="1" title="<?php echo $this->__('Save in address book') ?>" id="billing:save_in_address_book" onchange="if(window.shipping) shipping.setSameAsBilling(false);"<?php if ($this->getDataFromSession('save_in_address_book')):?> checked="checked"<?php endif; ?> class="checkbox" />
                         <label for="billing:save_in_address_book"><?php echo $this->__('Save in address book') ?></label>
                     </div>
                     <div style="clear:both;"></div>
@@ -238,7 +238,7 @@
          <div class="aw-onestepcheckout-general-form-field">
                     <div class="control">
                         <?php if ($this->customerMustBeRegistered()): ?>
-                        <input type="checkbox" name="billing[create_account]" value="1" title="<?php echo $this->__('Create Account') ?>" id="billing:create_account" class="checkbox"<?php if ($this->getDataFromSession('create_account')):?> checked="checked"<?php endif; ?>/><label for="billing:create_account"><?php echo $this->__('Create an account for later use.') ?></label>
+                        <input style="margin-left:0px;" type="checkbox" name="billing[create_account]" value="1" title="<?php echo $this->__('Create Account') ?>" id="billing:create_account" class="checkbox"<?php if ($this->getDataFromSession('create_account')):?> checked="checked"<?php endif; ?>/><label for="billing:create_account"><?php echo $this->__('Create an account for later use.') ?></label>
                         <?php else: ?>
                             <input type="hidden" name="billing[create_account]" value="1" id="billing:create_account" />
                         <?php endif ?>
@@ -249,7 +249,7 @@
         <?php if (!$this->isUseBillingAsShipping() && $this->canShip()): ?>
             <div id="aw-onestepcheckout-billing-use-for-shipping" class="aw-onestepcheckout-general-form-field">
                 <div class="control">
-                    <input type="checkbox" name="billing[use_for_shipping]" value="1" title="<?php echo $this->__('Ship to same address') ?>" id="billing:use_for_shipping" <?php if ($this->isUseBillingAsShippingChecked()):?> checked="checked"<?php endif; ?> class="checkbox" />
+                    <input style="margin-left:0px;" type="checkbox" name="billing[use_for_shipping]" value="1" title="<?php echo $this->__('Ship to same address') ?>" id="billing:use_for_shipping" <?php if ($this->isUseBillingAsShippingChecked()):?> checked="checked"<?php endif; ?> class="checkbox" />
                     <label for="billing:use_for_shipping"><?php echo $this->__('Ship to same address') ?></label>
                 </div>
                 <div style="clear:both;"></div>
