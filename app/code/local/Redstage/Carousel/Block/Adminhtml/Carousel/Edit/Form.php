@@ -51,7 +51,16 @@ class Redstage_Carousel_Block_Adminhtml_Carousel_Edit_Form extends Mage_Adminhtm
             'name' => 'sort_order',
             'note' => Mage::helper('carousel')->__('Order of the slide in the collection (larger numbers push the slide to the right).')
         ));
-
+        $fieldset->addField('caption', 'editor', array(
+            'label' => Mage::helper('carousel')->__('Caption'),
+            'value' => '0',
+            'class' => 'required-entry',
+            'wysiwyg'   => true,
+            'required' => false,
+            'style'     => 'height:15em',
+            'name' => 'caption',
+            'note' => Mage::helper('carousel')->__('To show promo code on banner')
+        ));
         $fieldset->addField('name', 'text', array(
             'label' => Mage::helper('carousel')->__('Name'),
             'class' => 'required-entry',
