@@ -1899,7 +1899,7 @@ h2.product-name a:hover, h3.product-name a:hover, h4.product-name a:hover, h5.pr
 .product-view .add-to-cart .qty-wrapper {
         margin: 5px 15px 0px 0px;
 }
-.product-view .add-to-cart .qty-wrapper label {line-height:40px;}
+.product-view .add-to-cart .qty-wrapper label {line-height:34px;}
 .product-view .add-to-cart .qty-wrapper .qty {float:left; height:35px;}
 .product-view .add-to-cart-buttons {float:left; margin-right:0px; max-width:100%;}
 .product-view .add-to-cart-buttons .paypal-logo {clear:left; text-align:center;}
