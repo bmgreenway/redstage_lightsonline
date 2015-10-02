@@ -9,6 +9,7 @@
             <action method="addItem"><type>skin_js</type><name>js/homepage-banner-carousel/jquery-1.10.1.min.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/homepage-banner-carousel/jquerynoconflict.js</name></action>			
 			<action method="addItem"><type>skin_js</type><name>js/mobile-toggle-effect.js</name></action>  
+			<action method="addItem"><type>skin_css</type><name>css/custom.css</name></action>
 		</reference>
     </default>
 
@@ -78,6 +79,7 @@
 		<action method="addItem"><type>skin_css</type><name>css/home-product-carousel/owl.carousel.css</name><params/></action>		
 		<action method="addItem"><type>skin_css</type><name>css/home-product-carousel/owl.theme.css</name><params/></action>
 		<action method="addItem"><type>skin_js</type><name>js/home-product-carousel/owl.carousel.js</name></action>
+		
 	</reference>
 	<reference name="content">
 		<remove name="product.attributes" />
@@ -95,7 +97,6 @@
 			</block>			
 		</reference>
 	</reference>
-  </catalog_product_view>
-   
+  </catalog_product_view>   
 </layout>
 

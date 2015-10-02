@@ -40,7 +40,7 @@
         <div class="field-wrapper">
             <input class="required-entry input-text" type="text" id="giftcard_code" name="giftcard_code" value="" placeholder="<?php echo 'Enter card number here'?>" />
             <div class="button-wrapper">
-                <button class="button2" onclick="giftcardForm.submit()" type="button" value="<?php echo $this->__('Apply') ?>"><span><span><?php echo $this->__('Apply') ?></span></span></button>
+                <button class="button2 giftcard_code_button_sb" onclick="giftcardForm.submit()" type="button" value="<?php echo $this->__('Apply') ?>"><span><span><?php echo $this->__('Apply') ?></span></span></button>
             </div>
         </div>
         <a class="button2 check-gc-status" onclick="checkGiftCardStatus();" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Check Gift Card status and balance')) ?>"><span><span><?php echo $this->__('Check Gift Card status and balance') ?></span></span></a>
