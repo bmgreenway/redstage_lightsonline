@@ -122,7 +122,8 @@
 <div class="toolbar for_mobile">   
     <div class="pager">
 		 <?php if( $this->isExpanded() ): ?>
-        <div class="sorter">
+        <div class="sorter_container">
+		<div class="sorter">
             <div class="sort-by">
                 <label><?php echo $this->__('Sort By') ?></label>
                 <select onchange="setLocation(this.value)" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Sort By')) ?>">
@@ -167,6 +168,7 @@
                 <?php //endforeach; ?>
                 </select> -->
             </div>
+        </div>
         </div>
 		 <?php if($this->getLastPageNum()>1): ?>
 				<p class="amount amount--no-pages">
