@@ -6311,7 +6311,7 @@ li.sub_category_menu_li {
 	background-color: rgba(0, 0, 0, 0.4);
     position: absolute;
     width: 100%;
-    margin: -42px 0 0 0;
+    margin: -41px 0 0 0;
     color: #FFF;
     padding: 0 5px;
     cursor: pointer;
@@ -6325,7 +6325,7 @@ i.menu_arrow_icon {
     background-size: contain;
     position: absolute;
     margin: -38px 0 0 0;
-    right: 5px;
+    right: 10px;
 }
 .sub_category_menu_sub {
     width: 60%;
@@ -6337,7 +6337,7 @@ li.sub_category_menu_li a {
     font-size: 14px;
     font-family: 'robotolight';
     color: #1d80a9 !important;
-    display: inline-block;
+    float:left;
     width: 100%;
     position: relative;
 	padding:5px 0
