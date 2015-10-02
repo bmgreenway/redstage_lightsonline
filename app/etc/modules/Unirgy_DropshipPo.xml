@@ -19,7 +19,7 @@
 <config>
     <modules>
         <Unirgy_DropshipPo>
-            <active>true</active>
+            <active>false</active>
             <codePool>community</codePool>
             <depends>
                 <Unirgy_Dropship />
