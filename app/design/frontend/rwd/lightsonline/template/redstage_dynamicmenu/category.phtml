@@ -1,13 +1,13 @@
 <?php $dataParams = $this->getData(); ?>
 <?php $category = Mage::getModel('catalog/category')->load($dataParams['cat_id']); ?>
-<?php //print_r($category->getData()); exit; ?>
+
 <?php if ($category->getId()) : ?>
 <li class="sub_category_menu_li">
 	<a href="<?php echo $category->getUrl(); ?>"><?php echo $category->getName(); ?></a>
 	<div class="sub_category_menu_sub_inner" id="<?php echo $dataParams['id']; ?>">
 		<div class="sub_category_menu_sub_content">
 			<span class="arrow_custom">
-				<img alt="" src="<?php echo Mage::getBaseUrl('media').'catalog/category/' . $category->getImage(); ?>" /> 
+				<img alt="" src="<?php echo Mage::getBaseUrl('media').'catalog/category/' . $category->getMegamenuImage(); ?>" /> 
 			</span>
 			<a href="<?php echo $category->getUrl(); ?>">
 				<div class="menu_overlay">
