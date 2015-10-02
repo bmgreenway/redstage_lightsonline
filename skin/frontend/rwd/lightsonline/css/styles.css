@@ -5410,8 +5410,7 @@ display:none;
     font-family: 'robotoregular';
     white-space: nowrap;
     margin: 0;
-	border-bottom: 1px solid #a5ccdd;	
-	margin: 5px 0 0 0;
+	margin: 15px 0 0 0;
 }
 .catalog-product-view .product-view .add-to-cart{
     width: 100%;
@@ -6309,13 +6308,13 @@ li.sub_category_menu_li {
 	margin-bottom:3px; 
 }
 .menu_overlay {
-    background-color: rgba(0, 0, 0, 0.4);
+	background-color: rgba(0, 0, 0, 0.4);
     position: absolute;
     width: 100%;
-    margin: -41px 0 0 0;
+    margin: -42px 0 0 0;
     color: #FFF;
-    padding: 0 10px;
-	cursor:pointer;
+    padding: 0 5px;
+    cursor: pointer;
 }
 
 i.menu_arrow_icon {
@@ -6332,6 +6331,7 @@ i.menu_arrow_icon {
     width: 60%;
 	float: left;
 }
+
 li.sub_category_menu_li a {
 	outline: none;
     font-size: 14px;
@@ -6341,6 +6341,9 @@ li.sub_category_menu_li a {
     width: 100%;
     position: relative;
 	padding:5px 0
+}
+li.sub_category_menu_li .sub_category_menu_sub_inner a{
+padding:0px 0;
 }
 .sub_category_menu_li:hover{
 border:0 solid !important;
@@ -6421,4 +6424,8 @@ ul.sub_category_menu_sub_second_main {
 font-size:12px;
 }
 .which_room.lightfinder_inner{padding: 5px 0;
+}
+.aplus {
+    position: relative;
+    left: 20px;
 }
