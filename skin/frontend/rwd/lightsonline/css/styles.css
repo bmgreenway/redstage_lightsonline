@@ -543,6 +543,7 @@ font-size:1.1vw;
 }
 .button, .cart-table .product-cart-actions .button, #co-shipping-method-form .buttons-set .button, .footer .button {    
 	background: #1d80a9;
+	*background: transparent;
     display: inline-block;
     padding: 7px 15px;
     border: 0;
@@ -1972,9 +1973,10 @@ h2.product-name a:hover, h3.product-name a:hover, h4.product-name a:hover, h5.pr
 	margin:-2px 0 0 5px;
 }
 .product-collateral .toggle-tabs li.current span {
-    padding: 0px 30px;
+    padding: 0px 25px;
     height: 32px;
     line-height: 32px;
+	font-size:13px;
 }
 .product-collateral .toggle-tabs li.current {border-right: 2px solid #b9b9b9;border-left: 2px solid #b9b9b9;border-top: 1px solid #999999;}
 .product-collateral .toggle-tabs li.current > span {background-color:#FFFFFF; z-index:5;}
@@ -2355,7 +2357,7 @@ color:#1e80a9;
 }
 .cart-table {font-family:'robotoregular';}
 .cart-table th, .cart-table td, .cart-table tbody td {border-bottom:none; vertical-align:top;}
-.cart-table h2 {color:#636363; font-size:14px; font-weight:600; margin-bottom:0; width:175px; display:inline-block;}
+.cart-table h2 {color:#636363; font-size:14px; margin-bottom:0; width:175px; display:inline-block;}
 .cart-table thead th, .cart-table tbody td {background-color:transparent; padding:10px 5px; font-family:'robotoregular'; text-transform: capitalize;}
 .cart-table .product-cart-info, .cart-table .product-cart-actions {padding-left:10px;}
 .cart-table tr {border-bottom:1px solid #dfedf3;}
@@ -4782,7 +4784,18 @@ border-top:1px solid #b0d2e1;
 .bottom_border_div{
 border-bottom:1px solid #b0d2e1;
 }
-
+.product-collateral.toggle-content.tabs dd.tab-container.last.current {
+    font-size: 13px;
+    color: #808080;
+    font-family: 'robotolight';
+}
+ul.checkout-types.top p.paypal-logo {
+    display: none;
+}
+ul.checkout-types.bottom p.paypal-logo {
+    right: 27px;
+    position: relative;
+}
 /* end for desktop */
 
 @media only screen and (max-width:736px) {
@@ -5340,6 +5353,11 @@ ul.sub_category_menu_sub_second_main {
     padding: 0 20px;
     border-left: 1px solid #ccc;
     margin: 0 0 0 115px;
+}
+.product-collateral .toggle-tabs li.current span {
+    padding: 0px 30px;
+    height: 32px;
+    line-height: 32px;
 }
 }
 .for_mobile{
@@ -6351,6 +6369,7 @@ border:0 solid !important;
 ul.sub_category_menu_sub_second_main {
     padding: 0 20px;
     border-left: 1px solid #ccc;
+	float:left;
 }
 .sub_category_menu_sub_second {
     width: 33%;
