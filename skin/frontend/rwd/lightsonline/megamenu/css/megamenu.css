@@ -42,7 +42,7 @@
 .ms-topmenu .ms-label{
     color: #808080;
     font-family: 'robotolight';
-    text-transform: uppercase !important;
+    text-transform: uppercase !important;float:left;
 }
 
 #ms-topmenu li:hover {
@@ -65,7 +65,7 @@
     border:1px solid #ddd;
     max-width: 100%;
     border-top: 0;
-    min-width: 160px;
+    min-width: 160px;border-top: 2px solid #D2E6EE;
 }
 .ms-topmenu .ms-submenu a:hover {
     background-color: #d2e6ee;
