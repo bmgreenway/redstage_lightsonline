@@ -4345,7 +4345,7 @@ display:inline-block;
 .product-img-box .energy_guide {
     position: absolute;
     right: 10px;
-    z-index: 9999;
+    z-index: 1000;
     bottom: 10px;
     cursor: pointer;
 }
