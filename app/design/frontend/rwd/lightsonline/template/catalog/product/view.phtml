@@ -152,7 +152,7 @@
 							->addCreatedAtLessThanNowFilter()
 						;
 					?>
-					<a href="#product_qa">Question and Answers (<?php echo $collection->getSize(); ?>)</a>
+					<a href="#product_qa">Questions and Answers (<?php echo $collection->getSize(); ?>)</a>
 				</div>
 				<div class="product-collateral toggle-content tabs">
 				<?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
@@ -173,19 +173,19 @@
 											<ul>
 												<li>
 													<div class="attrib_val">
-														<span>Airflow</span> <br/> <?php echo $_product->getAttributeText('f_airflow'); ?>
+														<span>Airflow</span> <br/> <?php echo sprintf("%01.2f", $_product->getAttributeText('f_airflow')); ?>
 														Cubic Feet Per Minute
 													</div>
 												</li>
 												<li>
 													<div class="attrib_val">
-														<span>Electricity Use</span> <br/> <?php echo $_product->getAttributeText('f_watts'); ?>
+														<span>Electricity Use</span> <br/> <?php echo sprintf("%01.2f", $_product->getAttributeText('f_watts')); ?>
 														Watts (excludes lights)
 													</div>
 												</li>
 												<li>
 													<div class="attrib_val">
-														<span>Airflow Efficiency</span> <br/> <?php echo $_product->getAttributeText('f_efficiency'); ?>
+														<span>Airflow Efficiency</span> <br/> <?php echo sprintf("%01.2f", $_product->getAttributeText('f_efficiency')); ?>
 														Cubic Feet Per Minute Per Watt
 													</div>
 												</li>
