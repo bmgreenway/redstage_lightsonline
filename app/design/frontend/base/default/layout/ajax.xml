@@ -42,6 +42,7 @@
             </action> 			
         </reference>		
     	<reference name="product_list">
+            <action method="setColumnCount"><count>4</count></action>
     		<action method="setTemplate"><template>ajax/catalog/product/view/list.phtml</template></action>
     	</reference>
     </catalog_category_default>
@@ -71,6 +72,7 @@
         </reference>	
     	
     	<reference name="product_list">
+            <action method="setColumnCount"><count>4</count></action>
     		<action method="setTemplate"><template>ajax/catalog/product/view/list.phtml</template></action>
     	</reference>
     </catalog_category_layered>
@@ -99,6 +101,7 @@
         </reference>    
         
         <reference name="search_result_list">
+            <action method="setColumnCount"><count>4</count></action>
             <action method="setTemplate"><template>ajax/catalog/product/view/list.phtml</template></action>
         </reference>
      </catalogsearch_result_index>
@@ -127,6 +130,7 @@
         </reference>    
         
         <reference name="search_result_list">
+            <action method="setColumnCount"><count>4</count></action>
             <action method="setTemplate"><template>ajax/catalog/product/view/list.phtml</template></action>
         </reference>
      </catalogsearch_advanced_result>
