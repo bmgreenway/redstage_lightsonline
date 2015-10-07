@@ -38,12 +38,12 @@ div.block-layered-nav dd a img {/* padding: 0px 4px 5px;*/ float:left;}
     margin-top: 4px;
 }
 #narrow-by-list dt:first-child{
-    padding: 0px 0 10px 0;
+    padding: 0px 0 8px 0;
 }
 #narrow-by-list dt {
     color: #333;
-    padding: 35px 0 10px 0;
-    border-bottom: 2px solid #e6e6e6;
+    padding: 25px 0 10px 0;
+    border-bottom: 1px solid #e6e6e6;
 }
 div.block-layered-nav dd li.amshopby-cat-level-2 {padding-left:10px;}
 div.block-layered-nav dd li.amshopby-cat-level-3 {padding-left:20px;}
