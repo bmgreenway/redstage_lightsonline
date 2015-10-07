@@ -45,10 +45,11 @@
     text-transform: uppercase !important;float:left;
 }
 
-#ms-topmenu li:hover {
+#ms-topmenu li:hover, .ms-topmenu .ms-level0.active{
     border: 1px solid #CCC;
 	border-bottom: 0;
-}#ms-topmenu li {
+}
+#ms-topmenu li {
     border: 1px solid transparent;
 }
 .ms-megamenu .ms-iconmega{
