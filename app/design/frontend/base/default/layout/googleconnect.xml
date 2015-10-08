@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<layout version="1.0.0">
+    <default>
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/aheadworks/socialbuttons/googleconnect.js</name></action>
+            <action method="addItem"><type>skin_css</type><name>css/aheadworks/socialbuttons/googleconnect.css</name></action>
+        </reference>
+        <block type="googleconnect/custom_connectbutton" name="custom.googleconnect" template="google/connect/custom/connectbutton.phtml"/>
+    </default>
+
+    <customer_account_login>
+        <reference name="before_body_end">
+            <block  type="googleconnect/customer_connectbutton" name="googleconnect" template="google/connect/connectbutton.phtml" />
+        </reference>
+    </customer_account_login>
+
+    <aw_onestepcheckout_index_index>
+        <reference name="before_body_end">
+            <block type="googleconnect/checkout_connectbutton" name="googleconnect" template="google/connect/connectbutton.phtml"/>
+        </reference>
+    </aw_onestepcheckout_index_index>
+
+    <checkout_onepage_index>
+        <reference name="before_body_end">
+            <block type="googleconnect/checkout_connectbutton" name="googleconnect" template="google/connect/connectbutton.phtml"/>
+        </reference>
+    </checkout_onepage_index>
+
+
+    <googleconnect_login_index>
+        <reference name="root">
+            <action method="setTemplate"><template>google/connect/popup.phtml</template></action>
+        </reference>
+        <reference name="content">
+            <block type="googleconnect/login" name="googleconnect.popup" template="google/connect/login.phtml"/>
+        </reference>
+    </googleconnect_login_index>
+</layout>

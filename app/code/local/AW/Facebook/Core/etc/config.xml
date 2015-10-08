@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <AW_Facebook_Core>
+            <version>3.0.0</version>
+        </AW_Facebook_Core>
+    </modules>
+
+    <global>
+        <blocks>
+            <facebookcore>
+                <class>AW_Facebook_Core_Block</class>
+            </facebookcore>
+        </blocks>
+        <models>
+            <facebookcore>
+                <class>AW_Facebook_Core_Model</class>
+            </facebookcore>
+        </models>
+        <helpers>
+            <facebookcore>
+                <class>AW_Facebook_Core_Helper</class>
+            </facebookcore>
+        </helpers>
+    </global>
+
+    <adminhtml>
+        <translate>
+            <modules>
+                <AW_Facebook_Core>
+                    <files>
+                        <default>AW_Facebookcore.csv</default>
+                    </files>
+                </AW_Facebook_Core>
+            </modules>
+        </translate>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <facebookcore translate="title" module="facebookcore">
+                                            <title>Facebook Core</title>
+                                            <sort_order>100</sort_order>
+                                        </facebookcore>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>

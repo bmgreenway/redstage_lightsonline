@@ -1,0 +1,19 @@
+Pin It Button,Pin It Button
+General Options,General Options
+Enable Extension,Enable Extension
+Pin Count,Pin Count
+Horizontal,Horizontal
+Vertical,Vertical
+No Count,No Count
+Width,Width
+Use Short Description of the product,Use Short Description of the product
+Use Price of the product,Use Price of the product
+The width of the image on http://pinterest.com,The width of the image on http://pinterest.com
+Content Options,Content Options
+Display on products page,Display on products page
+Display Custom Buttons,Display Custom Buttons
+Display Widget Buttons,Display Widget Buttons
+PinIt,PinIt
+Frontend Template,Frontend Template
+Only for simple products,Only for simple products
+Ex: "attribute_name1" some text "attribute_name2". If "Use Custom Description" field is not empty, then fileds "Use Price of the product" and "Use Short Description of the product" will not be considered.,Ex: "attribute_name1" some text "attribute_name2". If "Use Custom Description" field is not empty, then fileds "Use Price of the product" and "Use Short Description of the product" will not be considered.

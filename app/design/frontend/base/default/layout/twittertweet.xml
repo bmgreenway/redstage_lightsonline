@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<layout version="1.0.0">
+    <default>
+        <block type="twittertweet/custom_tweetbutton" name="custom.twittertweet" template="twitter/tweet/custom/tweetbutton.phtml"/>
+    </default>
+
+    <cms_page>
+        <reference name="content">
+            <block type="twittertweet/cms_tweetbutton" name="cms_page.twittertweet" template="twitter/tweet/tweetbutton.phtml" before="-"/>
+        </reference>
+    </cms_page>
+
+    <catalog_product_view>
+        <reference name="content">
+            <block type="twittertweet/catalog_product_tweetbutton" name="product.info.twittertweet" template="twitter/tweet/tweetbutton.phtml" before="-"/>
+        </reference>
+    </catalog_product_view>
+
+    <catalog_category_default>
+        <reference name="content">
+            <block type="twittertweet/catalog_category_tweetbutton" name="category_page.twittertweet" template="twitter/tweet/tweetbutton.phtml" before="-"/>
+        </reference>
+    </catalog_category_default>
+
+    <catalog_category_layered>
+        <reference name="content">
+            <block type="twittertweet/catalog_category_tweetbutton" name="category_page.twittertweet" template="twitter/tweet/tweetbutton.phtml" before="-"/>
+        </reference>
+    </catalog_category_layered>
+</layout>

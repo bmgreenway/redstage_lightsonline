@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<layout version="1.0.0">
+	<default>
+		<reference name="head">
+			<action method="addItem"><type>skin_js</type><name>js/aheadworks/socialbuttons/facebookconnect.js</name></action>
+			<action method="addItem"><type>skin_css</type><name>css/aheadworks/socialbuttons/facebookconnect.css</name></action>
+		</reference>
+		<block type="facebookconnect/custom_facebookconnect" name="custom.facebookconnect" template="facebookconnect/custom/facebookconnect.phtml"/>
+	</default>
+
+    <customer_account_login>
+        <reference name="before_body_end">
+            <block  type="facebookconnect/customer_facebookconnect" name="facebookconnect" template="facebookconnect/facebookconnect.phtml" />
+        </reference>
+    </customer_account_login>
+
+    <aw_onestepcheckout_index_index>
+        <reference name="before_body_end">
+            <block type="facebookconnect/checkout_facebookconnect" name="facebookconnect" template="facebookconnect/facebookconnect.phtml"/>
+        </reference>
+    </aw_onestepcheckout_index_index>
+
+    <checkout_onepage_index>
+        <reference name="before_body_end">
+            <block type="facebookconnect/checkout_facebookconnect" name="facebookconnect" template="facebookconnect/facebookconnect.phtml"/>
+        </reference>
+    </checkout_onepage_index>
+
+
+	<facebookconnect_login_index>
+		<reference name="root">
+			<action method="setTemplate"><template>facebookconnect/popup.phtml</template></action>
+		</reference>
+		<reference name="content">
+			<block type="facebookconnect/login" name="facebookconnect.login" template="facebookconnect/login.phtml"/>
+		</reference>
+	</facebookconnect_login_index>
+
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="addLink" translate="label" module="facebookconnect"><name>facebookconnect</name><path>facebookconnect/manage/</path><label>Facebook Connect</label></action>
+        </reference>
+    </customer_account>
+
+    <facebookconnect_manage_index translate="label">
+        <label>Customer My Account Facebook Wall Post</label>
+        <update handle="customer_account"/>
+        <reference name="my.account.wrapper">
+            <block type="facebookconnect/customer_form_facebookconnect" name="customer_facebookconnect">
+                <block type="page/html_wrapper" name="customer.facebookconnect.form.before" as="facebookconnect_form_before" translate="label">
+                    <label>Facebook Connect Form Before</label>
+                    <action method="setMayBeInvisible"><value>1</value></action>
+                </block>
+            </block>
+        </reference>
+    </facebookconnect_manage_index>
+
+    <wishlist_index_index translate="label">
+        <reference name="customer.wishlist.buttons">
+            <block type="facebookconnect/wishlist_share" name="wishlist_facebook_button" />
+        </reference>
+    </wishlist_index_index>
+</layout>

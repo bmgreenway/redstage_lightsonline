@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<widgets>
+	<twitterfollow_button type="twitterfollow/widget_followbutton" translate="name" module="twitterfollow">
+		<name>Twitter "Follow" Button</name>
+		<parameters>
+			<template translate="label">
+				<label>Frontend Template</label>
+				<visible>1</visible>
+				<required>1</required>
+				<type>text</type>
+				<value>twitter/follow/widget/followbutton.phtml</value> 
+			</template>
+		</parameters>
+	</twitterfollow_button>
+</widgets>

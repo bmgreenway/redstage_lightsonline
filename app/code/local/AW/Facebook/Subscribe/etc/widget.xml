@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<widgets>
+    <facebooksubscribe_button type="facebooksubscribe/widget_subscribe" translate="name description"
+                              module="facebooksubscribe">
+        <name>Facebook Subscribe</name>
+        <parameters>
+            <template translate="label">
+                <label>Frontend Template</label>
+                <visible>1</visible>
+                <required>1</required>
+                <type>text</type>
+                <value>facebooksubscribe/widget/subscribe.phtml</value>
+            </template>
+        </parameters>
+    </facebooksubscribe_button>
+</widgets>

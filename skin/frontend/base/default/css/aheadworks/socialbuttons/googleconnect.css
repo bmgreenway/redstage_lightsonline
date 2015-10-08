@@ -1,0 +1,41 @@
+.googleconnect-button {
+	display:inline-block;
+	margin:3px 10px 3px 0;
+	padding:0;
+}
+.googleconnect-button a {
+	display:inline-block;
+	height:24px;
+	width:auto;
+	padding:0 0 0 38px;
+	margin:0;
+	text-decoration:none;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:11px;
+	line-height:14px;
+	color:#FFFFFF;
+	cursor:pointer;
+}
+.googleconnect-button a,
+.googleconnect-button a span {
+	background-image:url(../../../images/aheadworks/socialbuttons/social_btn_long.png);
+	background-repeat:no-repeat;
+}
+
+.googleconnect-button a span {
+	display:inline-block;
+	height:14px;
+	width:auto;
+	padding:5px 10px 5px 5px;
+	margin:0;
+	text-decoration:none;
+}
+
+.googleconnect-button a {background-position:0 -24px; text-shadow:0 1px 0 #1a57bf;}
+
+.googleconnect-button a span {background-position:100% -24px;}
+
+.googleconnect-button a:hover {
+	text-decoration:none;
+	text-shadow:none;
+}

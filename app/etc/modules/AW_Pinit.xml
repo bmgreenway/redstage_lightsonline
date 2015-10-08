@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<AW_Pinit>
+			<active>true</active>
+			<codePool>local</codePool>
+		</AW_Pinit>
+	</modules>
+</config>

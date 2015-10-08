@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<layout version="1.0.0">
+    <default>
+        <block type="twitterfollow/custom_followbutton" name="custom.twitterfollow" template="twitter/follow/custom/followbutton.phtml"/>
+    </default>
+
+    <cms_page>
+        <reference name="content">
+            <block type="twitterfollow/cms_followbutton" name="cms_page.twitterfollow" template="twitter/follow/followbutton.phtml" before="-"/>
+        </reference>
+    </cms_page>
+
+    <catalog_product_view>
+        <reference name="content">
+            <block type="twitterfollow/catalog_product_followbutton" name="product.info.twitterfollow" template="twitter/follow/followbutton.phtml" before="-"/>
+        </reference>
+    </catalog_product_view>
+
+    <catalog_category_default>
+        <reference name="content">
+            <block type="twitterfollow/catalog_category_followbutton" name="category_page.twitterfollow" template="twitter/follow/followbutton.phtml" before="-"/>
+        </reference>
+    </catalog_category_default>
+
+    <catalog_category_layered>
+        <reference name="content">
+            <block type="twitterfollow/catalog_category_followbutton" name="category_page.twitterfollow" template="twitter/follow/followbutton.phtml" before="-"/>
+        </reference>
+    </catalog_category_layered>
+</layout>

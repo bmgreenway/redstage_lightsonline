@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<widgets>
+	<twittertweet_button type="twittertweet/widget_tweetbutton" translate="name" module="twittertweet">
+		<name>Twitter "Tweet" Button</name>
+		<parameters>
+			<template translate="label">
+				<label>Frontend Template</label>
+				<visible>1</visible>
+				<required>1</required>
+				<type>text</type>
+				<value>twitter/tweet/widget/tweetbutton.phtml</value> 
+			</template>
+		</parameters>
+	</twittertweet_button>
+</widgets>

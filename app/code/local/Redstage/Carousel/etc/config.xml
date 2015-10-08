@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Redstage_Carousel>
+            <version>1.1.0</version>
+        </Redstage_Carousel>
+    </modules>
+
+    <global>
+        <models>
+            <carousel>
+                <class>Redstage_Carousel_Model</class>
+                <resourceModel>carousel_resource</resourceModel>
+            </carousel>
+            <carousel_resource>
+                <class>Redstage_Carousel_Model_Resource</class>
+                <entities>
+                    <slide>
+                        <table>redstage_carousel_slide</table>
+                    </slide>
+                </entities>
+            </carousel_resource>
+        </models>
+        <helpers>
+            <carousel>
+                <class>Redstage_Carousel_Helper</class>
+            </carousel>
+        </helpers>
+        <blocks>
+            <carousel>
+                <class>Redstage_Carousel_Block</class>
+            </carousel>
+        </blocks>
+        <resources>
+            <carousel_setup>
+                <setup>
+                    <module>Redstage_Carousel</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </carousel_setup>
+            <carousel_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </carousel_write>
+            <carousel_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </carousel_read>
+        </resources>
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <carousel before="Mage_Adminhtml">Redstage_Carousel_Adminhtml</carousel>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <carousel>
+                    <file>carousel.xml</file>
+                </carousel>
+            </updates>
+        </layout>
+
+        <menu>
+            <cms>
+                <children>
+                    <carousel>
+                        <title>Redstage Carousel</title>
+                        <sort_order>0</sort_order>
+                        <action>adminhtml/carousel/index</action>
+                    </carousel>
+                </children>
+            </cms>
+        </menu>
+
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+
+                <admin>
+                    <children>
+                        <cms>
+                            <children>
+                                <carousel>
+                                    <title>Carousel Module</title>
+                                    <sort_order>0</sort_order>
+                                </carousel>
+                            </children>
+                        </cms>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+
+    <frontend>
+        <layout>
+            <updates>
+                <carousel>
+                    <file>carousel.xml</file>
+                </carousel>
+            </updates>
+        </layout>
+    </frontend>
+</config>

@@ -1,0 +1,5 @@
+<?php /** @var $this AW_Facebook_Comments_Block_Abstract  */?>
+<?php $meta_tags_params = $this->getMetaTagsParams(); ?>
+<?php foreach($meta_tags_params as $property=>$content): ?>
+    <meta property="<?php echo $property; ?>" content="<?php echo $content; ?>" />
+<?php endforeach; ?>
