@@ -1676,7 +1676,7 @@ h2.product-name a:hover, h3.product-name a:hover, h4.product-name a:hover, h5.pr
 .products-grid .product-image.loading {position:relative;}
 .products-grid .product-image.loading:before, .products-grid .product-image.loading:after {display:block;}
 
-@media only screen and (min-width:480px) {/* Config:Three columns + flexible gutter */
+@media only screen and (min-width:580px) {/* Config:Three columns + flexible gutter */
 .products-grid {/* Undo two-column config */
     /* Set three-column config */
 }
@@ -1685,6 +1685,12 @@ h2.product-name a:hover, h3.product-name a:hover, h4.product-name a:hover, h5.pr
 .products-grid > li {width:30.8642%; margin-right:3.7037%;}
 .products-grid > li:nth-child(3n+1) {clear:left;}
 .products-grid > li:nth-child(3n) {margin-right:0;}
+.sorter_container{
+    border-bottom: 0px solid #a5ccdd;
+}
+.toolbar.for_mobile .pager{
+    border-bottom: 0px solid #a5ccdd;
+}
 }
 
 @media only screen and (min-width:760px) {/* Config:Columns + flexible gutter */
@@ -2527,7 +2533,7 @@ color:#1e80a9;
 /* Change the layout to 2 columns at a breakpoint that is higher than a 3 columns layout would normally break */
 @media only screen and (max-width:979px) {.crosssell {/* Undo three-column config */
 }
-.crosssell .products-grid > li:nth-child(even),  .crosssell .products-grid > li:nth-child(3n),  .crosssell .products-grid > li {width:32%; margin-right:2%; height:270px;}
+.crosssell .products-grid > li:nth-child(even),  .crosssell .products-grid > li:nth-child(3n),  .crosssell .products-grid > li {width:32%; margin-right:2%;}
 .crosssell .products-grid > li:nth-child(odd) {clear:initial; float:left;}
 .crosssell .products-grid > li:nth-child(even) {margin-right:2%;}
 .crosssell .products-grid > li:nth-child(3n+1) {clear:none;}
@@ -4721,6 +4727,7 @@ position: absolute;
 }
 .wrapper_inner_add ul li img {
     height: 100%;
+	margin:0 auto;
 }
 .no-touch .product-image:hover {
     border-color: #1d80a9;
@@ -4999,6 +5006,12 @@ ul.products-grid.products-grid--max-4-col.first.odd {
 ul.home_products-grid h2.product-name {
     height: 42px;
     overflow: hidden;
+}
+.buttons-set_set span {
+    font-size: 13px !important;
+}
+li.amshopby-clearer a {
+    color: #1d80a9 !important;
 }
 /* end for desktop */
 
@@ -5637,7 +5650,7 @@ margin-left: 0px;
 .crosssell .products-grid > li:nth-child(even), .crosssell .products-grid > li:nth-child(3n), .crosssell .products-grid > li {
     width: 32%;
     margin-right: 2%;
-    height: 360px;
+   
 }
 .catalog-product-view .product-view .add-to-cart
 #aw-onestepcheckout-address .customer-name .field, .aw-onestepcheckout-general-form-field.aw-onestepcheckout-general-form-field-left, .aw-onestepcheckout-general-form-field.aw-onestepcheckout-general-form-field-right {
@@ -5786,7 +5799,7 @@ margin: 5px 0px;
     padding: 0 !important;
     float: none !important;
     text-align: center;
-    width: 35%;
+    width: 48%;
 }
 #discount-coupon-form span {
     font-size: 13px;    
@@ -5921,7 +5934,7 @@ font-size:15px;
     margin: 30px 8px !important;
 }
 .crosssell .products-grid > li:nth-child(even), .crosssell .products-grid > li:nth-child(3n), .crosssell .products-grid > li{
-height:260px;
+
 }
 .catalog-product-view .product-view .add-to-cart
  #aw-onestepcheckout-address .customer-name .field, .aw-onestepcheckout-general-form-field.aw-onestepcheckout-general-form-field-left, .aw-onestepcheckout-general-form-field.aw-onestepcheckout-general-form-field-right {
@@ -6028,6 +6041,7 @@ float:right;
     float: left;
     height: 34px;
     border-bottom: 1px solid #a5ccdd;
+    width: 100%;
 }
 .toolbar.for_mobile .pager {
     border-bottom: 1px solid #a5ccdd;
@@ -6727,10 +6741,117 @@ width: 100% !important;
   .cart div.cart-totals table tbody tr:last-child th {padding:2px 4% 5px 0}
 }
 /* Mobile View */
-@media only screen and (max-width: 599px) {
-.skip-content.skip-active{
-
+@media screen and (max-width: 420px) and (min-width:414px) {
+#discount-coupon-form .input-text, .cart .giftcard .input-text {
+    width: 80%;
+    float: left;
 }
+}
+@media screen and (max-width: 736px) and (min-width:700px) {
+.sorter_container{
+    border-bottom: 0px solid #a5ccdd;
+}
+.toolbar.for_mobile .pager{
+    border-bottom: 0px solid #a5ccdd;
+}
+  /* Undo three-column config */
+.products-grid--max-4-col > li:nth-child(odd) {clear:none;}
+.products-grid--max-4-col > li:nth-child(3n+1) {clear:none;}
+.products-grid--max-4-col > li:nth-child(even),  .products-grid--max-4-col > li:nth-child(3n) {margin-right:2.22222%;}
+/* Set column config */
+.products-grid--max-4-col > li {margin-right:2.22222%;}
+.products-grid--max-4-col > li {width:23.33333%; margin-right:2.22222%;}
+.products-grid--max-4-col > li:nth-child(4n+1) {clear:left;}
+.products-grid--max-4-col > li:nth-child(4n) {margin-right:0;}
+/* Config:Columns + flexible gutter */
+  /* Undo three-column config */
+.products-grid--max-5-col > li:nth-child(odd) {clear:none;}
+.products-grid--max-5-col > li:nth-child(3n+1) {clear:none;}
+.products-grid--max-5-col > li:nth-child(even),  .products-grid--max-5-col > li:nth-child(3n) {margin-right:2.22222%;}
+/* Set column config */
+.products-grid--max-5-col > li {margin-right:2.22222%;}
+.products-grid--max-5-col > li {width:18.22222%; margin-right:2.22222%;}
+.products-grid--max-5-col > li:nth-child(5n+1) {clear:left;}
+.products-grid--max-5-col > li:nth-child(5n) {margin-right:0;}
+/* Config:Columns + flexible gutter */
+  /* Undo three-column config */
+.products-grid--max-6-col > li:nth-child(odd) {clear:none;}
+.products-grid--max-6-col > li:nth-child(3n+1) {clear:none;}
+.products-grid--max-6-col > li:nth-child(even),  .products-grid--max-6-col > li:nth-child(3n) {margin-right:2.22222%;}
+/* Set column config */
+.products-grid--max-6-col > li {margin-right:2.22222%;}
+.products-grid--max-6-col > li {width:14.81481%; margin-right:2.22222%;}
+.products-grid--max-6-col > li:nth-child(6n+1) {clear:left;}
+.products-grid--max-6-col > li:nth-child(6n) {margin-right:0;}
+
+.page .main-container {padding:0 !important; margin:0;}
+  .logo .small {height:50px; display:inline-block;}
+  .cart .btn-proceed-checkout {width:85%; font-size:1.3em;}
+  .cart .cart-totals {margin-bottom: 20px;}
+  .checkout-cart-index .page-header, .aw-onestepcheckout-index-index .page-header {border-bottom:2px solid #9ec8da;}
+  .checkout-cart-index .page-header-container, .aw-onestepcheckout-index-index .page-header-container {height:75px;}
+  .cart .page-title h1 {float:none; text-align:center; margin:10px 0 12px; font-size:1.4em;}
+  .display-single-price .cart-forms {float:right; width:95%; margin:0 11px;}
+  .display-single-price .cart-table {width:100%; margin-top:20px;}
+  .display-single-price .crosssell {width:100%;}
+  .cart-table .cart-footer-actions .btn-continue {width:34.5%; margin-left:10px;}
+  .cart-table .cart-footer-actions .btn-update {width:29.5%; display:inline-block; float:right; margin-right:10px;}
+  .messages .success-msg li {width:95%; margin:0 auto;}
+  .messages .success-msg li:before {vertical-align:initial; margin-right:4%;}
+  .messages .success-msg li:after {position:initial; float:none; vertical-align:super; margin-left:9%;}
+  .messages .success-msg li span {width:75%; vertical-align:initial; display:inline-block; font-size:0.8em;}
+  .cart-totals .checkout-types .btn-checkout {width:95%; position:relative; left:0%; font-size:1.3em;}
+  .cart .cart-totals table td:first-child {padding-right:10%;}
+  .cart .cart-totals table tbody tr:last-child td{ font-size:1.1em;}
+  .cart .cart-totals table tbody tr:last-child th { font-size:1.1em;}
+  .checkout-cart-index .price-box .price, .price {padding-right:24%; font-size:1.1em; font-family:'robotoregular';}
+  .cart .cart-totals table tfoot strong {font-size:1em;}
+  .cart .cart-totals table tfoot strong span, .cart .cart-totals table tfoot span.price {font-size:0.9em; font-family:'robotoregular'; padding-right:15%;}
+  .cart .giftcard .check-gc-status > span > span {font-size: 0.8em;}
+  .products-grid {width:95%; margin:0 auto;}
+  .crosssell h2 {text-align:center;}
+  .crosssell h2:after {margin-top: 5px;}
+  .crosssell .products-grid > li:nth-child(even), .crosssell .products-grid > li:nth-child(3n), .crosssell .products-grid > li {width:47%; margin-right:6%;}
+  .crosssell .products-grid > li:nth-child(even) {margin-right:0;}
+  tr.first.odd {border-top:1px solid #e8f2f6;}
+  .cart-table .product-cart-actions .qty {width:55%;}
+  table#shopping-cart-table tbody tr {height:210px; margin-top:-10px;}
+  table#shopping-cart-table tbody tr:first-child {margin-top:10px;}
+  .cart-table td[data-rwd-label] {}.display-single-price .cart-forms {
+    width: 98%;
+    margin: 30px 8px !important;
+	}
+	#discount-coupon-form .input-text, .cart .giftcard .input-text {
+    width: 89%;
+    float: left;
+	}
+	.display-single-price .cart-forms, .display-single-price .cart-totals-wrapper {
+    width: 98%;
+    margin-right: 8px;
+	}
+	.col-main{
+	padding:10px;
+	}
+	.cart .cart-totals table td {
+    padding: 2px 32px 5px 0;
+}
+  .cart-table td[data-rwd-label]:before {display: block;
+    border-bottom: 1px solid #f5fbfc;
+    width: auto !important;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding-right: 0 !important;
+    padding-bottom: 0;
+    font-size: 0.9em;
+}
+  #shopping-cart-table {
+    margin-bottom: -20px;
+    margin-left: 10px;
+    width: 97%;
+}
+  .cart div.cart-totals table tbody tr:last-child th {padding:2px 10% 5px 0;}
+}
+@media only screen and (max-width: 599px) {
   .page .main-container {padding:0 !important; margin:0;}
   .logo .small {height:50px; display:inline-block;}
   .cart .btn-proceed-checkout {width:85%; font-size:1.3em;}
