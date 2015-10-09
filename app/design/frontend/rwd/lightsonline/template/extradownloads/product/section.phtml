@@ -25,7 +25,8 @@
  */
 ?><?php if ($this->getShowBlock()): ?>
 <div class="aw_extradownloads"<?php if ($style_id = $this->getStyleId()){ echo " id=\"{$style_id}\""; } ?>>
-    <h4><?php echo $this->getSectionTitle(); ?>	<a class="ultimate_toggle magic_arrow_down" id="show_hide_toggle" href="javascript:void(0);" dataparam="product_attachments">Show</a></h4>
+	<a class="ultimate_toggle magic_arrow_down" id="show_hide_toggle" href="javascript:void(0);" dataparam="product_attachments">Show</a>
+    <div class="resource_title"><?php echo $this->getSectionTitle(); ?>	</div>
 	<div id="product_attachments">
 		<div class="aw_extradownloads_0">
 			<div class="aw_extradownloads_title1">Files</div>
