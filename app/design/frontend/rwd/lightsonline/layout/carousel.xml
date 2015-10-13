@@ -3,7 +3,8 @@
         <reference name="head">
             <!--Add CSS and JS, skin Folder-->
             <action method="addItem"><type>skin_js</type><name>js/homepage-banner-carousel/jquery.flexslider.js</name></action>
-            <action method="addItem"><type>skin_js</type><name>js/homepage-banner-carousel/common-scripts.js</name></action>      
+            <action method="addItem"><type>skin_js</type><name>js/homepage-banner-carousel/common-scripts.js</name></action>
+            <action method="addItem"><type>skin_css</type><name>css/flexslider.css</name></action>      
 		</reference>
     </cms_index_index>
 </layout>
