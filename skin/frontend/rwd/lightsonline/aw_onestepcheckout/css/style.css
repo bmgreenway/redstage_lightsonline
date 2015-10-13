@@ -1075,9 +1075,9 @@ table.aw-onestepcheckout-cart-table thead tr {
     }
 
     .aw-onestepcheckout-auth-form-block {
-        vertical-align: top;
+       
         margin-bottom: 10px;
-        min-height: 55px;
+       
     }
 
     .aw-onestepcheckout-auth-form-block a{
