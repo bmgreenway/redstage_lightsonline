@@ -3670,7 +3670,7 @@ img { max-width: 100%; height: auto }
     height: 185px !important;
     background-color: #333;}
 .list1 li h2 { position: absolute; left: 0; bottom: 25px; font-size: 36px; color: #fff; text-transform: uppercase; text-align: center; width: 100% }
-.list1 li a.shop { color: #77b3cb; font-size: 14px; position: absolute; left: 40%; bottom: 10px; text-decoration: none; display: inline-block }
+.list1 li span.shop { color: #77b3cb; font-size: 14px; position: absolute; left: 40%; bottom: 10px; text-decoration: none; display: inline-block }
 .slidesml { background: #808080; border: 2px solid #b3b3b3; min-height: 70px; width: 100% }
 
 

@@ -10,9 +10,12 @@ $categories->addAttributeToFilter('parent_id', 2);//if you want only children of
 	    <?php foreach ($categories as $category){
 	    	$category = Mage::getModel('catalog/category')->load($category->getId());
 	     ?>
-        	<li><img alt="light" src="<?php echo $category->getImageUrl(); ?>" />
-				<h2><?php echo $category->getName(); ?></h2>
-				<a class="shop" href="<?php echo $category->getUrl(); ?>">Shop now</a>
+        	<li>
+    			<a href="<?php echo $category->getUrl(); ?>">
+        			<img alt="light" src="<?php echo $category->getImageUrl(); ?>" />
+					<h2><?php echo $category->getName(); ?></h2>
+					<span class="shop">Shop now</span>
+				</a>
 			</li>
     	<?php } ?>
    		</ul>
