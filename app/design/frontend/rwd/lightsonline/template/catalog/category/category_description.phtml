@@ -2,14 +2,13 @@
 	$_helper    = $this->helper('catalog/output');
 	$_category  = $this->getCurrentCategory();
 	if($_description = $_category->getDescription()): ?>
-   <div class="desktop-head-title"> 
-	<a class="show_hide_toggle magic_arrow_down" id="show_hide_toggle_cat_desc" href="javascript:void(0);" dataparam="category_description_std" >Show</a>	
-		<div class="category-description std" id="category_description_std"> 
-			<?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
-		</div>
-	</div>
+	<a class="show_hide_toggle magic_arrow_down" id="show_hide_toggle" href="javascript:void(0);" dataparam="home_page_heading_section" >Show</a>
+	<div class="desktop_home-page_heading_title category_show_hide top_border_div">
+<h1 class="home-page_heading_title"><?php echo  $_category->getMetaTitle(); ?></h1>
+<div id="home_page_heading_section" class="home_page_heading_section" style="display: none;"><?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?></div></div>
+		
 	<div class="mobile-head-title">
-		<div class="category-description std" id="category_description_std"> 
+		<div class="category-description std bottom_border_div" id="category_description_std"> 
 			<?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
 		</div>
     </div>

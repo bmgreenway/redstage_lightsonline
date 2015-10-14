@@ -25,8 +25,7 @@ array(
           'is_html_allowed_on_front'   => '1',
           'filterable_in_search'       => '1',
           'used_in_product_listing'    => '1',
-          'is_configurable'            => '1',
-          'apply_to'                   => 'simple,configurable',
+		  'is_used_for_promo_rules'    => '1',
           'visible_in_advanced_search' => '1',
           'position'                   => '1',
 		)

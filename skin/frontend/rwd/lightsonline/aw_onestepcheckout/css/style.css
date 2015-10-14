@@ -223,6 +223,7 @@
 #aw-onestepcheckout-authentification-container{
     position: relative;
     top: 0px;
+	padding:10px 0;
 }
 #aw-onestepcheckout-authentification .validation-advice{
     position: absolute;
@@ -331,10 +332,10 @@
 .aw-onestepcheckout-general-form-field.aw-onestepcheckout-general-form-field-left,
 .aw-onestepcheckout-general-form-field.aw-onestepcheckout-general-form-field-right{
     width:120px;
-    float: left;
+    float: left;margin: 0 21px 0 0px;
 }
 .aw-onestepcheckout-general-form-field.aw-onestepcheckout-general-form-field-left{
-    margin-right: 27px;
+  
 }
 .aw-onestepcheckout-general-form-field.aw-onestepcheckout-general-form-field-left .input-box,
 .aw-onestepcheckout-general-form-field.aw-onestepcheckout-general-form-field-right .input-box{
@@ -696,13 +697,15 @@ font-weight: normal;
     width: 100%;
 }
 #aw-onestepcheckout-review-comments textarea{
-    width:100%!important;
+    width:100% !important;
     height:5em;
 	background-color:#f4f4f4;
+	max-width:100% !important;
 }
 #aw-onestepcheckout-review-comments .field-row{
     margin-top: 5px;
 }
+
 .calendar{
     z-index: 7;
 }
@@ -1072,9 +1075,9 @@ table.aw-onestepcheckout-cart-table thead tr {
     }
 
     .aw-onestepcheckout-auth-form-block {
-        vertical-align: top;
+       
         margin-bottom: 10px;
-        min-height: 55px;
+       
     }
 
     .aw-onestepcheckout-auth-form-block a{

@@ -1,0 +1,314 @@
+<?php
+/**
+ * Magento Enterprise Edition
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Magento Enterprise Edition End User License Agreement
+ * that is bundled with this package in the file LICENSE_EE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.magento.com/license/enterprise-edition
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright Copyright (c) 2006-2015 X.commerce, Inc. (http://www.magento.com)
+ * @license http://www.magento.com/license/enterprise-edition
+ */
+
+/**
+ * Product view template
+ *
+ * @see Mage_Catalog_Block_Product_View
+ * @see Mage_Review_Block_Product_View
+ */
+?>
+<style type="text/css">
+	.stButton{
+		z-index: 0 !important;
+	}
+	.product-collateral .toggle-tabs li.current > span{
+		z-index: 0 !important;
+	}
+</style>
+<script type="text/javascript">var $j = jQuery.noConflict();</script>
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php $_product = $this->getProduct(); ?>
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+<div id="messages_product_view"><?php echo $this->getMessagesBlock()->toHtml() ?></div>
+<div class="product-view">
+    <div class="product-essential">
+        <form action="<?php echo $this->getSubmitUrl($_product, array('_secure' => $this->_isSecure())) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+            <?php echo $this->getBlockHtml('formkey') ?>
+            <div class="no-display">
+                <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+                <input type="hidden" name="related_product" id="related-products-field" value="" />
+            </div>
+
+            <div class="product-img-box">
+                <div class="product-name">
+                    <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+				</div>
+                <?php echo $this->getChildHtml('media') ?>
+				<div class="h3 for_mobile">SKU# <?php echo $_helper->productAttribute($_product, $_product->getSku(), 'name') ?></div>
+            </div>
+
+            <div class="product-shop">
+                <div class="product-name">
+                    <div class="h1"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></div>
+					<div class="h3">SKU# <?php echo $_helper->productAttribute($_product, $_product->getSku(), 'name') ?></div>
+                </div>
+				<div class="some_extra_offer">
+					<?php echo Mage::helper('onsale')->getProductLabelHtml($_product); ?>									
+				</div>		
+				<?php echo $this->getChildHtml('alert_urls') ?>				
+				<div class="add-to-cart-wrapper simple_wrapper_with_no_com">
+					<?php echo $this->getChildHtml('product_type_data') ?>
+					<?php echo $this->getChildHtml('extrahint') ?>
+
+					<?php if (!$this->hasOptions()):?>
+						<div class="price-info_new">
+							<?php echo $this->getPriceHtml($_product); ?>
+							<?php echo $this->getChildHtml('bundle_prices') ?>
+							<?php echo $this->getTierPriceHtml() ?>
+						</div>
+						<div class="add-to-box">
+							<?php if($_product->isSaleable()): ?>
+								<?php echo $this->getChildHtml('addtocart') ?>
+								<?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
+									<span class="or"><?php echo $this->__('OR') ?></span>
+								<?php endif; ?>
+							<?php endif; ?>
+							<?php echo $this->getChildHtml('addto') ?>
+							<?php echo $this->getChildHtml('sharing') ?>
+						</div>						
+					<?php echo $this->getChildHtml('extra_buttons') ?>
+					<?php elseif (!$_product->isSaleable()): ?>
+						<div class="add-to-box">
+							<?php echo $this->getChildHtml('addto') ?>
+							<?php echo $this->getChildHtml('sharing') ?>
+						</div>
+					<?php endif; ?>
+				</div>
+                
+                <?php //echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
+                
+
+               
+				
+                <?php echo $this->getChildHtml('other');?>
+
+                <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                    <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+                <?php endif;?>
+				<?php if ($_product->isSaleable() && $this->hasOptions()):?>
+					<?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+				<?php endif;?>
+				<div class="free-shipping_avalilablty">
+				<div class="free-shipping-block">
+					<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('product_free_shipping')->toHtml(); ?>
+				</div>
+				<div class="product_type_availability">
+				<?php echo $this->getChildHtml('product_type_availability'); ?>	
+				</div>
+				</div>
+				
+				<div class="social_sharing">
+					<span class="share_label">Share: </span>
+					<span class='st_facebook'></span>
+					<span class='st_twitter'></span>
+					<span class='st_pinterest'></span>
+					<span class='st_googleplus'></span>
+					<span class='st_email'></span>
+					<script type="text/javascript">var switchTo5x=true;</script>
+					<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+					<script type="text/javascript">stLight.options({publisher: "45fc0612-9449-4780-9249-c80b0a9e85ec", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+				</div>		
+				<div class="add_to">
+				<?php $_wishlistSubmitUrl = $this->helper('wishlist')->getAddUrl($_product); ?>
+				
+				<?php if ($this->helper('wishlist')->isAllow()) : ?>
+					<li><a href="<?php echo $_wishlistSubmitUrl ?>" onclick="productAddToCartForm.submitLight(this, this.href); return false;" class="link-wishlist"><?php echo $this->__('+ Add to My Wishlist') ?></a></li>
+				<?php endif; ?>
+				</div>
+				<div class="product_qa">
+					<?php 
+						$collection = Mage::getResourceModel('aw_pq2/question_collection');
+						$collection
+							->addFilterByProduct($_product)
+							->addShowInStoresFilter(Mage::app()->getStore()->getId())
+							->addPublicFilter()
+							->addApprovedStatusFilter()
+							->addCreatedAtLessThanNowFilter()
+						;
+					?>
+					<a href="#product_qa">Questions and Answers (<?php echo $collection->getSize(); ?>)</a>
+				</div>
+				<div class="product-collateral toggle-content tabs">
+				<?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
+					<dl id="collateral-tabs" class="collateral-tabs">
+						<?php foreach ($detailedInfoGroup as $alias => $html):?>
+							<dt class="tab"><span><?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?></span></dt>
+							<dd class="tab-container">
+								<div class="tab-content"><?php echo $html ?></div>
+							</dd>
+						<?php endforeach;?>
+						<?php if ($_product->getHasEnergyGuide()) : ?>
+							<dt class="tab"><span id="energy_guide">Energy Guide</span></dt>
+							<dd class="tab-container">
+								<div class="tab-content">
+									<div class="main_tab_content">
+										<div class="energy_title">ENERGY INFORMATION at High Speed</div>
+										<div class="attrib_info">
+											<ul>
+												<li>
+													<div class="attrib_val">
+														<span>Airflow</span> <br/> <?php echo sprintf("%01.2f", $_product->getAttributeText('f_airflow')); ?>
+														Cubic Feet Per Minute
+													</div>
+												</li>
+												<li>
+													<div class="attrib_val">
+														<span>Electricity Use</span> <br/> <?php echo sprintf("%01.2f", $_product->getAttributeText('f_watts')); ?>
+														Watts (excludes lights)
+													</div>
+												</li>
+												<li>
+													<div class="attrib_val">
+														<span>Airflow Efficiency</span> <br/> <?php echo sprintf("%01.2f", $_product->getAttributeText('f_efficiency')); ?>
+														Cubic Feet Per Minute Per Watt
+													</div>
+												</li>
+											</ul>
+										</div>
+										<div class="group_info">
+										<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId($_product->getAttributeText('group_info'))->toHtml(); ?>
+										</div>
+										<div class="money_tip"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('money_saving_tip')->toHtml(); ?></div>
+									</div>
+
+								</div>
+							</dd>
+							<?php endif; ?>
+					</dl>
+				<?php endif; ?>
+				</div>	
+            </div>	
+			<div class="product-collateral toggle-content tabs mobile-only">
+				<?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')):?>
+					<dl id="collateral-tabs" class="collateral-tabs">
+						<?php foreach ($detailedInfoGroup as $alias => $html):?>
+							<dt class="tab"><span><?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?></span></dt>
+							<dd class="tab-container">
+								<div class="tab-content"><?php echo $html ?></div>
+							</dd>
+						<?php endforeach;?>
+						<?php if ($_product->getMarkAsEnergyStar()) : ?>
+							<dt class="tab"><span id="energy_guide">Energy Guide</span></dt>
+							<dd class="tab-container">
+								<div class="tab-content"><?php echo $_product->getEnergyGuideIdentifier(); ?></div>
+							</dd>
+							<?php endif; ?>
+					</dl>
+				<?php endif; ?>
+			</div>			
+            
+			<div class="product-spec">
+				<?php echo $this->getLayout()->createBlock('catalog/product_view_attributes')->setTemplate('catalog/product/view/attributes.phtml')->toHtml(); ?>
+			</div>
+			<div class="clearer"></div>
+            <?php echo $this->getChildHtml('related_products') ?>
+
+            <div class="clearer"></div>
+            
+        </form>
+        <script type="text/javascript">
+        //<![CDATA[
+            var productAddToCartForm = new VarienForm('product_addtocart_form');
+            productAddToCartForm.submit = function(button, url) {
+                if (this.validator.validate()) {
+                    var form = this.form;
+                    var oldUrl = form.action;
+
+                    if (url) {
+                       form.action = url;
+                    }
+                    var e = null;
+                    try {
+                        this.form.submit();
+                    } catch (e) {
+                    }
+                    this.form.action = oldUrl;
+                    if (e) {
+                        throw e;
+                    }
+
+                    if (button && button != 'undefined') {
+                        button.disabled = true;
+                    }
+                }
+            }.bind(productAddToCartForm);
+
+            productAddToCartForm.submitLight = function(button, url){
+                if(this.validator) {
+                    var nv = Validation.methods;
+                    delete Validation.methods['required-entry'];
+                    delete Validation.methods['validate-one-required'];
+                    delete Validation.methods['validate-one-required-by-name'];
+                    // Remove custom datetime validators
+                    for (var methodName in Validation.methods) {
+                        if (methodName.match(/^validate-datetime-.*/i)) {
+                            delete Validation.methods[methodName];
+                        }
+                    }
+
+                    if (this.validator.validate()) {
+                        if (url) {
+                            this.form.action = url;
+                        }
+                        this.form.submit();
+                    }
+                    Object.extend(Validation.methods, nv);
+                }
+            }.bind(productAddToCartForm);
+        //]]>
+        </script>
+    </div>
+    <?php echo $this->getChildHtml('upsell_products') ?>
+	<?php
+	$brand = Mage::getModel('shopbybrand/brand');        
+	$attributeCode = Mage::helper('shopbybrand/brand')->getAttributeCode();        
+	$optionId = $_product->getData($attributeCode);
+	if($optionId){
+		$brand->load($optionId, 'option_id');
+		$brand->setStoreId($this->getStoreId())->load($brand->getId());
+		$path = 'brands' . DS . 'thumbnail'.DS.$brand->getId();
+	}
+    if($brand->getStatus()==1) : ?>
+		<div class="about_manufacturer_main">
+		<a class="ultimate_toggle magic_arrow_down" id="show_hide_toggle" href="javascript:void(0);" dataparam="brand_data">Show</a>
+		<div class="about_manufacturer_title">About This Manufacturer</div>
+			<div id="brand_data">
+				<div class="brand_image">				
+					<img src="<?php echo Mage::helper('shopbybrand/image')->init($brand, $path)->resizeThumbnail(100, 100); ?>" />
+				</div>
+				<div class="about_manufacturer_desc">
+					<?php echo $brand->getDescription(); ?>
+				</div>
+			</div>
+		</div>
+	<?php endif; ?>
+	<?php echo $this->getLayout()->createBlock('extradownloads/product_section')->toHtml(); ?>
+    <?php echo $this->getChildHtml('product_additional_data') ?>
+	
+</div>

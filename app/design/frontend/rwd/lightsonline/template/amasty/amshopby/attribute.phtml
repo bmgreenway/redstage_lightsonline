@@ -13,7 +13,15 @@ switch ($this->getDisplayType()){
             echo '<li rel="search"><input type="text" class="amshopby_attr_search input-text" onkeyup="amshopby_attr_search(this)" /></li>';
         }
         foreach ($this->getItemsAsArray() as $item){
-            echo '<li '.(isset($item['style']) ? $item['style'] : '').' data-text="' . htmlspecialchars($item['label']) . '"><a class="'.$item['css'].'"' . $item['rel'] . ' href="'.$item['url'].'">'. $item['label'] . $item['count'] . '</a>' . '</li>';
+            if(is_numeric ($item['label']))
+            {
+                 echo '<li '.(isset($item['style']) ? $item['style'] : '').' data-text="' . htmlspecialchars($item['label']) . '"><a class="'.$item['css'].'"' . $item['rel'] . ' href="'.$item['url'].'">'.sprintf("%01.2f", $item['label']). $item['count'] . '</a>' . '</li>';
+            }
+            else
+            {
+                echo '<li '.(isset($item['style']) ? $item['style'] : '').' data-text="' . htmlspecialchars($item['label']) . '"><a class="'.$item['css'].'"' . $item['rel'] . ' href="'.$item['url'].'">'.$item['label']. $item['count'] . '</a>' . '</li>';
+            }
+           
         }
     break;
     
@@ -100,7 +108,7 @@ if ($this->getShowLessMore() && in_array($this->getDisplayType(), array(
         $text = sprintf($this->__('View More'), $add);
         echo '<li class="amshopby-clearer"><a id="amshopby-more-'.$this->getRequestValue().'" class="amshopby-more" href="#">' . $text . '</a></li>';
     }
-    echo '<li class="amshopby-clearer"><a id="amshopby-less-'.$this->getRequestValue().'" class="amshopby-less" href="#" style="display:none">' . $this->__('Show Less') . '</a></li>';
+    echo '<li class="amshopby-clearer"><a id="amshopby-less-'.$this->getRequestValue().'" class="amshopby-less" href="#" style="display:none">' . $this->__('View Less') . '</a></li>';
 } 
 ?>
 </ol>

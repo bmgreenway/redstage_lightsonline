@@ -1,0 +1,72 @@
+<?php 
+/**
+ * template
+ */
+?>
+<?php $_menu = $this->getHtml('level-top') ?>
+
+<?php if($_menu): ?>
+    <nav id="nav">
+        <ol class="nav-primary">
+            <?php echo $_menu ?>
+  
+            <li style="border-top: 1px solid black;" class="level0 ">
+              <a class="level0" href="<?php echo Mage::getBaseUrl(); ?>help">Help</a>
+            </li>
+            <li class="level0 ">
+              <a class="level0"  href="<?php echo Mage::getBaseUrl(); ?>wishlist">My Wishlist</a>
+            </li>
+            <li class="level0 ">
+            <a class="level0 parent has-children" href="<?php echo Mage::getBaseUrl(); ?>customer/account">My Account</a>
+              <ul class="level0">
+                 <li class="level1"><a href="<?php echo Mage::getBaseUrl(); ?>customer/account">My Account</a></li>
+                <li class="level1"><a href="<?php echo Mage::getBaseUrl(); ?>brand">Brands</a></li>
+                 <li class="level1"><a href="<?php echo Mage::getBaseUrl(); ?>wishlist">My Wishlist</a></li>
+                  <li class="level1"><a href="<?php echo Mage::getBaseUrl(); ?>checkout/cart">My Cart</a></li>
+                   <li class="level1"><a href="<?php echo Mage::getBaseUrl(); ?>onestepcheckout/index/">Checkout</a></li>
+                    <li class="level1"><a href="<?php echo Mage::getBaseUrl(); ?>brand">Register</a></li>
+                <?php 
+                if(Mage::getSingleton('customer/session')->isLoggedIn()){ ?>
+       <li class="level1"><a href="<?php echo Mage::getBaseUrl(); ?>customer/account/logout">Logout</a></li>
+              <?php 
+              }else{ ?>
+      <li class="level1"><a href="<?php echo Mage::getBaseUrl(); ?>customer/account/login">Login</a></li>
+    <?php }
+?>
+                </ul>
+            </li>
+</ol>
+      
+       
+    </nav>
+<?php endif ?>
+<?php    
+   $session = Mage::getSingleton('core/session');
+   if($session->getData('megamenu_html')){
+       echo $session->getData('megamenu_html');
+   }else{
+       $store = Mage::app()->getStore()->getId();
+       $block = $this->getLayout()->createBlock('cms/block')->setBlockId('megamenu_'.$store);
+       if(!$block->getBlockId() || $block->toHtml() == null){
+           Mage::helper('megamenu')->saveCacheHtml($store);
+           $block = $this->getLayout()->createBlock('cms/block')->setBlockId('megamenu_'.$store);
+       }
+       echo $block->toHtml(); 
+   }
+?>
+<script>
+	jQuery(document).ready(function(){		
+		jQuery(".sub_category_menu_sub .sub_category_menu_ul li").hover(
+		  function(){
+			if ("first_cat" !== this.down().next().id) {			
+				jQuery(this.down().next()).fadeIn();
+			}
+		  },
+		  function(){
+			if ("first_cat" !== this.down().next().id) {			
+				jQuery(this.down().next()).fadeOut();
+			}
+		  }
+		);
+	});
+</script>

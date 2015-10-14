@@ -97,5 +97,10 @@ class Amasty_Base_Adminhtml_BaseController extends Mage_Adminhtml_Controller_Act
             ));
         }
     }
+
+    protected function _isAllowed()
+    {
+        return Mage::getSingleton('admin/session')->isAllowed('system/config');
+    }
 }  
 ?>

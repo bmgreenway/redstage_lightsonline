@@ -1,0 +1,14 @@
+<config>
+	<modules>
+		<Redstage_DynamicMenu>
+			<version>1.0.0</version>
+		</Redstage_DynamicMenu>
+	</modules>
+	<global>
+		<blocks>
+			<redstage_dynamicmenu>
+				<class>Redstage_DynamicMenu_Block</class>
+			</redstage_dynamicmenu>
+		</blocks>
+	</global>
+</config>

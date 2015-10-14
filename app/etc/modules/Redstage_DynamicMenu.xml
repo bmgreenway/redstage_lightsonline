@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Redstage_DynamicMenu>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Redstage_DynamicMenu>
+    </modules>
+</config>

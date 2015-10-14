@@ -38,11 +38,12 @@ if(navigator.appName == 'Microsoft Internet Explorer' ){
 
 
 	// Home Slider
-    jQuery(window).load(function(){
+    jQuery(document).ready(function(){
         jQuery('#homeSlider').flexslider({
 			   animation: "slide",
-			   slideshow: false,
+			   slideshow: true,
 			   controlNav: true,
+			   autoPlay: true,
 			   directionNav: true,
 			   useCSS : false,
 			   pauseOnHover: true,

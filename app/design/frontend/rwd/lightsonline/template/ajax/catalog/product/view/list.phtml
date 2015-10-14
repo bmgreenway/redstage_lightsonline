@@ -13,30 +13,19 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
     </div>
 	<?php endif; ?>
     <div class="block-content">
-    <?php if($_helper->getItemCount() > 0): ?>
+    <?php if($_helper->getItemCount() > 0):
+        $itemInCompareArray=array();
+        $i=0;
+     ?>
         <ol id="compare-items">
-        <?php foreach($_items as $_index => $_item): ?>
+        <?php foreach($_items as $_index => $_item): 
+                    $itemInCompareArray[$i]=$_item->getId();
+					$i++;
+                     $_compareUrl=$this->getAddToCompareUrl($_item);
+        ?>
             <li class="item">
                 <input type="hidden" class="compare-item-id" value="<?php echo $_item->getId() ?>" />
-                <a href="<?php 
-			        $params = $this->getRequest()->getParams();
-					if($params['isAjax'] == 1){
-						$refererUrl = Mage::registry('referrer_url');
-				        if (empty($refererUrl)) {
-				            $refererUrl = Mage::getBaseUrl();
-				        }
-						$deleteUrl = $this->getUrl(
-				            'catalog/product_compare/remove',
-				            array(
-				                'product'=>$_item->getId(),
-				                Mage_Core_Controller_Front_Action::PARAM_NAME_URL_ENCODED => $this->helper('core/url')->getEncodedUrl($refererUrl)
-				            )
-				        );
-					}else{
-		        		$deleteUrl = $_helper->getRemoveUrl($_item);
-					}
-		        	echo $deleteUrl; 
-        		?>" title="<?php echo $this->__('Remove This Item') ?>" class="btn-remove" onclick="return confirm('<?php echo $this->__('Are you sure you would like to remove this item from the compare products?') ?>');"><?php echo $this->__('Remove This Item') ?></a>
+                <a style="cursor: pointer;" title="<?php echo $this->__('Remove This Item') ?>" class="btn-remove" onclick='ajaxdelete("<?php echo $_compareUrl ?>","<?php echo $_item->getId()?>");return false;'><?php echo $this->__('Remove This Item') ?></a>
                 <p class="product-name"><a href="<?php echo $this->getProductUrl($_item) ?>"><?php echo $this->helper('catalog/output')->productAttribute($_item, $_item->getName(), 'name') ?></a></p>
             </li>
         <?php endforeach; ?>
@@ -125,7 +114,7 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
                        
 		        <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
                     
-		    		<p class="action"><button type="button" title="<?php echo $this->quoteEscape($this->__('SEE DETAILS')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('SEE DETAILS') ?></span></span></button></p>
+		    		<p class="action"><button type="button" title="<?php echo $this->quoteEscape($this->__('SEE DETAILS')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $_product->getProductUrl() ?>')"><span><span><?php echo $this->__('SEE DETAILS') ?></span></span></button></p>
                  <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
                             <p class="action"><a title="<?php echo $this->quoteEscape($this->__('View Details')) ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a></p>
 					
@@ -139,7 +128,7 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
                             <li><a href="#" onclick='ajaxWishlist("<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>","<?php echo $_product->getId()?>");return false;' class="link-wishlist"><?php echo $this->__('Add to Wishlist') ?></a></li>
                         <?php endif; ?>
                         <?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
-                            <li><span class="separator">|</span> <a href="#" onclick='ajaxCompare("<?php echo $_compareUrl ?>","<?php echo $_product->getId()?>");return false;' class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
+                            <li><span class="separator">|</span> <a style="cursor:pointer;" href="#" onclick='ajaxCompare("<?php echo $_compareUrl ?>","<?php echo $_product->getId()?>");return false;' class="link-compare"><?php echo $this->__('Add to Compare') ?></a></li>
                         <?php endif; ?>
                     </ul>
                     <span id='ajax_loading<?php echo $_product->getId()?>' class="ajax_loading_style" style='display:none'><img src='<?php echo $this->getSkinUrl('images/opc-ajax-loader.gif')?>'/></span>
@@ -172,10 +161,11 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
 
     <?php $_collectionSize = $_productCollection->count() ?>
     <?php $_columnCount = $this->getColumnCount(); ?>
-    <ul class="products-grid products-grid--max-<?php echo $_columnCount; ?>-col">
+    
         <?php $i=0; foreach ($_productCollection as $_product): ?>
-            <?php /*if ($i++%$_columnCount==0): ?>
-            <?php endif*/ ?>
+            <?php if ($i++%$_columnCount==0): ?>
+                <ul class="products-grid products-grid--max-<?php echo $_columnCount; ?>-col">
+            <?php endif; ?>
             <li class="item<?php if(($i-1)%$_columnCount==0): ?> first<?php elseif($i%$_columnCount==0): ?> last<?php endif; ?>">
               	<div class="onsale-category-container-grid">
 				<?php echo Mage::helper('onsale')->getCategoryLabelHtml($_product); ?>
@@ -185,6 +175,11 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
                          src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize($_imgSize); ?>"
                          alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />
                 </a>
+                <?php  if ($_product->getMarkAsEnergyStar()) : ?>
+                    <div class="energy_star">
+                        <img src="<?php echo $this->getSkinUrl('images/energy_star_logo.png'); ?>" />
+                    </div>
+                <?php endif; ?>
 				</div>
                 <div class="product-info">
                 <h2 class="product-name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($_product->getName(), null, true) ?>"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></a></h2>
@@ -208,7 +203,7 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
                 <div class="actions">
                     <?php if(!$_product->canConfigure() && $_product->isSaleable()): ?>
                     
-		                                <button type="button" title="<?php echo $this->quoteEscape($this->__('SEE DETAILS')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('SEE DETAILS') ?></span></span></button>
+		                                <button type="button" title="<?php echo $this->quoteEscape($this->__('SEE DETAILS')) ?>" class="button btn-cart" onclick="setLocation('<?php echo $_product->getProductUrl() ?>')"><span><span><?php echo $this->__('SEE DETAILS') ?></span></span></button>
                         <?php elseif($_product->getStockItem() && $_product->getStockItem()->getIsInStock()): ?>
                             <a title="<?php echo $this->quoteEscape($this->__('View Details')) ?>" class="button" href="<?php echo $_product->getProductUrl() ?>"><?php echo $this->__('View Details') ?></a>
                     <?php else: ?>
@@ -220,11 +215,11 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
 					 <ul class="add-to-links comp_wl_product_list">
 						<?php if($_compareUrl=$this->getAddToCompareUrl($_product)): ?>
                             <li class="comp_product_list">
-							<input type="checkbox" name="add_to_comepare_chk" value="<?php echo $this->__('Add to Compare') ?>"  class="link-compare" />Compare ›<a onclick='ajaxCompare("<?php echo $_compareUrl ?>","<?php echo $_product->getId()?>");return false;' title=""></a><span class="separator">|</span>
+							<input  type="checkbox" name="add_to_comepare_chk" value="<?php echo $this->__('Add to Compare') ?>"  class="link-compare" />Compare ›<a id="ajaxCompare-<?php echo $_product->getId()?>" <?php if(in_array($_product->getId() , $itemInCompareArray)){ ?> onclick='ajaxdelete("<?php echo $_compareUrl ?>","<?php echo $_product->getId()?>");return false;' class="active" <?php }else{ ?> onclick='ajaxCompare("<?php echo $_compareUrl ?>","<?php echo $_product->getId()?>");return false;' <?php } ?>  title=""></a><span class="separator">|</span>
 							<!-- <a href="#" onclick='ajaxCompare("<?php //echo $_compareUrl ?>","<?php //echo $_product->getId()?>");return false;' class="link-compare"><?php //echo $this->__('Add to Compare') ?></a></li> -->
                         <?php endif; ?>
                         <?php if ($this->helper('wishlist')->isAllow()) : ?>
-                            <li class="wl_product_list"><a href="#" onclick='ajaxWishlist("<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>","<?php echo $_product->getId()?>");return false;' class="link-wishlist"><?php echo $this->__('+Wish List') ?></a></li>
+                            <li class="wl_product_list"><a href="#" onclick='ajaxWishlist("<?php echo $this->helper('wishlist')->getAddUrl($_product) ?>","<?php echo $_product->getId()?>");return false;' class="link-wishlist"><?php echo $this->__('+ Wish List') ?></a></li>
                         <?php endif; ?>
                         
                     </ul>
@@ -244,10 +239,12 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
                   </div>
                 </div>
             </li>
-            <?php /*if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
-            <?php endif*/ ?>
+            <?php if ($i%$_columnCount==0 || $i==$_collectionSize): ?>
+                </ul>
+            <?php endif ?>
+
         <?php endforeach ?>
-    </ul>
+    
     <script type="text/javascript">decorateGeneric($$('ul.products-grid'), ['odd','even','first','last'])</script>
     <?php endif; ?>
 
@@ -256,6 +253,11 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
     </div>
 </div>
 <?php endif; ?>
+<div id="ajax-response-compare">
+	<div class="message"></div>
+	<div class="close_ajax" onclick="close_popup();">X</div>
+</div>
+<div class="overlay_image"></div>
 <script type="text/javascript">
 	jQuery.noConflict();
 	/*jQuery(document).ready(function(){
@@ -309,4 +311,9 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
 		} catch (e) {
 		}
 	}
+	/*jQuery(document).ready(function(){
+		jQuery('#refine_results').click(function(){
+			jQuery('#narrow-by-list').toggle();
+		});
+	});*/
 </script>

@@ -41,18 +41,18 @@
 <?php if($_cartQty > 0){?>
 <div class="account-cart-wrapper_m_item_in_cart">
 <?php } ?>
-<a href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>" data-target-element="#header-cart" class="skip-link skip-cart <?php if($_cartQty <= 0): ?> no-count<?php endif; ?>">
+<a href="<?php echo $this->helper('checkout/cart')->getCartUrl(); ?>"  class="<?php if($_cartQty <= 0): ?> no-count<?php endif; ?>">
    <?php if($_cartQty > 0){?>
-       <span class="label"><?php echo 'checkout'; ?></span>
+       <span class="label"><?php echo 'Checkout'; ?></span>
    <?php }else{ ?>
     <span class="label"><?php echo 'My Cart'; ?></span>
    <?php } ?>
-	<span class="count"><?php echo $_cartQty; ?></span>
+	<span class="count">(<?php echo $_cartQty; ?>)</span>
 	<span class="cart_icon"></span>
 </a>
 <?php if($_cartQty > 0){?>
 </div>
 <?php } ?>
-<div id="header-cart" class="block block-cart skip-content">
+<div id="header-cart" style="display:none;" class="block block-cart">
     <?php echo $this->getChildHtml('minicart_content');?>
 </div>
