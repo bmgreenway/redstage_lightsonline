@@ -50,7 +50,8 @@ $_minimalPriceValue = $_product->getMinimalPrice();
 $_minimalPriceValue = $_store->roundPrice($_store->convertPrice($_minimalPriceValue));
 $_minimalPrice = $_taxHelper->getPrice($_product, $_minimalPriceValue, $_simplePricesTax);
 $_convertedFinalPrice = $_store->roundPrice($_store->convertPrice($_product->getFinalPrice()));
-$_specialPriceStoreLabel = 'Our Price:'; //$this->getProductAttribute('special_price')->getStoreLabel();
+//$_specialPriceStoreLabel = 'Our Price:'; //$this->getProductAttribute('special_price')->getStoreLabel();
+$_specialPriceStoreLabel = ''; //$this->getProductAttribute('special_price')->getStoreLabel();
 ?>
 
 <?php if (!$_product->isGrouped()): ?>
@@ -72,8 +73,9 @@ $_specialPriceStoreLabel = 'Our Price:'; //$this->getProductAttribute('special_p
     <?php $_weeeDisplayType = $_weeeHelper->getPriceDisplayType(); ?>
 	<?php 
 		$savedPrice = 0;
-		if ($_finalPrice < $_regularPrice) {
-			$savedPrice = (float)($_regularPrice - $_finalPrice);
+        $msrpPrice=$_product->getMsrp();
+		if ($_finalPrice < $msrpPrice) {
+			$savedPrice = (float)($msrpPrice - $_finalPrice);
 		}
 	?>
     <?php if ($_finalPrice >= $_price): ?>
@@ -418,11 +420,11 @@ $_specialPriceStoreLabel = 'Our Price:'; //$this->getProductAttribute('special_p
             </span>
         <?php endif ?>
     <?php endif; /* if ($this->getDisplayMinimalPrice() && $_minimalPrice && $_minimalPrice < $_finalPrice): */ ?>
-	<?php if (isset($savedPrice) && $savedPrice > 0) : ?>
+	<?php /* if (isset($savedPrice) && $savedPrice > 0) : ?>
 		<div class="you-saved-price">
 			<?php echo 'You Save: ' . $_coreHelper->formatPrice($savedPrice, false); ?>
 		</div>
-	<?php endif; ?>
+	<?php endif;*/  ?>
 	</div>
 
 <?php else: /* if (!$_product->isGrouped()): */ ?>
