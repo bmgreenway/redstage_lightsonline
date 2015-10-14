@@ -78,7 +78,44 @@
 
 					<?php if (!$this->hasOptions()):?>
 						<div class="price-info_new">
-							<?php echo $this->getPriceHtml($_product); ?>
+							<?php $_coreHelper = $this->helper('core'); ?>
+							<?php 
+								if($_product->getMsrp() > 0 )
+								{
+								?>
+								<div class="sugg_price">Sugg. Retail: <span><?php
+							echo $_coreHelper->formatPrice($_product->getMsrp(), false); //echo $_product->getMsrp(); 
+							 ?> 
+							 </span>
+							</div>
+							<?php	}	
+							?>
+								<div class="our_price_group">
+								<div class="our_price_title">Our Price: </div>
+								<div class="our_price_number">
+								<?php echo $this->getPriceHtml($_product); 
+							
+								
+								?>
+								</div>
+								</div>
+								<div class="you_save_prod">
+								<?php
+								$msrpPrice=$_product->getMsrp();
+
+								if ($_finalPrice < $msrpPrice) {
+									$_store = $_product->getStore();
+									$_convertedFinalPrice = $_store->roundPrice($_store->convertPrice($_product->getFinalPrice()));
+									$_finalPrice= $this->helper('tax')->getPrice($_product, $_convertedFinalPrice);
+									$savedPrice = (float)($msrpPrice - $_finalPrice);
+								}
+								 if (isset($savedPrice) && $savedPrice > 0) : ?>
+								<div class="you-saved-price">
+									<?php echo 'You Save: ' . $_coreHelper->formatPrice($savedPrice, false); ?>
+								</div>
+								<?php endif;
+								?>
+								</div>
 							<?php echo $this->getChildHtml('bundle_prices') ?>
 							<?php echo $this->getTierPriceHtml() ?>
 						</div>
