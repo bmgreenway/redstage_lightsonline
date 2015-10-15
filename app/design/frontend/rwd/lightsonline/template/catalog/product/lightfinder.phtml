@@ -48,7 +48,7 @@
             $finishArray=$collectionFinish->toOptionArray();
             //End of Finish values 
              //load style values in value label format
- 			$attributeIdStyle = Mage::getResourceModel('eav/entity_attribute')->getIdByCode('catalog_product','style');
+ 			$attributeIdStyle = Mage::getResourceModel('eav/entity_attribute')->getIdByCode('catalog_product','style_filter');
  			$collectionStyle =Mage::getResourceModel('eav/entity_attribute_option_collection')
                 ->setPositionOrder('asc')
                 ->setAttributeFilter($attributeIdStyle)
