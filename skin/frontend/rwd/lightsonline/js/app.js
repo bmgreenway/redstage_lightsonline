@@ -839,7 +839,7 @@ $j(document).ready(function () {
     //     destruct: defaults to false, but if true, the plugin will remove itself, display content, and remove event handlers
 
 
-    jQuery.fn.toggleSingle = function (options) {
+    $j.fn.toggleSingle = function (options) {
 
         // passing destruct: true allows
         var settings = $j.extend({

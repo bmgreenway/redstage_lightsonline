@@ -1857,11 +1857,14 @@ h2.product-name a:hover, h3.product-name a:hover, h4.product-name a:hover, h5.pr
 /* ============================================ *
  * Catalog - Product
  * ============================================ */
- 
+.you_save_prod {
+	float:left;
+    left: 15px;
+    position: relative;
+	text-align: left;
+}
  .you-saved-price {
-    position: absolute;
-    right: 0;
-    margin: -21px 80px 0 0;
+    display:inline-block;
     font-size: 13px;
     font-family: 'robotolight';
     font-style: italic;
@@ -4363,13 +4366,13 @@ li.additional_info_main {
 width:100%;
 }
 .price-info_new .price-box p {
-    width: 50%;
+	display: inline-block;
     margin: 0 auto;
     text-align: left;
     padding: 3px 0;
 }
 .catalog-product-view .regular-price {
-    top: 3px;
+    top: 0px;
     position: relative;
 }
 .product-options-bottom .price-info_new .price-box {
@@ -4401,9 +4404,11 @@ display:inline-block;
     display: none;
 }
 .price-info_new {
-    width: 100%;
+	width: 100%;
     float: left;
     text-align: center;
+    margin: 10px 0;
+    padding: 0 95px;
 }
 .product-img-box .energy_guide {
     position: absolute;
@@ -4947,7 +4952,7 @@ ul.sub_category_menu_sub_second_main {
 }
 
 .catalog-product-view .product-view .product-shop .price-box{
-    margin-top: 10px;
+    margin-top: 0px;
 }
 .brand_image img {
     display: inline-block;
@@ -6331,7 +6336,6 @@ min-height:225px;
 .mini-products-list .price-box .old-price, .price-box .special-price {
     display: inline-block;
     text-align: left;
-    overflow: hidden;
 }
 #wishlist-sidebar .product-name {
     text-align: left;
@@ -7206,3 +7210,37 @@ width: 100% !important;
   #shopping-cart-table {margin-bottom:-20px;}
   .cart div.cart-totals table tbody tr:last-child th {padding:2px 10% 5px 0;}
 }
+.sugg_price {
+    color: #999;
+    font-family: 'robotoregular';
+    float: left;
+    text-align: left;
+    right: 0;
+    position: relative;
+    width: 100%;
+}
+.our_price_number {
+   float: left;
+}
+.our_price_group{
+	float: left;
+    font-size: 16px;
+    font-family: 'robotoregular';
+    text-transform: capitalize;
+    color: #D84D3C;
+}
+.our_price_number .regular-price .price{
+    font-size: 16px;
+    font-family: 'robotoregular';
+    text-transform: capitalize;
+    color: #D84D3C;
+}
+.sugg_price span{text-decoration: line-through;color: #999;font-family: 'robotoregular';}
+.our_price_number {
+   float: left;
+}
+.our_price_title {
+    float: left;
+	vertical-align: top
+}
+

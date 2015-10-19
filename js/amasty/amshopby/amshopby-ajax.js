@@ -1,6 +1,6 @@
 var amshopby_working  = false;
 var amshopby_blocks   = {};
-
+var $j=jQuery.noConflict();
 function amshopby_ajax_fallback_mode() {
     var myNav = navigator.userAgent.toLowerCase();
     var isIE = (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;

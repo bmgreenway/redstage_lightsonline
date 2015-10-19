@@ -62,7 +62,8 @@ class Magestore_Shopbybrand_Helper_Image extends Mage_Core_Helper_Abstract
             $_backgroundColor  = array(255, 255, 255);
             try {
                 $imageObj = new Varien_Image($imagePathInput);
-                $imageObj->backgroundColor($_backgroundColor);
+                //$imageObj->backgroundColor($_backgroundColor);
+                $imageObj->keepTransparency(TRUE);
                 $imageObj->constrainOnly(TRUE);
                 $imageObj->keepAspectRatio(TRUE);
                 $imageObj->keepFrame(TRUE);
@@ -101,7 +102,8 @@ class Magestore_Shopbybrand_Helper_Image extends Mage_Core_Helper_Abstract
             $_backgroundColor  = array(255, 255, 255);
             try {
                 $imageObj = new Varien_Image($imagePathInput);
-                $imageObj->backgroundColor($_backgroundColor);
+                //$imageObj->backgroundColor($_backgroundColor);
+                 $imageObj->keepTransparency(TRUE);
                 $imageObj->constrainOnly(TRUE);
                 $imageObj->keepAspectRatio(TRUE);
                 $imageObj->keepFrame(TRUE);

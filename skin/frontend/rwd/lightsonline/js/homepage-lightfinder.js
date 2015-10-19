@@ -74,11 +74,11 @@ jQuery( ".reset" ).click(function() {
 			 	validatedrop=1;
 			 	if(catalogsearchUrl.indexOf("?") == -1)
 			 	{
-			 		catalogsearchUrl=catalogsearchUrl+'?style='+styleval;
+			 		catalogsearchUrl=catalogsearchUrl+'?style_filter='+styleval;
 			 	}
 			 	else
 			 	{
-			 		catalogsearchUrl=catalogsearchUrl+'&style='+styleval;
+			 		catalogsearchUrl=catalogsearchUrl+'&style_filter='+styleval;
 			 	}
 			 }
 			 
@@ -179,11 +179,11 @@ function sumitlightfinderMobile(catalogsearchUrl)
 			 	validatedrop=1;
 			 	if(catalogsearchUrl.indexOf("?") == -1)
 			 	{
-			 		catalogsearchUrl=catalogsearchUrl+'?style='+styleval;
+			 		catalogsearchUrl=catalogsearchUrl+'?style_filter='+styleval;
 			 	}
 			 	else
 			 	{
-			 		catalogsearchUrl=catalogsearchUrl+'&style='+styleval;
+			 		catalogsearchUrl=catalogsearchUrl+'&style_filter='+styleval;
 			 	}
 			 }
 			 
