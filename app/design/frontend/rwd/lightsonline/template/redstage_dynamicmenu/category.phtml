@@ -3,7 +3,9 @@
 
 <?php if ($category->getId()) : ?>
 <li class="sub_category_menu_li">
-	<a href="<?php echo $category->getUrl(); ?>"><?php echo $category->getName(); ?></a>
+	<?php if (!isset($dataParams['hidden'])): ?>
+		<a href="<?php echo $category->getUrl(); ?>"><?php echo $category->getName(); ?></a>
+	<?php endif; ?>
 	<div class="sub_category_menu_sub_inner" id="<?php echo $dataParams['id']; ?>">
 		<div class="sub_category_menu_sub_content">
 			<span class="arrow_custom">
