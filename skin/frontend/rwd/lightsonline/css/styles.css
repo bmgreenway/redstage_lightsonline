@@ -4296,6 +4296,7 @@ li.additional_info_main {
 	color:#333333;
 	font-size: 13px;
     font-family: 'robotolight';
+    padding-left: 4px;
 }
 .indicator_ambanners_main {
 	float: left;
@@ -4974,6 +4975,7 @@ ul.sub_category_menu_sub_second_main {
     float: right;
     top: 3px;
     position: relative;
+    height: 48px;
 }
 .banner_content_inner {
     position: absolute;
