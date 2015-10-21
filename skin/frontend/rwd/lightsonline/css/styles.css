@@ -4335,6 +4335,20 @@ li.additional_info_main {
     border-image-repeat: round;
     border-image: url("../images/wLdVc.png") 1 round;
 }
+.coupon_stipeed_background td {
+    display: inline-block;
+    border: dashed 3px #000;
+    border-image-source: url("../images/wLdVc1.png");
+    border-image-slice: 0;
+    width: 48%;
+    margin: 6px;
+    padding: 10px;
+    border-image-repeat: round;
+    border-image: url("../images/wLdVc1.png") 2 round;
+}
+.coupon_stipeed_background tr:first-child{
+	border-bottom:0 !important;
+}
 .ambanners.ambanner {
     padding: 0 13px;
 }
@@ -4875,6 +4889,7 @@ p#refine_results {
 }
 .category-products {
     margin: -18px 0 0 0;
+	float:left;
 }
 
 /*globle banner content*/
