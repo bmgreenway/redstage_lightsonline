@@ -30,7 +30,7 @@
     <div class="footer">
       <div class="livechat">
         <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_call_us_toll_free')->toHtml(); ?>
-        <img src="<?php echo $this->getSkinUrl('images/icn-chatwomen.png'); ?>" alt="Live chat"/> <a class="chat" href="#" onclick="parent.LC_API.open_chat_window()">Live Chat is <span>Online</span></a></div>
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_livechat')->toHtml(); ?>
       <div class="joinemail">
         <div class="email"><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer_newsletter_subscription_text')->toHtml(); ?></div>
         <!-- subscribe form starts -->
