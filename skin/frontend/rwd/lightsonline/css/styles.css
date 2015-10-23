@@ -674,7 +674,11 @@ top:10px;
 .footer-container {border-top:2px solid #77b3cb; padding:0 0 20px; background:#ededed; border-bottom:2px solid #4d4d4d}
 .footer-container .fthd {background:#e5e5e5; border-bottom:1px solid #dbdbdb; color:#666}
 .footer-container .fthd .footer {margin:0 auto; padding:0}
-.footer-container .fthd .livechat {float:left; font:normal 16px 'robotolight'}
+.footer-container .fthd .livechat {
+    float: left;
+    font: normal 16px 'robotolight';
+    width: 100%;
+}
 .footer-container .fthd .que {float:left; margin:12px 0 0}
 .footer-container .fthd .que span {color:#1d80a9;display:inline-block;}
 .footer-container .fthd .livechat img {float:left; margin:0 10px}
@@ -5250,13 +5254,14 @@ width:100%;
 
 .flex-control-nav.flex-control-paging{display:none;}
 
-	.footer-container .fthd .livechat, .footer-container .fthd .joinemail, .footer .ftcol-lt, .footer .ftcol-rt { width:100%;overflow:hidden} .footer-container .fthd .livechat {padding:0 10px}
-	.footer-container .fthd {margin:0 0px; padding:0 9px} .footer-container .fthd .livechat {border-bottom:1px solid #dbdbdb}
+.footer-container .fthd .livechat, .footer-container .fthd .joinemail, .footer .ftcol-lt, .footer .ftcol-rt { width:100%;overflow:hidden} .footer-container .fthd .livechat {padding:0 0px}
+.livechat_button a img {width: 62%;padding: 10px 0;}
+.footer-container .fthd {margin:0 0px; padding:0 9px} .footer-container .fthd .livechat {border-bottom:1px solid #dbdbdb}
 .footer-container .fthd .que, .footer-container .fthd .livechat a.chat {width:37.05524861878453%; *width:37.00205712942283%;}
 .footer-container .fthd .joinemail .email, .footer-container .fthd .joinemail .block-subscribe {}
-	.footer .ftcol-rt {width:100%; margin:0 auto}
+.footer .ftcol-rt {width:100%; margin:0 auto}
 
-	.featuredbrands.col {
+.featuredbrands.col {
     width: 98.7%;padding: 0px 0 10px 0;
 }
 .extra_dd {
