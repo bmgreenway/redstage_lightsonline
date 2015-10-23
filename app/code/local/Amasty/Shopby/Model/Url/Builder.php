@@ -233,6 +233,14 @@ class Amasty_Shopby_Model_Url_Builder
     {
         $seoParts = array();
         $query = array();
+
+        // REDSTAGE PROGLIGHTPROJ-83
+        $rootId = (int) Mage::app()->getStore()->getRootCategoryId();
+        if ($this->isRealBrandPage() && ($this->getCategoryId() != $rootId)) {
+            $this->effectiveQuery['cat'] = $this->getCategoryObject()->getId();
+        }
+
+
         // add attributes as keys, not as ids
         if ($this->mode && !$this->isSomeSearch()) {
             $options = $this->getUrlHelper()->getAllFilterableOptionsAsHash();
@@ -340,25 +348,38 @@ class Amasty_Shopby_Model_Url_Builder
                     $needUrlKey = true;
             }
             if ($needUrlKey) {
-                $url.= $reservedKey;
+
+                // REDSTAGE PROGLIGHTPROJ-83
+                if ($this->isRealBrandPage()) {
+                   return $this->getNewUrlKey();
+                }
+                else {
+                    $url.= $reservedKey;
+                }
                 if ($seoAttributePartExist) {
                     $url .=  '/';
                 }
             }
         }
         else { // we have a valid category
-            $url = $this->getCategoryObject()->getUrl();
-            $pos = strpos($url,'?');
-            $url = $pos ? substr($url, 0, $pos) : $url;
 
-            if ($seoAttributePartExist) {
-                $url = $this->getUrlHelper()->checkRemoveSuffix($url);
-                if ($this->isUrlKeyMode()) {
-                    $url .= '/' . $reservedKey;
-                }
-                $url.= '/';
+            // REDSTAGE PROGLIGHTPROJ-83
+            if ($this->isRealBrandPage()) {
+                $url = '';
             }
+            else {
+                $url = $this->getCategoryObject()->getUrl();
+                $pos = strpos($url,'?');
+                $url = $pos ? substr($url, 0, $pos) : $url;
 
+                if ($seoAttributePartExist) {
+                    $url = $this->getUrlHelper()->checkRemoveSuffix($url);
+                    if ($this->isUrlKeyMode()) {
+                        $url .= '/' . $reservedKey;
+                    }
+                    $url.= '/';
+                }
+            }
         }
 
         return $url;
@@ -371,6 +392,21 @@ class Amasty_Shopby_Model_Url_Builder
 
         $isBrandPage = $this->moduleName == 'amshopby' && $isAttributeRequested;
         return $isBrandPage;
+    }
+
+    // REDSTAGE PROGLIGHTPROJ-83
+    protected function isRealBrandPage()
+    {
+        $attrCode = trim(Mage::getStoreConfig('amshopby/brands/attr'));
+        return Mage::app()->getRequest()->getParam($attrCode);
+    }
+
+    // REDSTAGE PROGLIGHTPROJ-83
+    protected function getNewUrlKey()
+    {
+        $currentUrl = Mage::helper('core/url')->getCurrentUrl();
+        $url = Mage::getSingleton('core/url')->parseUrl($currentUrl);
+        return $url->getPath();
     }
 
     /**
