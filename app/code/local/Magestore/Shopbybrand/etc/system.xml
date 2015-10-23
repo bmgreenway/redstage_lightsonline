@@ -75,7 +75,7 @@
                             <show_in_store>1</show_in_store>
                             <comment><![CDATA[ Set URL path for the Brand Listing page. For example: http://www.yourstore.com/brand. ]]></comment>
                         </router>
-                        <attribute_code translate="label">
+<!--                         <attribute_code translate="label">
                             <label>Attribute Code</label>
                             <frontend_type>select</frontend_type>
                             <source_model>shopbybrand/system_config_source_attributecode</source_model>
@@ -84,7 +84,7 @@
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
                             <comment><![CDATA[Name of  the Manufacturer attribute will be imported to brands. "manufacturer" is default .]]></comment>
-                        </attribute_code>
+                        </attribute_code> -->
                         
                         <brand_separator_brandnavigation translate="label">
                             <label>Menu Bar</label>
