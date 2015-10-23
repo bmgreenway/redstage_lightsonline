@@ -46,6 +46,9 @@
 			<block type="catalog/category_view" name="category.products.banner" template="catalog/category/category_banner.phtml" />
 			<block type="catalog/category_view" name="category.products.description" template="catalog/category/category_description.phtml" />
 		</reference>
+		<reference name="left">
+			<block type="reports/product_viewed" name="left_reports_product_viewed" template="reports/product_viewed.phtml" />
+		</reference>
 	</catalog_category_view>
 
   <!-- Cart Page -->
