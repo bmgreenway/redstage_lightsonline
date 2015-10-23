@@ -32,7 +32,7 @@ class Amasty_Shopby_Helper_Attributes extends Amasty_Shopby_Helper_Cached
 
         foreach ($attributes as $a){
             $code        = $a->getAttributeCode();
-            $code = str_replace(array('_', '-'), Mage::getStoreConfig('amshopby/seo/special_char'), $code);
+            $code = $this->prepareAttributeCode($code);
             $hash[$code] = array();
             foreach ($options as $o){
                 if (($o['value'] || $o['value'] === '0') && $o['attribute_id'] == $a->getId()) { // skip first empty
@@ -53,6 +53,43 @@ class Amasty_Shopby_Helper_Attributes extends Amasty_Shopby_Helper_Cached
 
         $this->save($hash, $cacheId);
         return $hash;
+    }
+
+	public function getPositionsAttributes()
+	{
+		$cacheId = 'positions_attributes';
+
+		$result = $this->load($cacheId);
+		if ($result) {
+			return $result;
+		}
+
+		$positions = array();
+		/** @var $attributes Mage_Eav_Model_Attribute[] */
+		$attributes = $this->getFilterableAttributes();
+        $i=0;
+		foreach($attributes as $a) {
+			$positions[$a->getAttributeCode()] = $i++;
+		}
+
+		$this->save($positions, $cacheId);
+
+		return $positions;
+	}
+
+    public function sortFiltersByOrder($filter1, $filter2)
+    {
+        if ($filter1->getPosition() == $filter2->getPosition()) {
+            if ($filter1 instanceof Mage_Catalog_Block_Layer_Filter_Category || $filter1 instanceof Enterprise_Search_Block_Catalog_Layer_Filter_Category) {
+                return -1;
+            } else
+                if ($filter2 instanceof Mage_Catalog_Block_Layer_Filter_Category || $filter2 instanceof Enterprise_Search_Block_Catalog_Layer_Filter_Category) {
+                    return 1;
+                }
+
+            return 0;
+        }
+        return $filter1->getPosition() > $filter2->getPosition() ? 1 : -1;
     }
 
     public function getFilterableAttributes()
@@ -125,6 +162,8 @@ class Amasty_Shopby_Helper_Attributes extends Amasty_Shopby_Helper_Cached
         return $map;
     }
 
+
+
     /**
      * Get option for specific attribute
      * @param string $attributeCode
@@ -176,11 +215,11 @@ class Amasty_Shopby_Helper_Attributes extends Amasty_Shopby_Helper_Cached
 
         //Only catalog filterable attributes
         $select->joinInner(
-            array('a' => $valuesCollection->getTable('catalog/eav_attribute')),
-            'a.attribute_id = main_table.attribute_id',
+            array('f' => $valuesCollection->getTable('amshopby/filter')),
+            'f.attribute_id = main_table.attribute_id',
             array()
         );
-        $select->where('is_filterable IN (1,2)');
+        $select->where('disable_seo_url = 0');
 
         $options = $valuesCollection->getConnection()->fetchAll($select);
 
@@ -243,4 +282,23 @@ class Amasty_Shopby_Helper_Attributes extends Amasty_Shopby_Helper_Cached
 
         return $value;
     }
+
+	public function getIsOptionFeatured($optionId)
+	{
+		$cacheId = 'featured_options_hash';
+
+		$listIdsFeaturedOptions = $this->load($cacheId);
+		if (!$listIdsFeaturedOptions) {
+			$listIdsFeaturedOptions = Mage::getModel('amshopby/value')->getResource()->getFeaturedOptionsIds();
+		}
+
+		return in_array($optionId, $listIdsFeaturedOptions);
+	}
+
+
+	public function prepareAttributeCode($code)
+	{
+		$code = str_replace(array('_', '-'), Mage::getStoreConfig('amshopby/seo/special_char'), $code);
+		return $code;
+	}
 }

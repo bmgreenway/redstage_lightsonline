@@ -7,14 +7,6 @@
 
 class Amasty_Shopby_Helper_Layer_View_Strategy_Stock extends Amasty_Shopby_Helper_Layer_View_Strategy_Abstract
 {
-
-    public function prepare()
-    {
-        parent::prepare();
-
-        $this->filter->setData('hide_counts', !Mage::getStoreConfig('catalog/layered_navigation/display_product_count'));
-    }
-
     protected function setTemplate()
     {
         return 'amasty/amshopby/attribute.phtml';
@@ -30,8 +22,8 @@ class Amasty_Shopby_Helper_Layer_View_Strategy_Stock extends Amasty_Shopby_Helpe
         return isset($_GET['stock']);
     }
 
-    protected function setCollapsed()
-    {
-        return false;
-    }
+	protected function setCollapsed()
+	{
+		return $this->isCollapseEnabled() && Mage::getStoreConfig('amshopby/general/stock_collapsed');
+	}
 }

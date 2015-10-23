@@ -226,11 +226,44 @@ function amshopby_toggle(evt){
     var attr = Event.findElement(evt, 'a').id.substr(14);
 
     $$('.amshopby-attr-' + attr).invoke('toggle');
-
     $$('#amshopby-less-' + attr, '#amshopby-more-' + attr).invoke('toggle');
+
+    var fieldSortFeatured = $('field_sort_featured_' + attr);
+    if(fieldSortFeatured) {
+        amshopby_sort_options(attr, fieldSortFeatured.value);
+        fieldSortFeatured.value = fieldSortFeatured.value == 'default_sort' ? 'featured_sort' : 'default_sort';
+    }
 
     Event.stop(evt);
     return false;
+}
+
+function amshopby_sort_options(attr, fieldSort)
+{
+    fieldSort = 'data-' + fieldSort;
+    $$('.sort-featured-first-'+attr).each(function(ol) {
+        var sorted = ol.select('li').sort(function(a,b) {
+            if(!a.getAttribute(fieldSort)) {
+                return 1;
+            }
+            if(!b.getAttribute(fieldSort)) {
+                return -1;
+            }
+            var aValue = parseInt(a.getAttribute(fieldSort));
+            var bValue = parseInt(b.getAttribute(fieldSort));
+
+            if(aValue == bValue) {
+                return 0;
+            }
+
+            return aValue > bValue ? 1 : -1;
+        })
+
+        sorted.each(function(li) {
+            ol.appendChild(li);
+        });
+    })
+
 }
 
 function amshopby_category_show(evt){
@@ -347,6 +380,14 @@ function amshopby_attr_unhighlight(li)
 function amshopby_attr_search(searchBox){
     var str = searchBox.value.toLowerCase();
     var all = searchBox.up(1).childElements();
+
+    var moreButton = searchBox.up(1).select('.amshopby-more');
+    if(moreButton.length > 0) {
+        moreButton = moreButton[0];
+        if(moreButton.style.display ==''){
+            moreButton.click();
+        };
+    }
 
     all.each(function(li) {
         if (li.hasAttribute('data-text')) {
