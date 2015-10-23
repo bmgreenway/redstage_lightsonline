@@ -88,7 +88,7 @@ class Amasty_Shopby_Model_Mysql4_Decimal extends Mage_Catalog_Model_Resource_Eav
         $toSign = ($max == $to || $isSlider || $from == $to) ? '<=' : '<';
         $collection->getSelect()->where("{$tableAlias}.value >= ?", $from);
 
-        if ($to >= $min) {
+        if ($to) {
             $collection->getSelect()->where("{$tableAlias}.value {$toSign} ?", $to);
         }
     }

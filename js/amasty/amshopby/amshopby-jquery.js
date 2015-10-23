@@ -65,7 +65,7 @@ function amshopby_slider_ui_init(from, to, max, prefix, min, step, uiParamElemen
 function amshopby_jquery_init () {
     $amQuery('.amshopby-slider-ui-param').each(function() {
         var params = this.value.split(',');
-        amshopby_slider_ui_init( params[0], params[1], parseInt(params[2]), params[3], parseInt(params[4]), params[5], this );
+        amshopby_slider_ui_init( params[0], params[1], parseFloat(params[2]), params[3], parseFloat(params[4]), params[5], this );
     });
 }
 

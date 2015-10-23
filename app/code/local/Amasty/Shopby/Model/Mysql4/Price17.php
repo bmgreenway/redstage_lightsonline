@@ -144,7 +144,7 @@ class Amasty_Shopby_Model_Mysql4_Price17 extends Mage_Catalog_Model_Resource_Lay
         $select = $this->_removePriceFromSelect($select, $priceExpression);
 
         $sqlEndPart = ') * ' . $collection->getCurrencyRate() . ')';
-        $select->columns('CEIL(MAX(' . $priceExpression . $sqlEndPart . ' as max_price');
+        $select->columns('CEIL(MAX(' . str_replace('min', 'max', $priceExpression) . $sqlEndPart . ' as max_price');
         $select->columns('FLOOR(MIN(' . $priceExpression . $sqlEndPart . ' as min_price');
         $select->where($collection->getPriceExpression($select) . ' IS NOT NULL');
 

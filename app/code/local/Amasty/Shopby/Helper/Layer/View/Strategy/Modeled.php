@@ -26,7 +26,7 @@ abstract class Amasty_Shopby_Helper_Layer_View_Strategy_Modeled extends Amasty_S
         parent::prepare();
 
         $this->transferModelData();
-        $this->filter->setData('hide_counts', !Mage::getStoreConfig('catalog/layered_navigation/display_product_count') || ($this->model && $this->model->getHideCounts()));
+        $this->filter->setData('hide_counts', !$this->_getDataHelper()->getIsCountGloballyEnabled() || ($this->model && $this->model->getHideCounts()));
     }
 
     protected function setCollapsed()
