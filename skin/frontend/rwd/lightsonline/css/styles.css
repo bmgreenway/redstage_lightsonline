@@ -955,6 +955,10 @@ a.previous.i-previous{
     width: 27%;
     float: none;
 }
+.toolbar-bottom .toolbar .pager .pages{
+display:inline-block;
+margin:0 auto;
+}
 button#amshopby-price-btn span {
     color: #1d80a9;
     font-size: 13px;
@@ -4895,6 +4899,7 @@ p#refine_results {
 .category-products {
     margin: -18px 0 0 0;
 	float:left;
+	width: 100%;
 }
 
 /*globle banner content*/
@@ -7265,4 +7270,54 @@ width: 100% !important;
     float: left;
 	vertical-align: top
 }
+/* help dropdown */
 
+div#help_header_link_content {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 9999;
+}
+.help_header_link_inner {
+    width: 980px;
+    margin: 0 auto;
+    background: #FFF;
+	padding:10px;
+	border: 1px solid #ddd;
+}
+.help-column_main {
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+	line-height: 22px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'robotolight';
+    color: #1d80a9;
+}
+.help-column_main.help-column-common h6 a{
+color:#333;
+}
+.help-column_main.help-column-common a {
+    line-height: 22px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'robotolight';
+    color: #1d80a9;
+		
+}
+.help-column_main h6, .help-column_main p, .help-column_main span{
+	line-height: 22px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'robotolight';
+    color: #1d80a9;
+}
+.help_link a{
+	line-height: 22px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'robotolight';
+    color: #1d80a9;
+}
+/* end help dropdown */
