@@ -4894,6 +4894,7 @@ p#refine_results {
 .category-products {
     margin: -18px 0 0 0;
 	float:left;
+	width: 100%;
 }
 
 /*globle banner content*/
@@ -7274,23 +7275,43 @@ div#help_header_link_content {
 .help_header_link_inner {
     width: 980px;
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.85);
+    background: #FFF;
 	padding:10px;
+	border: 1px solid #ddd;
 }
 .help-column_main {
     width: 45%;
     display: inline-block;
     vertical-align: top;
-	color: #FFF;
+	line-height: 22px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'robotolight';
+    color: #1d80a9;
+}
+.help-column_main.help-column-common h6 a{
+color:#333;
 }
 .help-column_main.help-column-common a {
-    color: #FFF;
-	line-height: 22px;
+    line-height: 22px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'robotolight';
+    color: #1d80a9;
+		
 }
 .help-column_main h6, .help-column_main p, .help-column_main span{
-color:#FFF;
+	line-height: 22px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'robotolight';
+    color: #1d80a9;
 }
 .help_link a{
-color:#1d80a9;
+	line-height: 22px;
+    outline: none;
+    font-size: 14px;
+    font-family: 'robotolight';
+    color: #1d80a9;
 }
 /* end help dropdown */
