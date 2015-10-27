@@ -7263,4 +7263,34 @@ width: 100% !important;
     float: left;
 	vertical-align: top
 }
+/* help dropdown */
 
+div#help_header_link_content {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 9999;
+}
+.help_header_link_inner {
+    width: 980px;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.85);
+	padding:10px;
+}
+.help-column_main {
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+	color: #FFF;
+}
+.help-column_main.help-column-common a {
+    color: #FFF;
+	line-height: 22px;
+}
+.help-column_main h6, .help-column_main p, .help-column_main span{
+color:#FFF;
+}
+.help_link a{
+color:#1d80a9;
+}
+/* end help dropdown */
