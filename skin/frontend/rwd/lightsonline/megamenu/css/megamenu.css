@@ -67,6 +67,7 @@
     max-width: 100%;
     border-top: 0;
     min-width: 160px;border-top: 2px solid #D2E6EE;
+	min-height: 328px;
 }
 .ms-topmenu .ms-submenu a:hover {
     background-color: #d2e6ee;
