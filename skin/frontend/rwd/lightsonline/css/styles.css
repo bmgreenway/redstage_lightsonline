@@ -955,6 +955,10 @@ a.previous.i-previous{
     width: 27%;
     float: none;
 }
+.toolbar-bottom .toolbar .pager .pages{
+display:inline-block;
+margin:0 auto;
+}
 button#amshopby-price-btn span {
     color: #1d80a9;
     font-size: 13px;
