@@ -214,7 +214,7 @@ div.amshopby-overlay div {
 div.block-layered-nav div.amshopby-slider div.handle.active { z-index: 3; }
 
 .amshopby-slider-ui { background: url(../images/amshopby-slider-bg.gif) repeat-x 0 50%; margin: 10px .4em; }
-.amshopby-slider-ui .ui-slider-handle { background-color: #f18200; border: 1px solid #de5400; box-sizing: border-box; outline: none; }
+.amshopby-slider-ui .ui-slider-handle {background-color: #f18200;border: 1px solid #CCC;box-sizing: border-box;outline: none;}
 .amshopby-slider-ui .ui-slider-range { background-color: #999999; }
 
 .ui-widget-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; }
