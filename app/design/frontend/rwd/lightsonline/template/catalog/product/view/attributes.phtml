@@ -42,7 +42,7 @@
                 <li class="additional_info_main">
 					<div class="additional_info_1"><?php echo $this->escapeHtml($this->__($_data['label'])) ?>:</div>
 					<?php 
-						if ($_data['code'] == 'width_pricetype' || $_data['code'] == 'height_pricetype') {
+						if ($_data['code'] == 'width' || $_data['code'] == 'height') {
 							$attribVal = str_replace("$","", $_data['value']);
 						} elseif (is_numeric($_data['value'])) {
 							$attribVal = sprintf("%01.2f", $_helper->productAttribute($_product, $_data['value'], $_data['code']));
