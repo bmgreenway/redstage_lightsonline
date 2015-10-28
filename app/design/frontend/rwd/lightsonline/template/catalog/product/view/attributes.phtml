@@ -43,11 +43,10 @@
 					<div class="additional_info_1"><?php echo $this->escapeHtml($this->__($_data['label'])) ?>:</div>	
 					<?php 
 					if (is_numeric($_data['value'])) {						
-							if ($_data['code'] == 'width_pricetype' || $_data['code'] == 'height_pricetype') {
-								$attribVal = sprintf("%01.2f", $_data['value']);
-							} else {
-								$attribVal = sprintf("%01.2f", $_helper->productAttribute($_product, $_data['value'], $_data['code']));
-							}
+							$attribVal = sprintf("%01.2f", $_helper->productAttribute($_product, $_data['value'], $_data['code']));
+							
+						} elseif ($_data['code'] == 'width_pricetype' || $_data['code'] == 'height_pricetype') {				
+							$attribVal = str_replace("$","", $_data['value']); 
 						} else {
 							$attribVal = $_helper->productAttribute($_product, $_data['value'], $_data['code']);
 						}
