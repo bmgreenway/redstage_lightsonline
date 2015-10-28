@@ -40,13 +40,12 @@
         <?php foreach ($_additional as $_data): ?>
                 <?php if (!empty($_data['value']) && $_data['value'] != 'No' && $_data['value'] != 'N/A') : ?>
                 <li class="additional_info_main">
-					<div class="additional_info_1"><?php echo $this->escapeHtml($this->__($_data['label'])) ?>:</div>	
+					<div class="additional_info_1"><?php echo $this->escapeHtml($this->__($_data['label'])) ?>:</div>
 					<?php 
-					if (is_numeric($_data['value'])) {						
+						if ($_data['code'] == 'width_pricetype' || $_data['code'] == 'height_pricetype') {
+							$attribVal = str_replace("$","", $_data['value']);
+						} elseif (is_numeric($_data['value'])) {
 							$attribVal = sprintf("%01.2f", $_helper->productAttribute($_product, $_data['value'], $_data['code']));
-							
-						} elseif ($_data['code'] == 'width_pricetype' || $_data['code'] == 'height_pricetype') {				
-							$attribVal = str_replace("$","", $_data['value']); 
 						} else {
 							$attribVal = $_helper->productAttribute($_product, $_data['value'], $_data['code']);
 						}
