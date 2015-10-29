@@ -143,7 +143,7 @@
 .aw-pq2-list__add-question-button {
     color: #fff;
     background-color: #78b3cb;
-    width: 158px;
+    /* width: 158px; */
     font-size: 16px;
     padding: 10px 0;
     margin: -10px 0 0 0;
