@@ -7324,8 +7324,10 @@ color:#333;
 #product-attribute-specs-table .additional_info_2 .price{
 	font-family:'robotolight';
 }
-@media (max-width: 414px) {
-
+@media (max-width: 736px) {
+.simple_wrapper_with_no_com .add-to-box{
+    padding: 0 95px;
+}
 .you-saved-price {
     font-family: "robotolight";
     font-size: 13px;
@@ -7334,5 +7336,60 @@ color:#333;
     position: relative;
     right: 0;
 }
-
+.price-info_new {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin: 10px 0;
+    padding: 0 6% 0 25%;
+}
+}
+@media (max-width: 736px) {
+.simple_wrapper_with_no_com .add-to-box {
+    padding: 0 0px;
+}
+.price-info_new {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin: 10px 0;
+    padding: 0 0% 0 23%;
+}
+}
+@media (max-width: 667px) {
+.simple_wrapper_with_no_com .add-to-box {
+    padding: 0 0px;
+}
+.price-info_new {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin: 10px 0;
+    padding: 0 0% 0 23%;
+}
+}
+@media (max-width: 480px) {
+.simple_wrapper_with_no_com .add-to-box{
+    padding: 0 80px;
+}
+}
+@media (max-width: 414px) {
+.simple_wrapper_with_no_com .add-to-box{
+    padding: 0 10px;
+}
+.you-saved-price {
+    font-family: "robotolight";
+    font-size: 13px;
+    font-style: italic;
+    margin: 0;
+    position: relative;
+    right: 0;
+}
+.price-info_new {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin: 10px 0;
+    padding: 0 6% 0 25%;
+}
 }
