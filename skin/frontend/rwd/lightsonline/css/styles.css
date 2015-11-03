@@ -5229,7 +5229,7 @@ input#submitlightfinder {
 }
 .footer-container .fthd .livechat img {
     float: left;
-    margin: 0 0px 0 36px;
+    margin: 0 0px 0 0px;
 }
 a#show_hide_toggle {
    float: right;
