@@ -7324,3 +7324,15 @@ color:#333;
 #product-attribute-specs-table .additional_info_2 .price{
 	font-family:'robotolight';
 }
+@media (max-width: 414px) {
+
+.you-saved-price {
+    font-family: "robotolight";
+    font-size: 13px;
+    font-style: italic;
+    margin: 0;
+    position: relative;
+    right: 0;
+}
+
+}
