@@ -70,6 +70,11 @@ class AW_Onestepcheckout_IndexController extends Mage_Checkout_Controller_Action
         Mage::getSingleton('checkout/session')->setCartWasUpdated(false);
         $this->getOnepage()->initCheckout();
 
+    
+            $countryId = Mage::getStoreConfig('general/country/default');
+        $billingAddress=$this->getOnepage()->getQuote()->getBillingAddress()->setCountryId($countryId);
+        $this->getOnepage()->getQuote()->save();
+
         //need set billing and shipping data from session
         $currentData = Mage::getSingleton('checkout/session')->getData('aw_onestepcheckout_form_values');
         if ($currentData && array_key_exists('billing', $currentData)) {
