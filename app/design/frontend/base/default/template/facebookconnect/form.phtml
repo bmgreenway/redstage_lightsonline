@@ -1,0 +1,16 @@
+<?php /* @var $this AW_Facebook_Connect_Block_Form */?>
+<script type="text/javascript">
+    Event.observe(document, 'fbinit:ready', function (event) {
+        mpFBConnect.init("<?php echo $this->getConnectUrl(); ?>");
+    });
+
+    <?php if(Mage::getSingleton('facebookconnect/session')->getShowLoginPopup()) : ?>
+         mpFBConnect.displayLoginWin = true;
+        <?php Mage::getSingleton('facebookconnect/session')->setShowLoginPopup(false); ?>
+    <?php endif; ?>
+
+    mpFBConnect.facebookconnectform = '<form id="facebookconnectform" method="post" action="<?php echo Mage::getUrl('facebookconnect/login', array('_secure' => $this->_getHelper()->isHttps())); ?>">' +
+        '<input type="hidden" name="return" value="<?php echo base64_encode(Mage::helper('core/url')->getCurrentUrl()); ?>" />' +
+        '<input type="hidden" name="<?php echo $this->getConnectType();  ?>" value="form" />' +
+        '</form>';
+</script>

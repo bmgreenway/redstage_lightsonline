@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<AW_Google_Plusone>
+			<version>3.0.0</version>
+		</AW_Google_Plusone>
+	</modules>
+	<global>
+		<blocks>
+			<googleplusone>
+				<class>AW_Google_Plusone_Block</class>
+			</googleplusone>
+		</blocks>
+		<models>
+			<googleplusone>
+				<class>AW_Google_Plusone_Model</class>
+			</googleplusone>
+		</models>
+		<helpers>
+			<googleplusone>
+				<class>AW_Google_Plusone_Helper</class>
+			</googleplusone>
+		</helpers>
+	</global>
+
+	<adminhtml>
+		<translate>
+			<modules>
+				<AW_Google_Plusone>
+					<files>
+						<default>AW_Google_Plusone.csv</default>
+					</files>
+				</AW_Google_Plusone>
+			</modules>
+		</translate>
+
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<googleplusone translate="title" module="googleplusone">
+											<title>AW Google "+1" Button</title>
+											<sort_order>100</sort_order>
+										</googleplusone>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	
+	<frontend>
+		<layout>
+			<updates>
+				<googleplusone>
+					<file>googleplusone.xml</file>
+				</googleplusone>
+			</updates>
+		</layout>
+	</frontend>
+
+	<default>
+		<googleplusone>
+			<general>
+				<button_code>google</button_code>
+				<count>true</count>
+				<size>standard</size>
+			</general>
+			<content>
+				<show_in_cms>0</show_in_cms>
+				<show_in_home>0</show_in_home>
+				<show_in_category>0</show_in_category>
+				<show_in_product>0</show_in_product>
+				<show_custom>0</show_custom>
+				<show_widget>0</show_widget>
+			</content>
+		</googleplusone>
+	</default>
+</config>

@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<AW_Twitter_Follow>
+			<version>3.0.0</version>
+		</AW_Twitter_Follow>
+	</modules>
+	<global>
+		<blocks>
+			<twitterfollow>
+				<class>AW_Twitter_Follow_Block</class>
+			</twitterfollow>
+		</blocks>
+		<models>
+			<twitterfollow>
+				<class>AW_Twitter_Follow_Model</class>
+			</twitterfollow>
+		</models>
+		<helpers>
+			<twitterfollow>
+				<class>AW_Twitter_Follow_Helper</class>
+			</twitterfollow>
+		</helpers>
+	</global>
+
+	<adminhtml>
+		<translate>
+			<modules>
+				<AW_Twitter_Follow>
+					<files>
+						<default>AW_Twitter_Follow.csv</default>
+					</files>
+				</AW_Twitter_Follow>
+			</modules>
+		</translate>
+
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<twitterfollow translate="title" module="twitterfollow">
+											<title>Twitter "Follow" Button</title>
+											<sort_order>100</sort_order>
+										</twitterfollow>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+	</adminhtml>
+	
+	<frontend>
+		<layout>
+			<updates>
+				<twitterfollow>
+					<file>twitterfollow.xml</file>
+				</twitterfollow>
+			</updates>
+		</layout>
+	</frontend>
+
+	<default>
+		<twitterfollow>
+			<general>
+				<user_name>@aheadWorks</user_name>
+				<button_code>javascript</button_code>
+				<show_count>1</show_count>
+				<button>blue</button>
+				<width>300px</width>
+				<height>20px</height>
+			</general>
+			<content>
+				<show_in_cms>0</show_in_cms>				
+				<show_in_home>0</show_in_home>				
+				<show_in_category>0</show_in_category>				
+				<show_in_product>0</show_in_product>				
+				<show_custom>0</show_custom>
+				<show_widget>0</show_widget>
+			</content>
+		</twitterfollow>
+	</default>
+</config>

@@ -1,0 +1,24 @@
+<?php $dataParams = $this->getData(); ?>
+<?php $category = Mage::getModel('catalog/category')->load($dataParams['cat_id']); ?>
+
+<?php if ($category->getId()) : ?>
+<li class="sub_category_menu_li">
+	<?php if (!isset($dataParams['hidden'])): ?>
+		<a href="<?php echo $category->getUrl(); ?>"><?php echo $category->getName(); ?></a>
+	<?php endif; ?>
+	<div class="sub_category_menu_sub_inner" id="<?php echo $dataParams['id']; ?>">
+		<div class="sub_category_menu_sub_content">
+			<span class="arrow_custom">
+				<img alt="" src="<?php echo Mage::getBaseUrl('media').'catalog/category/' . $category->getMegamenuImage(); ?>" /> 
+			</span>
+			<a href="<?php echo $category->getUrl(); ?>">
+				<div class="menu_overlay">
+					<p><?php echo $dataParams['content_label']; ?></p>
+					<p><?php echo $dataParams['content_desc']; ?></p>
+					<i class="menu_arrow_icon"></i>
+				</div>
+			</a>
+		</div>
+	</div>
+</li>
+<?php endif; ?>

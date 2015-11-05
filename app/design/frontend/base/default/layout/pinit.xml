@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<layout version="1.0.0">
+    <default>
+        <block type="pinit/custom_pinitbutton" name="custom.pinitbutton" template="pinit/custom/pinitbutton.phtml"/>
+    </default>
+
+    <catalog_product_view>
+        <reference name="content">
+            <block type="pinit/catalog_product_pinitbutton" name="product.info.pinit" template="pinit/catalog/product/pinitbutton.phtml"  before="-"/>
+        </reference>
+    </catalog_product_view>
+</layout>

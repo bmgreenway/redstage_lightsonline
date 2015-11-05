@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <AW_Facebook_Connect>
+            <version>3.0.0</version>
+        </AW_Facebook_Connect>
+    </modules>
+
+    <global>
+        <fieldsets>
+            <customer_account>
+                <post_to_fb_wall>
+                    <create>1</create>
+                    <update>1</update>
+                </post_to_fb_wall>
+            </customer_account>
+        </fieldsets>
+        <resources>
+            <facebookconnect_setup>
+                <setup>
+                    <module>AW_Facebook_Connect</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </facebookconnect_setup>
+            <facebookconnect_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </facebookconnect_write>
+            <facebookconnect_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </facebookconnect_read>
+        </resources>
+        <blocks>
+            <facebookconnect>
+                <class>AW_Facebook_Connect_Block</class>
+            </facebookconnect>
+        </blocks>
+        <models>
+            <facebookconnect>
+                <class>AW_Facebook_Connect_Model</class>
+            </facebookconnect>
+        </models>
+        <helpers>
+            <facebookconnect>
+                <class>AW_Facebook_Connect_Helper</class>
+            </facebookconnect>
+            <fbintegrator>
+                <class>AW_Facebook_Connect_Helper</class>
+            </fbintegrator>
+        </helpers>
+        <events>
+            <sales_order_save_after>
+                <observers>
+                    <facebookconnect>
+                        <class>facebookconnect/observer</class>
+                        <method>processSalesOrderSaveAfter</method>
+                    </facebookconnect>
+                </observers>
+            </sales_order_save_after>
+        </events>
+        <template>
+            <email>
+                <facebookconnect_create_account_email_template translate="label" module="facebookconnect">
+                    <label>Facebook new account</label>
+                    <file>facebook_account_new.html</file>
+                    <type>html</type>
+                </facebookconnect_create_account_email_template>
+            </email>
+        </template>
+    </global>
+
+    <frontend>
+        <routers>
+            <facebookconnect>
+                <use>standard</use>
+                <args>
+                    <module>AW_Facebook_Connect</module>
+                    <frontName>facebookconnect</frontName>
+                </args>
+            </facebookconnect>
+        </routers>
+        <translate>
+            <modules>
+                <AW_Facebook_Connect>
+                    <files>
+                        <default>AW_Facebookconnect.csv</default>
+                    </files>
+                </AW_Facebook_Connect>
+            </modules>
+        </translate>
+        <layout>
+            <updates>
+                <facebookconnect>
+                    <file>facebookconnect.xml</file>
+                </facebookconnect>
+            </updates>
+        </layout>
+        <events>
+            <controller_action_postdispatch_wishlist_index_update>
+                <observers>
+                    <facebookconnect>
+                        <type>singleton</type>
+                        <class>AW_Facebook_Connect_Model_Observer</class>
+                        <method>shareWishlistViaFacebook</method>
+                    </facebookconnect>
+                </observers>
+            </controller_action_postdispatch_wishlist_index_update>
+        </events>
+    </frontend>
+
+    <adminhtml>
+        <translate>
+            <modules>
+                <AW_Facebook_Connect>
+                    <files>
+                        <default>AW_Facebookconnect.csv</default>
+                    </files>
+                </AW_Facebook_Connect>
+            </modules>
+        </translate>
+
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <facebookconnect translate="title" module="facebookconnect">
+                                            <title>Facebook Connect</title>
+                                            <sort_order>100</sort_order>
+                                        </facebookconnect>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+
+    <default>
+        <web>
+            <routers>
+                <facebookconnect>
+                    <area>frontend</area>
+                    <class>AW_Facebook_Connect_Controller_Varien_Router_Standard</class>
+                </facebookconnect>
+            </routers>
+        </web>
+        <facebookconnect>
+            <general>
+                <enable_extension>0</enable_extension>
+                <title>Sign in with Facebook</title>
+            </general>
+
+            <wall>
+                <orderstatus>pending</orderstatus>
+                <publish_order>0</publish_order>
+                <post_message>I've just purchased {items_count} item(s) at Magento Store {store_link}</post_message>
+                <post_link_template>View {item_name} for {item_price} {item_link}</post_link_template>
+                <items_count>0</items_count>
+                <picture>1</picture>
+                <wishlist_share_message><![CDATA[I have some items in my wishlist at Magento Store
+{store_link}
+
+{wishlist_link}]]></wishlist_share_message>
+            </wall>
+            <content>
+                <show_in_login>0</show_in_login>
+                <show_in_checkout>0</show_in_checkout>
+                <show_custom>0</show_custom>
+                <show_widget>0</show_widget>
+            </content>
+            <signup>
+                <signup_enable_message>0</signup_enable_message>
+                <signup_message>I've just registered in Magento store</signup_message>
+                <signup_name>Magento Store Name</signup_name>
+                <signup_description>Magento Store Description</signup_description>
+            </signup>
+            <create_account>
+                <enable_notify>0</enable_notify>
+                <email_identity>general</email_identity>
+            </create_account>
+        </facebookconnect>
+    </default>
+</config>

@@ -1,0 +1,98 @@
+<?php /* @var $this AW_Facebook_Core_Block_Init */ ?>
+<div id="fb-root"></div>
+<script type="text/javascript">
+    var fbAsyncLoaded = 0;
+    window.fbAsyncInit = function () {
+        if (fbAsyncLoaded != 1) {
+            fbAsyncLoaded = 1;
+            appInit();
+        }
+    }
+
+    if (document.addEventListener) {
+        document.addEventListener("DOMContentLoaded", function () {
+            if (fbAsyncLoaded != 1) {
+                fbAsyncLoaded = 1;
+                appInit();
+            }
+            document.removeEventListener("DOMContentLoaded", arguments.callee, false);
+        }, false);
+    } else if (document.attachEvent) {
+        document.attachEvent("onreadystatechange", function () {
+            if (document.readyState === "complete") {
+                if (fbAsyncLoaded != 1) {
+                    fbAsyncLoaded = 1;
+                    appInit();
+                }
+                document.detachEvent("onreadystatechange", arguments.callee);
+            }
+        });
+    }
+
+    (function (d) {
+        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement('script');
+        js.id = id;
+        js.async = true;
+        js.src = "https://connect.facebook.net/<?php echo $this->getFacebookLocale(); ?>/all.js";
+        ref.parentNode.insertBefore(js, ref);
+    }(document));
+
+
+
+    function appInit() {
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '<?php echo $this->getFacebookAppId(); ?>',
+                status: true,
+                cookie: true,
+                xfbml: true
+            });
+
+
+            Event.observe(window, 'load', function () {
+                Event.fire(document, 'fbinit:ready', {});
+            });
+
+            <?php if (Mage::getSingleton('customer/session')->isLoggedIn() && $this->_isLikeInstalled() ): ?>
+                <?php $url_to_like  = Mage::helper('facebookilike')->getUrlToLike();  ?>
+                var mp_fb_code = '<?php echo Mage::helper('facebookilike')->getUrlSecretCode($url_to_like); ?>';
+                var mp_fb_like_url = '<?php echo Mage::getUrl('facebookilike/facebook/like') ?>';
+
+                FB.Event.subscribe('edge.create',
+                    function (response) {
+                        new Ajax.Request(mp_fb_like_url, {
+                            method: 'post',
+                            parameters: {url: response, action: 'like', code: mp_fb_code},
+                            onSuccess: function (transport) {
+                                mp_fb_like_response(transport);
+                            }
+                        });
+                    }
+                );
+                FB.Event.subscribe('edge.remove',
+                    function (response) {
+                        new Ajax.Request(mp_fb_like_url, {
+                            method: 'post',
+                            parameters: {url: response, action: 'unlike', code: mp_fb_code},
+                            onSuccess: function (transport) {
+                                mp_fb_like_response(transport);
+                            }
+                        });
+                    }
+                );
+            <?php endif; ?>
+        }
+    }
+    function mp_fb_like_response(transport) {
+        var json = transport.responseText.evalJSON(true);
+        if ("message" in json) {
+            if ($$('.fb-points').first()) {
+                $$('.fb-points').first().update('<p>' + json.message + '</p>');
+            }
+        }
+    }
+</script>
