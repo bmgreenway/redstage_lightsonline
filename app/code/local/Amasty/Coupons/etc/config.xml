@@ -139,11 +139,11 @@
                     <cart_coupon>Amasty_Coupons_Block_Rewrite_Cart_Coupon</cart_coupon>
                 </rewrite>
             </checkout>
-            <!-- <adminhtml>
+            <adminhtml>
                 <rewrite>
                     <sales_order_create_coupons>Amasty_Coupons_Block_Rewrite_Adminhtml_Coupon</sales_order_create_coupons>
                 </rewrite>
-            </adminhtml> -->
+            </adminhtml>
         </blocks>
         <helpers>
             <amcoupons>
