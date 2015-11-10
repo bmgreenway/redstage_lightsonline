@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Redstage_ShellIndexer>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Redstage_ShellIndexer>
+    </modules>
+</config>

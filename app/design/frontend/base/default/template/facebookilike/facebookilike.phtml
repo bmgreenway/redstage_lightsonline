@@ -1,0 +1,11 @@
+<?php /** @var $this AW_Facebook_Like_Block_Abstract */ ?>
+<<?php echo $this->getTag(); ?> <?php echo $this->getTagParams(); ?>></<?php echo $this->getTag(); ?>>
+
+<?php if (Mage::helper('facebookilike')->canGetPoints()): ?>
+    <div class="fb-points">
+        <?php $currentUrl = $this->getUrlToLike(); ?>
+        <?php if (!Mage::helper('facebookilike')->isAlreadyLiked($currentUrl)) : ?>
+            <?php echo $this->__("Like and get <b>%s</b> point(s)", Mage::helper('facebookilike')->getPoints()); ?>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>

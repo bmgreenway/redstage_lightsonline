@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<widgets>
+	<facebookcomments_button type="facebookcomments/widget_comments" translate="name description" module="facebookcomments">
+		<name>Facebook Comments</name>
+		<parameters>
+			<template translate="label">
+				<label>Frontend Template</label>
+				<visible>1</visible>
+				<required>1</required>
+				<type>text</type>
+				<value>facebookcomments/widget/comments.phtml</value> 
+			</template>
+		</parameters>
+	</facebookcomments_button>
+</widgets>

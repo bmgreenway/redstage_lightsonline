@@ -1,0 +1,18 @@
+<?php
+// WARNING! Don't change span class "googleconnect-button"
+?>
+<?php /* @var $this AW_Google_Connect_Block_Abstract */?>
+<div id="googleconnect_wrapper" style="display: none;">
+    <span class="googleconnect-button">
+    <?php if (strtolower(substr($this->getLinkUrl(), 0, 4)) === 'http'): ?>
+        <a href="<?php echo $this->getLinkUrl(); ?>" title="<?php echo $this->getTitle(); ?>" class="link-google">
+            <?php elseif ($this->getLinkUrl()): ?>
+            <a href="<?php echo $this->getUrl($this->getLinkUrl()); ?>" title="<?php echo $this->getTitle(); ?>"
+               class="link-google">
+                <?php endif; ?>
+                <span><?php echo $this->getTitle(); ?></span>
+                <?php if ($this->getLinkUrl()): ?>
+            </a>
+        <?php endif ?>
+    </span>
+</div>

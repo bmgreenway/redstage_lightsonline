@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<AW_Twitter_Follow>
+			<active>true</active>
+			<codePool>local</codePool>
+		</AW_Twitter_Follow>
+	</modules>
+</config>

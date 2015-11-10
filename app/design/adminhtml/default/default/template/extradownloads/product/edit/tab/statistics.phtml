@@ -1,0 +1,56 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/AW-LICENSE.txt
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This software is designed to work with Magento enterprise edition and
+ * its use on an edition other than specified is prohibited. aheadWorks does not
+ * provide extension support in case of incorrect edition use.
+ * =================================================================
+ *
+ * @category   AW
+ * @package    AW_Extradownloads
+ * @version    1.0.2
+ * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/AW-LICENSE.txt
+ */
+?><div class="grid" id="extradownloads_statistics_container">
+    <div class="hor-scroll">
+        <table cellspacing="0" class="data border">
+            <col width="80%" />
+            <col width="20%" />
+            <thead>
+                <tr class="headings">
+                    <th><?php echo Mage::helper('extradownloads')->__('Filename') ?></th>
+                    <th><?php echo Mage::helper('extradownloads')->__('Downloads') ?></th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <td colspan="2" class="a-right"><?php echo $this->getResetButtonHtml() ?></td>
+                </tr>
+            </tfoot>
+            <tbody id="extradownloads_items_body">
+                <?php foreach($this->getCollection() as $file): ?>
+                <tr>
+                    <td><?php echo $file->getTitle(); ?></td>
+                    <?php if ($this->getStoreId()): ?>
+                        <td><?php echo $file->getDownloads() ? $file->getDownloads() : 0; ?></td>
+                    <?php else: ?>
+                        <td><?php echo $file->getDownloadsSummary(); ?></td>
+                    <?php endif; ?>      
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Redstage_ShellIndexer>
+            <version>1.0.0.0</version>
+        </Redstage_ShellIndexer>
+    </modules>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Redstage_ShellIndexer before="Mage_Index_Adminhtml">Redstage_ShellIndexer_Adminhtml</Redstage_ShellIndexer>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <global>        
+        <blocks>
+            <redstage_shellindexer>
+                <class>Redstage_ShellIndexer_Block</class>
+            </redstage_shellindexer>        
+            <enterprise_index>
+                <rewrite>
+                    <adminhtml_process>Redstage_ShellIndexer_Block_Adminhtml_Process</adminhtml_process>
+                </rewrite>
+            </enterprise_index>
+        </blocks>                                                                                                   
+    </global>
+    
+</config>

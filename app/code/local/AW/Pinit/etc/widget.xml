@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<widgets>
+	<pinitbutton type="pinit/widget_pinitbutton" translate="name description" module="pinit">
+		<name>PinIt</name>
+		<parameters>
+			<template translate="label">
+				<label>Frontend Template</label>
+				<visible>1</visible>
+				<required>1</required>
+				<type>text</type>
+				<value>pinit/widget/pinitbutton.phtml</value> 
+			</template>
+		</parameters>
+	</pinitbutton>
+</widgets>

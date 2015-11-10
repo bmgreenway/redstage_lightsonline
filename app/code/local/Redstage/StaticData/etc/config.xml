@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Redstage_StaticData>
+            <version>1.0.7</version>
+        </Redstage_StaticData>
+    </modules>
+    <global>
+        <resources>
+            <redstage_staticdata_setup>
+                <setup>
+                    <module>Redstage_StaticData</module>
+                    <class>Mage_Core_Model_Resource_Setup</class>
+                </setup>
+            </redstage_staticdata_setup>
+            <redstage_staticdata_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </redstage_staticdata_write>
+            <redstage_staticdata_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </redstage_staticdata_read>
+        </resources>
+    </global>
+</config>

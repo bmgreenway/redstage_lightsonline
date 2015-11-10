@@ -1,0 +1,51 @@
+<?php
+/**
+ * aheadWorks Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://ecommerce.aheadworks.com/AW-LICENSE.txt
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This software is designed to work with Magento enterprise edition and
+ * its use on an edition other than specified is prohibited. aheadWorks does not
+ * provide extension support in case of incorrect edition use.
+ * =================================================================
+ *
+ * @category   AW
+ * @package    AW_Extradownloads
+ * @version    1.0.2
+ * @copyright  Copyright (c) 2010-2012 aheadWorks Co. (http://www.aheadworks.com)
+ * @license    http://ecommerce.aheadworks.com/AW-LICENSE.txt
+ */
+?><?php if ($this->getShowBlock()): ?>
+<div class="aw_extradownloads"<?php if ($style_id = $this->getStyleId()){ echo " id=\"{$style_id}\""; } ?>>
+	<a class="ultimate_toggle magic_arrow_down" id="show_hide_toggle" href="javascript:void(0);" dataparam="product_attachments">Show</a>
+    <div class="resource_title"><?php echo $this->getSectionTitle(); ?>	</div>
+	<div id="product_attachments">
+		<div class="aw_extradownloads_0">
+			<div class="aw_extradownloads_title1">Files</div>
+			<div class="aw_extradownloads_title2">Notes</div>
+		</div>
+	<ul class="aw_extradownloads_1">
+    <?php $_files = $this->getFiles();  ?>
+    <?php if (count($_files)): ?>
+		
+        <?php foreach($_files as $file): ?>
+        <li>
+			<div class="aw_extradownloads_desc1"><a href="<?php echo $this->getDownloadLink($file); ?>" target="_blank"><?php echo basename($file->getFile()); ?></a></div>
+			<div class="aw_extradownloads_desc2"><?php echo $file->getTitle(); ?></div>
+		</li>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <li><?php echo $this->__('There are no files'); ?></li>
+    <?php endif; ?>
+    </ul>
+	</div>
+</div>
+<?php endif; ?>
