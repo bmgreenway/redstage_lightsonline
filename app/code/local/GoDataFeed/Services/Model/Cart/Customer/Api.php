@@ -51,7 +51,7 @@ class GoDataFeed_Services_Model_Cart_Customer_Api extends GoDataFeed_Services_Mo
 
 				 $customer
 					 ->setPassword($password)
-					 ->setConfirmation($password);
+					 ->setPasswordConfirmation($password);
 			 }
 
 			 $isCustomerValid = $customer->validate();
