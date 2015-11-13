@@ -37,6 +37,9 @@
                 </block>
             </block>
     		<block type="amshopby/top" name="amshopby.top" before="category.products" template="amasty/amshopby/top.phtml"/>
+            <block type="core/template" name="amshopby.bottom" after="-" template="amasty/amshopby/bottom.phtml">
+                <action method="setBlockId"><id>amshopby-filters-bottom-cms</id></action>
+            </block>
         </reference>
     </amshopby_index_index>
 
@@ -49,6 +52,9 @@
         <reference name="content">
                 <block type="amshopby/catalog_layer_view_top" name="amshopby.navtop" before="-" template="amasty/amshopby/view_top.phtml"/>
                 <block type="amshopby/top" name="amshopby.top" before="category.products" template="amasty/amshopby/top.phtml"/>
+            <block type="core/template" name="amshopby.bottom" after="-" template="amasty/amshopby/bottom.phtml">
+                <action method="setBlockId"><id>amshopby-filters-bottom-cms</id></action>
+            </block>
         </reference>
     </catalog_category_layered> 
 
@@ -62,6 +68,9 @@
         </reference>  
         <reference name="content">
                 <block type="amshopby/search_layer_top" name="amshopby.navtop" before="search.result" template="amasty/amshopby/view_top.phtml"/>
+            <block type="core/template" name="amshopby.bottom" after="-" template="amasty/amshopby/bottom.phtml">
+                <action method="setBlockId"><id>amshopby-filters-bottom-cms</id></action>
+            </block>
         </reference>
     </catalogsearch_result_index>   
 

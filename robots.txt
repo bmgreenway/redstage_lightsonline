@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /ceiling-lights/chandeliers/all-chandeliers.html
+
+Sitemap: http://www.lightsonline.com/sitemap/sitemap.xml
+
+
+User-Agent: Halebot
+Disallow: /*
+

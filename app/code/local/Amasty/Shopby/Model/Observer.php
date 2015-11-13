@@ -65,10 +65,14 @@ class Amasty_Shopby_Model_Observer
         }
 
         $seoUrl = $urlBuilder->getUrl();
+        $pSeo = strpos($seoUrl, '?');
+        $tSeo = $pSeo ? substr($seoUrl, 0, $pSeo) : $seoUrl;
 
         $currentUrl = Mage::helper('core/url')->getCurrentUrl();
+        $pCurrent = strpos($currentUrl, '?');
+        $tCurrent = $pCurrent ? substr($currentUrl, 0, $pCurrent) : $currentUrl;
 
-        if ($currentUrl != $seoUrl) {
+        if ($tCurrent != $tSeo) {
             Mage::app()->getResponse()->setRedirect($seoUrl, 301);
         }
     }
@@ -101,7 +105,7 @@ class Amasty_Shopby_Model_Observer
 
         $blocks = array();
         foreach ($layout->getAllBlocks() as $b){
-            if (!in_array($b->getNameInLayout(), array('amshopby.navleft','amshopby.navtop','amshopby.navright', 'amshopby.top', 'amfinder89'))){
+            if (!in_array($b->getNameInLayout(), array('amshopby.navleft','amshopby.navtop','amshopby.navright', 'amshopby.top', 'amshopby.bottom', 'amfinder89'))){
                 continue;
             }
             $b->setIsAjax(true);
