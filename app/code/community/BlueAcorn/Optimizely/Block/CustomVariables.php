@@ -156,6 +156,8 @@ class BlueAcorn_Optimizely_Block_CustomVariables extends Mage_Core_Block_Abstrac
             return $this->_pageType;
         }
 
+        if (!is_object($this->getAction())) return "";
+
         $routeName = $this->getRequest()->getRequestedRouteName();
         $actionName = $this->getAction()->getFullActionName();
         $this->_pageType = '';

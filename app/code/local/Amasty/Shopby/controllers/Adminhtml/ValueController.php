@@ -53,6 +53,7 @@ class Amasty_Shopby_Adminhtml_ValueController extends Mage_Adminhtml_Controller_
         if (!$data) {
             Mage::getSingleton('adminhtml/session')->addError(Mage::helper('amshopby')->__('Unable to find an option to save'));
             $this->_redirect('*/adminhtml_filter/');
+            return;
         }
         
         //upload images
