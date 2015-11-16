@@ -226,10 +226,12 @@ $onlyBrandHaveProduct = Mage::getStoreConfig('shopbybrand/brand_list/display_bra
         align-items: center;
         display: inline-flex;
         align-items: center;
-        width: <?php echo $logo_width; ?>px;
+       /* width: <?php echo $logo_width; ?>px; */
         margin: 0 auto;
         min-height: 85%;
         overflow: hidden;
+        position: relative;
+        bottom: 35px;
     }
     .brand-ajax-loading img{
         width: 180px;

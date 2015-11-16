@@ -203,6 +203,11 @@ class Amasty_Coupons_Model_SalesRule_Validator extends Mage_SalesRule_Model_Vali
         return $this;
         
     }
+
+    public function canProcessRule($rule, $address)
+    {
+        return parent::_canProcessRule($rule, $address);
+    }
     
     // CE 1.3 compatibility
     public function processShippingAmount(Mage_Sales_Model_Quote_Address $address)

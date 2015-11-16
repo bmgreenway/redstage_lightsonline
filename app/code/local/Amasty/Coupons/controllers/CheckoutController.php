@@ -66,7 +66,7 @@ class Amasty_Coupons_CheckoutController extends Mage_Core_Controller_Front_Actio
         }
         
         if ($isAjax && Mage::helper("amcoupons")->isAmastyOnestepcheckoutInstalled()){
-            $this->_redirect('amscheckout/onepage/cancelCoupon');
+            $this->_redirect('amscheckout/onepage/cancelCoupon', array('_secure' => true));
         } else {
             $this->_redirectReferer('*/*');
         }
