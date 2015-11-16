@@ -33,10 +33,10 @@
         <resources>
             <default_setup>
                 <connection>
-                    <host>localhost</host>
-                    <username/>
-                    <password/>
-                    <dbname>magento</dbname>
+                    <host>172.25.16.33</host>
+                    <username>lightsonline-db</username>
+                    <password>p4N7rsikCdl</password>
+                    <dbname>lightsonline</dbname>
                     <model>mysql4</model>
                     <initStatements>SET NAMES utf8</initStatements>
                     <type>pdo_mysql</type>
