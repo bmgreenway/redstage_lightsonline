@@ -7500,3 +7500,30 @@ div#amshopby-page-container .products-grid.products-grid--max-4-col.odd {
     height: 290px;
     overflow: hidden;
 }
+@media (max-width: 736px) {
+	.left_over {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.79);
+    opacity: 1;
+    height: 241px;
+    overflow: hidden;
+}
+.catalog-category-view .left_over {
+    margin: 56px 0 0 0;
+    padding: 10px 0 10px 0;
+    border: 0;
+}
+.catalog-category-view .category-image {
+    height: auto;
+    overflow: hidden;
+}
+.left_over_desc .cat_desc_exp {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    height: 115px;
+    overflow: hidden;
+}
+}
