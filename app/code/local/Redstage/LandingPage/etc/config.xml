@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config>
+	<modules>
+		<Redstage_LandingPage>
+			<version>1.0.0</version>
+		</Redstage_LandingPage>			
+	</modules>
+	<global>
+		<blocks>
+			<redstage_landingpage>
+				<class>Redstage_LandingPage_Block</class>
+			</redstage_landingpage>
+		</blocks>
+	</global>
+</config>
