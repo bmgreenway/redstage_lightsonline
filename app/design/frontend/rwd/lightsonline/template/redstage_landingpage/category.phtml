@@ -1,0 +1,18 @@
+<?php $categories = $this->getSubCategories(); ?>
+<ul class="products-grid products-grid--max-4-col first odd">
+<?php foreach ($categories as $cat) : ?>
+	<?php //echo '<pre>'; print_r($cat->getData()); exit; ?>
+	<li class="item">
+		<div class="sub-cat">
+			<a href="<?php echo $cat->getUrl(); ?>">
+				<img src="<?php echo $cat->getImageUrl(); ?>" width="200" height="200" />
+			</a>			
+			<div class="sub-cat-name">
+				<a href="<?php echo $cat->getUrl(); ?>">
+					<?php echo $cat->getName(); ?>
+				</a>
+			</div>
+		</div>
+	</li>
+<?php endforeach; ?>
+<ul>
