@@ -7420,6 +7420,7 @@ dl#narrow-by-list2 a span {
     margin: 10px 0;
     height: 400px;
     overflow: hidden;
+	left: 0;
 }
 .left_over_desc {
     padding: 0 50px;
@@ -7435,6 +7436,7 @@ dl#narrow-by-list2 a span {
     margin: 10px 0;
     height: 400px;
     overflow: hidden;
+	right:0;
 }
 .right_over_desc {
     padding: 0 50px;
@@ -7467,14 +7469,14 @@ dl#narrow-by-list2 a span {
 
 @media (max-width: 736px) {
 .left_over{
-	top: 4.5%;
+	top: 3.5%;
 	width: 55%;
 }
 .left_over_desc{
     padding: 0 10px;
 }
 .right_over{
-	top: 4.5%;
+	top: 3.5%;
 	width: 55%;
 }
 .right_over_desc{
@@ -7489,9 +7491,17 @@ dl#narrow-by-list2 a span {
 }
 @media (max-width: 568px) {
 .left_over{	
-	top: 3.5%;
+	top: 2%;
 }
 .right_over{	
-	top: 3.5%;
+	top: 2%;
+}
+}
+@media (max-width: 320px) {
+.left_over {
+    top: 2%;
+}
+.right_over {
+    top: 2%;
 }
 }
