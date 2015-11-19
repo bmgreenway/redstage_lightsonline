@@ -18,7 +18,13 @@ function amshopby_ajax_init(){
             if ((p.hasClassName('amshopby-cat') && !p.hasClassName('amshopby-cat-multi')) || p.hasClassName('amshopby-clearer')){
                 return;
             }
-
+			var checkProductGridimg = e.up().up().up();
+			var checkProductGridname = e.up().up().up().up();
+			
+			if (checkProductGridimg.hasClassName('products-grid') || checkProductGridname.hasClassName('products-grid')) {
+				return false;
+			}
+			
             e.onclick = function(){
                 if (this.hasClassName('checked')) {
                     this.removeClassName('checked');
