@@ -18,7 +18,7 @@ function amshopby_ajax_init(){
             if ((p.hasClassName('amshopby-cat') && !p.hasClassName('amshopby-cat-multi')) || p.hasClassName('amshopby-clearer')){
                 return;
             }
-
+			
             e.onclick = function(){
                 if (this.hasClassName('checked')) {
                     this.removeClassName('checked');
@@ -284,7 +284,7 @@ document.observe("dom:loaded", function(event) {
 
 });
 
-var amshopby_toolbar_selector = '.amshopby-page-container';
+var amshopby_toolbar_selector = 'div.toolbar';
 var amshopby_scroll_to_products = false;
 
 function amshopby_external(){
