@@ -4555,6 +4555,7 @@ margin-left:15px;
 }
 .onsale-category-container{
 top:8px !important;
+background: no-repeat !important;
 }
 input#amshopby-price-from {
     background-color: #FFF;
