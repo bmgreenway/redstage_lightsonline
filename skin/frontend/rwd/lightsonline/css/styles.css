@@ -4555,6 +4555,7 @@ margin-left:15px;
 }
 .onsale-category-container{
 top:8px !important;
+background: no-repeat;
 }
 input#amshopby-price-from {
     background-color: #FFF;
@@ -7391,5 +7392,117 @@ color:#333;
     text-align: center;
     margin: 10px 0;
     padding: 0 6% 0 25%;
+}
+}
+dl#narrow-by-list2 a {
+    font-family: 'robotoregular';
+    font-size: 13px;
+    line-height: 22px;
+}
+dl#narrow-by-list2 a span {
+    color: #999;
+}
+.landing_page_ul {
+    position: relative;
+}
+#narrow-by-list2 dt {
+    padding: 0px 0 5px 0 !important;
+}
+#amshopby-page-container ul.products-grid.products-grid--max-4-col.odd{
+	border-bottom: 0;
+}
+.left_over {
+   position: absolute;
+    z-index: 9;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    /* padding: 0 50px; */
+    margin: 10px 0;
+    height: 400px;
+    overflow: hidden;
+	left: 0;
+}
+.left_over_desc {
+    padding: 0 50px;
+    max-height: 310px;
+}
+.right_over {
+   position: absolute;
+    z-index: 9;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    /* padding: 0 50px; */
+    margin: 10px 0;
+    height: 400px;
+    overflow: hidden;
+	right:0;
+}
+.right_over_desc {
+    padding: 0 50px;
+    max-height: 310px;
+}
+.category-image img{
+	height:400px;
+	overflow:hidden;
+}
+.left_over_title {
+    font-family: 'robotolight';
+    color: #539ebd;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+.right_over_title {
+    font-family: 'robotolight';
+    color: #539ebd;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+.cat_desc_exp {
+    font-size: 13px;
+    font-family: 'robotoregular';
+    color: #999;
+    line-height: 22px;
+    max-height: 286px;
+    overflow: hidden;
+}
+
+@media (max-width: 736px) {
+.left_over{
+	top: 3.5%;
+	width: 55%;
+}
+.left_over_desc{
+    padding: 0 10px;
+}
+.right_over{
+	top: 3.5%;
+	width: 55%;
+}
+.right_over_desc{
+    padding: 0 10px;
+}
+.cat_desc_exp{
+    max-height: 200px;
+}
+.landing_page_ul{
+	top:0;
+}
+}
+@media (max-width: 568px) {
+.left_over{	
+	top: 2%;
+}
+.right_over{	
+	top: 2%;
+}
+}
+@media (max-width: 320px) {
+.left_over {
+    top: 2%;
+}
+.right_over {
+    top: 2%;
 }
 }
