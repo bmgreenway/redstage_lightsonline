@@ -93,3 +93,21 @@ $currency = $order->getOrderCurrencyCode();
 <div class="buttons-set">
     <button type="button" class="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Continue Shopping')) ?>" onclick="window.location='<?php echo $this->getUrl() ?>'"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
 </div>
+
+<script type="text/javascript">
+var sa_products = {};
+<?php
+//loading the order object 
+$orderObj = Mage::getModel('sales/order')->loadByIncrementId($this->getOrderId());
+//get all the items included on the order. 
+$orderItems = $orderObj->getAllItems();
+
+//do a loop to get the sku and name of each item
+foreach($orderItems as $item)
+    {
+?>
+  sa_products["<?php echo $item->getSku();?>"] = "<?php echo $item->getName();?>"; //Fill for Shopper Approved
+<?php
+    }
+?>
+</script>
