@@ -40,14 +40,13 @@
 		<div class="header_top_right_links">
 			<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('header_call_us_toll_free')->toHtml(); ?>
 		</div>
-		<div class="chat_live_m"><span class="chat_icon"></span><span class="chat_text" onclick="parent.LC_API.open_chat_window()">chat</span></div>
-		<div class="chat_live">
-			<span class="chat_link_a" onclick="parent.LC_API.open_chat_window()">Live Chat is <span class="highlight">Online</span><span class="chat_icon"></span>
-			</span>
-		</div>
+		<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('header_call_for_livechat')->toHtml(); ?>
 		<div class="account-cart-wrapper_m"> <?php echo $this->getChildHtml('minicart_head'); ?></div>
 		<div class="account-cart-wrapper">
-                <a href="#"class="link-help">Help</a>				
+                <a href="#" class="link-help" id="help_header_link">Help</a>				
+				<div class="help_header_link_content" id="help_header_link_content" style="display:none;">
+					<?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('header_help_content')->toHtml(); ?>
+				</div>
 				<a href="<?php echo $this->getUrl('wishlist') ?>"class="link-wishlist">My Wishlist</a>
 				<a href="<?php echo $this->helper('customer')->getAccountUrl(); ?>" data-target-element="#header-account" class="skip-link skip-account">
                   
@@ -155,4 +154,3 @@ if(Mage::registry('current_category') && !Mage::registry('current_product'))
 echo $this->getLayout()->createBlock('ambanners/container')->setTemplate('ambanners/container.phtml')->setPosition(4)->toHtml(); 
 }
 ?>
-

@@ -1,6 +1,6 @@
 var amshopby_working  = false;
 var amshopby_blocks   = {};
-var $j=jQuery.noConflict();
+
 function amshopby_ajax_fallback_mode() {
     var myNav = navigator.userAgent.toLowerCase();
     var isIE = (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
@@ -18,7 +18,7 @@ function amshopby_ajax_init(){
             if ((p.hasClassName('amshopby-cat') && !p.hasClassName('amshopby-cat-multi')) || p.hasClassName('amshopby-clearer')){
                 return;
             }
-
+			
             e.onclick = function(){
                 if (this.hasClassName('checked')) {
                     this.removeClassName('checked');
@@ -181,7 +181,7 @@ function amshopby_ajax_update(data){
             var parent = block.parentNode;
             parent.insertBefore(amshopbyFiltersTop, block);
         }
-        var colLeftFirst = block.select('.col-left-first').first();
+        var colLeftFirst = block.select('.col-left-first, .amshopby-filters-left').first();
         if(colLeftFirst){
             var parent = block.parentNode;
             parent.insertBefore(colLeftFirst, block);
@@ -247,7 +247,7 @@ function amshopby_ajax_update(data){
 
     try {
         var categoryProducts = $$('.category-products, .catblocks').first();
-        var colLeftFirst = amshopby_get_container().parentNode.select('.col-left-first').first();
+        var colLeftFirst = amshopby_get_container().parentNode.select('.col-left-first, .amshopby-filters-left').first();
         if(colLeftFirst && categoryProducts){
             var parent = categoryProducts.parentNode;
             parent.insertBefore(colLeftFirst, categoryProducts);

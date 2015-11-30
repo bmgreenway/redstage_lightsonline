@@ -45,9 +45,6 @@ class Amasty_Coupons_Model_Sales_Quote extends Mage_Sales_Model_Quote
         $maxCouponsCount = Mage::getStoreConfig('amcoupons/codes/max_num_coupons');
         if (($maxCouponsCount == 0) || ($couponsCount <= $maxCouponsCount)) {
             $this->setData('coupon_code', $resultCodes);
-            if ($this->_isActionNameIn(array('couponPostAction'), 'Amasty_Scheckout_OnepageController')) {
-                $this->_validateCouponCode();
-            }
         }
 
         return $this;
@@ -325,9 +322,7 @@ class Amasty_Coupons_Model_Sales_Quote extends Mage_Sales_Model_Quote
         $isAdmin = Mage::app()->getStore()->isAdmin();
         if ($this->_isActionNameIn(array('_updateShoppingCart', 'deleteAction'))
             || $isAdmin
-            || $this->_isActionNameIn(array('couponPostAction'), 'Amasty_Scheckout_OnepageController')
         ) {
-
             $quote = Mage::getSingleton('adminhtml/session_quote')->getQuote();
             $adminCustomer = Mage::getModel('customer/customer')->load($quote->getCustomerId());
             $websiteId = Mage::getModel('core/store')->load($quote->getStoreId())->getWebsiteId();
@@ -360,7 +355,7 @@ class Amasty_Coupons_Model_Sales_Quote extends Mage_Sales_Model_Quote
             $this->setData('coupon_code', $validCodesString);
         }
 
-        if ($codes && !$this->_isActionNameIn(array('couponPostAction'), 'Amasty_Scheckout_OnepageController')) {
+        if ($codes) {
             $addressHasCoupon = false;
             $addresses = $this->getAllAddresses();
             if (count($addresses)>0) {
