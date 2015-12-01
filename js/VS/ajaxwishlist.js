@@ -25,7 +25,7 @@ function ajaxCompare(url,id){
 				jQuery("#ajaxCompare-"+id).addClass("active");
 				jQuery("#ajaxCompare-"+id).attr("onclick", "ajaxdelete('"+saveurl+"',"+id+")");
 				jQuery('#ajax-response-compare .message').html(data.message);
-				showMessage();
+				//showMessage();
 				if(jQuery('.block-compare').length){
                     jQuery('.block-compare').replaceWith(data.sidebar);
                 }else{
@@ -62,7 +62,7 @@ function ajaxdelete(url,id){
 				jQuery('#ajax-response-compare .message').html(data.message);
 			}else{
 				jQuery('#ajax-response-compare .message').html(data.message);
-				showMessage();
+				//showMessage();
 				jQuery("#ajaxCompare-"+id).removeClass("active");
 				jQuery("#ajaxCompare-"+id).attr('onclick', 'ajaxCompare("'+saveurl+'",'+id+')');
 				if(jQuery('.block-compare').length){
@@ -104,8 +104,8 @@ function ajaxWishlist(url,id){
 
 function showMessage()
 {
-	jQuery(".overlay_image").fadeIn(1000);
-	jQuery("#ajax-response-compare").fadeIn(1000);	
+	//jQuery(".overlay_image").fadeIn(1000);
+	//jQuery("#ajax-response-compare").fadeIn(1000);	
 }
 
 function close_popup()
