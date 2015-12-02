@@ -1,0 +1,18 @@
+<?php $pid = $this->getProductId(); ?>
+<?php if (!empty($pid)) : ?>
+	<?php $product = Mage::getModel('catalog/product')->load($pid); ?>
+	<?php if ($product->getId()) : ?>
+		<li class="item">
+			<div class="sub-cat">
+				<a style="width:200px;height:200px;"href="<?php echo $product->getUrl(); ?>">
+					<img src="<?php echo $product->getImageUrl(); ?>" style="width:179px;height:179px;" />
+				</a>			
+				<div class="sub-cat-name">
+					<a href="<?php echo $product->getUrl(); ?>">
+						<?php echo $product->getName(); ?>
+					</a>
+				</div>
+			</div>
+		</li>
+	<?php endif; ?>
+<?php endif; ?>
