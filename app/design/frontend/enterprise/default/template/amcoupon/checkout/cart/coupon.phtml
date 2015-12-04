@@ -79,7 +79,7 @@
                     <tr style="padding-bottom: 3px;">
                         <td><?php echo $coupon; ?></td>
                         <td style="text-align: right;">
-                            <form id="discount-coupon-cancel-form-<?php echo $couponCnt; ?>" action="<?php echo $this->getUrl('amcoupons/checkout/cancelCoupon') ?>" method="post">
+                            <form id="discount-coupon-cancel-form-<?php echo $couponCnt; ?>" action="<?php echo $this->getUrl('amcoupons/checkout/cancelCoupon', array('_secure' => true)) ?>" method="post">
                                 <input type="hidden" name="amcoupon_code_cancel" value="<?php echo $coupon; ?>" />
                                 <a href="#" onclick="javascript: discountForm.cancel('<?php echo $couponCnt; ?>'); return false;"><?php echo $this->__('Cancel'); ?></a>
                             </form>
