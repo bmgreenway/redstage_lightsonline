@@ -270,10 +270,7 @@
 			</div>
 			<div class="clearer"></div>
 			
-			<!-- Shopper Approved Product Page Code -->
-			<script type="text/javascript"> var sa_products_count = 3; var sa_date_format = 'F j, Y'; var sa_product = '<?php echo $_helper->productAttribute($_product, $_product->getSku(), 'name') ?>'; function saLoadScript(src) { var js = window.document.createElement("script"); js.src = src; js.type = "text/javascript"; document.getElementsByTagName("head")[0].appendChild(js); } saLoadScript('//www.shopperapproved.com/product/14666/'+sa_product+'.js'); </script><div id="review_header"></div><div id="product_page"></div><div id="review_image"><a href="http://www.shopperapproved.com/reviews/lightsonline.com/" target="_blank" rel="nofollow"></a></div>
-			<div class="clearer"></div>
-			<!-- End Shopper Approved Product Page Code -->
+			
 			
             <?php echo $this->getChildHtml('related_products') ?>
 
@@ -356,6 +353,10 @@
 			</div>
 		</div>
 	<?php endif; ?>
+	<!-- Shopper Approved Product Page Code -->
+			<script type="text/javascript"> var sa_products_count = 3; var sa_date_format = 'F j, Y'; var sa_product = '<?php echo $_helper->productAttribute($_product, $_product->getSku(), 'name') ?>'; function saLoadScript(src) { var js = window.document.createElement("script"); js.src = src; js.type = "text/javascript"; document.getElementsByTagName("head")[0].appendChild(js); } saLoadScript('//www.shopperapproved.com/product/14666/'+sa_product+'.js'); </script><div id="review_header"></div><div id="product_page"></div><div id="review_image"><a href="http://www.shopperapproved.com/reviews/lightsonline.com/" target="_blank" rel="nofollow"></a></div>
+			<div class="clearer"></div>
+			<!-- End Shopper Approved Product Page Code -->
 	<?php echo $this->getLayout()->createBlock('extradownloads/product_section')->toHtml(); ?>
     <?php echo $this->getChildHtml('product_additional_data') ?>
 	
