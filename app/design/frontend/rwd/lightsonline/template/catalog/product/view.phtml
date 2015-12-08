@@ -173,7 +173,11 @@
 					<span class='st_googleplus'></span>
 					<span class='st_email'></span>
 					<script type="text/javascript">var switchTo5x=true;</script>
-					<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+					<?php if (empty($_SERVER['HTTPS'])) { ?>
+						<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+					<?php }else{ ?>
+						<script type="text/javascript" src="https://w.sharethis.com/button/buttons.js"></script>
+					<?php } ?>
 					<script type="text/javascript">stLight.options({publisher: "45fc0612-9449-4780-9249-c80b0a9e85ec", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 				</div>		
 				<div class="add_to">
