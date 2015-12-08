@@ -7506,3 +7506,6 @@ dl#narrow-by-list2 a span {
     top: 2%;
 }
 }
+.tab-content .std {
+    font-family: 'robotoregular';
+}
