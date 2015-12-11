@@ -111,12 +111,13 @@
 								<?php
 								$msrpPrice=$_product->getMsrp();
 
-								if ($_finalPrice < $msrpPrice) {
+								// _finalPrice not defined
+								// if ($_finalPrice < $msrpPrice) {
 									$_store = $_product->getStore();
 									$_convertedFinalPrice = $_store->roundPrice($_store->convertPrice($_product->getFinalPrice()));
 									$_finalPrice= $this->helper('tax')->getPrice($_product, $_convertedFinalPrice);
 									$savedPrice = (float)($msrpPrice - $_finalPrice);
-								}
+								// }
 								 if (isset($savedPrice) && $savedPrice > 0) : ?>
 								<div class="you-saved-price">
 									<?php echo 'You Save: ' . $_coreHelper->formatPrice($savedPrice, false); ?>

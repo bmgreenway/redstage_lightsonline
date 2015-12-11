@@ -6,7 +6,7 @@
 	<?php if (!isset($dataParams['hidden'])): ?>
 		<a href="<?php echo $category->getUrl(); ?>"><?php echo $category->getName(); ?></a>
 	<?php endif; ?>
-	<div class="sub_category_menu_sub_inner" id="<?php echo $dataParams['id']; ?>">
+	<div class="sub_category_menu_sub_inner" id="<?php echo (isset($dataParams['id'])) ? $dataParams['id'] : ''; ?>">
 		<div class="sub_category_menu_sub_content">
 			<span class="arrow_custom">
 				<img alt="" src="<?php echo Mage::getBaseUrl('media').'catalog/category/' . $category->getMegamenuImage(); ?>" /> 
