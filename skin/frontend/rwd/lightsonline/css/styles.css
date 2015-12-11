@@ -4879,7 +4879,7 @@ border-top:1px solid #b0d2e1;
 .bottom_border_div{
 border-bottom:1px solid #b0d2e1;
 }
-.product-collateral.toggle-content.tabs dd.tab-container.last.current {
+.product-collateral.toggle-content.tabs dd.tab-container {
     font-size: 13px;
     color: #808080;
     font-family: 'robotolight';
