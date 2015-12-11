@@ -51,7 +51,9 @@
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
                 <div class="col-main">
-                    <?php echo $this->getChildHtml('global_messages') ?>
+                    <div class="msg-wrapper" onclick="this.style.display='none';">
+                        <?php echo $this->getChildHtml('global_messages') ?>
+                    </div>
                     <?php echo $this->getChildHtml('content') ?>
                 </div>
             </div>
