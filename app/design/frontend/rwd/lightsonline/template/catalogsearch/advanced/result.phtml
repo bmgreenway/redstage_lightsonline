@@ -25,7 +25,7 @@
  */
 ?>
 <div class="page-title">
-    <h1><?php echo $this->__('Light finder') ?></h1>
+    <h1><?php echo $this->__('Light Finder') ?></h1>
 </div>
 <?php echo $this->getMessagesBlock()->toHtml() ?>
 <?php if($this->getResultCount()): ?>
@@ -33,7 +33,7 @@
         <?php echo $this->helper('catalogsearch')->__('<strong>%d item(s)</strong> were found using the following search criteria', $this->getResultCount()); ?>
     </p>
 <?php else: ?>
-    <p class="error-msg"><?php echo $this->helper('catalogsearch')->__('No items were found using the following search criteria.');?> <a href="<?php echo $this->getBaseUrl(); ?>"><?php echo $this->helper('catalogsearch')->__('Modify your search'); ?></a></p>
+    <p class="error-msg"><?php echo $this->helper('catalogsearch')->__('No items were found using the following search criteria.');?> <a href="<?php echo $this->getBaseUrl(); ?>" onclick="window.history.back(); return false;"><?php echo $this->__('Modify your search'); ?></a></p>
 <?php endif; ?>
 
 <div class="advanced-search-summary">
@@ -50,7 +50,7 @@
     <?php if($this->getResultCount()): ?>
         <p>
             <?php echo $this->helper('catalogsearch')->__("Don't see what you're looking for?"); ?>
-            <a href="<?php echo $this->getBaseUrl(); ?>"><?php echo $this->helper('catalogsearch')->__('Modify your search'); ?></a>
+            <a href="<?php echo $this->getBaseUrl(); ?>" onclick="window.history.back(); return false;"><?php echo $this->__('Modify your search'); ?></a>
         </p>
     <?php endif; ?>
 </div>
