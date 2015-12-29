@@ -53,7 +53,7 @@ class Mirasvit_SeoFilter_Block_Catalog_Product_List_Toolbar extends Mirasvit_Seo
     {
         //support of Magestore_Shopbybrand
         if (Mage::helper('seo')->getFullActionCode() == 'brand_index_view') {
-            return parent::getPageUrl($page);
+            return parent::getPageUrl($params);
         }
 
         if ($identifier = Mage::helper('seo')->isOnLandingPage()) {

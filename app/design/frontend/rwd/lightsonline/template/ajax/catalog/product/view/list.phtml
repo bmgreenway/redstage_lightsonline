@@ -1,6 +1,7 @@
 <?php 
 $_helper = $this->helper('catalog/product_compare');
 $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
+$itemInCompareArray = array();
 ?>
 <div class="block block-list block-compare">
 	<?php if($_helper->getItemCount() > 0): ?>
@@ -14,7 +15,6 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
 	<?php endif; ?>
     <div class="block-content">
     <?php if($_helper->getItemCount() > 0):
-        $itemInCompareArray=array();
         $i=0;
      ?>
         <ol id="compare-items">
@@ -34,20 +34,26 @@ $_items = $_helper->getItemCount() > 0 ? $_helper->getItemCollection() : null;
         <div class="actions">
             <a href="<?php 
 			        $params = $this->getRequest()->getParams();
-					if($params['isAjax'] == 1){
-						$refererUrl = Mage::registry('referrer_url');
-				        if (empty($refererUrl)) {
-				            $refererUrl = Mage::getBaseUrl();
-				        }
-						$deleteUrl = $this->getUrl(
-				            'catalog/product_compare/clear',
-				            array(
-				                Mage_Core_Controller_Front_Action::PARAM_NAME_URL_ENCODED => $this->helper('core/url')->getEncodedUrl($refererUrl)
-				            )
-				        );
-					}else{
-		        		$deleteUrl = $_helper->getClearListUrl();
-					}
+                    if (isset($params['isAjax'])) {
+    					if($params['isAjax'] == 1) {
+    						$refererUrl = Mage::registry('referrer_url');
+    				        if (empty($refererUrl)) {
+    				            $refererUrl = Mage::getBaseUrl();
+    				        }
+    						$deleteUrl = $this->getUrl(
+    				            'catalog/product_compare/clear',
+    				            array(
+    				                Mage_Core_Controller_Front_Action::PARAM_NAME_URL_ENCODED => $this->helper('core/url')->getEncodedUrl($refererUrl)
+    				            )
+    				        );
+    					}
+                        else {
+    		        		$deleteUrl = $_helper->getClearListUrl();
+    					}
+                    }
+                    else {
+                        $deleteUrl = $_helper->getClearListUrl();
+                    }
 		        	echo $deleteUrl; 
         		?>" onclick="return confirm('<?php echo $this->__('Are you sure you would like to remove all products from your comparison?') ?>');"><?php echo $this->__('Clear All') ?></a>
             <button type="button" title="<?php echo $this->__('Compare') ?>" class="button" onclick="popWin('<?php echo $_helper->getListUrl() ?>','compare','top:0,left:0,width=820,height=600,resizable=yes,scrollbars=yes')"><span><span><?php echo $this->__('Compare') ?></span></span></button>
