@@ -7397,11 +7397,9 @@ color:#333;
 .tab-content .std {
     font-family: 'robotoregular';
 }
-/* category landing paeg */
+/* category landing page */
 #amshopby-page-container li {
     list-style-type: none;
-	max-height: 230px;
-
 }
 #amshopby-page-container img {
     width: 200px;
