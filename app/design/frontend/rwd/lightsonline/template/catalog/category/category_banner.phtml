@@ -10,10 +10,9 @@ if ($_imgUrl = $_category->getImageUrl()) {
 } ?>
 <?php 
 $attribute = Mage::getSingleton('eav/config')->getAttribute('catalog_category', 'text_overlay');
- $text = $attribute->getSource()->getOptionText($_category->getTextOverlay());
+$text = $attribute->getSource()->getOptionText($_category->getTextOverlay());
 
- $overlayContentattribute = Mage::getSingleton('eav/config')->getAttribute('catalog_category', 'overlay_content');
- $overlayContent = $attribute->getSource()->getOptionText($_category->getOverlayContent());
+$overlayContent = $_category->getOverlayContent();
 ?>
 
 
