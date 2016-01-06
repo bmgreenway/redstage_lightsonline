@@ -13,7 +13,7 @@ array(
 		'overlay_content' => array (
 		'group'			=> 'General Information',
 		'input' 		=> 'textarea',
-		'type'      	=> 'varchar',
+		'type'      	=> 'text',
 		'backend' 		=> '',
 		'label'     	=> 'Overlay Content',
 		'required'  	=> '0',
