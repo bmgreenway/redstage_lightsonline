@@ -37,21 +37,25 @@
     <div class="product-details">
         <a href="<?php 
 	        $params = $this->getRequest()->getParams();
-			if($params['isAjax'] == 1){
-				$refererUrl = Mage::registry('referrer_url');
-		        if (empty($refererUrl)) {
-		            $refererUrl = Mage::getBaseUrl();
-		        }
-				$deleteUrl = $this->getUrl(
-		            'checkout/cart/delete',
-		            array(
-		                'id'=>$_item->getId(),
-		                Mage_Core_Controller_Front_Action::PARAM_NAME_URL_ENCODED => $this->helper('core/url')->getEncodedUrl($refererUrl)
-		            )
-		        );
-			}else{
-        		$deleteUrl = $this->getDeleteUrl();
-			}
+            if (isset($params['isAjax'])) {
+    			if($params['isAjax'] == 1){
+    				$refererUrl = Mage::registry('referrer_url');
+    		        if (empty($refererUrl)) {
+    		            $refererUrl = Mage::getBaseUrl();
+    		        }
+    				$deleteUrl = $this->getUrl(
+    		            'checkout/cart/delete',
+    		            array(
+    		                'id'=>$_item->getId(),
+    		                Mage_Core_Controller_Front_Action::PARAM_NAME_URL_ENCODED => $this->helper('core/url')->getEncodedUrl($refererUrl)
+    		            )
+    		        );
+    			} else {
+            		$deleteUrl = $this->getDeleteUrl();
+    			}
+            } else {
+                    $deleteUrl = $this->getDeleteUrl();
+            }
         	echo $deleteUrl; 
         ?>" title="<?php echo $this->__('Remove This Item') ?>" onclick="return confirm('<?php echo $this->__('Are you sure you would like to remove this item from the shopping cart?') ?>');" class="btn-remove"><?php echo $this->__('Remove This Item') ?></a>
         <?php if ($isVisibleProduct): ?>

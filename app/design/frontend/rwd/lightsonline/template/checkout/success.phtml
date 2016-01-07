@@ -94,6 +94,24 @@ $currency = $order->getOrderCurrencyCode();
     <button type="button" class="button" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Continue Shopping')) ?>" onclick="window.location='<?php echo $this->getUrl() ?>'"><span><span><?php echo $this->__('Continue Shopping') ?></span></span></button>
 </div>
 
+<!-- Spring Metrics code for purchase conversion -->
+<?php
+$orderId = Mage::getSingleton('checkout/type_onepage')->getCheckout()->getLastOrderId();
+$order = Mage::getModel('sales/order')->load($orderId);
+$coupon_code = $order->getCouponCode();
+if (!$coupon_code) $coupon_code = '';
+$amount = number_format($order->getGrandTotal(),2);
+$email = $order->getCustomerEmail();
+?>
+<script type="text/javascript">
+_springMetq.push(["setdata", { "revenue": "<?php echo $amount; ?>" }]);
+_springMetq.push(["setdata", { "orderId": "<?php echo $orderId; ?>" }]);
+_springMetq.push(["setdata", { "email": <?php echo json_encode($email); ?> }]);
+_springMetq.push(["setdata", { "promoCode": <?php echo json_encode($coupon_code); ?> }]);
+_springMetq.push(["convert", "sale" ]);
+</script>
+<!-- end Spring Metrics code -->
+
 <script type="text/javascript">
 var sa_products = {};
 <?php
