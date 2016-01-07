@@ -10,7 +10,9 @@ if ($_imgUrl = $_category->getImageUrl()) {
 } ?>
 <?php 
 $attribute = Mage::getSingleton('eav/config')->getAttribute('catalog_category', 'text_overlay');
- $text = $attribute->getSource()->getOptionText($_category->getTextOverlay());
+$text = $attribute->getSource()->getOptionText($_category->getTextOverlay());
+
+$overlayContent = $_category->getOverlayContent();
 ?>
 
 
@@ -19,7 +21,10 @@ $attribute = Mage::getSingleton('eav/config')->getAttribute('catalog_category', 
 			?>
 			<div class="left_over">
 			<div class="left_over_title"><?php echo $catName=$_helper->categoryAttribute($_category, $_category->getName(), 'name');?></div>
-			<div class="left_over_desc"><?php echo $description=$_category->getDescription();?></div>
+			<div class="left_over_desc">
+				<?php //echo $description=$_category->getDescription();?>
+				<?php echo $overlayContent; ?>
+			</div>
 			</div>
 			<?php 
 			echo $_imgHtml; 
@@ -27,7 +32,10 @@ $attribute = Mage::getSingleton('eav/config')->getAttribute('catalog_category', 
 			?>
 			<div class="right_over">
 			<div class="right_over_title"><?php echo $catName=$_helper->categoryAttribute($_category, $_category->getName(), 'name');?></div>
-			<div class="right_over_desc"><?php echo $description=$_category->getDescription();?></div>
+			<div class="right_over_desc">
+				<?php //echo $description=$_category->getDescription();?>
+				<?php echo $overlayContent; ?>
+			</div>
 			</div>
 			<?php 
 			echo $_imgHtml; 
